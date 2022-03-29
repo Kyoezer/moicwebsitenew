@@ -1,0 +1,918 @@
+{%load static%}
+{% static "images" as baseUrl %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css'%}">
+    <title>moic</title>
+</head>
+<body>
+    {% block tophead %}
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        .wrapper1{
+            align-items: center;
+            width: auto;
+            margin-left: 50px;  
+        }
+        .tophead{
+          display: grid;
+          grid-gap:30px;
+          background-color: gray;
+          align-items: center;
+          text-align: center;
+          grid-template-areas: 
+          'logo logotext';
+        }
+        
+        .logo{
+          background-color: transparent;
+          height: 200px;
+          margin-left: 20px;
+          margin-top: 30px;
+        }
+        .logo img{
+          width: 200px;
+        }
+        .font_Text{
+          font-size: 40px;
+          color: #000000;
+          padding-right: 90px;
+          margin-top: 10px;
+        }
+        .font_Text1{
+          color: red;
+          padding-right: 70px;
+          margin-top: -40px;
+        }
+        .font_Text0{
+          margin-top: -30px;
+          font-size: 40px;
+          color: #000000;
+          padding-right: 60px;
+        }
+        @media(max-width: 500px){
+          .tophead{
+            display: grid;
+            grid-gap:30px;
+            width: auto;
+            align-items: center;
+            grid-template-areas: 
+            'logo'
+            'logotext';
+          }
+          
+          .logo{
+            background-color: transparent;
+            height: 200px;
+            width: auto;
+            margin: auto;
+            text-align: center;
+          }
+          .logo img{
+            margin-top: 1px;
+            height: 140px;
+            width: auto; 
+          }
+          .font_Text {
+            font-size:30px;
+            padding:20px;
+            margin-top: -90px;
+          }
+         
+          .font_Text1{
+            color: red;
+            padding: 6px 30px;
+            margin-top: -60px;
+          }
+          .font_Text0{
+            margin-top: -30px;
+            font-size: 30px;
+            color: #000000;
+            padding: 20px;
+            margin-top: -70px;
+          }
+        
+        }
+        
+        
+        .navbar{
+            display: grid;
+            grid-gap:30px;
+            height: 40px;
+            width: 100%;
+            margin: auto;
+            grid-template-areas: 
+            'left1 left1 ';
+        }
+        .header {
+            background-color: #f1f1f1;
+            text-align: center;
+          }
+        
+        .navbar{
+            grid-area: left1;
+        }
+        
+        .navbar{
+            grid-area: right1;
+        }
+        .left1{
+            background-color:  #bdac18;
+            width: auto; 
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        
+        }
+        .right1{
+            background-color: transparent;
+        }
+        @media(max-width: 500px){
+            .right1{
+                margin-top: 20px;
+                background-color: #bdac18;
+                border-radius: 20px;
+                
+            }
+            
+          .topwrap{
+            align-items: center;
+            width: 100%;
+          }
+          .wrapper{
+            align-items: center;
+            width: 94%;
+            margin-left: 20px;
+          }
+          
+        }
+        @media(max-width: 768px){
+           
+        .navbar{
+            
+            display: grid;
+            grid-gap:20px;
+            height: 100px;
+            width: 100%;
+            margin: auto;
+            grid-template-areas: 
+            'left1'
+            'right1';
+        }
+         .right1{
+                background-color: #bdac18;
+                border-radius: 20px;
+                
+            }
+        }
+        @media(max-width: 1024px){
+           
+            .navbar{
+                
+                display: grid;
+                grid-gap:20px;
+                height: 100px;
+                width: 100%;
+                margin: auto;
+                grid-template-areas: 
+                'left1'
+                'right1';
+            }
+             .right1{
+                    background-color: #bdac18;
+                    border-radius: 20px;
+                    
+                }
+            }
+            
+          
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+          }
+        li {
+            display: inline;
+            height: 40px;
+        }
+        li a{
+            float: left;
+            display: block;
+            color: #000000;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+        li a:hover:not(.active) {
+            background-color: rgb(255, 255, 255);
+          }
+          
+        .active {
+            background-color: #ffffff;
+        }
+        li a:hover {
+            background-color: rgb(255, 255, 255);
+          }
+        
+         
+          @media(max-width: 500px){
+          
+            .navbar{
+                display: grid;
+                height: 40px;
+                width: 100%;
+                margin: auto;
+                align-items: center;
+                grid-template-areas: 
+                'left1' 
+                'right1';
+            }
+            
+            .navbar{
+                grid-area: left1;
+            }
+            .navbar{
+                grid-area: right1;
+            }
+          }
+        
+        
+          .topnav{
+              overflow: hidden;
+            
+            }
+        
+            .topnav a {
+              float: left;
+              text-align: center;
+              padding: 14px 16px;
+              text-decoration: none;
+              font-size: 17px;
+            }
+        
+            .active {
+              background-color: #ffffff;
+              color: rgb(0, 0, 0);
+            }
+        
+            .topnav .icon {
+              display: none;
+            }
+        
+            .dropdown {
+              float: left;
+              overflow: hidden;
+            }
+        
+            .dropdown .dropbtn {
+              font-size: 17px;    
+              border: none;
+              outline: none;
+              color: white;
+              padding: 14px 16px;
+              background-color: inherit;
+              font-family: inherit;
+              margin: 0;
+            }
+        
+            .dropdown-content {
+              display: none;
+              position: absolute;
+              background-color:  #bdac18;
+              min-width: 160px;
+              box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+              z-index: 1;
+            }
+        
+            .dropdown-content a {
+              float: none;
+              color: black;
+              padding: 12px 16px;
+              text-decoration: none;
+              display: block;
+              text-align: left;
+            }
+        
+            .topnav a:hover, .dropdown:hover .dropbtn {
+              background-color: rgb(255, 255, 255);
+              color: rgb(0, 0, 0);
+            }
+        
+            .dropdown-content a:hover {
+              background-color: #ffffff;
+              color: black;
+            }
+        
+            .dropdown:hover .dropdown-content {
+              display: block;
+            }
+        
+            @media screen and (max-width: 600px) {
+              .topnav a:not(:first-child), .dropdown .dropbtn {
+                display: none;
+              }
+              .topnav a.icon {
+                float: right;
+                display: block;
+              }
+            }
+        
+            @media screen and (max-width: 600px) {
+              .topnav.responsive {position: relative;}
+              .topnav.responsive .icon {
+                position: absolute;
+                right: 0;
+                top: 0;
+              }
+              .topnav.responsive a {
+                float: none;
+                display: block;
+                text-align: left;
+              }
+              .topnav.responsive .dropdown {float: none;}
+              .topnav.responsive .dropdown-content {position: relative;}
+              .topnav.responsive .dropdown .dropbtn {
+                display: block;
+                width: 100%;
+                text-align: left;
+                }
+                .div4{
+              width: 30%; height: 100%; margin: 10px auto;
+              border: 1px solid black;
+              display: grid;
+              display:flex;
+              grid-gap:5px;
+              grid-template-columns: repeat(auto-fit, minmax(50px));
+              grid-template-rows: 50px;
+              background-color:yellowgreen;
+              box-shadow: 10px 10px 5px #aaaaaa;
+              }
+             
+             }
+             .right1{
+                 display: grid;
+                 grid-template-areas: 
+                 'subs search';
+             }
+            
+            .button1{
+                border-radius: 12px;
+                background-color: #da1e18; /* Green */
+                border: none;
+                color: white;
+                padding: 20px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;
+                cursor: pointer;
+            }
+            @media(max-width: 500px){
+                .button1{
+                    border-radius: 12px;
+                    background-color: #da1e18; /* Green */
+                    border: none;
+                    color: white;
+                    padding: 15px;
+                    text-align: center;
+                    text-decoration: none;
+                    display: inline-block;
+                    font-size: 16px;
+                    cursor: pointer;
+                }
+            
+              }
+
+              /*social link start from here*/
+
+              .icon-bar {
+                position: fixed;
+                top: 50%;
+                -webkit-transform: translateY(-50%);
+                -ms-transform: translateY(-50%);
+                transform: translateY(-50%);
+              }
+              
+              .icon-bar a {
+                display: block;
+                text-align: center;
+                padding: 16px;
+                transition: all 0.3s ease;
+                color: white;
+                font-size: 20px;
+              }
+              
+              .icon-bar a:hover {
+                background-color: #000;
+              }
+              
+              .facebook {
+                background: #3B5998;
+                color: white;
+              }
+              
+              .twitter {
+                background: #55ACEE;
+                color: white;
+              }
+              
+              .google {
+                background: #dd4b39;
+                color: white;
+              }
+              
+              .linkedin {
+                background: #007bb5;
+                color: white;
+              }
+              
+              .youtube {
+                background: #bb0000;
+                color: white;
+              }
+              /*social link end here*/
+              
+    </style>
+          <section class="wrapper1">
+            <section class="head"> 
+              <section class="tophead">
+                <div class="logo">
+                  <img src="{% static 'images/logo.png' %}" alt="logo">
+                </div>
+                <div class="textlogo">
+                  <h1 class="font_Text">༆༑  ། བརྡ་དོན་དང་བརྒྱུད་འབྲེལ་ལྷན་ཁག །</h1>
+                  <h1 class="font_Text0">Ministry of Information and Communications</h1>
+                  <h3 class="font_Text1">"Connecting the unconnected and establishing a harmonious knowledge society"</h3>
+                </div>
+              </section>
+            </section>
+            <!--navder start-->
+            <section class="navbar">
+              <div class="left1"> 
+                  <div class="topnav" id="myTopnav">
+                      <a href="{% url 'home' %}" class="active">HOME</a>
+                      <div class="dropdown">
+                          <button class="dropbtn">ABOUT US 
+                            <i class="fa fa-caret-down"></i>
+                          </button>
+                          <div class="dropdown-content">
+                            <a href="{% url 'background' %}">BACKGROUND</a>
+                            <a href="{% url 'mission' %}">VISION & MISSION</a>
+                            <a href="{% url 'organogram' %}">ORGANOGRAM</a>
+                            <a href="{% url 'whoiswho' %}">WHO IS WHO</a>
+                          </div>
+                      </div> 
+                      <div class="dropdown">
+                          <button class="dropbtn">DEPARTMENTS 
+                            <i class="fa fa-caret-down"></i>
+                          </button>
+                          <div class="dropdown-content">
+                            <a href="{% url 'department' %}">DoAT</a>
+                            <a href="{% url 'department' %}">DITT</a>
+                            <a href="{% url 'department' %}">DoIM</a>
+                            <a href="{% url 'department' %}">RSTA</a>
+                          </div>
+                      </div> 
+                      <div class="dropdown">
+                          <button class="dropbtn">ANNUAL PERFORMANCE AGREEMENTS
+                            <i class="fa fa-caret-down"></i>
+                          </button>
+                          <div class="dropdown-content">
+                            <a href="{% url 'annual' %}">2021-2022</a>
+                            <a href="{% url 'annual' %}">2020-2021</a>
+                            <a href="{% url 'annual' %}">2019-2020</a>
+                          </div>
+                      </div> 
+                      <div class="dropdown">
+                        <button class="dropbtn">PUBLICATIONS 
+                          <i class="fa fa-caret-down"></i>
+                        </button>
+                        <div class="dropdown-content">
+                          <a href="{% url 'publication' %}">POLICIES</a>
+                          <a href="{% url 'publication' %}">ACTS</a>
+                          <a href="{% url 'publication' %}">RULES AMD REGULATIONS</a>
+                          <a href="{% url 'publication' %}">GUIDELINES</a>
+                          <a href="{% url 'publication' %}">REPORTS</a>
+                          <a href="{% url 'publication' %}">STATISTUS</a>
+                        </div>
+                      </div> 
+                      
+                      <a href="javascript:void(0);" style="font-size:30px;" class="icon" onclick="myFunction()">&#9776;</a>
+                    </div>  
+              </div>
+            <section class="container">
+                  <header class="showcase">
+                     <div class="img-slider">
+                             <div class="slide active"> 
+                             </div>
+                             <div class="navigation">
+                             </div>
+                             </div>
+                  </header>
+                  <div class="top-box top-box-a"> 
+                  </div>
+                  
+              <div class="right1">
+                  <div class="subs">
+                      <a href="#"><button class="button1">CONTACT US</button></a>
+              </div>
+                  <div class="search">
+                    <p>search</p>  
+                  </div>     
+                </section>   
+          </section>
+          </section>
+          <section class="icon-bar">
+            <a href="#" class="facebook"><i class="fa fa-facebook"></i></a> 
+            <a href="#" class="twitter"><i class="fa fa-twitter"></i></a> 
+            <a href="#" class="google"><i class="fa fa-google"></i></a> 
+            <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
+            <a href="#" class="youtube"><i class="fa fa-youtube"></i></a> 
+          </section>
+    {% endblock tophead %}
+    {% block content %}
+ 
+    {% endblock content %}
+    {% block footer %}
+    <style>
+      /* first month */
+.firstfooter{
+  height: auto;
+  background: url(https://www.freepnglogos.com/uploads/wave-png/blue-wave-background-transparent-30.png);
+  margin-top: 50px;
+  display: grid;
+  gap: 20px;
+  background-color: rgb(240, 235, 235);
+  border-style: groove;
+  grid-template-areas: 
+     'link contact post achive';
+}
+.link{
+  background-color:transparent ;
+}
+.cont{
+  display: flex;
+  text-align: center;
+  background-color: rgb(87, 87, 121);
+}
+.cont div{
+   flex: 1;
+}
+.cont i {
+  color: #0ecfff;
+  font-size: 45px;
+  align-items: center;
+}
+.title1{
+  background-color: orange;
+}
+.title1 h1{
+  color: #000;
+}
+/* link start */
+.cont1{
+  display: flex;
+  text-align: center;
+  background-color: transparent;
+}
+
+.cont1 div{
+   flex: 1;
+}
+.cont1 i {
+  color: #11aa03;
+  font-size: 30px;
+  align-items: center;
+}
+.title2{
+  background-color: transparent;
+}
+.title2 h1{
+  color: #000;
+  font-size: small;
+  margin-left: -100px;
+}
+.title2 a{
+  text-decoration: none;
+}
+#Categories{
+  background-color: transparent;
+  padding: 10px;
+  border: #494848 solid;
+  width: 200px;
+}
+@media(max-width: 500px){
+
+  .firstfooter{
+    height: 300px;
+    background: url(https://www.freepnglogos.com/uploads/wave-png/blue-wave-background-transparent-30.png);
+    margin-top: 50px;
+    display: grid;
+    gap: 20px;
+    grid-template-areas: 
+    'link'
+    'contact'
+    'post'
+    'achive';
+  }
+  .cont i {
+    color: #e4e4e4;
+    font-size: 30px;
+  }
+  .footerheadtext{
+    font-size: 15px;
+  }
+}
+/* last footer */
+
+.lastfooter{
+    display: grid;
+    grid-gap: 20px;
+    height: 200px;
+    wight: 200px;
+    grid-template-areas:
+        'media location';
+      
+    }
+@media(max-width: 500px){
+     
+.lastfooter{
+  margin-top: 400px;
+  display: grid;
+  grid-gap: 20px;
+  height: 200px;
+  wight: 200px;
+  grid-template-areas:
+      'media'
+      'location';
+    
+  }
+        
+}
+.media{
+  display: grid;
+  grid-gap: 20px;
+  text-align: center;
+  background-color: blue;
+  padding: 15px;
+  grid-template-areas:
+     'mediaicon mediatitle';
+}
+@media(max-width: 500px){
+  .media{
+    display: grid;
+    grid-gap: 20px;
+    text-align: center;
+    background-color: blue;
+    padding: 15px;
+    grid-template-areas:
+       'mediaicon'
+       'mediatitle';
+  }
+    
+}
+.mediaicon{
+  background-color: red;
+}
+
+.location{
+  text-align: center;
+  background-color: red;
+  padding: 15px
+}
+@media(max-width: 500px){
+  .media{
+    display: grid;
+    grid-gap: 20px;
+    text-align: center;
+    background-color: blue;
+    padding: 15px;
+    grid-template-areas:
+       'mediaicon'
+       'mediatitle';
+  }
+    
+}
+</style>
+    <section class="wrapper1">
+  <!--second end-->
+  <section class="firstfooter">
+    <div class="link">
+      <div class="cont">
+        <div class="icon">
+         <i class="fa fa-chain"></i>
+        </div>
+        <div class="title1">
+         <h1 class= "footerheadtext">QUICK LINKS</h1>
+        </div>
+      </div>
+      <!--link start-->
+         <div class="cont1">
+             <div class="icon">
+             <a href="#"><i class="fa fa-globe"></i></a>
+             </div>
+             <div class="title2">
+             <a href="#"><h1 class= "footerheadtext">Bhutan Portal</h1></a>
+             </div>
+         </div>
+         <div class="cont1">
+           <div class="icon">
+           <a href="#"><i class="fa fa-facebook"></i></a>
+           </div>
+           <div class="title2">
+           <a href="#"><h1 class= "footerheadtext">facebook Page</h1></a>
+           </div>
+       </div>
+    </div>
+    <div class="contact">
+     <div class="cont">
+       <div class="icon">
+         <i class="fa fa-envelope"></i>
+        </div>
+        <div class="title1">
+         <h1 class= "footerheadtext">CONTACTS</h1>
+        </div>
+     </div>
+         <!--link start-->
+         <div class="cont1">
+           <div class="icon">
+           <a href="#"><i class="fa fa-phone"></i></a>
+           </div>
+           <div class="title2">
+           <a href="#"><h1>+975-02-322567</h1></a>
+           <a href="#"><h1>+975-02-321283</h1></a>
+           </div>
+       </div>
+       <div class="cont1">
+         <div class="icon">
+         <a href="#"><i class="fa fa-address-card"></i></a>
+         </div>
+         <div class="title2">
+         <a href="#"><h1>P.O BOX:278</h1></a>
+         <a href="#"><h1>Doeboom Lam</h1></a>
+         <a href="#"><h1>Thimphu:Bhutan</h1></a>
+         <a href="#"><h1>webmaster:ict@moic.gov.bt</h1></a>
+         </div>
+     </div>
+    </div>
+    <div class="post">
+     <div class="cont">
+       <div class="icon">
+         <i class="fa fa-sitemap"></i>
+       </div>
+        <div class="title1">
+         <h1 class= "footerheadtext">POST CATEGORIES</h1>
+        </div>  
+     </div>
+          <!--link start-->
+          <div class="cont1">
+           <div class="title2">
+           <h1>Select Post Categories</h1>
+           <select name="Categories" id="Categories">
+             <option value="Select Category">Select Category</option>
+             <a href="#"><option value="Announcement">Announcement(2)</option></a>
+             <a href="#"><option value="Event">Event(1)</option></a>
+             <a href="#"><option value="Information">Information(2)</option></a>
+             <a href="#"><option value="Notification">Notification(3)</option></a>
+             <a href="#"><option value="Press release">Press Release(2)</option></a>
+             <a href="#"><option value="Tender">Tender(4)</option></a>
+             <a href="#"><option value="Vacancy">Vacancy(2)</option></a>
+           </select>
+           </div>
+       </div>
+    </div>
+    <div class="achive">
+     <div class="cont">
+       <div class="icon">
+         <i class="fa fa-file-zip-o"></i>
+        </div>
+        <div class="title1">
+         <h1 class= "footerheadtext">ARCHIVE</h1>
+        </div>
+     </div>
+         <!--link start-->
+         <div class="cont1">
+           <div class="title2">
+           <h1>Select Month</h1>
+           <select name="Categories" id="Categories">
+             <option value="Select Month">Select Month</option>
+             <a href="#"><option value="Augest 2021">Augest 2021(2)</option></a>
+             <a href="#"><option value="July 2021">July 2021(1)</option></a>
+             <a href="#"><option value="June 2021">June 2021(2)</option></a>
+             <a href="#"><option value="July 2006">July 2006(3)</option></a>
+           </select>
+           </div>
+       </div>
+    </div>
+ </section>
+
+ <!--lastfooter start from here -->
+ <br>
+ <section class="lastfooter">
+   <div class="media">
+     <section class="mediaicon">mediaicon</section>
+     <section class="mediatitle">titleicon</section>
+   </div>
+   <div class="media">
+    <section class="mediaicon">locationicon</section>
+    <section class="mediatitle">titleicon</section>
+  </div>
+   <div class="location">media</div>
+   <div class="location">location</div>
+ </section>
+ <!--<section class="lastfooter">
+  <div class="media">
+   <div class="cont">
+     <div class="icon">
+      <i class="fa fa-image"></i>
+     </div>
+     <div class="title1">
+      <h2 class="lastfootertext">MEDIA GALLERY</h2>
+     </div>
+   </div>
+   
+   <div class="caro">
+      <div class="caro">
+        <div class="site">
+          <div id="main">
+           <img src="moic1.jpg" class="im" id="sildeimage">
+          </div>
+        </div>
+        
+        <div class="site1">
+         <div id="main">
+          <img src="moic1.jpg" class="im" id="sildeimage1">
+         </div>
+       </div>
+      </div>
+   </div>
+  </div>
+  <div class="location">
+   <div class="cont">
+     <div class="icon">
+      <i class="fa fa-map-marker"></i>
+     </div>
+     <div class="title1">
+      <h2 class="lastfootertext">OUR LOCATION</h2>
+     </div>
+   </div>
+   <div class="mapouter"><div class="gmap_canvas"><iframe class="footermap" id="gmap_canvas" src="https://maps.google.com/maps?q=thimphu%20moic&t=k&z=17&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://123movies-to.org">123movies</a><br><style>.mapouter{position:relative;text-align:right;height:300px;width:560px;}</style><a href="https://www.embedgooglemap.net">google maps embed code generator</a><style>.gmap_canvas {overflow:hidden;background:none!important;height:300px;width:565px;}</style></div></div>
+  </div>-->
+ </section>
+
+</section>
+    {% endblock footer %}
+    <script>
+      function first(){
+        document.getElementById("sildeimage").src="{% static 'images/yeshi.png' %}";
+      }
+      function second(){
+        document.getElementById("sildeimage").src="{% static 'images/logo1.png' %}";
+      }
+      function thrid(){
+        document.getElementById("sildeimage").src="{% static 'images/whoweare.png' %}";
+      }
+      function fourth(){
+        document.getElementById("sildeimage").src="{% static 'images/samuh.png' %}";
+      }
+      setInterval(first,2000)
+      setInterval(second,3000)
+      setInterval(thrid,4000)
+      setInterval(fourth,5000)
+     
+  </script>
+  <script>
+  function first(){
+    document.getElementById("sildeimage1").src="{% static 'images/yeshi.png' %}";
+  }
+  function second(){
+    document.getElementById("sildeimage1").src="{% static 'images/whatwedo.png' %}";
+  }
+  function thrid(){
+    document.getElementById("sildeimage1").src="{% static 'images/samuh.png' %}";
+  }
+  function fourth(){
+    document.getElementById("sildeimage1").src="{% static 'images/denkers.png' %}";
+  }
+  setInterval(first,5000)
+  setInterval(second,4000)
+  setInterval(thrid,3000)
+  setInterval(fourth,2000)
+  </script>
+    <script> 
+        function myFunction() {
+          var x = document.getElementById("myTopnav");
+          if (x.className === "topnav") {
+            x.className += " responsive";
+          } else {
+            x.className = "topnav";
+          }
+        }
+    </script>
+</body>
+</html>
