@@ -1,5 +1,4 @@
-{% extends 'base.html' %} {%load static%} {% static "images" as baseUrl%} {%
-block content %}
+{% extends 'base.html' %} {% block content %} {% load static %}
 <style>
   .wrapper1 {
     align-items: center;
@@ -23,11 +22,14 @@ block content %}
     object-fit: cover;
   }
   .back {
-    background-color: red;
+    background-color: #d4ab2a;
   }
   .back h1 {
-    background-color: red;
-    font-size: 40px;
+    background-color: transparent;
+    font-size: 54px;
+    font-weight: 600;
+    color: white;
+    font-family: sans-serif;
     text-align: center;
   }
   .content {

@@ -123,10 +123,12 @@
         
         .navbar{
             grid-area: left1;
+            font-size: 14px;
         }
         
         .navbar{
             grid-area: right1;
+            font-size: 14px;
         }
         .left1{
             background-color:  #d4ab2a ;
@@ -243,8 +245,10 @@
             
             .navbar{
                 grid-area: left1;
+                font-size: 14px;
             }
             .navbar{
+                font-size: 14px;
                 grid-area: right1;
             }
           }
@@ -382,9 +386,9 @@
                 cursor: pointer;
             }
             @media(max-width: 500px){
-                .button1{
-                    border-radius: 12px;
-                    background-color: #ff6347; /* Green */
+            .search-button{
+                    border-radius: 7px;
+                    background-color: #ff6347;
                     border: none;
                     color: white;
                     padding: 15px;
@@ -530,8 +534,9 @@
                   
               <div class="right1">
                   <div class="subs">
-                      <a href="#"><button class="button1">CONTACT US</button></a>
+                      <a href="#"><button class="search-button"> CONTACT US </button></a>
               </div>
+            
                   <div class="search">
                     <p>search</p>  
                   </div>     
@@ -550,6 +555,8 @@
  
     {% endblock content %}
     {% block footer %}
+    <br>
+    <hr>
     <style>
       /* first month */
 .firstfooter{
@@ -645,7 +652,6 @@
     display: grid;
     grid-gap: 20px;
     height: 200px;
-    wight: 200px;
     grid-template-areas:
         'media location';
       
@@ -657,11 +663,9 @@
   display: grid;
   grid-gap: 20px;
   height: 200px;
-  wight: 200px;
   grid-template-areas:
       'media'
-      'location';
-    
+      'location'; 
   }
         
 }
