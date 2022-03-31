@@ -28,6 +28,7 @@ urlpatterns = [
     path('annual/', include('annual.urls')),
     path('publication/', include('publication.urls')),
     path('contact/', include('contact.urls')),
+    path('search/', include('search.urls')),
     path('admin/', admin.site.urls),
 ]
 

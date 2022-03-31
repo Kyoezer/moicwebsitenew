@@ -526,12 +526,12 @@
                           <i class="fa fa-caret-down"></i>
                         </button>
                         <div class="dropdown-content">
-                          <a href="{% url 'publication' %}">POLICIES</a>
-                          <a href="{% url 'publication' %}">ACTS</a>
-                          <a href="{% url 'publication' %}">RULES AND REGULATIONS</a>
-                          <a href="{% url 'publication' %}">GUIDELINES</a>
-                          <a href="{% url 'publication' %}">REPORTS</a>
-                          <a href="{% url 'publication' %}">STATISTICS</a>
+                          <a href="{% url 'policies' %}">POLICIES</a>
+                          <a href="{% url 'acts' %}">ACTS</a>
+                          <a href="{% url 'rules' %}">RULES AND REGULATIONS</a>
+                          <a href="{% url 'guidelines' %}">GUIDELINES</a>
+                          <a href="{% url 'reports' %}">REPORTS</a>
+                          <a href="{% url 'statistics' %}">STATISTICS</a>
                         </div>
                       </div> 
                       
@@ -556,7 +556,7 @@
               </div>
             
                   <div class="searchbtn">
-                    <a href="#">
+                    <a href="{% url 'search' %}">
                     <i class="fa fa-search fa-2x"></i>
                   </a>
                   </div>     

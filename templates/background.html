@@ -1,3 +1,45 @@
-{% extends 'base.html' %} {% block content %}
-<h1>pema background</h1>
-kjhcdsbcvobudsVCW {% endblock content %}
+{% extends 'base.html' %} {% block content %} {% load static %}
+<style>
+  .history {
+    font-family: sans-serif;
+    line-height: 26.4px;
+    letter-spacing: normal;
+    padding-left: 55px;
+    text-align: justify;
+    width: 680px;
+  }
+  .background {
+    background-color: transparent;
+    display: grid;
+    grid-template-areas: "history info";
+  }
+</style>
+<section class="background">
+  <section class="history">
+    <h1>HISTORY</h1>
+    <p>
+      Recognizing the importance of information in today’s knowledge-based
+      society driven by information technology and with the need to create
+      proper institutional and legal framework for a sound and holistic
+      development of the information and communication technology (ICT) sectors
+      in the Kingdom, the Royal Government created the Ministry of Information
+      and Communications in 2003 through bifurcation of the erstwhile Ministry
+      of Communications with the aim to tap the potential of rapid change in the
+      field of information and communications technology (ICT) and cater to the
+      policy and regulatory needs of the information, communications and media
+      sector in the country.
+    </p>
+    <img
+      src="{% static 'images/background.jpg' %}"
+      alt="background image"
+      style="width: 680px"
+    />
+    <hr />
+    <h1>MINISTRY TIMELINE</h1>
+  </section>
+  <section class="info">
+    <p>Information</p>
+  </section>
+</section>
+
+{% endblock content %}
