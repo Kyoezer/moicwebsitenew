@@ -39,6 +39,16 @@
     width: 100%;
     height: 100%;
   }
+  .pro1 {
+    display: grid;
+    grid-template-areas: "mis se";
+  }
+  .mis {
+    text-align: center;
+  }
+  .se {
+    text-align: center;
+  }
 </style>
 <section class="wrapper1">
   <section class="content">
@@ -54,5 +64,39 @@
       </div>
     </section>
   </section>
+  <br />
+  <hr />
+  <br />
+  <section class="pro1">
+    <section class="mis">
+      <section class="misdetail">
+        <img src="{% static 'images/Lyonpo-1.jpeg' %}" alt="Lyonpo" />
+        <h3>MINISTER</h3>
+        <h4>HON'BLE LYONPO KARMA DONNEN WANGDI</h4>
+        <p>
+          Hon'ble Minister joined the Ministry on 7th Nov <br />
+          2018.Lyonpo Karma Donnen Wangdi served as a <br />
+          Member of Parliament in the National Council <br />
+          from 2008 till 2013.
+        </p>
+      </section>
+    </section>
+    <section class="se">
+      <section class="sedetails">
+        <img
+          src="{% static 'images/Dasho-Secretary-1.jpeg' %}"
+          alt="Dasho Secretary"
+        />
+        <h3>SECRETARY</h3>
+        <h4>DASHO PHUNTSHO TOBGAY</h4>
+        <p>
+          Dasho Secretary joined the Ministry on 13th Sep <br />
+          2019. Dasho Phuntsho Tobgay served as <br />
+          DG,DGM in MoEA before joining MoIC.<br />
+        </p>
+      </section>
+    </section>
+  </section>
 </section>
+
 {% endblock content %}

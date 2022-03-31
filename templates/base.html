@@ -474,7 +474,7 @@
             <section class="head"> 
               <section class="tophead">
                 <div class="logo">
-                  <img src="{% static 'images/emblem-1.png' %}" class="toplogo" alt="logo" style="width: 100px;">
+                  <img src="{% static 'images/emblem-1.png' %}" class="toplogo" alt="logo" style="width: 120px;">
                 </div>
                 <div class="textlogo">
                   <img src="{% static 'images/MoIC.png' %}" class="logoimg" alt="Moic Description">
@@ -505,10 +505,10 @@
                             <i class="fa fa-caret-down"></i>
                           </button>
                           <div class="dropdown-content">
-                            <a href="{% url 'department' %}">DoAT</a>
-                            <a href="{% url 'department' %}">DITT</a>
-                            <a href="{% url 'department' %}">DoIM</a>
-                            <a href="{% url 'department' %}">RSTA</a>
+                            <a href="{% url 'doat' %}">DoAT</a>
+                            <a href="{% url 'ditt' %}">DITT</a>
+                            <a href="{% url 'doim' %}">DoIM</a>
+                            <a href="{% url 'rsta' %}">RSTA</a>
                           </div>
                       </div> 
                       <div class="dropdown">
@@ -516,9 +516,9 @@
                             <i class="fa fa-caret-down"></i>
                           </button>
                           <div class="dropdown-content">
-                            <a href="{% url 'annual' %}">2021-2022</a>
-                            <a href="{% url 'annual' %}">2020-2021</a>
-                            <a href="{% url 'annual' %}">2019-2020</a>
+                            <a href="{% url 'annual1' %}">2021-2022</a>
+                            <a href="{% url 'annual2' %}">2020-2021</a>
+                            <a href="{% url 'annual3' %}">2019-2020</a>
                           </div>
                       </div> 
                       <div class="dropdown">
@@ -552,7 +552,7 @@
                   
               <div class="right1">
                   <div class="subs">
-                      <a href="#"><button class="contact"> CONTACT US </button></a>
+                      <a href="{% url 'contact' %}"><button class="contact"> CONTACT US </button></a>
               </div>
             
                   <div class="searchbtn">
