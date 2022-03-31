@@ -13,6 +13,7 @@
     {% block tophead %}
     <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
         .background{
           background-color: #d4ab2a;
@@ -20,7 +21,7 @@
         .wrapper1{
             align-items: center;
             width: auto;
-            margin-left: 50px;  
+            margin-left: 50px;
         }
         .tophead{
           font-family: sans-serif;
@@ -29,10 +30,10 @@
           background-color: white;
           align-items: center;
           text-align: center;
-          grid-template-areas: 
+          grid-template-areas:
           'logo logotext';
         }
-        
+
         .logo{
           background-color: transparent;
           height: 200px;
@@ -69,7 +70,7 @@
             'logo'
             'logotext';
           }
-          
+
           .logo{
             background-color: transparent;
             height: 50px;
@@ -81,14 +82,14 @@
             padding-left: -10px;
             margin-top: 1px;
             height: 140px;
-            width: auto; 
+            width: auto;
           }
           .font_Text {
             font-size:30px;
             padding:20px;
             margin-top: -90px;
           }
-         
+
           .font_Text1{
             color: red;
             padding: 6px 30px;
@@ -101,7 +102,7 @@
             padding: 20px;
             margin-top: -70px;
           }
-        
+
         }
         .navbar{
             font-family: sans-serif;
@@ -111,28 +112,28 @@
             height: 40px;
             width: 100%;
             margin: auto;
-            grid-template-areas: 
+            grid-template-areas:
             'left1 left1 ';
         }
         .header {
             background-color: #f1f1f1;
             text-align: center;
           }
-        
+
         .navbar{
             grid-area: left1;
             font-size: 14px;
         }
-        
+
         .navbar{
             grid-area: right1;
             font-size: 14px;
         }
         .left1{
             background-color:  #d4ab2a ;
-            width: auto; 
+            width: auto;
             box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-        
+
         }
         .right1{
             background-color: transparent;
@@ -142,9 +143,9 @@
                 margin-top: 20px;
                 background-color: #d4ab2a;
                 border-radius: 20px;
-                
+
             }
-            
+
           .topwrap{
             align-items: center;
             width: 100%;
@@ -154,10 +155,10 @@
             width: 94%;
             margin-left: 20px;
           }
-          
+
         }
         @media(max-width: 768px){
-           
+
         .navbar{
             font-size: 14px;
             display: grid;
@@ -172,11 +173,11 @@
          .right1{
                 background-color: #d4ab2a;
                 border-radius: 20px;
-                
+
             }
         }
         @media(max-width: 1024px){
-           
+
             .navbar{
                 font-size: 14px;
                 display: grid;
@@ -184,16 +185,16 @@
                 height: 100px;
                 width: 100%;
                 margin: auto;
-                grid-template-areas: 
+                grid-template-areas:
                 'left1'
                 'right1';
             }
              .right1{
                     background-color: #d4ab2a;
                     border-radius: 20px;
-                    
+
                 }
-            }   
+            }
         ul {
             list-style-type: none;
             margin: 0;
@@ -216,17 +217,17 @@
         li a:hover:not(.active) {
             background-color: rgb(255, 255, 255);
           }
-          
+
         .active {
             background-color: #ffffff;
         }
         li a:hover {
             background-color: rgb(255, 255, 255);
           }
-        
-         
+
+
           @media(max-width: 500px){
-          
+
             .navbar{
                 font-size: 14px;
                 display: grid;
@@ -234,11 +235,11 @@
                 width: 100%;
                 margin: auto;
                 align-items: center;
-                grid-template-areas: 
+                grid-template-areas:
                 'left1' 
                 'right1';
             }
-            
+
             .navbar{
                 grid-area: left1;
                 font-size: 14px;
@@ -248,13 +249,13 @@
                 grid-area: right1;
             }
           }
-        
-        
+
+
           .topnav{
               overflow: hidden;
-              
+
             }
-        
+
             .topnav a {
               float: left;
               text-align: center;
@@ -262,23 +263,23 @@
               text-decoration: none;
               font-size: 17px;
             }
-        
+
             .active {
               background-color: #ffffff;
               color: rgb(0, 0, 0);
             }
-        
+
             .topnav .icon {
               display: none;
             }
-        
+
             .dropdown {
               float: left;
               overflow: hidden;
             }
-        
+
             .dropdown .dropbtn {
-              font-size: 17px;    
+              font-size: 17px;
               border: none;
               outline: none;
               color: white;
@@ -287,7 +288,7 @@
               font-family: inherit;
               margin: 0;
             }
-        
+
             .dropdown-content {
               display: none;
               position: absolute;
@@ -296,7 +297,7 @@
               box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
               z-index: 1;
             }
-        
+
             .dropdown-content a {
               float: none;
               color: black;
@@ -306,21 +307,21 @@
               display: block;
               text-align: left;
             }
-        
+
             .topnav a:hover, .dropdown:hover .dropbtn {
               background-color: rgb(255, 255, 255);
               color: rgb(0, 0, 0);
             }
-        
+
             .dropdown-content a:hover {
               background-color: #ffffff;
               color: black;
             }
-        
+
             .dropdown:hover .dropdown-content {
               display: block;
             }
-        
+
             @media screen and (max-width: 600px) {
               .topnav a:not(:first-child), .dropdown .dropbtn {
                 display: none;
@@ -330,7 +331,7 @@
                 display: block;
               }
             }
-        
+
             @media screen and (max-width: 600px) {
               .topnav.responsive {position: relative;}
               .topnav.responsive .icon {
@@ -361,14 +362,14 @@
               background-color:yellowgreen;
               box-shadow: 10px 10px 5px #aaaaaa;
               }
-             
+
              }
              .right1{
                  display: grid;
-                 grid-template-areas: 
+                 grid-template-areas:
                  'subs search';
              }
-            
+
             dbutton1{
                 border-radius: 12px;
                 background-color: #ff6347; /* Green */
@@ -394,7 +395,7 @@
                     font-size: 16px;
                     cursor: pointer;
                 }
-            
+
               }
 
               /*social link start from here*/
@@ -406,7 +407,13 @@
                 -ms-transform: translateY(-50%);
                 transform: translateY(-50%);
               }
-              
+
+                .call-icon{
+                    position: fixed;
+                    top: 85%;
+                    right: 0;
+                }
+
               .icon-bar a {
                 display: block;
                 text-align: center;
@@ -415,31 +422,31 @@
                 color: white;
                 font-size: 20px;
               }
-              
+
               .icon-bar a:hover {
                 background-color: #000;
               }
-              
+
               .facebook {
                 background: #3B5998;
                 color: white;
               }
-              
+
               .twitter {
                 background: #55ACEE;
                 color: white;
               }
-              
+
               .google {
                 background: #dd4b39;
                 color: white;
               }
-              
+
               .linkedin {
                 background: #007bb5;
                 color: white;
               }
-              
+
               .youtube {
                 background: #bb0000;
                 color: white;
@@ -459,19 +466,19 @@
               .searchbtn{
                 color: #000;
               }
-              /*social link end here*/  
+              /*social link end here*/
               .logoimg{
                 /* background-color: #11aa03; */
                 margin-right:200px;
               }
-              
+
               .toplogo{
                 height: auto;
               }
-            
+
     </style>
           <section class="wrapper1">
-            <section class="head"> 
+            <section class="head">
               <section class="tophead">
                 <div class="logo">
                   <img src="{% static 'images/emblem-1.png' %}" class="toplogo" alt="logo" style="width: 120px;">
@@ -486,11 +493,11 @@
             </section>
             <!--navder start-->
             <section class="navbar">
-              <div class="left1"> 
+              <div class="left1">
                   <div class="topnav" id="myTopnav">
                       <a href="{% url 'home' %}" class="active">HOME</a>
                       <div class="dropdown">
-                          <button class="dropbtn">ABOUT US 
+                          <button class="dropbtn">ABOUT US
                             <i class="fa fa-caret-down"></i>
                           </button>
                           <div class="dropdown-content">
@@ -499,9 +506,9 @@
                             <a href="{% url 'organogram' %}">ORGANOGRAM</a>
                             <a href="{% url 'whoiswho' %}">WHO IS WHO</a>
                           </div>
-                      </div> 
+                      </div>
                       <div class="dropdown">
-                          <button class="dropbtn">DEPARTMENTS 
+                          <button class="dropbtn">DEPARTMENTS
                             <i class="fa fa-caret-down"></i>
                           </button>
                           <div class="dropdown-content">
@@ -510,7 +517,7 @@
                             <a href="{% url 'doim' %}">DoIM</a>
                             <a href="{% url 'rsta' %}">RSTA</a>
                           </div>
-                      </div> 
+                      </div>
                       <div class="dropdown">
                           <button class="dropbtn">ANNUAL PERFORMANCE AGREEMENTS
                             <i class="fa fa-caret-down"></i>
@@ -520,9 +527,9 @@
                             <a href="{% url 'annual2' %}">2020-2021</a>
                             <a href="{% url 'annual3' %}">2019-2020</a>
                           </div>
-                      </div> 
+                      </div>
                       <div class="dropdown">
-                        <button class="dropbtn">PUBLICATIONS 
+                        <button class="dropbtn">PUBLICATIONS
                           <i class="fa fa-caret-down"></i>
                         </button>
                         <div class="dropdown-content">
@@ -533,374 +540,140 @@
                           <a href="{% url 'reports' %}">REPORTS</a>
                           <a href="{% url 'statistics' %}">STATISTICS</a>
                         </div>
-                      </div> 
-                      
+                      </div>
+
                       <a href="javascript:void(0);" style="font-size:30px;" class="icon" onclick="myFunction()">&#9776;</a>
-                    </div>  
+                    </div>
               </div>
             <section class="container">
                   <header class="showcase">
                      <div class="img-slider">
-                             <div class="slide active"> 
+                             <div class="slide active">
                              </div>
                              <div class="navigation">
                              </div>
                              </div>
                   </header>
-                  <div class="top-box top-box-a"> 
+                  <div class="top-box top-box-a">
                   </div>
-                  
+
               <div class="right1">
                   <div class="subs">
                       <a href="{% url 'contact' %}"><button class="contact"> CONTACT US </button></a>
               </div>
-            
+
                   <div class="searchbtn">
                     <a href="{% url 'search' %}">
                     <i class="fa fa-search fa-2x"></i>
                   </a>
-                  </div>     
-                </section>   
+                  </div>
+                </section>
           </section>
           </section>
           <section class="icon-bar">
-            <a href="#" class="facebook"><i class="fa fa-facebook"></i></a> 
-            <a href="#" class="twitter"><i class="fa fa-twitter"></i></a> 
-            <a href="#" class="google"><i class="fa fa-google"></i></a> 
+            <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+            <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+            <a href="#" class="google"><i class="fa fa-google"></i></a>
             <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
-            <a href="#" class="youtube"><i class="fa fa-youtube"></i></a> 
+            <a href="#" class="youtube"><i class="fa fa-youtube"></i></a>
           </section>
+
+    <section class="call-icon">
+        <span style="background-color: #f2f2f2; padding: 5px 20px; border-radius: 10px">Call Us</span>
+        <button style="background-color: #ff6347; padding: 15px 20px; border-radius: 50%; color: white; margin-right: 10px"><i class="fa fa-phone fa-2x"></i></button>
+    </section>
     {% endblock tophead %}
     {% block content %}
- 
+
     {% endblock content %}
     {% block footer %}
     <br>
     <hr>
-    <style>
-      /* first month */
-.firstfooter{
-  height: auto;
-  background: url(https://www.freepnglogos.com/uploads/wave-png/blue-wave-background-transparent-30.png);
-  margin-top: 50px;
-  display: grid;
-  gap: 20px;
-  background-color: rgb(240, 235, 235);
-  border-style: groove;
-  grid-template-areas: 
-     'link contact post achive';
-}
-.link{
-  background-color:transparent ;
-}
-.cont{
-  display: flex;
-  text-align: center;
-  background-color: rgb(87, 87, 121);
-}
-.cont div{
-   flex: 1;
-}
-.cont i {
-  color: #0ecfff;
-  font-size: 45px;
-  align-items: center;
-}
-.title1{
-  background-color: orange;
-}
-.title1 h1{
-  color: #000;
-}
-/* link start */
-.cont1{
-  display: flex;
-  text-align: center;
-  background-color: transparent;
-}
+    <!-- Remove the container if you want to extend the Footer to full width. -->
+    <section class="bubble mt-2">
+        <footer class="bg-gray-100 text-center lg:text-left ml-12">
+            <div class="container p-6">
+                <div class="grid lg:grid-cols-4 md:grid-cols-2">
+                    <div class="mb-6">
+                        <div>
+                            <i class="fa fa-globe text-blue-500 pr-2" style="font-size: 25px"></i>  <span>Bhutan Portal</span>
+                        </div>
+                        <br>
+                        <div>
+                            <i class="fa fa-facebook-square text-blue-500 pr-2" style="font-size: 25px"></i>  <span>Facebook Page</span>
+                        </div>
+                    </div>
 
-.cont1 div{
-   flex: 1;
-}
-.cont1 i {
-  color: #11aa03;
-  font-size: 30px;
-  align-items: center;
-}
-.title2{
-  background-color: transparent;
-}
-.title2 h1{
-  color: #000;
-  font-size: small;
-  margin-left: -100px;
-}
-.title2 a{
-  text-decoration: none;
-}
-#Categories{
-  background-color: transparent;
-  padding: 10px;
-  border: #494848 solid;
-  width: 200px;
-}
-@media(max-width: 500px){
+                    <div class="mb-6">
+                        <h5 class="uppercase font-bold mb-2.5 text-gray-800">Contact Us</h5>
 
-  .firstfooter{
-    height: 300px;
-    background: url(https://www.freepnglogos.com/uploads/wave-png/blue-wave-background-transparent-30.png);
-    margin-top: 50px;
-    display: grid;
-    gap: 20px;
-    grid-template-areas: 
-    'link'
-    'contact'
-    'post'
-    'achive';
-  }
-  .cont i {
-    color: #e4e4e4;
-    font-size: 30px;
-  }
-  .footerheadtext{
-    font-size: 15px;
-  }
-}
-/* last footer */
+                        <div class="mb-6">
+                            <div>
+                                <i class="fa fa-phone text-blue-500 pr-2" style="font-size: 25px"></i>  <span>+975-02-322567</span>
+                                <br>
+                                <span style="margin-left: 32px">+975-02-321283</span>
+                            </div>
+                            <br>
+                            <div class="mb-6">
+                                <i class="fa fa-address-book text-blue-500 pr-2" style="font-size: 25px"></i>  <span>P.O Box: 278</span>
+                            </div>
+                            <div class="mb-5">
+                                <i class="fa fa-map-marker text-blue-500 pr-2" style="font-size: 25px"></i>  <span>Doeboom Lam</span>
+                                <br>
+                                <span style="margin-left: 27px">Thimphu:Bhutan</span>
+                            </div>
 
-.lastfooter{
-    display: grid;
-    grid-gap: 20px;
-    height: 200px;
-    grid-template-areas:
-        'media location';
-      
-    }
-@media(max-width: 500px){
-     
-.lastfooter{
-  margin-top: 400px;
-  display: grid;
-  grid-gap: 20px;
-  height: 200px;
-  grid-template-areas:
-      'media'
-      'location'; 
-  }
-        
-}
-.media{
-  display: grid;
-  grid-gap: 20px;
-  text-align: center;
-  background-color: blue;
-  padding: 15px;
-  grid-template-areas:
-     'mediaicon mediatitle';
-}
-@media(max-width: 500px){
-  .media{
-    display: grid;
-    grid-gap: 20px;
-    text-align: center;
-    background-color: blue;
-    padding: 15px;
-    grid-template-areas:
-       'mediaicon'
-       'mediatitle';
-  }
-    
-}
-.mediaicon{
-  background-color: red;
-}
+                            <div>
+                                <i class="fa fa-envelope text-blue-500 pr-2" style="font-size: 25px"></i>  <span>webmaster:ict@moic.gov.bt</span>
+                            </div>
+                        </div>
+                    </div>
 
-.location{
-  text-align: center;
-  background-color: red;
-  padding: 15px
-}
-@media(max-width: 500px){
-  .media{
-    display: grid;
-    grid-gap: 20px;
-    text-align: center;
-    background-color: blue;
-    padding: 15px;
-    grid-template-areas:
-       'mediaicon'
-       'mediatitle';
-  }
-    
-}
-</style>
-    <section class="wrapper1">
-  <!--second end-->
-  <section class="firstfooter">
-    <div class="link">
-      <div class="cont">
-        <div class="icon">
-         <i class="fa fa-chain"></i>
-        </div>
-        <div class="title1">
-         <h1 class= "footerheadtext">QUICK LINKS</h1>
-        </div>
-      </div>
-      <!--link start-->
-         <div class="cont1">
-             <div class="icon">
-             <a href="#"><i class="fa fa-globe"></i></a>
-             </div>
-             <div class="title2">
-             <a href="#"><h1 class= "footerheadtext">Bhutan Portal</h1></a>
-             </div>
-         </div>
-         <div class="cont1">
-           <div class="icon">
-           <a href="#"><i class="fa fa-facebook"></i></a>
-           </div>
-           <div class="title2">
-           <a href="#"><h1 class= "footerheadtext">facebook Page</h1></a>
-           </div>
-       </div>
-    </div>
-    <div class="contact">
-     <div class="cont">
-       <div class="icon">
-         <i class="fa fa-envelope"></i>
-        </div>
-        <div class="title1">
-         <h1 class= "footerheadtext">CONTACTS</h1>
-        </div>
-     </div>
-         <!--link start-->
-         <div class="cont1">
-           <div class="icon">
-           <a href="#"><i class="fa fa-phone"></i></a>
-           </div>
-           <div class="title2">
-           <a href="#"><h1>+975-02-322567</h1></a>
-           <a href="#"><h1>+975-02-321283</h1></a>
-           </div>
-       </div>
-       <div class="cont1">
-         <div class="icon">
-         <a href="#"><i class="fa fa-address-card"></i></a>
-         </div>
-         <div class="title2">
-         <a href="#"><h1>P.O BOX:278</h1></a>
-         <a href="#"><h1>Doeboom Lam</h1></a>
-         <a href="#"><h1>Thimphu:Bhutan</h1></a>
-         <a href="#"><h1>webmaster:ict@moic.gov.bt</h1></a>
-         </div>
-     </div>
-    </div>
-    <div class="post">
-     <div class="cont">
-       <div class="icon">
-         <i class="fa fa-sitemap"></i>
-       </div>
-        <div class="title1">
-         <h1 class= "footerheadtext">POST CATEGORIES</h1>
-        </div>  
-     </div>
-          <!--link start-->
-          <div class="cont1">
-           <div class="title2">
-           <h1>Select Post Categories</h1>
-           <select name="Categories" id="Categories">
-             <option value="Select Category">Select Category</option>
-             <a href="#"><option value="Announcement">Announcement(2)</option></a>
-             <a href="#"><option value="Event">Event(1)</option></a>
-             <a href="#"><option value="Information">Information(2)</option></a>
-             <a href="#"><option value="Notification">Notification(3)</option></a>
-             <a href="#"><option value="Press release">Press Release(2)</option></a>
-             <a href="#"><option value="Tender">Tender(4)</option></a>
-             <a href="#"><option value="Vacancy">Vacancy(2)</option></a>
-           </select>
-           </div>
-       </div>
-    </div>
-    <div class="achive">
-     <div class="cont">
-       <div class="icon">
-         <i class="fa fa-file-zip-o"></i>
-        </div>
-        <div class="title1">
-         <h1 class= "footerheadtext">ARCHIVE</h1>
-        </div>
-     </div>
-         <!--link start-->
-         <div class="cont1">
-           <div class="title2">
-           <h1>Select Month</h1>
-           <select name="Categories" id="Categories">
-             <option value="Select Month">Select Month</option>
-             <a href="#"><option value="Augest 2021">Augest 2021(2)</option></a>
-             <a href="#"><option value="July 2021">July 2021(1)</option></a>
-             <a href="#"><option value="June 2021">June 2021(2)</option></a>
-             <a href="#"><option value="July 2006">July 2006(3)</option></a>
-           </select>
-           </div>
-       </div>
-    </div>
- </section>
+                    <div class="mb-6">
+                        <h5 class="uppercase font-bold mb-2.5 text-gray-800">
+                            <i class="fa fa-sitemap fa-2x text-blue-500 mr-3"></i> Post Categories</h5>
 
- <!--lastfooter start from here -->
- <br>
- <section class="lastfooter">
-   <div class="media">
-     <section class="mediaicon">mediaicon</section>
-     <section class="mediatitle">titleicon</section>
-   </div>
-   <div class="media">
-    <section class="mediaicon">locationicon</section>
-    <section class="mediatitle">titleicon</section>
-  </div>
-   <div class="location">media</div>
-   <div class="location">location</div>
- </section>
- <!--<section class="lastfooter">
-  <div class="media">
-   <div class="cont">
-     <div class="icon">
-      <i class="fa fa-image"></i>
-     </div>
-     <div class="title1">
-      <h2 class="lastfootertext">MEDIA GALLERY</h2>
-     </div>
-   </div>
-   
-   <div class="caro">
-      <div class="caro">
-        <div class="site">
-          <div id="main">
-           <img src="moic1.jpg" class="im" id="sildeimage">
-          </div>
-        </div>
-        
-        <div class="site1">
-         <div id="main">
-          <img src="moic1.jpg" class="im" id="sildeimage1">
-         </div>
-       </div>
-      </div>
-   </div>
-  </div>
-  <div class="location">
-   <div class="cont">
-     <div class="icon">
-      <i class="fa fa-map-marker"></i>
-     </div>
-     <div class="title1">
-      <h2 class="lastfootertext">OUR LOCATION</h2>
-     </div>
-   </div>
-   <div class="mapouter"><div class="gmap_canvas"><iframe class="footermap" id="gmap_canvas" src="https://maps.google.com/maps?q=thimphu%20moic&t=k&z=17&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://123movies-to.org">123movies</a><br><style>.mapouter{position:relative;text-align:right;height:300px;width:560px;}</style><a href="https://www.embedgooglemap.net">google maps embed code generator</a><style>.gmap_canvas {overflow:hidden;background:none!important;height:300px;width:565px;}</style></div></div>
-  </div>-->
- </section>
+                        <div class="mt-10">
+                            <label style="font-weight: bold; font-size: 15px;margin-bottom: 20px"> SELECT CATEGORY TYPE</label>
+                            <select class="mt-3 py-2 px-3" style="width: 70%;border-radius: 10px">
+                                <option>Select Category</option>
+                                <option value="Announcement">Announcement</option>
+                                <option value="Event">Event</option>
+                                <option value="Information">Information</option>
+                                <option value="Notification">Notification</option>
+                                <option value="Press Release">Press Release</option>
+                                <option value="Tender">Tender</option>
+                                <option value="Vacancy">Vacancy</option>
+                            </select>
+                        </div>
+                    </div>
 
-</section>
+                    <div class="mb-6">
+                        <h5 class="uppercase font-bold mb-2.5 text-gray-800">
+                            <i class="fa fa-file-zip-o fa-2x text-blue-500 mr-3"></i> Archive</h5>
+
+                        <div class="mt-10">
+                            <label style="font-weight: bold; font-size: 15px;margin-bottom: 20px"> SELECT MONTH</label>
+                            <select class="mt-3 py-2 px-3" style="width: 70%;border-radius: 10px">
+                                <option>Select Month</option>
+                                <option value="Announcement">January</option>
+                                <option value="February">February</option>
+                                <option value="March">March</option>
+                                <option value="April">April</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-gray-700 text-center p-4" style="background-color: #d4ab2a">
+                © 2022 Copyright:
+                <a class="text-gray-800" href="https://tailwind-elements.com/">Ministry of Information and Communication</a>
+            </div>
+        </footer>
+
+    </section>
+    <!-- End of .container -->
     {% endblock footer %}
     <script>
       function first(){
@@ -919,7 +692,7 @@
       setInterval(second,3000)
       setInterval(thrid,4000)
       setInterval(fourth,5000)
-     
+
   </script>
   <script>
   function first(){
@@ -939,7 +712,7 @@
   setInterval(thrid,3000)
   setInterval(fourth,2000)
   </script>
-    <script> 
+    <script>
         function myFunction() {
           var x = document.getElementById("myTopnav");
           if (x.className === "topnav") {
