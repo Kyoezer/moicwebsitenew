@@ -1,4 +1,63 @@
-{% extends 'base.html' %} {% block content %}
+{% extends 'base.html' %} {% block content %} {% load static %}
 
-<h1>MINISTRY VISION, MISSION OBJECTIVES</h1>
+<style>
+  .content {
+    font-family: sans-serif;
+    line-height: 26.4px;
+    letter-spacing: normal;
+    padding-left: 55px;
+    text-align: justify;
+    width: 680px;
+  }
+  .mission {
+    background-color: transparent;
+    display: grid;
+    grid-template-areas: "history info";
+  }
+  .vision {
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 10px;
+    padding: 10px;
+    border-color: #707070;
+  }
+</style>
+<section class="mission">
+  <section class="content">
+    <h1>MINISTRY VISION, MISSION & ObJECTIVES</h1>
+    <div class="vision">
+      <h1>VISION</h1>
+      <i class="fa fa-eye fa-2x" style="color: #ff6347"> </i>
+      Connecting the unconnected and establishing a harmonious knowledge
+      society.
+    </div>
+    <br />
+    <div class="vision">
+      <h1>MISSION</h1>
+      <i class="fas fa-bullseye fa-2x" style="color: #ff6347"> </i>
+      Promoting the development of reliable and sustainable information,
+      communications and transport networks and systems and facilitating the
+      provision of affordable and easier access to associated services,
+      particularly to meet the basic social needs and help improve living
+      standards of people in rural and far-flung communities of Bhutan, for the
+      ultimate purpose of making a meaningful contribution to Gross National
+      Happiness.
+    </div>
+    <br />
+    <div class="vision">
+      <h1>OBJECTIVES</h1>
+      <i class="fa fa-eye fa-2x" style="color: #ff6347"> </i>
+      The Ministry’s objectives are: <br />
+      To increase safe, reliable and affordable surface and air transport;<br />
+      To enhance access to sustainable, green and inclusive public transport;
+      <br />
+      To improve access to reliable and affordable ICT and media services;<br />
+      To improve effective and efficient public service delivery; and <br />
+      To keep alive culture and tradition through ICT and media.
+    </div>
+  </section>
+  <section class="info">
+    <p>Information</p>
+  </section>
+</section>
 {% endblock content %}

@@ -1,3 +1,132 @@
-{% extends 'base.html' %} {% block content %}
-<h1>DOIM</h1>
+{% extends 'base.html' %} {% block content %} {% load static %}
+<style>
+  .department {
+    font-family: sans-serif;
+    line-height: 26.4px;
+    letter-spacing: normal;
+    padding-left: 55px;
+    text-align: justify;
+    width: 680px;
+  }
+  .doat1 {
+    border-style: solid;
+    padding: 10px;
+    border-width: 1px;
+    border-radius: 10px;
+  }
+  .doat {
+    background-color: transparent;
+    display: grid;
+    grid-template-areas: "department info";
+  }
+  .readmore {
+    border-radius: 7px;
+    background-color: #ff6347;
+    border: none;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  .ws {
+    border-radius: 7px;
+    background-color: #ff6347;
+    border: none;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  .fb {
+    border-radius: 7px;
+    background-color: #4267b2;
+    border: none;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  .btn {
+    display: grid;
+    grid-template-areas: "ws" "fb";
+  }
+</style>
+<section class="doat">
+  <section class="department">
+    <h1>Department of Information and Media</h1>
+    <div class="doat1">
+      <img
+        src="{% static 'images/doim.gif' %}"
+        alt="background image"
+        style="width: auto; padding-right: 40px"
+      />
+      <p>
+        Recognizing the importance of information in today’s knowledge-based
+        society driven by information technology and with the need to create
+        proper institutional and legal framework for a sound and holistic
+        development of the information and communication technology (ICT)
+        sectors in the Kingdom, the Royal Government created the Ministry of
+        Information and Communications in 2003 through bifurcation of the
+        erstwhile Ministry of Communications with the aim to tap the potential
+        of rapid change in the field of information and communications
+        technology (ICT) and cater to the policy and regulatory needs of the
+        information, communications and media sector in the country
+      </p>
+      <button class="readmore">Read More</button>
+    </div>
+    <br />
+    <div class="doat1">
+      <h1>VISION</h1>
+      <i class="fa fa-eye fa-2x" style="color: #ff6347"> </i>
+      To create a vibrant and informed society towards a Shared National
+      Consciousness.
+    </div>
+    <br />
+    <div class="doat1">
+      <h1>MISSION</h1>
+      <i class="fas fa-bullseye fa-2x" style="color: #ff6347"> </i>
+      To optimize the use of information and media as a tool to nurture a
+      knowledge-based democratic society.
+    </div>
+    <br />
+    <div class="doat1">
+      <h1>OBJECTIVES</h1>
+      <i class="fa fa-eye fa-2x" style="color: #ff6347"> </i>
+      <br />
+      1.Create conducive growth of media through
+      formulation/consultation/collaboration with various stakeholders on issues
+      related to policies, regulations and legislations;<br />
+
+      2Create right infrastructure for media uptake;<br />
+      3.Develop strategies and standards for development of local contents;
+      <br />
+      4.Stimulate a vibrant and creative arts to strengthen national
+      identity;<br />
+      5.Enhance effective use of media for strengthening of democracy;<br />
+      6.Facilitate the dissemination of the Government information by using the
+      Government Web Portal and any other
+    </div>
+    <br />
+    <div class="doat1">
+      <h1>DoIM Human Resource Strength:10</h1>
+    </div>
+    <br />
+    <div class="btn">
+      <button class="ws">Website</button>
+      <button class="fb">Facebook</button>
+    </div>
+  </section>
+  <section class="info">
+    <p>Information</p>
+  </section>
+</section>
 {% endblock content %}
