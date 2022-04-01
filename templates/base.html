@@ -31,12 +31,13 @@
           align-items: center;
           text-align: center;
           grid-template-areas:
-          'logo logotext';
+          'logo textlogo';
         }
 
         .logo{
           background-color: transparent;
           height: 200px;
+          width: 100px;
           margin-left: 20px;
           margin-top: 30px;
         }
@@ -475,6 +476,9 @@
               .toplogo{
                 height: auto;
               }
+              .textlogo{
+                padding-left: -20px;
+              }
 
     </style>
           <section class="wrapper1">
@@ -484,10 +488,10 @@
                   <img src="{% static 'images/emblem-1.png' %}" class="toplogo" alt="logo" style="width: 120px;">
                 </div>
                 <div class="textlogo">
-                  <img src="{% static 'images/MoIC.png' %}" class="logoimg" alt="Moic Description">
-              <!--<h1 class="font_Text">༆༑  ། བརྡ་དོན་དང་བརྒྱུད་འབྲེལ་ལྷན་ཁག །</h1>
-                  <h1 class="font_Text0">Ministry of Information and Communications</h1>
-                <h3 class="font_Text1">"Connecting the unconnected and establishing a harmonious knowledge society"</h3>-->
+                <!--  <img src="{% static 'images/MoIC.png' %}" class="logoimg" alt="Moic Description"> -->
+                <h1 class="font_Text">༆༑  ། བརྡ་དོན་དང་བརྒྱུད་འབྲེལ་ལྷན་ཁག །</h1><br>
+                <h1 class="font_Text0">Ministry of Information and Communications</h1><br> <br>
+                <h3 class="font_Text1">"Connecting the unconnected and establishing a harmonious knowledge society"</h3>
               </div>
               </section>
             </section>

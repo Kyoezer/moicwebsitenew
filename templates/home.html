@@ -45,9 +45,22 @@
   }
   .mis {
     text-align: center;
+    font-family: Poppins;
   }
   .se {
     text-align: center;
+  }
+  .subscribebtn {
+    float: inline-end;
+    border-radius: 7px;
+    background-color: #ff6347;
+    border: none;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
   }
 </style>
 <section class="wrapper1">
@@ -63,16 +76,24 @@
         <img src=" {% static 'images/back.jpg' %}" alt="back" />
       </div>
     </section>
+    <div style="position: relative; float: right; padding-right: 10px">
+      <button class="subscribebtn">SUBSCRIBE</button>
+    </div>
   </section>
+
   <br />
-  <hr />
   <br />
   <section class="pro1">
     <section class="mis">
       <section class="misdetail">
-        <img src="{% static 'images/Lyonpo-1.jpeg' %}" alt="Lyonpo" style="display: block;margin-left: auto;margin-right: auto;" />
-        <h>MINISTER</h>
-        <h4>HON'BLE LYONPO KARMA DONNEN WANGDI</h4>
+        <img
+          src="{% static 'images/Lyonpo-1.jpeg' %}"
+          alt="Lyonpo"
+          style="display: block; margin-left: auto; margin-right: auto"
+        />
+        <br />
+        <b style="font-size: 26px">MINISTER</b>
+        <h4 style="font-style: italic">HON'BLE LYONPO KARMA DONNEN WANGDI</h4>
         <p>
           Hon'ble Minister joined the Ministry on 7th Nov <br />
           2018.Lyonpo Karma Donnen Wangdi served as a <br />
@@ -85,11 +106,13 @@
       <section class="sedetails">
         <img
           src="{% static 'images/Dasho-Secretary-1.jpeg' %}"
-          alt="Dasho Secretary" class="mx-12" style="display: block;margin-left: auto;margin-right: auto;"
+          alt="Dasho Secretary"
+          class="mx-12"
+          style="display: block; margin-left: auto; margin-right: auto"
         />
-        <br>
-        <h3>SECRETARY</h3>
-        <h4>DASHO PHUNTSHO TOBGAY</h4>
+        <br />
+        <b style="font-size: 26px; font-family: Poppins">SECRETARY</b><br />
+        <i>DASHO PHUNTSHO TOBGAY</i><br />
         <p class="text-center">
           Dasho Secretary joined the Ministry on 13th Sep <br />
           2019. Dasho Phuntsho Tobgay served as <br />
@@ -99,5 +122,4 @@
     </section>
   </section>
 </section>
-
 {% endblock content %}

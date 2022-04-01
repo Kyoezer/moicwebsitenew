@@ -1,4 +1,90 @@
-{% extends 'base.html' %}
-{% block content %}
-<h1>organogram</h1>
+{% extends 'base.html' %} {% block content %} {% load static %}
+<style>
+  .department {
+    font-family: sans-serif;
+    line-height: 26.4px;
+    letter-spacing: normal;
+    padding-left: 55px;
+    text-align: justify;
+    width: 680px;
+  }
+  .doat1 {
+    border-style: solid;
+    padding: 10px;
+    border-width: 1px;
+    border-radius: 10px;
+  }
+  .doat {
+    background-color: transparent;
+    display: grid;
+    grid-template-areas: "department info";
+  }
+  .readmore {
+    border-radius: 7px;
+    background-color: #ff6347;
+    border: none;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  .ws {
+    border-radius: 7px;
+    background-color: #ff6347;
+    border: none;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  .fb {
+    border-radius: 7px;
+    background-color: #4267b2;
+    border: none;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  .btn {
+    display: grid;
+    grid-template-areas: "ws" "fb";
+  }
+</style>
+<section class="doat mt-12 ml-6">
+  <section class="department">
+    <div class="doat1">
+      <b style="font-size: 25px">ORGANOGRAM</b>
+      <p>The total HR for the Ministry as of July 2021 is………..</p>
+    </div>
+    <br />
+    <div class="doat1">
+      <h1>Ministry's Human Resource Strength</h1>
+    </div>
+    <br />
+    <hr />
+    <div class="doat1">
+      <img src="{% static 'images/organogram.png' %}" alt="" />
+    </div>
+    <br />
+    <div class="btn grid lg:grid-cols-4 md:grid-cols-4">
+      <button class="ws">Website</button>
+      <div></div>
+      <div></div>
+      <button class="fb">Facebook</button>
+    </div>
+  </section>
+  <section class="info">
+    <p>Information</p>
+  </section>
+</section>
 {% endblock content %}

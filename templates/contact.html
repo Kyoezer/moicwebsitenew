@@ -1,13 +1,97 @@
-{% extends 'base.html' %} {% block content %}
-
-<!--Contact form-->
-<div style="margin: 80px">
-  <h1>Contact</h1>
-  <h4>How Can We Help?</h4>
-  <p>If you don’t find what you need, fill out our Contact Form.</p>
-  <form method="post">
-    {% csrf_token %} {{form.as_p}}
-    <button type="submit">Submit</button>
-  </form>
-</div>
+{% extends 'base.html' %} {% block content %} {% load static %}
+<style>
+  .history {
+    width: 680px;
+    padding-left: 55px;
+  }
+  .background {
+    background-color: transparent;
+    display: grid;
+    grid-template-areas: "history info";
+  }
+  .content {
+    font-size: 16px;
+    font-family: sans-serif;
+    line-height: 26.4px;
+    letter-spacing: normal;
+    text-align: justify;
+  }
+  .inputcontent {
+    width: 100%;
+    border: 1px solid #ccc;
+    padding: 12px 20px;
+    border-radius: 10px;
+    display: inline-block;
+    box-sizing: border-box;
+  }
+  .line {
+    border: 1px solid #d4ab2a;
+    margin: 20px 0px;
+  }
+  .submitbtn {
+    float: inline-end;
+    border-radius: 7px;
+    background-color: #ff6347;
+    border: none;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+  }
+</style>
+<section class="background mt-12 ml-6">
+  <section class="history">
+    <div>
+      <b style="font-size: 30px">CONTACT US</b>
+      <p class="content">Ministry of Information & Communication</p>
+      <p class="content">PO Box 278, Chubachu</p>
+      <p class="content">Thimphu: Bhutan</p>
+      <br />
+      <p class="content">Tele#00975-2- 321238/322567/322144</p>
+      <br />
+      <p class="content">Email (Web Master) : ict@moic.gov.bt</p>
+    </div>
+    <div
+      class="elementor-element elementor-element-1f132b7 elementor-widget elementor-widget-google_maps"
+      data-id="1f132b7"
+      data-element_type="widget"
+      data-widget_type="google_maps.default"
+    >
+      <div class="elementor-widget-container">
+        <div class="elementor-custom-embed">
+          <iframe
+            frameborder="0"
+            scrolling="no"
+            marginheight="0"
+            marginwidth="0"
+            src="https://maps.google.com/maps?q=MINISTRY%20OF%20INFORMATION%20AND%20COMMUNICATIONS&amp;t=m&amp;z=10&amp;output=embed&amp;iwloc=near"
+            title="MINISTRY OF INFORMATION AND COMMUNICATIONS"
+            aria-label="MINISTRY OF INFORMATION AND COMMUNICATIONS"
+            style="width: 100%; height: 400px"
+          ></iframe>
+        </div>
+      </div>
+    </div>
+    <hr class="line" />
+    <b style="font-size: 30px">How Can We Help you?</b>
+    <form action="POST">
+      <p>If you don’t find what you need,fill out our Contact Form.</p>
+      <p>Your Name:</p>
+      <input type="text" class="inputcontent" />
+      <p>Your Email:</p>
+      <input type="email" class="inputcontent" />
+      <p>Subject:</p>
+      <input type="text" class="inputcontent" />
+      <p>Your Message:</p>
+      <textarea class="inputcontent"> </textarea>
+    </form>
+    <button class="submitbtn">SUBMIT</button>
+    <hr class="line" />
+  </section>
+  <section class="info">
+    <p>Information</p>
+  </section>
+</section>
 {% endblock content %}

@@ -1,7 +1,104 @@
-{% extends 'base.html' %} {% block content %}
-<h1>
-  annual
-  <h1>2021-2022</h1>
-</h1>
-
+{% extends 'base.html' %} {% block content %} {% load static %}
+<style>
+  .department {
+    font-family: sans-serif;
+    line-height: 26.4px;
+    letter-spacing: normal;
+    padding-left: 55px;
+    text-align: justify;
+    width: 680px;
+  }
+  .doat1 {
+    border-style: solid;
+    padding: 10px;
+    border-width: 1px;
+    border-radius: 10px;
+  }
+  .doat {
+    background-color: transparent;
+    display: grid;
+    grid-template-areas: "department info";
+  }
+  .readmore {
+    border-radius: 7px;
+    background-color: #ff6347;
+    border: none;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  .ws {
+    border-radius: 7px;
+    background-color: #ff6347;
+    border: none;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  .fb {
+    border-radius: 7px;
+    background-color: #4267b2;
+    border: none;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  .btn {
+    display: grid;
+    grid-template-areas: "ws" "fb";
+  }
+</style>
+<section class="doat mt-12 ml-6">
+  <section class="department">
+    <b style="font-size: 25px">APA: 2020-2021</b> <br />
+    This is the third annual performance agreement since it began in the fiscal
+    year 2014-2015. The actual set up began with the Institution of National
+    Technical Committee and recently 55 people have been trained in this field.
+    <br />
+    <br />
+    National Technical Committee comprises of Gross National Happiness
+    Commission (GNHC), Government Performance Management Division (GPMD),
+    Ministry of Finance (MoF), National Statistical Bureau (NSB), and Royal
+    Civil Service Commission (RCSC). The committee reviews plans, policies, and
+    targets in the beginning of the year, and evaluates achievements at the end
+    of the year. <br /><br />
+    Government Performance Management System (GPMS) is an initiative taken by
+    government to address the concerns of good planning thwart by poor
+    implementation. <br /><br />
+    The system works on a result-based management by holding agencies
+    accountable at the outcome and output level, and providing flexibility at
+    the activities input level. It also aims to strengthen decentralization by
+    restricting the roles of the central agencies to policy, planning,
+    monitoring, evaluating and leaving the implementation flexibility at local
+    government. <br />
+    <div class="doat1"></div>
+    <br />
+    <div class="doat1"></div>
+    <br />
+    <hr />
+    <div class="doat1"></div>
+    <br />
+    <div class="btn grid lg:grid-cols-4 md:grid-cols-4">
+      <button class="ws">Website</button>
+      <div></div>
+      <div></div>
+      <button class="fb">Facebook</button>
+    </div>
+  </section>
+  <section class="info">
+    <p>Information</p>
+  </section>
+</section>
 {% endblock content %}

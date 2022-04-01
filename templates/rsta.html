@@ -1,3 +1,144 @@
-{% extends 'base.html' %} {% block content %}
-<h1>RSTA</h1>
+{% extends 'base.html' %} {% block content %} {% load static %}
+<style>
+  .department {
+    font-family: sans-serif;
+    line-height: 26.4px;
+    letter-spacing: normal;
+    padding-left: 55px;
+    text-align: justify;
+    width: 680px;
+  }
+  .doat1 {
+    border-style: solid;
+    padding: 10px;
+    border-width: 1px;
+    border-radius: 10px;
+  }
+  .doat {
+    background-color: transparent;
+    display: grid;
+    grid-template-areas: "department info";
+  }
+  .readmore {
+    border-radius: 7px;
+    background-color: #ff6347;
+    border: none;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  .ws {
+    border-radius: 7px;
+    background-color: #ff6347;
+    border: none;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  .fb {
+    border-radius: 7px;
+    background-color: #4267b2;
+    border: none;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  .btn {
+    display: grid;
+    grid-template-areas: "ws" "fb";
+  }
+</style>
+<section class="doat mt-12 ml-6">
+  <section class="department">
+    <div class="doat1">
+      <b style="font-size: 30px; text-align: justify"
+        >ROAD SAFETY AND TRANSPORT AUTHORITY</b
+      >
+      <img
+        src="{% static 'images/RSTA-Director.png' %}"
+        alt="background image"
+        style="width: auto; padding-right: 40px"
+      />
+      <p>
+        The Road Safety and Transport Authority (RSTA) was established in 1997
+        after consolidating all motor vehicle related activities under one
+        organization. The RSTA is a Department under the Ministry of Information
+        and Communications (MoIC) and is headed by a Director/Director General.
+        Its Headquarter is located at Lungtenzampa in Thimphu. It has 5 Regional
+        Offices and 22 Base Offices located in 19 Dzongkhags/Districts of the
+        country.
+      </p>
+      <button class="readmore">Read More</button>
+    </div>
+    <br />
+    <div class="doat1">
+      <h1>VISION</h1>
+      <i class="fa fa-eye fa-2x" style="color: #ff6347"> </i>
+      Safe, sustainable and inclusive road transport systems for accelerated
+      socio-economic development.
+    </div>
+    <br />
+    <div class="doat1">
+      <h1>MISSION</h1>
+      <i class="fa fa-dot-circle-o fa-2x" style="color: #ff6347"> </i>
+      To provide for and facilitate development of safe, reliable, efficient,
+      sustainable and green transport services as an enabler of national
+      socio-economic development.
+    </div>
+    <br />
+    <div class="doat1">
+      <h1>OBJECTIVES</h1>
+      <i class="fa fa-eye fa-2x" style="color: #ff6347"> </i> <br />
+      1.Formulation of road transport roadmap, policies, regulatory framework
+      and strategy documents <br />
+      2.Development of regulations, guidelines and procedures for road traffic,
+      vehicle registration, driver licensing, roadworthiness and emission
+      testing. <br />
+      3.Development and implementation of road safety strategies including road
+      safety education and training programs. <br />
+      4.Foster efficiency, effectiveness, safety and reliability of public
+      transport services <br />
+      5.Development of climate resilient and sustainable transport facilities
+      and infrastructure <br />
+      6.Performance assessment and management of any person or entities
+      contracted to provide transport services in the country. <br />
+      7.Development, co-ordination and implementation of strategic plans and
+      resources mobilization for road transport activities. <br />
+      8.Collaboration with national/regional/international agencies on road
+      transport services/systems. <br />
+      9. Promotion of green, sustainable and low emission technologies in the
+      transport sector, including EV and other emerging technologies. <br />
+      10.Conduct researches and develop roadmap/strategy papers in the area of
+      road transport. <br />
+      11. Enhance public service delivery through digitization and online
+      services
+    </div>
+    <br />
+    <div class="doat1">
+      <h1>RSTA Human Resource Strength:131</h1>
+    </div>
+    <br />
+    <div class="btn grid lg:grid-cols-4 md:grid-cols-4">
+      <button class="ws">Website</button>
+      <div></div>
+      <div></div>
+      <button class="fb">Facebook</button>
+    </div>
+  </section>
+  <section class="info">
+    <p>Information</p>
+  </section>
+</section>
 {% endblock content %}
