@@ -7,13 +7,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'css/style.css'%}">
+  
     <title>moic</title>
 </head>
 <body>
     {% block tophead %}
+    
     <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
+      @import url('https://fonts.googleapis.com/css?family=Poppins:400,700,900');
         .background{
           background-color: #d4ab2a;
         }
@@ -32,6 +36,8 @@
           grid-template-areas: 
           'logo logotext';
         }
+
+        *{font-family:Poppins,sans-serif;font-weight:100}
         
         .logo{
           background-color: transparent;
@@ -557,7 +563,7 @@
             
                   <div class="searchbtn">
                     <a href="{% url 'search' %}">
-                    <i class="fa fa-search fa-2x"></i>
+                    <i class="fa fa-search fa-2x" style="color:black"></i>
                   </a>
                   </div>     
                 </section>   
