@@ -1,4 +1,43 @@
-{% extends 'base.html' %}
-{% block content %}
-<h1>who-is-who</h1>
+{% extends 'base.html' %} {% block content %} {% load static %}
+<style>
+  .who {
+    width: 680px;
+    padding-left: 55px;
+  }
+  .background {
+    background-color: transparent;
+    display: grid;
+    grid-template-areas: "who info";
+  }
+  .line {
+    border: 1px solid #d4ab2a;
+    margin: 20px 0px;
+  }
+  .minister {
+    text-align: center;
+  }
+</style>
+<section class="background mt-12 ml-6">
+  <section class="who">
+    <div class="minister">
+      {% for minister in ministeroffice %}
+      <p>{{ minister.profile_img }}</p>
+      <p>{{ minister.title }} {{ minister.name}}</p>
+      <p>{{ minister.mail_id }}</p>
+      <p>{{ minister.phone_no }}</p>
+      {% endfor %}
+    </div>
+    <div class="grid lg:grid-cols-2 md:grid-cols-4">
+      {% for secretary in secretaryoffice %}
+      <img src="{{ secretary.profile_img.png }}" alt="secretary" />
+      <p>{{ secretary.title }} {{ secretary.name }}</p>
+      <p>{{ secretary.mail_id }}</p>
+      <p>{{ secretary.phone_no }}</p>
+      {% endfor %}
+    </div>
+  </section>
+  <section class="info">
+    <p>Information</p>
+  </section>
+</section>
 {% endblock content %}

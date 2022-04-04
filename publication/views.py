@@ -1,25 +1,39 @@
+from multiprocessing import context
 from django.shortcuts import render
+from .models import *
 
 # Create your views here.
 def policies(request):
-    return render(request, 'policies.html',)
+    policies = policy.objects.all()
+    context = {'policies': policies}
+    return render(request, 'policies.html', context)
 
 
 def acts(request):
-    return render(request, 'acts.html',)
+    acts = arts.objects.all()
+    context = {'acts': acts}
+    return render(request, 'acts.html', context)
 
 
 def rules(request):
-    return render(request, 'rules.html',)
+    rules = rules_and_regulation.objects.all()
+    context = {'rules': rules}
+    return render(request, 'rules.html', context)
 
 
 def guidelines(request):
-    return render(request, 'guidelines.html',)
+    guidelines = guideline.objects.all()
+    context = {'guidelines': guidelines}
+    return render(request, 'guidelines.html', context)
 
 
 def reports(request):
-    return render(request, 'reports.html',)
+    reports = report.objects.all()
+    context = {'reports': reports}
+    return render(request, 'reports.html', context)
 
 
 def statistics(request):
-    return render(request, 'statistics.html',)
+    statistics = statistic.objects.all()
+    context = {'statistics': statistics}
+    return render(request, 'statistics.html', context)

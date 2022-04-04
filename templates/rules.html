@@ -1,3 +1,86 @@
 {% extends 'base.html' %} {% block content %}
-<h1>Rules and Regulations</h1>
+
+<style>
+  .sec {
+    display: grid;
+    grid-template-areas: "acts info";
+  }
+  .acts {
+    padding-left: 55px;
+    width: 680px;
+  }
+  .info {
+    text-align: center;
+  }
+  .topic {
+    font-size: 30px;
+    text-transform: uppercase;
+  }
+  .content {
+    font-size: 16px;
+    font-family: sans-serif;
+    line-height: 26.4px;
+    letter-spacing: normal;
+    text-align: justify;
+  }
+  .line {
+    border: 1px solid #d4ab2a;
+    margin: 20px 0px;
+  }
+  .border {
+    border-style: solid;
+    padding: 10px;
+    border-width: 1px;
+    border-radius: 10px;
+    border-color: #707070;
+    margin: 10px 0px;
+  }
+  .links {
+    display: grid;
+    grid-template-areas: "";
+  }
+</style>
+
+<section class="sec mt-12 ml-6">
+  <section class="acts">
+    <p class="topic">Rules and regulations</p>
+    <p class="content">Lorem Ipsum</p>
+    <hr class="line" />
+    <p class="topic">rules</p>
+    {% for rule in rules %}
+    <div class="border">
+      <div class="flex flex-wrap overflow-hidden">
+        <div class="w-full overflow-hidden sm:w-1/2">
+          <a href="#"> {{ rule.SI_No }}. {{ rule.title }} </a>
+        </div>
+        <div class="w-full overflow-hidden sm:w-1/2">
+          <i class="fa fa-envelope" style="float: right; padding: 0px 2px"></i>
+          <i class="fa fa-plus" style="float: right; padding: 0px 2px"></i>
+          <i class="fa fa-chain" style="float: right; padding: 0px 2px"></i>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+    <hr class="line" />
+
+    <!-- <p class="topic">Regulations</p>
+    {% for rule in rules %}
+    <div class="border">
+      <div class="flex flex-wrap overflow-hidden">
+        <div class="w-full overflow-hidden sm:w-1/2">
+          <a href="#"> {{ rule.SI_No }}. {{ rule.title }} </a>
+        </div>
+        <div class="w-full overflow-hidden sm:w-1/2">
+          <i class="fa fa-envelope" style="float: right; padding: 0px 2px"></i>
+          <i class="fa fa-plus" style="float: right; padding: 0px 2px"></i>
+          <i class="fa fa-chain" style="float: right; padding: 0px 2px"></i>
+        </div>
+      </div>
+    </div>
+    {% endfor %} -->
+  </section>
+  <section class="info">
+    <p>Info</p>
+  </section>
+</section>
 {% endblock content %}
