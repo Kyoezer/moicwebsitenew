@@ -9,9 +9,6 @@
     padding-left: 55px;
     width: 680px;
   }
-  .info {
-    text-align: center;
-  }
   .topic {
     font-size: 30px;
     text-transform: uppercase;
@@ -65,7 +62,18 @@
     {% endfor %}
   </section>
   <section class="info">
-    <p>Info</p>
+    <div class="scroll-fixed">
+      <div class="sidebar">
+        <p style="font-size: 25px">INFORMATION AND DOWNLOADS</p>
+        <a href="#">For MoIC Officials</a><br />
+        <a href="#">Downloads</a><br />
+        <a href="#">RSTA Online Services</a><br />
+        <a href="#">HR Decisions</a>
+      </div>
+      <div class="sidebar">
+        <div inline-datepicker data-date="auto"></div>
+      </div>
+    </div>
   </section>
 </section>
 {% endblock content %}

@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'css/style.css'%}">
+    <script src="https://unpkg.com/flowbite@1.4.1/dist/datepicker.js"></script>
     <title>moic</title>
 </head>
 <body>
@@ -34,12 +35,26 @@
           'logo textlogo';
         }
 
+        .sidebar {
+            margin: 10%;
+            background-color: rgb(206, 199, 199);
+            padding: 10px;
+        }
+
+        .calendar {
+            margin: 10%;
+        }
+
+        .scroll-fixed {
+            position: sticky;
+            top: 5%;
+            left: 70%;
+            overflow-y: scroll;
+        }
+
         .logo{
           background-color: transparent;
-          height: 200px;
-          width: 100px;
           margin-left: 20px;
-          margin-top: 30px;
         }
         .logo img{
           width: 200px;
@@ -413,6 +428,7 @@
                     position: fixed;
                     top: 85%;
                     right: 0;
+                    z-index: 1;
                 }
 
               .icon-bar a {
