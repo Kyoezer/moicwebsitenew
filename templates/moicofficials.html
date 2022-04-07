@@ -39,35 +39,63 @@
     display: grid;
     grid-template-areas: "";
   }
+  .demo {
+    width: 90%;
+    border: 1px solid #c0c0c0;
+    border-collapse: collapse;
+    padding: 5px;
+  }
+  .demo th {
+    border: 1px solid #c0c0c0;
+    padding: 5px;
+    background: #f0f0f0;
+  }
+  .demo td {
+    border: 1px solid #c0c0c0;
+    padding: 5px;
+  }
 </style>
 
 <section class="sec mt-12 ml-6">
   <section class="acts">
-    <p class="topic">reports</p>
-    <p class="content">The  rules and regulations listed here are related to Transport (RSTA & DoAT), ICT (DITT) and Media (DoIM) …..</p>
-    {% for report in reports %}
-    <div class="border">
-      <div class="flex flex-wrap overflow-hidden">
-        <div class="w-full overflow-hidden sm:w-1/2">
-          <a href="#"><p></p class=content> {{ report.SI_No }}. {{ report.title }}</p> </a>
-        </div>
-        <div class="w-full overflow-hidden sm:w-1/2" >
-          <i class="fa fa-envelope" style="float: right; padding: 0px 2px"></i>
-          <i class="fa fa-plus" style="float: right; padding: 0px 2px"></i>
-          <i class="fa fa-chain" style="float: right; padding: 0px 2px"></i>
-        </div>
-      </div>
-    </div>
-    {% endfor %}
+    <p class="topic">For MoIC Officials</p>
+    <table class="demo">
+      <thead>
+        <tr>
+          <th>SL. No</th>
+          <th>URLs and Links</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1.</td>
+          <td>Take Attendance</td>
+        </tr>
+        <tr>
+          <td>2.</td>
+          <td>Request Leave</td>
+        </tr>
+        <tr>
+          <td>3.</td>
+          <td>ICT Help Desk and Support</td>
+        </tr>
+        <tr>
+          <td>4.</td>
+          <td>Conference Hall Bookings</td>
+        </tr>
+      </tbody>
+
+      <tbody></tbody>
+    </table>
   </section>
   <section>
     <div class="scroll-fixed">
       <div class="sidebar">
         <p style="font-size: 25px">INFORMATION AND DOWNLOADS</p>
-        <a href="#">For MoIC Officials</a><br />
-        <a href="#">Downloads</a><br />
-        <a href="#">RSTA Online Services</a><br />
-        <a href="#">HR Decisions</a>
+        <a href="{% url 'moicofficials' %}">For MoIC Officials</a><br />
+        <a href="{% url 'download' %}">Downloads</a><br />
+        <a href="{% url 'rstaservices' %}">RSTA Online Services</a><br />
+        <a href="{% url 'hrdecisions' %}">HR Decisions</a>
       </div>
       <div>
         <div class="calendar" inline-datepicker data-date="auto"></div>
@@ -76,4 +104,3 @@
   </section>
 </section>
 {% endblock content %}
-
