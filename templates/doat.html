@@ -118,14 +118,15 @@
                   <div class="Scriptcontent">
                     <!-- partial:index.partial.html -->
                     <div class="numbers">
-                    <span class="numbers__window">
-                      <span style="font-weight: bold"
-                            class="numbers__window__digit numbers__window__digit--1"
-                            data-fake="8642519073"
-                      >1</span
-                      >
-                    </span>
-                      <br>
+                      <span class="numbers__window">
+                        <span
+                          style="font-weight: bold"
+                          class="numbers__window__digit numbers__window__digit--1"
+                          data-fake="8642519073"
+                          >1</span
+                        >
+                      </span>
+                      <br />
                       <span class="text-2">Executives</span>
                     </div>
                   </div>
@@ -141,21 +142,23 @@
                   <div class="Scriptcontent">
                     <!-- partial:index.partial.html -->
                     <div class="numbers">
-                    <span class="numbers__window">
-                      <span style="font-weight: bold"
-                            class="numbers__window__digit numbers__window__digit--1"
-                            data-fake="8642519073"
-                      >2</span
-                      >
-                    </span>
                       <span class="numbers__window">
-                      <span style="font-weight: bold"
-                            class="numbers__window__digit numbers__window__digit--3"
-                            data-fake="8395216407"
-                      >5</span
-                      >
-                    </span>
-                      <br>
+                        <span
+                          style="font-weight: bold"
+                          class="numbers__window__digit numbers__window__digit--1"
+                          data-fake="8642519073"
+                          >2</span
+                        >
+                      </span>
+                      <span class="numbers__window">
+                        <span
+                          style="font-weight: bold"
+                          class="numbers__window__digit numbers__window__digit--3"
+                          data-fake="8395216407"
+                          >5</span
+                        >
+                      </span>
+                      <br />
                       <span class="text-2">Professional & Management</span>
                     </div>
                   </div>
@@ -171,28 +174,31 @@
                   <div class="Scriptcontent">
                     <!-- partial:index.partial.html -->
                     <div class="numbers">
-                    <span class="numbers__window">
-                      <span style="font-weight: bold"
-                            class="numbers__window__digit numbers__window__digit--1"
-                            data-fake="8642519073"
-                      >2</span
-                      >
-                    </span>
                       <span class="numbers__window">
-                      <span style="font-weight: bold"
-                            class="numbers__window__digit numbers__window__digit--3"
-                            data-fake="8395216407"
-                      >2</span
-                      >
-                    </span>
+                        <span
+                          style="font-weight: bold"
+                          class="numbers__window__digit numbers__window__digit--1"
+                          data-fake="8642519073"
+                          >2</span
+                        >
+                      </span>
                       <span class="numbers__window">
-                      <span style="font-weight: bold"
-                            class="numbers__window__digit numbers__window__digit--3"
-                            data-fake="8395216407"
-                      >4</span
-                      >
-                    </span>
-                      <br>
+                        <span
+                          style="font-weight: bold"
+                          class="numbers__window__digit numbers__window__digit--3"
+                          data-fake="8395216407"
+                          >2</span
+                        >
+                      </span>
+                      <span class="numbers__window">
+                        <span
+                          style="font-weight: bold"
+                          class="numbers__window__digit numbers__window__digit--3"
+                          data-fake="8395216407"
+                          >4</span
+                        >
+                      </span>
+                      <br />
                       <span class="text-2">Supervisory & Support</span>
                     </div>
                   </div>
@@ -208,20 +214,23 @@
                   <div class="Scriptcontent">
                     <!-- partial:index.partial.html -->
                     <div class="numbers">
-                    <span class="numbers__window">
-                      <span style="font-weight: bold"
-                            class="numbers__window__digit numbers__window__digit--1"
-                            data-fake="8642519073"
-                      >3</span>
-                    </span>
                       <span class="numbers__window">
-                      <span style="font-weight: bold"
-                            class="numbers__window__digit numbers__window__digit--3"
-                            data-fake="8395216407"
-                      >0</span
-                      >
-                    </span>
-                      <br>
+                        <span
+                          style="font-weight: bold"
+                          class="numbers__window__digit numbers__window__digit--1"
+                          data-fake="8642519073"
+                          >3</span
+                        >
+                      </span>
+                      <span class="numbers__window">
+                        <span
+                          style="font-weight: bold"
+                          class="numbers__window__digit numbers__window__digit--3"
+                          data-fake="8395216407"
+                          >0</span
+                        >
+                      </span>
+                      <br />
                       <span class="text-2">Operational</span>
                     </div>
                   </div>
@@ -246,10 +255,10 @@
     <div class="scroll-fixed">
       <div class="sidebar">
         <p style="font-size: 25px">INFORMATION AND DOWNLOADS</p>
-        <a href="#">For MoIC Officials</a><br />
-        <a href="#">Downloads</a><br />
-        <a href="#">RSTA Online Services</a><br />
-        <a href="#">HR Decisions</a>
+        <a href="{% url 'moicofficials' %}">For MoIC Officials</a><br />
+        <a href="{% url 'download' %}">Downloads</a><br />
+        <a href="{% url 'rstaservices' %}">RSTA Online Services</a><br />
+        <a href="{% url 'hrdecisions' %}">HR Decisions</a>
       </div>
       <div>
         <div class="calendar" inline-datepicker data-date="auto"></div>

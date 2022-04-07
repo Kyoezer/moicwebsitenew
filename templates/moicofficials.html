@@ -1,0 +1,106 @@
+{% extends 'base.html' %} {% block content %}
+
+<style>
+  .sec {
+    display: grid;
+    grid-template-areas: "acts info";
+  }
+  .acts {
+    padding-left: 55px;
+    width: 680px;
+  }
+  .info {
+    text-align: center;
+  }
+  .topic {
+    font-size: 30px;
+    text-transform: uppercase;
+  }
+  .content {
+    font-size: 16px;
+    font-family: sans-serif;
+    line-height: 26.4px;
+    letter-spacing: normal;
+    text-align: justify;
+  }
+  .line {
+    border: 1px solid #d4ab2a;
+    margin: 20px 0px;
+  }
+  .border {
+    border-style: solid;
+    padding: 10px;
+    border-width: 1px;
+    border-radius: 10px;
+    border-color: #707070;
+    margin: 10px 0px;
+  }
+  .links {
+    display: grid;
+    grid-template-areas: "";
+  }
+  .demo {
+    width: 90%;
+    border: 1px solid #c0c0c0;
+    border-collapse: collapse;
+    padding: 5px;
+  }
+  .demo th {
+    border: 1px solid #c0c0c0;
+    padding: 5px;
+    background: #f0f0f0;
+  }
+  .demo td {
+    border: 1px solid #c0c0c0;
+    padding: 5px;
+  }
+</style>
+
+<section class="sec mt-12 ml-6">
+  <section class="acts">
+    <p class="topic">For MoIC Officials</p>
+    <table class="demo">
+      <thead>
+        <tr>
+          <th>SL. No</th>
+          <th>URLs and Links</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1.</td>
+          <td>Take Attendance</td>
+        </tr>
+        <tr>
+          <td>2.</td>
+          <td>Request Leave</td>
+        </tr>
+        <tr>
+          <td>3.</td>
+          <td>ICT Help Desk and Support</td>
+        </tr>
+        <tr>
+          <td>4.</td>
+          <td>Conference Hall Bookings</td>
+        </tr>
+      </tbody>
+
+      <tbody></tbody>
+    </table>
+  </section>
+  <section>
+    <div class="scroll-fixed">
+      <div class="sidebar">
+        <p style="font-size: 25px">INFORMATION AND DOWNLOADS</p>
+        <a href="{% url 'moicofficials' %}">For MoIC Officials</a><br />
+        <a href="{% url 'download' %}">Downloads</a><br />
+        <a href="{% url 'rstaservices' %}">RSTA Online Services</a><br />
+        <a href="{% url 'hrdecisions' %}">HR Decisions</a>
+      </div>
+      <div>
+        <div class="calendar" inline-datepicker data-date="auto"></div>
+      </div>
+    </div>
+  </section>
+</section>
+{% endblock content %}

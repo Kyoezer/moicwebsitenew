@@ -65,10 +65,10 @@
     <div class="scroll-fixed">
       <div class="sidebar">
         <p style="font-size: 25px">INFORMATION AND DOWNLOADS</p>
-        <a href="#">For MoIC Officials</a><br />
-        <a href="#">Downloads</a><br />
-        <a href="#">RSTA Online Services</a><br />
-        <a href="#">HR Decisions</a>
+        <a href="{% url 'moicofficials' %}">For MoIC Officials</a><br />
+        <a href="{% url 'download' %}">Downloads</a><br />
+        <a href="{% url 'rstaservices' %}">RSTA Online Services</a><br />
+        <a href="{% url 'hrdecisions' %}">HR Decisions</a>
       </div>
       <div class="sidebar">
         <div inline-datepicker data-date="auto"></div>

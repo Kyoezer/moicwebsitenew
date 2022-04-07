@@ -43,7 +43,7 @@
 
 <section class="sec mt-12 ml-6">
   <section class="acts">
-    <p class="topic">reports</p>
+    <p class="topic">Reports</p>
     <p class="content">The  rules and regulations listed here are related to Transport (RSTA & DoAT), ICT (DITT) and Media (DoIM) …..</p>
     {% for report in reports %}
     <div class="border">
@@ -64,10 +64,10 @@
     <div class="scroll-fixed">
       <div class="sidebar">
         <p style="font-size: 25px">INFORMATION AND DOWNLOADS</p>
-        <a href="#">For MoIC Officials</a><br />
-        <a href="#">Downloads</a><br />
-        <a href="#">RSTA Online Services</a><br />
-        <a href="#">HR Decisions</a>
+        <a href="{% url 'moicofficials' %}">For MoIC Officials</a><br />
+        <a href="{% url 'download' %}">Downloads</a><br />
+        <a href="{% url 'rstaservices' %}">RSTA Online Services</a><br />
+        <a href="{% url 'hrdecisions' %}">HR Decisions</a>
       </div>
       <div>
         <div class="calendar" inline-datepicker data-date="auto"></div>

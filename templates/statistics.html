@@ -145,7 +145,6 @@
           <p style="font-size: 12px">CAR ACCIDENTS</p>
           </div>
       </div>
-
     </div>
     <hr class="line">
 
@@ -171,6 +170,7 @@
       <a class="forward" onclick="plusSlides(1)">❯</a>
 
     </div>
+    <br>
 
     <p class="topic">Annual Info-Comm & Transport Statistical Bulletin</p>
     <hr class="line">
@@ -191,12 +191,12 @@
   </section>
   <section>
     <div class="scroll-fixed">
-      <div class="sidebar">
+      <div class="sidebar" style="font-style: normal;">
         <p style="font-size: 25px">INFORMATION AND DOWNLOADS</p>
-        <a href="#">For MoIC Officials</a><br />
-        <a href="#">Downloads</a><br />
-        <a href="#">RSTA Online Services</a><br />
-        <a href="#">HR Decisions</a>
+        <a href="{% url 'moicofficials' %}">For MoIC Officials</a><br />
+        <a href="{% url 'download' %}">Downloads</a><br />
+        <a href="{% url 'rstaservices' %}">RSTA Online Services</a><br />
+        <a href="{% url 'hrdecisions' %}">HR Decisions</a>
       </div>
       <div>
         <div class="calendar" inline-datepicker data-date="auto"></div>
