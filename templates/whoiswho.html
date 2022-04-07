@@ -1,54 +1,331 @@
 {% extends 'base.html' %} {% block content %} {% load static %}
 <style>
-  .who {
-    width: 680px;
-    padding-left: 55px;
-  }
-  .background {
-    background-color: transparent;
-    display: grid;
-    grid-template-areas: "who info";
-  }
-  .line {
-    border: 1px solid #d4ab2a;
-    margin: 20px 0px;
-  }
-  .minister {
-    text-align: center;
-  }
+    .who {
+        width: 680px;
+        padding-left: 55px;
+    }
+
+    .background {
+        background-color: transparent;
+        display: grid;
+        grid-template-areas: "who info";
+    }
+
+    .line {
+        border: 1px solid #d4ab2a;
+        margin: 20px 0px;
+    }
+
+    .minister {
+        text-align: center;
+    }
+
+    /* Tab content - closed */
+    .tab-content {
+        max-height: 0;
+        -webkit-transition: max-height .35s;
+        -o-transition: max-height .35s;
+        transition: max-height .35s;
+    }
+
+    /* :checked - resize to full height */
+    .tab input:checked ~ .tab-content {
+        max-height: 100vh;
+    }
+
+    /* Label formatting when open */
+    .tab input:checked + label {
+        /*@apply text-xl p-5 border-l-2 border-indigo-500 bg-gray-100 text-indigo*/
+        font-size: 1.25rem; /*.text-xl*/
+        padding: 1.25rem; /*.p-5*/
+        border-left-width: 2px; /*.border-l-2*/
+        border-color: #6574cd; /*.border-indigo*/
+        background-color: #f8fafc; /*.bg-gray-100 */
+        color: #6574cd; /*.text-indigo*/
+    }
+
+    /* Icon */
+    .tab label::after {
+        float: right;
+        right: 0;
+        top: 0;
+        display: block;
+        width: 1.5em;
+        height: 1.5em;
+        line-height: 1.5;
+        font-size: 1.25rem;
+        text-align: center;
+        -webkit-transition: all .35s;
+        -o-transition: all .35s;
+        transition: all .35s;
+    }
+
+    /* Icon formatting - closed */
+    .tab input[type=checkbox] + label::after {
+        content: "+";
+        font-weight: bold; /*.font-bold*/
+        border-width: 1px; /*.border*/
+        border-radius: 9999px; /*.rounded-full */
+        border-color: #b8c2cc; /*.border-grey*/
+    }
+
+    .tab input[type=radio] + label::after {
+        content: "\25BE";
+        font-weight: bold; /*.font-bold*/
+        border-width: 1px; /*.border*/
+        border-radius: 9999px; /*.rounded-full */
+        border-color: #b8c2cc; /*.border-grey*/
+    }
+
+    /* Icon formatting - open */
+    .tab input[type=checkbox]:checked + label::after {
+        transform: rotate(315deg);
+        background-color: #6574cd; /*.bg-indigo*/
+        color: #f8fafc; /*.text-grey-lightest*/
+    }
+
+    .tab input[type=radio]:checked + label::after {
+        transform: rotateX(180deg);
+        background-color: #6574cd; /*.bg-indigo*/
+        color: #f8fafc; /*.text-grey-lightest*/
+    }
 </style>
 <section class="background mt-12 ml-6">
-  <section class="who">
-    <div class="minister">
-      {% for minister in ministeroffice %}
-      <p>{{ minister.profile_img }}</p>
-      <p>{{ minister.title }} {{ minister.name}}</p>
-      <p>{{ minister.mail_id }}</p>
-      <p>{{ minister.phone_no }}</p>
-      {% endfor %}
-    </div>
-    <div class="grid lg:grid-cols-2 md:grid-cols-4">
-      {% for secretary in secretaryoffice %}
-      <img src="{{ secretary.profile_img.png }}" alt="secretary" />
-      <p>{{ secretary.title }} {{ secretary.name }}</p>
-      <p>{{ secretary.mail_id }}</p>
-      <p>{{ secretary.phone_no }}</p>
-      {% endfor %}
-    </div>
-  </section>
-  <section>
-    <div class="scroll-fixed">
-      <div class="sidebar">
-        <p style="font-size: 25px">INFORMATION AND DOWNLOADS</p>
-        <a href="#">For MoIC Officials</a><br />
-        <a href="#">Downloads</a><br />
-        <a href="#">RSTA Online Services</a><br />
-        <a href="#">HR Decisions</a>
-      </div>
-      <div>
-        <div class="calendar" inline-datepicker data-date="auto"></div>
-      </div>
-    </div>
-  </section>
+    <section class="who">
+
+        <div class="grid lg:grid-cols-1 md:grid-cols-4">
+            <!--      <div class="w-full md:w-1/2 mx-auto p-8">-->
+            <p>Staff <strong>Directory</strong></p>
+            <br>
+            <div class="shadow-md">
+                <div class="tab w-full h-full overflow-hidden border-t">
+                    <input class="absolute opacity-0" id="tab-single-one" type="radio" name="tabs2">
+                    <label class="block p-5 leading-normal cursor-pointer" for="tab-single-one">Office of
+                        Minister</label>
+                    <div class="tab-content border-l-2 bg-gray-100 border-indigo-500 leading-normal text-center">
+                        <div class="flex flex-wrap overflow-hidden">
+                            {% for minister in ministeroffice %}
+                            {% if minister.title == "Minister" %}
+                            <div class="w-full overflow-hidden">
+                                <img src="{{ minister.profile_img.url }}" alt="secretary"/>
+                                <p style="font-weight: bold">{{ minister.title }}</p>
+                                <p>{{ minister.name }}</p>
+                                <p>{{ minister.mail_id }}</p>
+                                <p>{{ minister.phone_no }}</p>
+                                <br>
+                            </div>
+                            {% else %}
+                            <div class="my-5 px-5 w-1/3 overflow-hidden sm:w-1/3 md:w-1/3 w-full">
+                                <img src="{{ minister.profile_img.url }}" alt="secretary"/>
+                                <p style="font-weight: bold">{{ minister.title }}</p>
+                                <p>{{ minister.name }}</p>
+                                <p>{{ minister.mail_id }}</p>
+                                <p>{{ minister.phone_no }}</p>
+                            </div>
+                            {% endif %}
+                            {% endfor %}
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="tab w-full overflow-hidden border-t">
+                <input class="absolute opacity-0" id="tab-single-two" type="radio" name="tabs2">
+                <label class="block p-5 leading-normal cursor-pointer" for="tab-single-two">Office of Secretary</label>
+                <div class="tab-content border-l-2 bg-gray-100 border-indigo-500 leading-normal text-center">
+                    <div class="flex flex-wrap overflow-hidden">
+                        {% for secretary in secretaryoffice %}
+                        {% if secretary.title == "Secretary" %}
+                        <div class="w-full overflow-hidden">
+                            <img src="{{ secretary.profile_img.url }}" alt="secretary"
+                                 style="display: block; margin-left: auto; margin-right: auto"/>
+                            <p style="font-weight: bold">{{ secretary.title }}</p>
+                            <p>{{ secretary.name }}</p>
+                            <p>{{ secretary.mail_id }}</p>
+                            <p>{{ secretary.phone_no }}</p>
+                            <br>
+                        </div>
+                        {% else %}
+                        <div class="my-5 px-5 w-1/2 overflow-hidden sm:w-1/2 md:w-1/2 w-full">
+                            <img src="{{ secretary.profile_img.url }}" alt="secretary"
+                                 style="display: block; margin-left: auto; margin-right: auto"/>
+                            <p style="font-weight: bold">{{ secretary.title }}</p>
+                            <p>{{ secretary.name }}</p>
+                            <p>{{ secretary.mail_id }}</p>
+                            <p>{{ secretary.phone_no }}</p>
+                        </div>
+                        {% endif %}
+                        {% endfor %}
+                    </div>
+
+                </div>
+            </div>
+            <div class="tab w-full overflow-hidden border-t">
+                <input class="absolute opacity-0" id="tab-single-three" type="radio" name="tabs2">
+                <label class="block p-5 leading-normal cursor-pointer" for="tab-single-three">Policy and Planning
+                    Division</label>
+                <div class="tab-content border-l-2 bg-gray-100 border-indigo-500 leading-normal text-center">
+                    <div class="flex flex-wrap overflow-hidden">
+                        {% for policy in ppd %}
+                        <div class="my-5 px-5 w-1/4 overflow-hidden sm:w-1/4 md:w-1/4 w-full">
+                            <img src="{{ policy.profile_img.url }}" alt="secretary"
+                                 style="display: block; margin-left: auto; margin-right: auto; height: 100px; width: 100px"/>
+                            <p style="font-weight: bold">{{ policy.title }}</p>
+                            <p>{{ policy.name }}</p>
+                            <p>{{ policy.mail_id }}</p>
+                            <p>{{ policy.phone_no }}</p>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab w-full overflow-hidden border-t">
+                <input class="absolute opacity-0" id="tab-single-four" type="radio" name="tabs2">
+                <label class="block p-5 leading-normal cursor-pointer" for="tab-single-four">Human Resource
+                    Division</label>
+                <div class="tab-content border-l-2 bg-gray-100 border-indigo-500 leading-normal text-center">
+                    <div class="flex flex-wrap overflow-hidden">
+                        {% for policy in ppd %}
+                        <div class="my-5 px-5 w-1/4 overflow-hidden sm:w-1/4 md:w-1/4 w-full">
+                            <img src="{{ policy.profile_img.url }}" alt="secretary"
+                                 style="display: block; margin-left: auto; margin-right: auto; height: 100px; width: 100px"/>
+                            <p style="font-weight: bold">{{ policy.title }}</p>
+                            <p>{{ policy.name }}</p>
+                            <p>{{ policy.mail_id }}</p>
+                            <p>{{ policy.phone_no }}</p>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab w-full overflow-hidden border-t">
+                <input class="absolute opacity-0" id="tab-single-five" type="radio" name="tabs2">
+                <label class="block p-5 leading-normal cursor-pointer" for="tab-single-five">ICT
+                    Division</label>
+                <div class="tab-content border-l-2 bg-gray-100 border-indigo-500 leading-normal text-center">
+                    <div class="flex flex-wrap overflow-hidden">
+                        {% for policy in ppd %}
+                        <div class="my-5 px-5 w-1/4 overflow-hidden sm:w-1/4 md:w-1/4 w-full">
+                            <img src="{{ policy.profile_img.url }}" alt="secretary"
+                                 style="display: block; margin-left: auto; margin-right: auto; height: 100px; width: 100px"/>
+                            <p style="font-weight: bold">{{ policy.title }}</p>
+                            <p>{{ policy.name }}</p>
+                            <p>{{ policy.mail_id }}</p>
+                            <p>{{ policy.phone_no }}</p>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab w-full overflow-hidden border-t">
+                <input class="absolute opacity-0" id="tab-single-six" type="radio" name="tabs2">
+                <label class="block p-5 leading-normal cursor-pointer" for="tab-single-six">Internal Audit</label>
+                <div class="tab-content border-l-2 bg-gray-100 border-indigo-500 leading-normal text-center">
+                    <div class="flex flex-wrap overflow-hidden">
+                        {% for policy in ppd %}
+                        <div class="my-5 px-5 w-1/4 overflow-hidden sm:w-1/4 md:w-1/4 w-full">
+                            <img src="{{ policy.profile_img.url }}" alt="secretary"
+                                 style="display: block; margin-left: auto; margin-right: auto; height: 100px; width: 100px"/>
+                            <p style="font-weight: bold">{{ policy.title }}</p>
+                            <p>{{ policy.name }}</p>
+                            <p>{{ policy.mail_id }}</p>
+                            <p>{{ policy.phone_no }}</p>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab w-full overflow-hidden border-t">
+                <input class="absolute opacity-0" id="tab-single-seven" type="radio" name="tabs2">
+                <label class="block p-5 leading-normal cursor-pointer" for="tab-single-seven">Administration</label>
+                <div class="tab-content border-l-2 bg-gray-100 border-indigo-500 leading-normal text-center">
+                    <div class="flex flex-wrap overflow-hidden">
+                        {% for policy in ppd %}
+                        <div class="my-5 px-5 w-1/4 overflow-hidden sm:w-1/4 md:w-1/4 w-full">
+                            <img src="{{ policy.profile_img.url }}" alt="secretary"
+                                 style="display: block; margin-left: auto; margin-right: auto; height: 100px; width: 100px"/>
+                            <p style="font-weight: bold">{{ policy.title }}</p>
+                            <p>{{ policy.name }}</p>
+                            <p>{{ policy.mail_id }}</p>
+                            <p>{{ policy.phone_no }}</p>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab w-full overflow-hidden border-t">
+                <input class="absolute opacity-0" id="tab-single-eight" type="radio" name="tabs2">
+                <label class="block p-5 leading-normal cursor-pointer" for="tab-single-eight">Finance Division</label>
+                <div class="tab-content border-l-2 bg-gray-100 border-indigo-500 leading-normal text-center">
+                    <div class="flex flex-wrap overflow-hidden">
+                        {% for policy in ppd %}
+                        <div class="my-5 px-5 w-1/4 overflow-hidden sm:w-1/4 md:w-1/4 w-full">
+                            <img src="{{ policy.profile_img.url }}" alt="secretary"
+                                 style="display: block; margin-left: auto; margin-right: auto; height: 100px; width: 100px"/>
+                            <p style="font-weight: bold">{{ policy.title }}</p>
+                            <p>{{ policy.name }}</p>
+                            <p>{{ policy.mail_id }}</p>
+                            <p>{{ policy.phone_no }}</p>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab w-full overflow-hidden border-t">
+                <input class="absolute opacity-0" id="tab-single-ninth" type="radio" name="tabs2">
+                <label class="block p-5 leading-normal cursor-pointer" for="tab-single-ninth">Procurement Section</label>
+                <div class="tab-content border-l-2 bg-gray-100 border-indigo-500 leading-normal text-center">
+                    <div class="flex flex-wrap overflow-hidden">
+                        {% for policy in ppd %}
+                        <div class="my-5 px-5 w-1/4 overflow-hidden sm:w-1/4 md:w-1/4 w-full">
+                            <img src="{{ policy.profile_img.url }}" alt="secretary"
+                                 style="display: block; margin-left: auto; margin-right: auto; height: 100px; width: 100px"/>
+                            <p style="font-weight: bold">{{ policy.title }}</p>
+                            <p>{{ policy.name }}</p>
+                            <p>{{ policy.mail_id }}</p>
+                            <p>{{ policy.phone_no }}</p>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="scroll-fixed">
+            <div class="sidebar">
+                <p style="font-size: 25px">INFORMATION AND DOWNLOADS</p>
+                <a href="#">For MoIC Officials</a><br/>
+                <a href="#">Downloads</a><br/>
+                <a href="#">RSTA Online Services</a><br/>
+                <a href="#">HR Decisions</a>
+            </div>
+            <div>
+                <div class="calendar" inline-datepicker data-date="auto"></div>
+            </div>
+        </div>
+    </section>
 </section>
+
+<script>
+    var myRadios = document.getElementsByName('tabs2');
+    var setCheck;
+    var x = 0;
+    for (x = 0; x < myRadios.length; x++) {
+        myRadios[x].onclick = function () {
+            if (setCheck != this) {
+                setCheck = this;
+            } else {
+                this.checked = false;
+                setCheck = null;
+            }
+        };
+    }
+</script>
 {% endblock content %}
