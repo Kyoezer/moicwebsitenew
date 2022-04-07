@@ -1,4 +1,4 @@
-{% extends 'base.html' %} {% block content %}
+{% extends 'base.html' %} {% block content %} {% load static %}
 
 <style>
   .sec {
@@ -39,6 +39,64 @@
     display: grid;
     grid-template-areas: "";
   }
+
+  * {box-sizing: border-box}
+  body {font-family: Verdana, sans-serif; margin:0}
+  .mySlides {display: none}
+  img {vertical-align: middle;}
+
+  /* Slideshow container */
+  .slideshow-container {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+  }
+
+  /* Next & previous buttons */
+  .back, .forward {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    background-color: #ff6347;
+  }
+
+  /* Position the "next button" to the right */
+  .forward {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+    background-color: #ff6347;
+  }
+
+  /* Caption text */
+  .text {
+    color: #f2f2f2;
+    font-size: 15px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+  }
+
+
+  @keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+  }
+
+  /* On smaller screens, decrease text size */
+  @media only screen and (max-width: 300px) {
+    .prev, .next,.text {font-size: 11px}
+  }
 </style>
 
 <section class="sec mt-12 ml-6">
@@ -48,26 +106,71 @@
     <hr class="line">
 
     <p class="topic">INFO COMM STATISTICS :JULY 2021</p>
-    <div class="flex flex-wrap overflow-hidden">
+    <div class="flex flex-wrap overflow-hidden" style="text-align: center;color: #959595;padding: 10px">
 
-      <div class="w-1/4 overflow-hidden">
-        <!-- Column Content -->
+      <div class="w-1/4 overflow-hidden sm:w-full md:w-1/4 lg:w-1/4 xl:w-1/4">
+        <div >
+          <i class="fa fa-globe fa-4x"></i>
+          <p style="font-weight: bold;font-size: 20px">720,169</p>
+          <p style="font-size: 12px">INTERNET</p>
+          <br>
+          <p style="font-size: 12px">SUBSCRIPTION</p>
+        </div>
       </div>
-    
-      <div class="w-1/4 overflow-hidden">
-        <!-- Column Content -->
+
+      <div class="w-1/4 overflow-hidden sm:w-full md:w-1/4 lg:w-1/4 xl:w-1/4">
+        <div >
+          <i class="fa fa-phone fa-4x"></i>
+          <p style="font-weight: bold;font-size: 20px">23,064</p>
+          <p style="font-size: 12px">FIXED-TELEPHONE</p>
+          <br>
+          <p style="font-size: 12px">LINE-SUBSCRIPTION</p>
+        </div>
       </div>
-    
-      <div class="w-1/4 overflow-hidden">
-        <!-- Column Content -->
+
+      <div class="w-1/4 overflow-hidden sm:w-full md:w-1/4 lg:w-1/4 xl:w-1/4">
+        <div >
+          <i class="fa fa-car fa-4x"></i>
+          <p style="font-weight: bold;font-size: 20px">113,746</p>
+          <p style="font-size: 12px">TOTAL CAR</p>
+          <br>
+          <p style="font-size: 12px">REGISTERED</p>
+        </div>
       </div>
-    
-      <div class="w-1/4 overflow-hidden">
-        <!-- Column Content -->
+
+      <div class="w-1/4 overflow-hidden sm:w-full md:w-1/4 lg:w-1/4 xl:w-1/4">
+        <div >
+          <i class="fa fa-truck fa-4x"></i>
+          <p style="font-weight: bold;font-size: 20px">124</p>
+          <p style="font-size: 12px">CAR ACCIDENTS</p>
+          </div>
       </div>
-    
     </div>
     <hr class="line">
+
+    <div class="slideshow-container">
+
+      <div class="mySlides fade">
+        <img src="{% static 'images/first-quarter.png' %}" style="width:100%">
+        <button class="contact" style="display: block; margin-left: auto; margin-right: auto"> Download Report </button>
+      </div>
+
+      <div class="mySlides fade">
+        <img src="{% static 'images/second-quarter.png' %}" style="width:100%">
+        <button class="contact" style="display: block; margin-left: auto; margin-right: auto"> Download Report </button>
+
+      </div>
+
+      <div class="mySlides fade">
+        <img src="{% static 'images/third-quarter.png' %}" style="width:100%">
+        <button class="contact" style="display: block; margin-left: auto; margin-right: auto"> Download Report </button>
+      </div>
+
+      <a class="back" onclick="plusSlides(-1)">❮</a>
+      <a class="forward" onclick="plusSlides(1)">❯</a>
+
+    </div>
+    <br>
 
     <p class="topic">Annual Info-Comm & Transport Statistical Bulletin</p>
     <hr class="line">
@@ -88,7 +191,7 @@
   </section>
   <section>
     <div class="scroll-fixed">
-      <div class="sidebar">
+      <div class="sidebar" style="font-style: normal;">
         <p style="font-size: 25px">INFORMATION AND DOWNLOADS</p>
         <a href="#">For MoIC Officials</a><br />
         <a href="#">Downloads</a><br />
@@ -101,6 +204,35 @@
     </div>
   </section>
 </section>
+
+<script>
+  let slideIndex = 1;
+  showSlides(slideIndex);
+
+  function plusSlides(n) {
+    showSlides(slideIndex += n);
+  }
+
+  function currentSlide(n) {
+    showSlides(slideIndex = n);
+  }
+
+  function showSlides(n) {
+    let i;
+    let slides = document.getElementsByClassName("mySlides");
+    let dots = document.getElementsByClassName("dot");
+    if (n > slides.length) {slideIndex = 1}
+    if (n < 1) {slideIndex = slides.length}
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+    for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1].style.display = "block";
+    dots[slideIndex-1].className += " active";
+  }
+</script>
 {% endblock content %}
 
 

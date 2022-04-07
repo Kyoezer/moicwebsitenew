@@ -21,7 +21,7 @@
   <section class="who">
     <div class="minister">
       {% for minister in ministeroffice %}
-      <p>{{ minister.profile_img }}</p>
+      <img src="{{ minister.profile_img.url }}" alt="{{ minister.name }}" />
       <p>{{ minister.title }} {{ minister.name}}</p>
       <p>{{ minister.mail_id }}</p>
       <p>{{ minister.phone_no }}</p>
@@ -29,7 +29,7 @@
     </div>
     <div class="grid lg:grid-cols-2 md:grid-cols-4">
       {% for secretary in secretaryoffice %}
-      <img src="{{ secretary.profile_img.png }}" alt="secretary" />
+      <img src="{{ secretary.profile_img.url }}" alt="{{ secretary.name }}" />
       <p>{{ secretary.title }} {{ secretary.name }}</p>
       <p>{{ secretary.mail_id }}</p>
       <p>{{ secretary.phone_no }}</p>

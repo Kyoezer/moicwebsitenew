@@ -47,97 +47,341 @@
 
     <hr class="line" />
     <div>
-      <b style="font-size: 30px">MINISTRY TIMELINE</b>
-      <div class="p-4 mt-4">
-        <h1 class="text-4xl text-center font-semibold mb-6">Package status</h1>
-        <div class="container">
-          <div class="flex flex-col md:grid grid-cols-12 text-gray-50">
-            <div class="flex md:contents">
-              <div class="col-start-2 col-end-4 mr-10 md:mx-auto relative">
-                <div class="h-full w-6 flex items-center justify-center">
-                  <div
-                    class="h-full w-1 bg-green-500 pointer-events-none"
-                  ></div>
-                </div>
-                <div
-                  class="w-6 h-6 absolute top-1/2 -mt-3 rounded-full bg-green-500 shadow text-center"
-                >
-                  <i class="fas fa-check-circle text-white"></i>
-                </div>
-              </div>
-              <div
-                class="bg-green-500 col-start-4 col-end-12 p-4 rounded-xl my-4 mr-auto shadow-md w-full"
-              >
-                <h3 class="font-semibold text-lg mb-1">Package Booked</h3>
-                <p class="leading-tight text-justify w-full">
-                  21 July 2021, 04:30 PM
-                </p>
-              </div>
+      <b><p style="font-size: 30px">MINISTRY TIMELINE</p></b>
+      <br />
+      <!-- component -->
+      <div class="container bg-gray-100 mx-auto w-full h-full">
+        <div class="relative wrap overflow-hidden p-10 h-full">
+          <div
+            class="border-2-2 absolute border-opacity-20 border-gray-700 h-full border"
+            style="left: 50%"
+          ></div>
+          <!-- right timeline -->
+          <div
+            class="mb-8 flex justify-between items-center w-full right-timeline"
+          >
+            <div class="order-1 w-5/12"></div>
+            <div
+              class="z-20 flex items-center order-1 bg-gray-800 shadow-xl w-16 h-16 rounded-full"
+            >
+              <h1 class="mx-auto font-semibold text-lg text-white text-center">
+                July 1995
+              </h1>
             </div>
-
-            <div class="flex md:contents">
-              <div class="col-start-2 col-end-4 mr-10 md:mx-auto relative">
-                <div class="h-full w-6 flex items-center justify-center">
-                  <div
-                    class="h-full w-1 bg-green-500 pointer-events-none"
-                  ></div>
-                </div>
-                <div
-                  class="w-6 h-6 absolute top-1/2 -mt-3 rounded-full bg-green-500 shadow text-center"
-                >
-                  <i class="fas fa-check-circle text-white"></i>
-                </div>
-              </div>
-              <div
-                class="bg-green-500 col-start-4 col-end-12 p-4 rounded-xl my-4 mr-auto shadow-md w-full"
-              >
-                <h3 class="font-semibold text-lg mb-1">Out for Delivery</h3>
-                <p class="leading-tight text-justify">22 July 2021, 01:00 PM</p>
-              </div>
+            <div
+              class="order-1 bg-green-400 rounded-lg shadow-xl w-5/12 px-6 py-4"
+            >
+              <h3 class="mb-3 font-bold text-gray-800 text-xl">
+                Ministry Founded
+              </h3>
             </div>
+          </div>
 
-            <div class="flex md:contents">
-              <div class="col-start-2 col-end-4 mr-10 md:mx-auto relative">
-                <div class="h-full w-6 flex items-center justify-center">
-                  <div class="h-full w-1 bg-red-500 pointer-events-none"></div>
-                </div>
-                <div
-                  class="w-6 h-6 absolute top-1/2 -mt-3 rounded-full bg-red-500 shadow text-center"
-                >
-                  <i class="fas fa-times-circle text-white"></i>
-                </div>
-              </div>
-              <div
-                class="bg-red-500 col-start-4 col-end-12 p-4 rounded-xl my-4 mr-auto shadow-md w-full"
-              >
-                <h3 class="font-semibold text-lg mb-1 text-gray-50">
-                  Cancelled
-                </h3>
-                <p class="leading-tight text-justify">
-                  Customer cancelled the order
-                </p>
-              </div>
+          <!-- left timeline -->
+          <div
+            class="mb-8 flex justify-between flex-row-reverse items-center w-full left-timeline"
+          >
+            <div class="order-1 w-5/12"></div>
+            <div
+              class="z-20 flex items-center order-1 bg-gray-800 shadow-xl w-16 h-16 rounded-full"
+            >
+              <h1 class="mx-auto text-white font-semibold text-lg">2003</h1>
             </div>
-
-            <div class="flex md:contents">
-              <div class="col-start-2 col-end-4 mr-10 md:mx-auto relative">
-                <div class="h-full w-6 flex items-center justify-center">
-                  <div class="h-full w-1 bg-gray-300 pointer-events-none"></div>
-                </div>
-                <div
-                  class="w-6 h-6 absolute top-1/2 -mt-3 rounded-full bg-gray-300 shadow text-center"
-                >
-                  <i class="fas fa-exclamation-circle text-gray-400"></i>
-                </div>
-              </div>
-              <div
-                class="bg-gray-300 col-start-4 col-end-12 p-4 rounded-xl my-4 mr-auto shadow-md w-full"
+            <div
+              class="order-1 bg-red-400 rounded-lg shadow-xl w-5/12 px-6 py-4"
+            >
+              <h3 class="mb-3 font-bold text-white text-xl">
+                Ministry Renamed & Bifurcated
+              </h3>
+              <p
+                class="text-sm font-medium leading-snug tracking-wide text-white text-opacity-100"
               >
-                <h3 class="font-semibold text-lg mb-1 text-gray-400">
-                  Delivered
-                </h3>
-                <p class="leading-tight text-justify"></p>
-              </div>
+                In 2003 Ministry of Communication was bifurcated to Ministry of
+                Information and Communication and Ministry of Works and Human
+                Settlement.
+              </p>
+            </div>
+          </div>
+
+          <!-- right timeline -->
+          <div
+            class="mb-8 flex justify-between items-center w-full right-timeline"
+          >
+            <div class="order-1 w-5/12"></div>
+            <div
+              class="z-20 flex items-center order-1 bg-gray-800 shadow-xl w-16 h-16 rounded-full"
+            >
+              <h1 class="mx-auto font-semibold text-lg text-white text-center">
+                Aug 2007
+              </h1>
+            </div>
+            <div
+              class="order-1 bg-green-400 rounded-lg shadow-xl w-5/12 px-6 py-4"
+            >
+              <h3 class="mb-3 font-bold text-gray-800 text-xl">
+                Ministry gerer
+              </h3>
+              <p
+                class="text-sm font-medium leading-snug tracking-wide text-black text-opacity-100"
+              >
+                BCAA as automous agency
+              </p>
+            </div>
+          </div>
+
+          <!-- left timeline -->
+          <div
+            class="mb-8 flex justify-between flex-row-reverse items-center w-full left-timeline"
+          >
+            <div class="order-1 w-5/12"></div>
+            <div
+              class="z-20 flex items-center order-1 bg-gray-800 shadow-xl w-16 h-16 rounded-full"
+            >
+              <h1 class="mx-auto text-white font-semibold text-lg">2019</h1>
+            </div>
+            <div
+              class="order-1 bg-red-400 rounded-lg shadow-xl w-5/12 px-6 py-4"
+            >
+              <h3 class="mb-3 font-bold text-white text-xl">BCAA Delink</h3>
+              <p
+                class="text-sm font-medium leading-snug tracking-wide text-white text-opacity-100"
+              >
+                BCAA Delink from Ministry
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr class="line" />
+    <div>
+      <b
+        ><p style="font-size: 30px">
+          TIMELINE OF MINISTERS (AS OF AUGUST 2021)
+        </p></b
+      >
+      <br />
+      <!-- component -->
+      <div class="container bg-gray-100 mx-auto w-full h-full">
+        <div class="relative wrap overflow-hidden p-10 h-full">
+          <div
+            class="border-2-2 absolute border-opacity-20 border-gray-700 h-full border"
+            style="left: 50%"
+          ></div>
+          <!-- right timeline -->
+          <div
+            class="mb-8 flex justify-between items-center w-full right-timeline"
+          >
+            <div class="order-1 w-5/12"></div>
+            <div
+              class="z-20 flex items-center order-1 bg-gray-800 shadow-xl w-18 h-18 rounded-full"
+            >
+              <h1 class="mx-auto font-semibold text-lg text-white text-center">
+                2003 to 2008
+              </h1>
+            </div>
+            <div class="order-1 rounded-lg shadow-xl w-5/12 px-6 py-4">
+              <img
+                src="{% static 'images/lyonpo1.jpg' %}"
+                alt="background image"
+                style="width: auto"
+              />
+              <br />
+              <h3 class="mb-3 font-bold text-gray-800 text-xl">
+                Lyonpo Leki Dorji
+              </h3>
+            </div>
+          </div>
+
+          <!-- left timeline -->
+          <div
+            class="mb-8 flex justify-between flex-row-reverse items-center w-full left-timeline"
+          >
+            <div class="order-1 w-5/12"></div>
+            <div
+              class="z-20 flex items-center order-1 bg-gray-800 shadow-xl w-18 h-18 rounded-full"
+            >
+              <h1 class="mx-auto font-semibold text-lg text-white text-center">
+                2008 to 2013
+              </h1>
+            </div>
+            <div class="order-1 rounded-lg shadow-xl w-5/12 px-6 py-4">
+              <img
+                src="{% static 'images/lyonpo2.jpg' %}"
+                alt="background image"
+                style="width: auto"
+              />
+              <br />
+              <h3 class="mb-3 font-bold text-gray-800 text-xl">
+                Lyonpo Nandalal Rai
+              </h3>
+            </div>
+          </div>
+
+          <!-- right timeline -->
+          <div
+            class="mb-8 flex justify-between items-center w-full right-timeline"
+          >
+            <div class="order-1 w-5/12"></div>
+            <div
+              class="z-20 flex items-center order-1 bg-gray-800 shadow-xl w-18 h-18 rounded-full"
+            >
+              <h1 class="mx-auto font-semibold text-lg text-white text-center">
+                2013 to 2018
+              </h1>
+            </div>
+            <div class="order-1 rounded-lg shadow-xl w-5/12 px-6 py-4">
+              <img
+                src="{% static 'images/lyonpo3.jpg' %}"
+                alt="background image"
+                style="width: auto"
+              />
+              <br />
+              <h3 class="mb-3 font-bold text-gray-800 text-xl">
+                Lyonpo D.N Dhungyel
+              </h3>
+            </div>
+          </div>
+
+          <!-- left timeline -->
+          <div
+            class="mb-8 flex justify-between flex-row-reverse items-center w-full left-timeline"
+          >
+            <div class="order-1 w-5/12"></div>
+            <div
+              class="z-20 flex items-center order-1 bg-gray-800 shadow-xl w-18 h-18 rounded-full"
+            >
+              <h1 class="mx-auto font-semibold text-lg text-white text-center">
+                2019 to till date
+              </h1>
+            </div>
+            <div class="order-1 rounded-lg shadow-xl w-5/12 px-6 py-4">
+              <img
+                src="{% static 'images/lyonpo4.png' %}"
+                alt="background image"
+                style="width: auto"
+              />
+              <br />
+              <h3 class="mb-3 font-bold text-gray-800 text-xl">
+                Lyonpo Karma Donnen Wangdi
+              </h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr class="line" />
+    <div>
+      <b
+        ><p style="font-size: 30px">
+          TIMELINE OF SECRETRARIES (AS OF AUGUST 2021)
+        </p></b
+      >
+      <br />
+      <!-- component -->
+      <div class="container bg-gray-100 mx-auto w-full h-full">
+        <div class="relative wrap overflow-hidden p-10 h-full">
+          <div
+            class="border-2-2 absolute border-opacity-20 border-gray-700 h-full border"
+            style="left: 50%"
+          ></div>
+          <!-- right timeline -->
+          <div
+            class="mb-8 flex justify-between items-center w-full right-timeline"
+          >
+            <div class="order-1 w-5/12"></div>
+            <div
+              class="z-20 flex items-center order-1 bg-gray-800 shadow-xl w-18 h-18 rounded-full"
+            >
+              <h1 class="mx-auto font-semibold text-lg text-white text-center">
+                2003 to 2008
+              </h1>
+            </div>
+            <div class="order-1 rounded-lg shadow-xl w-5/12 px-6 py-4">
+              <img
+                src="{% static 'images/dasho1.png' %}"
+                alt="background image"
+                style="width: auto"
+              />
+              <br />
+              <h3 class="mb-3 font-bold text-gray-800 text-xl">
+                Dasho Tashi Phuntsho
+              </h3>
+            </div>
+          </div>
+
+          <!-- left timeline -->
+          <div
+            class="mb-8 flex justify-between flex-row-reverse items-center w-full left-timeline"
+          >
+            <div class="order-1 w-5/12"></div>
+            <div
+              class="z-20 flex items-center order-1 bg-gray-800 shadow-xl w-18 h-18 rounded-full"
+            >
+              <h1 class="mx-auto font-semibold text-lg text-white text-center">
+                2009 to 2015
+              </h1>
+            </div>
+            <div class="order-1 rounded-lg shadow-xl w-5/12 px-6 py-4">
+              <img
+                src="{% static 'images/dasho2.jpeg' %}"
+                alt="background image"
+                style="width: auto"
+              />
+              <br />
+              <h3 class="mb-3 font-bold text-gray-800 text-xl">
+                Dasho Kinley Dorji
+              </h3>
+            </div>
+          </div>
+
+          <!-- right timeline -->
+          <div
+            class="mb-8 flex justify-between items-center w-full right-timeline"
+          >
+            <div class="order-1 w-5/12"></div>
+            <div
+              class="z-20 flex items-center order-1 bg-gray-800 shadow-xl w-18 h-18 rounded-full"
+            >
+              <h1 class="mx-auto font-semibold text-lg text-white text-center">
+                2016 to 2019
+              </h1>
+            </div>
+            <div class="order-1 rounded-lg shadow-xl w-5/12 px-6 py-4">
+              <img
+                src="{% static 'images/dasho3.jpeg' %}"
+                alt="background image"
+                style="width: auto"
+              />
+              <br />
+              <h3 class="mb-3 font-bold text-gray-800 text-xl">
+                Late Dasho Karma Penjor
+              </h3>
+            </div>
+          </div>
+
+          <!-- left timeline -->
+          <div
+            class="mb-8 flex justify-between flex-row-reverse items-center w-full left-timeline"
+          >
+            <div class="order-1 w-5/12"></div>
+            <div
+              class="z-20 flex items-center order-1 bg-gray-800 shadow-xl w-18 h-18 rounded-full"
+            >
+              <h1 class="mx-auto font-semibold text-lg text-white text-center">
+                2019 to till date
+              </h1>
+            </div>
+            <div class="order-1 rounded-lg shadow-xl w-5/12 px-6 py-4">
+              <img
+                src="{% static 'images/Dasho-Secretary-1.jpeg' %}"
+                alt="background image"
+                style="width: auto"
+              />
+              <br />
+              <h3 class="mb-3 font-bold text-gray-800 text-xl">
+                Dasho Phuntsho Tobgayn
+              </h3>
             </div>
           </div>
         </div>

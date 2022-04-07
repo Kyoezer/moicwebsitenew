@@ -28,6 +28,10 @@ urlpatterns = [
     path('annual/', include('annual.urls')),
     path('publication/', include('publication.urls')),
     path('contact/', include('contact.urls')),
+    path('moicoffcials/', include('moicofficials.urls')),
+    path('download/', include('download.urls')),
+    path('hrdecisions/', include('hrdecisions.urls')),
+    path('rstaservices/', include('rstaservices.urls')),
     path('search/', include('search.urls')),
     path('admin/', admin.site.urls),
 ]

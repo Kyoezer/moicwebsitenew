@@ -62,15 +62,82 @@
     font-size: 16px;
     cursor: pointer;
   }
+  .sec {
+    display: grid;
+    grid-template-areas: "events sidebar";
+  }
+  .events {
+    padding-left: 55px;
+    width: 680px;
+  }
+  :root {
+    --smaller: 0.75;
+  }
+
+  * {
+    border-style: solid;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  .container {
+    border-style: solid;
+    border-color: #333;
+    color: #333;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  h1 {
+    font-weight: normal;
+    letter-spacing: 0.125rem;
+    text-transform: uppercase;
+  }
+
+  li {
+    display: inline-block;
+    font-size: 16px;
+    list-style-type: none;
+    padding: 1em;
+    text-transform: uppercase;
+  }
+
+  li span {
+    border-style: solid;
+    border-color: #333;
+    display: block;
+    font-size: 40px;
+    font-weight: bold;
+  }
+  @media all and (max-width: 768px) {
+    h1 {
+      font-size: calc(1.5rem * var(--smaller));
+    }
+
+    li {
+      font-size: calc(1.125rem * var(--smaller));
+    }
+
+    li span {
+      font-size: calc(3.375rem * var(--smaller));
+    }
+  }
 </style>
 <section class="wrapper1">
   <section class="content">
     <section class="start">
       <div class="back">
-        <h1>
+        <p
+          style="
+            font-size: 60px;
+            color: white;
+            text-align: center;
+            font-weight: bold;
+          "
+        >
           Connecting the unconnected and establishing a harmonious knowledge
           society
-        </h1>
+        </p>
       </div>
       <div class="info">
         <img src=" {% static 'images/back.jpg' %}" alt="back" />
@@ -80,9 +147,9 @@
       <button class="subscribebtn">SUBSCRIBE</button>
     </div>
   </section>
-
   <br />
   <br />
+  <hr class="line" />
   <section class="pro1">
     <section class="mis">
       <section class="misdetail">
@@ -122,4 +189,89 @@
     </section>
   </section>
 </section>
+<hr class="line" />
+<section class="sec mt-12 ml-6">
+  <section class="events">
+    <p>Events</p>
+  </section>
+
+  <section>
+    <div class="container">
+      <p style="font-size: 30px; font-weight: bold">PIT DECLARATION</p>
+      <div id="countdown">
+        <ul>
+          <li><span id="days"></span>days</li>
+          <li><span id="hours"></span>Hours</li>
+          <li><span id="minutes"></span>Minutes</li>
+          <li><span id="seconds"></span>Seconds</li>
+        </ul>
+      </div>
+    </div>
+    <div class="scroll-fixed">
+      <div class="sidebar">
+        <p style="font-size: 25px">INFORMATION AND DOWNLOADS</p>
+        <a href="#">For MoIC Officials</a><br />
+        <a href="#">Downloads</a><br />
+        <a href="#">RSTA Online Services</a><br />
+        <a href="#">HR Decisions</a>
+      </div>
+      <div>
+        <div class="calendar" inline-datepicker data-date="auto"></div>
+      </div>
+    </div>
+  </section>
+</section>
+<script>
+  (function () {
+    const second = 1000,
+      minute = second * 60,
+      hour = minute * 60,
+      day = hour * 24;
+
+    //I'm adding this section so I don't have to keep updating this pen every year :-)
+    //remove this if you don't need it
+    let today = new Date(),
+      dd = String(today.getDate()).padStart(2, "0"),
+      mm = String(today.getMonth() + 1).padStart(2, "0"),
+      yyyy = today.getFullYear(),
+      nextYear = yyyy + 1,
+      dayMonth = "09/30/",
+      birthday = dayMonth + yyyy;
+
+    today = mm + "/" + dd + "/" + yyyy;
+    if (today > birthday) {
+      birthday = dayMonth + nextYear;
+    }
+    //end
+
+    const countDown = new Date(birthday).getTime(),
+      x = setInterval(function () {
+        const now = new Date().getTime(),
+          distance = countDown - now;
+
+        (document.getElementById("days").innerText = Math.floor(
+          distance / day
+        )),
+          (document.getElementById("hours").innerText = Math.floor(
+            (distance % day) / hour
+          )),
+          (document.getElementById("minutes").innerText = Math.floor(
+            (distance % hour) / minute
+          )),
+          (document.getElementById("seconds").innerText = Math.floor(
+            (distance % minute) / second
+          ));
+
+        //do something later when date is reached
+        if (distance < 0) {
+          document.getElementById("headline").innerText = "It's my birthday!";
+          document.getElementById("countdown").style.display = "none";
+          document.getElementById("content").style.display = "block";
+          clearInterval(x);
+        }
+        //seconds
+      }, 0);
+  })();
+</script>
+
 {% endblock content %}
