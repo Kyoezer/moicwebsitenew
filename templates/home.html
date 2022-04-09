@@ -68,7 +68,7 @@
   }
   .events {
     padding-left: 55px;
-    width: 680px;
+    width: 850px;
   }
   :root {
     --smaller: 0.75;
@@ -192,7 +192,91 @@
 <hr class="line" />
 <section class="sec mt-12 ml-6">
   <section class="events">
-    <p>Events</p>
+    <div class="flex flex-wrap" id="tabs-id">
+      <div class="w-full">
+        <ul class="flex mb-0 list-none flex-wrap pt-3 pb-4 flex-row">
+          <li class="mr-2 last:mr-0 flex-auto text-center">
+            <a class="text-xs font-bold uppercase px-16 py-3 shadow-lg rounded block leading-normal text-white bg-yellow-600" onclick="changeAtiveTab(event,'tab-profile')">
+              <i class="fa fa-calendar text-base mr-1"></i>  Events
+            </a>
+          </li>
+          <li class="-mb-px mr-2 last:mr-0 flex-auto text-center">
+            <a class="text-xs font-bold uppercase px-16 py-3 shadow-lg rounded block leading-normal text-yellow-600 bg-white" onclick="changeAtiveTab(event,'tab-settings')">
+              <i class="fa fa-user-plus text-base mr-1"></i>  Vacancy
+            </a>
+          </li>
+          <li class="-mb-px mr-2 last:mr-0 flex-auto text-center">
+            <a class="text-xs font-bold uppercase px-16 py-3 shadow-lg rounded block leading-normal text-yellow-600 bg-white" onclick="changeAtiveTab(event,'tab-tender')">
+              <i class="fa fa-envelope text-base mr-1"></i>  Tender
+            </a>
+          </li>
+        </ul>
+        <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded">
+          <div class="px-4 py-5 flex-auto">
+            <div class="tab-content tab-space ">
+              <div class="block " id="tab-profile">
+                {% for event in events %}
+                <p style="font-weight: bold">{{forloop.counter}}) <a href="{% url 'detail' event.id %}"><span>{{ event.event_title }}</span></a></p>
+                <p style="color: #bababa;font-size: 12px">Published on: {{ event.pub_date }}</p>
+                <br>
+                  {{event.event_description | safe | truncatechars:250}} <a href="{% url 'detail' event.id %}">
+                <span style="color: #0077ee;font-size: 13px">Read More >>> </span></a>
+                <br>
+                <br>
+                {% endfor %}
+              </div>
+              <div class="hidden" id="tab-settings">
+                {% for vacancy in vacancies %}
+                <p style="font-weight: bold">{{forloop.counter}}) <a href="{% url 'vacancy_detail' vacancy.id %}"><span>{{ vacancy.vacancy_title }}</span></a></p>
+                <p style="color: #bababa;font-size: 12px">Published on: {{ vacancy.pub_date }}</p>
+                <br>
+                {{vacancy.vacancy_description | safe | truncatechars:150}} <a href="{% url 'vacancy_detail' vacancy.id %}">
+                <span style="color: #0077ee;font-size: 13px">Read More >>> </span></a>
+                <br>
+                <br>
+                {% endfor %}
+              </div>
+              <div class="hidden" id="tab-tender">
+                <p>
+                  Efficiently unleash cross-media information without
+                  cross-media value. Quickly maximize timely deliverables for
+                  real-time schemas.
+                  <br />
+                  <br />
+                  Dramatically maintain clicks-and-mortar solutions
+                  without functional solutions.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript">
+      function changeAtiveTab(event,tabID){
+        let element = event.target;
+        while(element.nodeName !== "A"){
+          element = element.parentNode;
+        }
+        ulElement = element.parentNode.parentNode;
+        aElements = ulElement.querySelectorAll("li > a");
+        tabContents = document.getElementById("tabs-id").querySelectorAll(".tab-content > div");
+        for(let i = 0 ; i < aElements.length; i++){
+          aElements[i].classList.remove("text-white");
+          aElements[i].classList.remove("bg-yellow-600");
+          aElements[i].classList.add("text-yellow-600");
+          aElements[i].classList.add("bg-white");
+          tabContents[i].classList.add("hidden");
+          tabContents[i].classList.remove("block");
+        }
+        element.classList.remove("text-yellow-600");
+        element.classList.remove("bg-white");
+        element.classList.add("text-white");
+        element.classList.add("bg-yellow-600");
+        document.getElementById(tabID).classList.remove("hidden");
+        document.getElementById(tabID).classList.add("block");
+      }
+    </script>
   </section>
 
   <section>
@@ -238,10 +322,7 @@
       dayMonth = "09/30/",
       birthday = dayMonth + yyyy;
 
-    today = mm + "/" + dd + "/" + yyyy;
-    if (today > birthday) {
-      birthday = dayMonth + nextYear;
-    }
+    today = '04' + "/" + "30" + "/" + "2022";
     //end
 
     const countDown = new Date(birthday).getTime(),
@@ -261,15 +342,6 @@
           (document.getElementById("seconds").innerText = Math.floor(
             (distance % minute) / second
           ));
-
-        //do something later when date is reached
-        if (distance < 0) {
-          document.getElementById("headline").innerText = "It's my birthday!";
-          document.getElementById("countdown").style.display = "none";
-          document.getElementById("content").style.display = "block";
-          clearInterval(x);
-        }
-        //seconds
       }, 0);
   })();
 </script>

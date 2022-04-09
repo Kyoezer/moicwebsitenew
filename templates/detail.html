@@ -1,0 +1,61 @@
+{% extends 'base.html' %} {% block content %} {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+  <style>
+    .doat {
+      background-color: transparent;
+      display: grid;
+      grid-template-areas: "department info";
+    }
+
+    .department {
+      font-family: sans-serif;
+      line-height: 26.4px;
+      letter-spacing: normal;
+      padding-left: 55px;
+      text-align: justify;
+      width: 680px;
+    }
+    .doat1 {
+      border-style: solid;
+      padding: 10px;
+      border-width: 1px;
+      border-radius: 10px;
+      border-color: #707070;
+    }
+  </style>
+</head>
+<body>
+<section class="doat mt-12 ml-10">
+  <section class="department">
+    <span style="font-size: 25px; font-weight: bold">{{obj.event_title}}</span>
+    <p style="font-size: 15px; color: #a3a3a3">{{obj.pub_date}}</p>
+    <br>
+    <img src="{{ obj.event_img.url }}" alt="secretary" style="display: block; margin-left: auto; margin-right: auto"/>
+    <br>
+    <p>{{obj.event_description | safe}}</p>
+    <br>
+    <hr>
+
+  </section>
+  <section>
+    <div class="scroll-fixed">
+      <div class="sidebar">
+        <p style="font-size: 25px">INFORMATION AND DOWNLOADS</p>
+        <a href="{% url 'moicofficials' %}">For MoIC Officials</a><br />
+        <a href="{% url 'download' %}">Downloads</a><br />
+        <a href="{% url 'rstaservices' %}">RSTA Online Services</a><br />
+        <a href="{% url 'hrdecisions' %}">HR Decisions</a>
+      </div>
+      <div>
+        <div class="calendar" inline-datepicker data-date="auto"></div>
+      </div>
+    </div>
+  </section>
+</section>
+
+</body>
+</html>
+{% endblock content %}
