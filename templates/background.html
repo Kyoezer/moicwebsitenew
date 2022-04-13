@@ -25,7 +25,7 @@
 <section class="background mt-12 ml-6">
   <section class="history">
     <div>
-      <b style="font-size: 30px">HISTORY</b>
+      <p class="topic">History</p>
       <p class="content">
         Recognizing the importance of information in today’s knowledge-based
         society driven by information technology and with the need to create
@@ -38,6 +38,7 @@
         technology (ICT) and cater to the policy and regulatory needs of the
         information, communications and media sector in the country.
       </p>
+      <hr class="line">
       <img
         src="{% static 'images/background.jpg' %}"
         alt="background image"
@@ -47,7 +48,7 @@
 
     <hr class="line" />
     <div>
-      <b><p style="font-size: 30px">MINISTRY TIMELINE</p></b>
+      <p class="topic">MINISTRY TIMELINE</p>
       <br />
       <!-- component -->
       <div class="container bg-gray-100 mx-auto w-full h-full">
@@ -155,11 +156,9 @@
     </div>
     <hr class="line" />
     <div>
-      <b
-        ><p style="font-size: 30px">
-          TIMELINE OF MINISTERS (AS OF AUGUST 2021)
-        </p></b
-      >
+
+      <p class="topic">TIMELINE OF MINISTERS (AS OF AUGUST 2021)</p>
+
       <br />
       <!-- component -->
       <div class="container bg-gray-100 mx-auto w-full h-full">
@@ -272,11 +271,7 @@
     </div>
     <hr class="line" />
     <div>
-      <b
-        ><p style="font-size: 30px">
-          TIMELINE OF SECRETRARIES (AS OF AUGUST 2021)
-        </p></b
-      >
+         <p class="topic">TIMELINE OF SECRETRARIES (AS OF AUGUST 2021)</p>
       <br />
       <!-- component -->
       <div class="container bg-gray-100 mx-auto w-full h-full">
@@ -380,13 +375,27 @@
               />
               <br />
               <h3 class="mb-3 font-bold text-gray-800 text-xl">
-                Dasho Phuntsho Tobgayn
+                Dasho Phuntsho Tobgay
               </h3>
             </div>
           </div>
         </div>
       </div>
     </div>
+    <hr class="line">
+  <div class="navigationcontent">
+      <div style="margin:5% 20%;">
+        <h5 class="uppercase font-bold mb-2.5 text-gray-800" style="font-size:22px">
+          <i class="fa fa-caret-right fa-2x mr-3" style="color:#ff6347"></i> ABOUT US</h5>
+        <h5 class="uppercase font-bold mb-2.5 text-gray-800">
+          <i class="fa fa-angle-right fa-2x mr-3" style="color:#ff6347"></i> <a href="{% url 'mission' %}">Vision & Mission</a></h5>
+        <h5 class="uppercase font-bold mb-2.5 text-gray-800">
+          <i class="fa fa-angle-right fa-2x mr-3" style="color:#ff6347"></i> <a href="{% url 'organogram' %}">organogram</a></h5>
+        <h5 class="uppercase font-bold mb-2.5 text-gray-800">
+          <i class="fa fa-angle-right fa-2x mr-3" style="color:#ff6347"></i> <a href="{% url 'whoiswho' %}">who is who</a></h5>
+      </div>
+    </div>
+    <hr class="line">
   </section>
   <section>
     <div class="scroll-fixed">

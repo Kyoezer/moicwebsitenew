@@ -4,25 +4,58 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'css/style.css'%}">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <link href="{% static 'css/style.css'%}" rel="stylesheet">
     <script src="https://unpkg.com/flowbite@1.4.1/dist/datepicker.js"></script>
     <title>moic</title>
 </head>
 <body>
-    {% block tophead %}
-    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-
-        *{
-            font-family: 'Arial', sans-serif;
-        }
-      .line {
+{% block tophead %}
+<link href="https://unpkg.com/flickity@2/dist/flickity.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+  .navigationcontent{
+    border-style: solid;
+    padding: 10px;
+    border-width: 1px;
+    border-radius: 10px;
+    border-color: #707070;
+   }
+  .line {
     border: 1px solid #d4ab2a;
     margin: 20px 0px;
+  }
+  .topic {
+    font-size: 30px;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-shadow: 1px 1px black;
+  }
+  .sub_topic{
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: bold;
+  }.sub_topic1{
+    font-size: 18px;
+    font-weight: bold;
+  }
+  .tb {
+    width: 90%;
+    border: 1px solid #c0c0c0;
+    border-collapse: collapse;
+    padding: 5px;
+  }
+  .tb th {
+    border: 1px solid #c0c0c0;
+    padding: 5px;
+    background: #f0f0f0;
+  }
+  .tb td {
+    border: 1px solid #c0c0c0;
+    padding: 5px;
+    text-align: center;
   }
         .background{
           background-color: #d4ab2a;
@@ -30,27 +63,27 @@
         .wrapper1{
             align-items: center;
             width: auto;
-            margin-left: 50px;
         }
         .tophead{
           font-family: sans-serif;
           display: grid;
-          grid-gap:30px;
           background-color: white;
-          align-items: center;
-          text-align: center;
           grid-template-areas:
           'logo textlogo';
         }
 
         .sidebar {
             margin: 10%;
-            background-color: rgb(206, 199, 199);
+            color: white;
+            background-color: #D4AB2A;
             padding: 10px;
+            border: 1px solid black;
+            border-radius: 10px;
         }
-
         .calendar {
             margin: 10%;
+            background-color: #D4AB2A;
+            border: 1px solid black;
         }
 
         .scroll-fixed {
@@ -87,12 +120,11 @@
         @media(max-width: 500px){
           .tophead{
             display: grid;
-            grid-gap:0px;
-            width: auto;
+            width: 100%;
+            height: 100px;
             align-items: center;
-            grid-template-areas: 
-            'logo'
-            'logotext';
+            grid-template-areas:
+            'logo logotext';
           }
 
           .logo{
@@ -136,6 +168,7 @@
             height: 40px;
             width: 100%;
             margin: auto;
+            color: white;
             grid-template-areas:
             'left1 left1 ';
         }
@@ -167,7 +200,6 @@
                 margin-top: 20px;
                 background-color: #d4ab2a;
                 border-radius: 20px;
-
             }
 
           .topwrap{
@@ -179,7 +211,6 @@
             width: 94%;
             margin-left: 20px;
           }
-
         }
         @media(max-width: 768px){
 
@@ -190,7 +221,7 @@
             height: 100px;
             width: 100%;
             margin: auto;
-            grid-template-areas: 
+            grid-template-areas:
             'left1'
             'right1';
         }
@@ -242,8 +273,9 @@
             background-color: rgb(255, 255, 255);
           }
 
-        .active {
+        li a:active {
             background-color: #ffffff;
+            color: black;
         }
         li a:hover {
             background-color: rgb(255, 255, 255);
@@ -260,7 +292,7 @@
                 margin: auto;
                 align-items: center;
                 grid-template-areas:
-                'left1' 
+                'left1'
                 'right1';
             }
 
@@ -277,7 +309,6 @@
 
           .topnav{
               overflow: hidden;
-
             }
 
             .topnav a {
@@ -324,7 +355,7 @@
 
             .dropdown-content a {
               float: none;
-              color: black;
+              color: white;
               padding: 12px 16px;
               background-color: #d4ab2a;
               text-decoration: none;
@@ -386,7 +417,6 @@
               background-color:yellowgreen;
               box-shadow: 10px 10px 5px #aaaaaa;
               }
-
              }
              .right1{
                  display: grid;
@@ -419,11 +449,8 @@
                     font-size: 16px;
                     cursor: pointer;
                 }
-
               }
-
               /*social link start from here*/
-
               .icon-bar {
                 position: fixed;
                 top: 50%;
@@ -431,14 +458,12 @@
                 -ms-transform: translateY(-50%);
                 transform: translateY(-50%);
               }
-
                 .call-icon{
                     position: fixed;
                     top: 85%;
                     right: 0;
                     z-index: 1;
                 }
-
               .icon-bar a {
                 display: block;
                 text-align: center;
@@ -495,10 +520,12 @@
               .logoimg{
                 /* background-color: #11aa03; */
                 margin-right:200px;
+                padding: 20px;
               }
 
               .toplogo{
                 height: auto;
+                padding-top: 2rem;
               }
               .textlogo{
                 padding-left: -20px;
@@ -557,225 +584,340 @@
     transform: translate3d(0, -10em, 0);
   }
 }
+    #myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 95%;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: #ff6347;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 85%;
+  width:57px;
+}
 
-    </style>
-          <section class="wrapper1">
-            <section class="head">
-              <section class="tophead">
-                <div class="logo">
-                  <img src="{% static 'images/emblem-1.png' %}" class="toplogo" alt="logo" style="width: 120px;">
-                </div>
-                <div class="textlogo">
-                <!--  <img src="{% static 'images/MoIC.png' %}" class="logoimg" alt="Moic Description"> -->
-                <h1 class="font_Text">༆༑  ། བརྡ་དོན་དང་བརྒྱུད་འབྲེལ་ལྷན་ཁག །</h1><br>
-                <h1 class="font_Text0">Ministry of Information and Communications</h1><br> <br>
-                <h3 class="font_Text1">"Connecting the unconnected and establishing a harmonious knowledge society"</h3>
-              </div>
-              </section>
-            </section>
-            <!--navder start-->
-            <section class="navbar">
-              <div class="left1">
-                  <div class="topnav" id="myTopnav">
-                      <a href="{% url 'home' %}" class="active">HOME</a>
-                      <div class="dropdown">
-                          <button class="dropbtn">ABOUT US
-                            <i class="fa fa-caret-down"></i>
-                          </button>
-                          <div class="dropdown-content">
-                            <a href="{% url 'background' %}">BACKGROUND</a>
-                            <a href="{% url 'mission' %}">VISION & MISSION</a>
-                            <a href="{% url 'organogram' %}">ORGANOGRAM</a>
-                            <a href="{% url 'whoiswho' %}">WHO IS WHO</a>
-                          </div>
-                      </div>
-                      <div class="dropdown">
-                          <button class="dropbtn">DEPARTMENTS
-                            <i class="fa fa-caret-down"></i>
-                          </button>
-                          <div class="dropdown-content">
-                            <a href="{% url 'doat' %}">DoAT</a>
-                            <a href="{% url 'ditt' %}">DITT</a>
-                            <a href="{% url 'doim' %}">DoIM</a>
-                            <a href="{% url 'rsta' %}">RSTA</a>
-                          </div>
-                      </div>
-                      <div class="dropdown">
-                          <button class="dropbtn">ANNUAL PERFORMANCE AGREEMENTS
-                            <i class="fa fa-caret-down"></i>
-                          </button>
-                          <div class="dropdown-content">
-                            <a href="{% url 'annual1' %}">2021-2022</a>
-                            <a href="{% url 'annual2' %}">2020-2021</a>
-                            <a href="{% url 'annual3' %}">2019-2020</a>
-                          </div>
-                      </div>
-                      <div class="dropdown">
-                        <button class="dropbtn">PUBLICATIONS
-                          <i class="fa fa-caret-down"></i>
-                        </button>
-                        <div class="dropdown-content">
-                          <a href="{% url 'policies' %}">POLICIES</a>
-                          <a href="{% url 'acts' %}">ACTS</a>
-                          <a href="{% url 'rules' %}">RULES AND REGULATIONS</a>
-                          <a href="{% url 'guidelines' %}">GUIDELINES</a>
-                          <a href="{% url 'reports' %}">REPORTS</a>
-                          <a href="{% url 'statistics' %}">STATISTICS</a>
-                        </div>
-                      </div>
+#myBtn:hover {
+  background-color: #555;
+}
+.carousel-open:checked + .carousel-item {
+				position: static;
+				opacity: 100;
+			}
+			.carousel-item {
+				-webkit-transition: opacity 0.6s ease-out;
+				transition: opacity 0.6s ease-out;
+			}
+			#carousel-1:checked ~ .control-1,
+			#carousel-2:checked ~ .control-2,
+			#carousel-3:checked ~ .control-3 {
+				display: block;
+			}
+			.carousel-indicators {
+				list-style: none;
+				margin: 0;
+				padding: 0;
+				position: absolute;
+				bottom: 2%;
+				left: 0;
+				right: 0;
+				text-align: center;
+				z-index: 10;
+			}
+			#carousel-1:checked ~ .control-1 ~ .carousel-indicators li:nth-child(1) .carousel-bullet,
+			#carousel-2:checked ~ .control-2 ~ .carousel-indicators li:nth-child(2) .carousel-bullet,
+			#carousel-3:checked ~ .control-3 ~ .carousel-indicators li:nth-child(3) .carousel-bullet {
+			}
 
-                      <a href="javascript:void(0);" style="font-size:30px;" class="icon" onclick="myFunction()">&#9776;</a>
-                    </div>
-              </div>
-            <section class="container">
-                  <header class="showcase">
-                     <div class="img-slider">
-                             <div class="slide active">
-                             </div>
-                             <div class="navigation">
-                             </div>
-                             </div>
-                  </header>
-                  <div class="top-box top-box-a">
-                  </div>
 
-              <div class="right1">
-                  <div class="subs">
-                      <a href="{% url 'contact' %}"><button class="contact"> CONTACT US </button></a>
-              </div>
-
-                  <div class="searchbtn">
-                    <i class="fa fa-search fa-2x"></i>
-                  </div>
-                </section>
-          </section>
-          </section>
-          <section class="icon-bar">
-            <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
-            <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
-            <a href="#" class="google"><i class="fa fa-google"></i></a>
-            <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
-            <a href="#" class="youtube"><i class="fa fa-youtube"></i></a>
-          </section>
-
-    <section class="call-icon">
-        <span style="background-color: #f2f2f2; padding: 5px 20px; border-radius: 10px">Call Us</span>
-        <button style="background-color: #ff6347; padding: 15px 20px; border-radius: 50%; color: white; margin-right: 10px"><i class="fa fa-phone fa-2x"></i></button>
+</style>
+<section class="wrapper1">
+    <section class="head">
+        <section class="tophead">
+            <div class="logo">
+                <a href="{% url 'home' %}"><img alt="logo" class="toplogo" src="{% static 'images/emblem-1.png' %}" style="width: 120px;"></a>
+            </div>
+            <div class="textlogo">
+                <a href="{% url 'home' %}"><img alt="Moic Description" class="logoimg" src="{% static 'images/imagelogo.jpg' %}"></a>
+            </div>
+        </section>
     </section>
-    {% endblock tophead %}
-    {% block content %}
-      
-    {% endblock content %}
-    {% block footer %}
-    <br>
-    <hr>
-    <!-- Remove the container if you want to extend the Footer to full width. -->
-    <section class="bubble mt-2">
-        <footer class="bg-gray-100 text-center lg:text-left ml-12">
-            <div class="container p-6">
-                <div class="grid lg:grid-cols-5 md:grid-cols-2">
+    <!--navber start-->
+    <section class="navbar">
+        <div class="left1">
+            <div class="topnav" id="myTopnav">
+                <a class="active" href="{% url 'home' %}">HOME</a>
+                <div class="dropdown">
+                    <button class="dropbtn">ABOUT US
+                        <i class="fa fa-caret-down"></i>
+                    </button>
+                    <div class="dropdown-content">
+                        <a href="{% url 'background' %}">BACKGROUND</a>
+                        <a href="{% url 'mission' %}">VISION & MISSION</a>
+                        <a href="{% url 'organogram' %}">ORGANOGRAM</a>
+                        <a href="{% url 'whoiswho' %}">WHO IS WHO</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <button class="dropbtn">DEPARTMENTS
+                        <i class="fa fa-caret-down"></i>
+                    </button>
+                    <div class="dropdown-content">
+                        <a href="{% url 'doat' %}">DoAT</a>
+                        <a href="{% url 'ditt' %}">DITT</a>
+                        <a href="{% url 'doim' %}">DoIM</a>
+                        <a href="{% url 'rsta' %}">RSTA</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <button class="dropbtn">ANNUAL PERFORMANCE AGREEMENTS
+                        <i class="fa fa-caret-down"></i>
+                    </button>
+                    <div class="dropdown-content">
+                        <a href="{% url 'annual1' %}">2021-2022</a>
+                        <a href="{% url 'annual2' %}">2020-2021</a>
+                        <a href="{% url 'annual3' %}">2019-2020</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <button class="dropbtn">PUBLICATIONS
+                        <i class="fa fa-caret-down"></i>
+                    </button>
+                    <div class="dropdown-content">
+                        <a href="{% url 'policies' %}">POLICIES</a>
+                        <a href="{% url 'acts' %}">ACTS</a>
+                        <a href="{% url 'rules' %}">RULES AND REGULATIONS</a>
+                        <a href="{% url 'guidelines' %}">GUIDELINES</a>
+                        <a href="{% url 'reports' %}">REPORTS</a>
+                        <a href="{% url 'statistics' %}">STATISTICS</a>
+                    </div>
+                </div>
+
+                <a class="icon" href="javascript:void(0);" onclick="myFunction()" style="font-size:30px;">&#9776;</a>
+            </div>
+        </div>
+        <section class="container">
+            <header class="showcase">
+                <div class="img-slider">
+                    <div class="slide active">
+                    </div>
+                    <div class="navigation">
+                    </div>
+                </div>
+            </header>
+            <div class="top-box top-box-a">
+            </div>
+
+            <div class="right1">
+                <div class="subs">
+                    <a href="{% url 'contact' %}">
+                        <button class="contact"> CONTACT US</button>
+                    </a>
+                </div>
+
+                <div class="searchbtn">
+                    <i class="fa fa-search fa-2x"></i>
+                </div>
+        </section>
+    </section>
+</section>
+<section class="icon-bar">
+    <a class="facebook" href="https://www.facebook.com/MoICBhutan" target="_blank"><i class="fa fa-facebook"></i></a>
+    <a class="twitter" href="#"><i class="fa fa-twitter"></i></a>
+    <a class="google" href="#"><i class="fa fa-google"></i></a>
+    <a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a>
+    <a class="youtube" href="#"><i class="fa fa-youtube"></i></a>
+</section>
+
+<section class="call-icon">
+    <span style="background-color: #f2f2f2; padding: 5px 20px; border-radius: 10px">Call Us</span>
+    <a href="tel:9752324319">
+        <button style="background-color: #ff6347; padding: 15px 20px; border-radius: 50%; color: white; margin-right: 10px">
+            <i class="fa fa-phone fa-2x"></i></button>
+    </a>
+</section>
+{% endblock tophead %}
+{% block content %}
+
+{% endblock content %}
+{% block footer %}
+<br>
+<hr>
+<button id="myBtn" onclick="topFunction()" title="Go to top"><i class="fa fa-arrow-up"></i></button>
+<!-- Remove the container if you want to extend the Footer to full width. -->
+<section class="bubble mt-2">
+    <footer class="bg-gray-100 text-center lg:text-left ml-12">
+        <div class="container p-6">
+            <div class="grid lg:grid-cols-4 md:grid-cols-2">
+                <div class="mb-6">
+                    <div>
+                        <i class="fa fa-globe text-blue-500 pr-2" style="font-size: 25px"></i>
+                        <span>Bhutan Portal</span>
+                    </div>
+                    <br>
+                    <div>
+                        <i class="fa fa-facebook-square text-blue-500 pr-2" style="font-size: 25px"></i> <span>Facebook Page</span>
+                    </div>
+                </div>
+
+                <div class="mb-6">
+                    <h5 class="uppercase font-bold mb-2.5 text-gray-800">Contact Us</h5>
+
                     <div class="mb-6">
                         <div>
-                            <i class="fa fa-globe text-blue-500 pr-2" style="font-size: 25px"></i>  <span>Bhutan Portal</span>
+                            <i class="fa fa-phone text-blue-500 pr-2" style="font-size: 25px"></i>
+                            <span>+975-02-322567</span>
+                            <br>
+                            <span style="margin-left: 32px">+975-02-321283</span>
                         </div>
                         <br>
-                        <div>
-                            <i class="fa fa-facebook-square text-blue-500 pr-2" style="font-size: 25px"></i>  <span>Facebook Page</span>
-                        </div>
-                    </div>
-
-                    <div class="mb-6">
-                        <h5 class="uppercase font-bold mb-2.5 text-gray-800">Contact Us</h5>
-
                         <div class="mb-6">
-                            <div>
-                                <i class="fa fa-phone text-blue-500 pr-2" style="font-size: 25px"></i>  <span>+975-02-322567</span>
-                                <br>
-                                <span style="margin-left: 32px">+975-02-321283</span>
-                            </div>
-                            <br>
-                            <div class="mb-6">
-                                <i class="fa fa-address-book text-blue-500 pr-2" style="font-size: 25px"></i>  <span>P.O Box: 278</span>
-                            </div>
-                            <div class="mb-5">
-                            </div>
+                            <i class="fa fa-address-book text-blue-500 pr-2" style="font-size: 25px"></i> <span>P.O Box: 278</span>
+                        </div>
+                        <div class="mb-5">
+                        </div>
 
-                            <div>
-                                <i class="fa fa-envelope text-blue-500 pr-2" style="font-size: 25px"></i>  <span>webmaster:ict@moic.gov.bt</span>
-                            </div>
+                        <div>
+                            <i class="fa fa-envelope text-blue-500 pr-2" style="font-size: 25px"></i> <span>webmaster:ict@moic.gov.bt</span>
                         </div>
                     </div>
+                </div>
 
-                    <div class="mb-6">
-                        <h5 class="uppercase font-bold mb-2.5 text-gray-800">
-                            <i class="fa fa-sitemap fa-2x text-blue-500 mr-3"></i> Post Categories</h5>
+                <div class="mb-6">
+                    <h5 class="uppercase font-bold mb-2.5 text-gray-800">
+                        <i class="fa fa-sitemap fa-2x text-blue-500 mr-3"></i> Post Categories</h5>
 
-                        <div class="mt-10">
-                            <label style="font-weight: bold; font-size: 15px;margin-bottom: 20px"> SELECT CATEGORY TYPE</label>
-                            <select class="mt-3 py-2 px-3" style="width: 70%;border-radius: 10px">
-                                <option>Select Category</option>
-                                <option value="Announcement">Announcement</option>
-                                <option value="Event">Event</option>
-                                <option value="Information">Information</option>
-                                <option value="Notification">Notification</option>
-                                <option value="Press Release">Press Release</option>
-                                <option value="Tender">Tender</option>
-                                <option value="Vacancy">Vacancy</option>
-                            </select>
-                        </div>
+                    <div class="mt-10">
+                        <label style="font-weight: bold; font-size: 15px;margin-bottom: 20px"> SELECT CATEGORY
+                            TYPE</label>
+                        <select class="mt-3 py-2 px-3" style="width: 70%;border-radius: 10px">
+                            <option>Select Category</option>
+                            <option value="Announcement">Announcement</option>
+                            <option value="Event">Event</option>
+                            <option value="Information">Information</option>
+                            <option value="Notification">Notification</option>
+                            <option value="Press Release">Press Release</option>
+                            <option value="Tender">Tender</option>
+                            <option value="Vacancy">Vacancy</option>
+                        </select>
                     </div>
+                </div>
 
-                    <div class="mb-6">
-                        <h5 class="uppercase font-bold mb-2.5 text-gray-800">
-                            <i class="fa fa-file-zip-o fa-2x text-blue-500 mr-3"></i> Archive</h5>
+                <div class="mb-6">
+                    <h5 class="uppercase font-bold mb-2.5 text-gray-800">
+                        <i class="fa fa-file-zip-o fa-2x text-blue-500 mr-3"></i> Archive</h5>
 
-                        <div class="mt-10">
-                            <label style="font-weight: bold; font-size: 15px;margin-bottom: 20px"> SELECT MONTH</label>
-                            <select class="mt-3 py-2 px-3" style="width: 70%;border-radius: 10px">
-                                <option>Select Month</option>
-                                <option value="Announcement">January</option>
-                                <option value="February">February</option>
-                                <option value="March">March</option>
-                                <option value="April">April</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div>
-                      <h5 class="uppercase font-bold mb-2.5 text-gray-800">
-                        <i class="fa fa-map-marker fa-2x text-blue-500 mr-3"></i> Location</h5>
-                      <div class="elementor-widget-container">
-                        <div class="elementor-custom-embed">
-                          <iframe
-                            frameborder="0"
-                            scrolling="no"
-                            marginheight="0"
-                            marginwidth="0"
-                            src="https://maps.google.com/maps?q=MINISTRY%20OF%20INFORMATION%20AND%20COMMUNICATIONS&amp;t=m&amp;z=10&amp;output=embed&amp;iwloc=near"
-                            title="MINISTRY OF INFORMATION AND COMMUNICATIONS"
-                            aria-label="MINISTRY OF INFORMATION AND COMMUNICATIONS"
-                            style="width: 100%; height: 100%"
-                          ></iframe>
-                          <p style="padding-top: 20px ;">
-                          <span>Doeboom Lam</span>
-                          <br>
-                          <span>Thimphu:Bhutan</span>
-                        </p>
-                        </div>
-                      </div>
+                    <div class="mt-10">
+                        <label style="font-weight: bold; font-size: 15px;margin-bottom: 20px"> SELECT MONTH</label>
+                        <select class="mt-3 py-2 px-3" style="width: 70%;border-radius: 10px">
+                            <option>Select Month</option>
+                            <option value="Announcement">January</option>
+                            <option value="February">February</option>
+                            <option value="March">March</option>
+                            <option value="April">April</option>
+                        </select>
                     </div>
                 </div>
             </div>
 
-            <div class="text-gray-700 text-center p-4" style="background-color: #d4ab2a">
-                © 2022 Copyright:
-                <a class="text-gray-800" href="https://tailwind-elements.com/">Ministry of Information and Communication</a>
-            </div>
-        </footer>
+        </div>
+        <div class="container p-6">
+            <div class="grid lg:grid-cols-2 md:grid-cols-2">
+                <div style="padding: 2rem;">
+                    <h5 class="uppercase font-bold mb-2.5 text-gray-800">
+                        <i class="fa fa-map-marker fa-2x text-blue-500 mr-3"></i> Location</h5>
+                    <div class="elementor-widget-container">
+                        <div class="elementor-custom-embed">
+                            <iframe
+                                    aria-label="MINISTRY OF INFORMATION AND COMMUNICATIONS"
+                                    frameborder="0"
+                                    marginheight="0"
+                                    marginwidth="0"
+                                    scrolling="no"
+                                    src="https://maps.google.com/maps?q=MINISTRY%20OF%20INFORMATION%20AND%20COMMUNICATIONS&amp;t=m&amp;z=10&amp;output=embed&amp;iwloc=near"
+                                    style="width: 100%; height: 10rem"
+                                    title="MINISTRY OF INFORMATION AND COMMUNICATIONS"
+                            ></iframe>
+                            <p style="padding-top: 20px ;">
+                                <span>Doeboom Lam</span>
+                                <br>
+                                <span>Thimphu:Bhutan</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel relative  bg-transparent">
+                    <p class="sub_topic"><i class="fa fa-image text-blue-500 pr-2" >&nbsp;</i>Image Gallery</p>
+                    <div class="carousel-inner relative overflow-hidden w-full" style="padding:1rem;">
+                        <!--Slide 1-->
+                        <input aria-hidden="true" checked="checked" class="carousel-open" hidden="" id="carousel-1"
+                               name="carousel" type="radio">
+                        <div class="carousel-item absolute opacity-0" style="height:50vh;">
+                            <img src="{% static 'images/archieve1.jpg' %}" alt="">
+                        </div>
+                        <label class="prev control-1 w-10 h-10 ml-2 md:ml-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-blue-700 leading-tight text-center z-10 inset-y-0 left-0 my-auto"
+                               for="carousel-3">‹</label>
+                        <label class="next control-1 w-10 h-10 mr-2 md:mr-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-blue-700 leading-tight text-center z-10 inset-y-0 right-0 my-auto"
+                               for="carousel-2">›</label>
 
-    </section>
-    <!-- End of .container -->
-    {% endblock footer %}
-    <script>
+                        <!--Slide 2-->
+                        <input aria-hidden="true" class="carousel-open" hidden="" id="carousel-2" name="carousel"
+                               type="radio">
+                        <div class="carousel-item absolute opacity-0" style="height:50vh;">
+                            <img src="{% static 'images/archieve2.jpeg' %}" alt="">
+                        </div>
+                        <label class="prev control-2 w-10 h-10 ml-2 md:ml-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-blue-700 leading-tight text-center z-10 inset-y-0 left-0 my-auto"
+                               for="carousel-1">‹</label>
+                        <label class="next control-2 w-10 h-10 mr-2 md:mr-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-blue-700 leading-tight text-center z-10 inset-y-0 right-0 my-auto"
+                               for="carousel-3">›</label>
+
+                        <!--Slide 3-->
+                        <input aria-hidden="true" class="carousel-open" hidden="" id="carousel-3" name="carousel"
+                               type="radio">
+                        <div class="carousel-item absolute opacity-0" style="height:50vh;">
+<img src="{% static 'images/archieve3.jpg' %}" alt="">
+                        </div>
+                        <label class="prev control-3 w-10 h-10 ml-2 md:ml-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-blue-700 leading-tight text-center z-10 inset-y-0 left-0 my-auto"
+                               for="carousel-2">‹</label>
+                        <label class="next control-3 w-10 h-10 mr-2 md:mr-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-blue-700 leading-tight text-center z-10 inset-y-0 right-0 my-auto"
+                               for="carousel-1">›</label>
+
+                        <!-- Add additional indicators for each slide-->
+                        <ol class="carousel-indicators">
+                            <li class="inline-block mr-3">
+                                <label class="carousel-bullet cursor-pointer block text-4xl text-white hover:text-blue-700"
+                                       for="carousel-1">•</label>
+                            </li>
+                            <li class="inline-block mr-3">
+                                <label class="carousel-bullet cursor-pointer block text-4xl text-white hover:text-blue-700"
+                                       for="carousel-2">•</label>
+                            </li>
+                            <li class="inline-block mr-3">
+                                <label class="carousel-bullet cursor-pointer block text-4xl text-white hover:text-blue-700"
+                                       for="carousel-3">•</label>
+                            </li>
+                        </ol>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="text-gray-700 text-center p-4" style="background-color: #d4ab2a">
+            © 2022 Copyright:
+            <a class="text-gray-800" href="https://tailwind-elements.com/">Ministry of Information and Communication</a>
+        </div>
+    </footer>
+
+</section>
+<!-- End of .container -->
+{% endblock footer %}
+<script>
       function first(){
         document.getElementById("sildeimage").src="{% static 'images/yeshi.png' %}";
       }
@@ -793,8 +935,10 @@
       setInterval(thrid,4000)
       setInterval(fourth,5000)
 
-  </script>
-  <script>
+
+
+</script>
+<script>
   function first(){
     document.getElementById("sildeimage1").src="{% static 'images/yeshi.png' %}";
   }
@@ -811,8 +955,10 @@
   setInterval(second,4000)
   setInterval(thrid,3000)
   setInterval(fourth,2000)
-  </script>
-    <script>
+
+
+</script>
+<script>
         function myFunction() {
           var x = document.getElementById("myTopnav");
           if (x.className === "topnav") {
@@ -821,6 +967,27 @@
             x.className = "topnav";
           }
         }
-    </script>
+
+       var mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+
+
+</script>
 </body>
 </html>

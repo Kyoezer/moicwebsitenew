@@ -23,6 +23,8 @@
   }
   .back {
     background-color: #d4ab2a;
+    border-bottom-left-radius: 30% 10%;
+    border-bottom-radius: 30% 50%;
   }
   .back h1 {
     background-color: transparent;
@@ -81,11 +83,14 @@
     padding: 0;
   }
   .container {
-    border-style: solid;
-    border-color: #333;
     color: #333;
     margin: 0 auto;
     text-align: center;
+  }
+  .pit{
+    border-style: solid;
+    border-radius: 1px;
+    border-color: black;
   }
 
   h1 {
@@ -122,72 +127,72 @@
       font-size: calc(3.375rem * var(--smaller));
     }
   }
+
 </style>
 <section class="wrapper1">
-  <section class="content">
-    <section class="start">
-      <div class="back">
-        <p
-          style="
+    <section class="content">
+        <section class="start">
+            <div class="back">
+                <p style="
             font-size: 60px;
             color: white;
             text-align: center;
-            font-weight: bold;
-          "
-        >
-          Connecting the unconnected and establishing a harmonious knowledge
-          society
-        </p>
-      </div>
-      <div class="info">
-        <img src=" {% static 'images/back.jpg' %}" alt="back" />
-      </div>
+            font-weight: bold;"
+                >
+                    Connecting the unconnected and establishing a harmonious knowledge
+                    society
+                </p>
+            </div>
+            <div class="info">
+                <img src=" {% static 'images/back.jpg' %}" alt="back"/>
+            </div>
+        </section>
+        <div style="position: relative; float: right; padding-right: 10px">
+            <button class="subscribebtn">SUBSCRIBE</button>
+        </div>
     </section>
-    <div style="position: relative; float: right; padding-right: 10px">
-      <button class="subscribebtn">SUBSCRIBE</button>
-    </div>
-  </section>
-  <br />
-  <br />
-  <hr class="line" />
-  <section class="pro1">
-    <section class="mis">
-      <section class="misdetail">
-        <img
-          src="{% static 'images/Lyonpo-1.jpeg' %}"
-          alt="Lyonpo"
-          style="display: block; margin-left: auto; margin-right: auto"
-        />
-        <br />
-        <b style="font-size: 26px">MINISTER</b>
-        <h4 style="font-style: italic">HON'BLE LYONPO KARMA DONNEN WANGDI</h4>
-        <p>
-          Hon'ble Minister joined the Ministry on 7th Nov <br />
-          2018.Lyonpo Karma Donnen Wangdi served as a <br />
-          Member of Parliament in the National Council <br />
-          from 2008 till 2013.
-        </p>
-      </section>
+    <br/>
+    <br/>
+    <hr class="line"/>
+    <section class="pro1">
+        <section class="mis">
+            <section class="misdetail">
+                <img
+                        src="{% static 'images/Lyonpo-1.jpeg' %}"
+                        alt="Lyonpo"
+                        style="display: block; margin-left: auto; margin-right: auto"
+                />
+                <br/>
+                <b style="font-size: 26px">MINISTER</b>
+                <h4 style="font-style: italic">HON'BLE LYONPO KARMA DONNEN WANGDI</h4>
+                <p>
+                    Hon'ble Minister joined the Ministry on 7th Nov <br/>
+                    2018.Lyonpo Karma Donnen Wangdi served as a <br/>
+                    Member of Parliament in the National Council <br/>
+                    from 2008 till 2013.
+                </p>
+            </section>
+        </section>
+        <section class="se">
+            <section class="sedetails">
+                <img
+                        src="{% static 'images/Dasho-Secretary-1.jpeg' %}"
+                        alt="Dasho Secretary"
+                        class="mx-12"
+                        style="display: block; margin-left: auto; margin-right: auto"
+                />
+                <br/>
+                <b style="font-size: 26px; font-family: Poppins">SECRETARY</b><br/>
+                <i>DASHO PHUNTSHO TOBGAY</i><br/>
+                <p class="text-center">
+                    Dasho Secretary joined the Ministry on 13th Sep <br/>
+                    2019. Dasho Phuntsho Tobgay served as <br/>
+                    DG,DGM in MoEA before joining MoIC.<br/>
+                </p>
+            </section>
+        </section>
     </section>
-    <section class="se">
-      <section class="sedetails">
-        <img
-          src="{% static 'images/Dasho-Secretary-1.jpeg' %}"
-          alt="Dasho Secretary"
-          class="mx-12"
-          style="display: block; margin-left: auto; margin-right: auto"
-        />
-        <br />
-        <b style="font-size: 26px; font-family: Poppins">SECRETARY</b><br />
-        <i>DASHO PHUNTSHO TOBGAY</i><br />
-        <p class="text-center">
-          Dasho Secretary joined the Ministry on 13th Sep <br />
-          2019. Dasho Phuntsho Tobgay served as <br />
-          DG,DGM in MoEA before joining MoIC.<br />
-        </p>
-      </section>
-    </section>
-  </section>
+    <hr class="line">
 </section>
 <hr class="line" />
 <section class="sec mt-12 ml-6">
@@ -280,34 +285,37 @@
         document.getElementById(tabID).classList.remove("hidden");
         document.getElementById(tabID).classList.add("block");
       }
-    </script>
-  </section>
 
-  <section>
-    <div class="container">
-      <p style="font-size: 30px; font-weight: bold">PIT DECLARATION</p>
-      <div id="countdown">
-        <ul>
-          <li><span id="days"></span>days</li>
-          <li><span id="hours"></span>Hours</li>
-          <li><span id="minutes"></span>Minutes</li>
-          <li><span id="seconds"></span>Seconds</li>
-        </ul>
-      </div>
-    </div>
-    <div class="scroll-fixed">
-      <div class="sidebar">
-        <p style="font-size: 25px">INFORMATION AND DOWNLOADS</p>
-        <a href="{% url 'moicofficials' %}">For MoIC Officials</a><br />
-        <a href="{% url 'download' %}">Downloads</a><br />
-        <a href="{% url 'rstaservices' %}">RSTA Online Services</a><br />
-        <a href="{% url 'hrdecisions' %}">HR Decisions</a>
-      </div>
-      <div>
-        <div class="calendar" inline-datepicker data-date="auto"></div>
-      </div>
-    </div>
-  </section>
+        </script>
+    </section>
+
+    <section>
+        <div class="container">
+            <p style="font-size: 30px; font-weight: bold">PIT DECLARATION</p>
+            <hr class="line">
+            <div id="countdown">
+                <ul>
+                    <li><span id="days" class="pit"></span>days</li>
+                    <li><span id="hours" class="pit"></span>Hours</li>
+                    <li><span id="minutes" class="pit"></span>Minutes</li>
+                    <li><span id="seconds" class="pit"></span>Seconds</li>
+                </ul>
+            </div>
+        </div>
+        <hr class="line">
+        <div class="scroll-fixed">
+            <div class="sidebar">
+                <p style="font-size: 25px">INFORMATION AND DOWNLOADS</p>
+                <a href="{% url 'moicofficials' %}">For MoIC Officials</a><br/>
+                <a href="{% url 'download' %}">Downloads</a><br/>
+                <a href="{% url 'rstaservices' %}">RSTA Online Services</a><br/>
+                <a href="{% url 'hrdecisions' %}">HR Decisions</a>
+            </div>
+            <div>
+                <div class="calendar" inline-datepicker data-date="auto"></div>
+            </div>
+        </div>
+    </section>
 </section>
 <script>
   (function () {
@@ -348,6 +356,7 @@
           ));
       }, 0);
   })();
+
 </script>
 
 {% endblock content %}

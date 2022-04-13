@@ -108,4 +108,9 @@ class information_and_download(models.Model):
     download_link = models.CharField(max_length=300, blank=True)
     info_description = RichTextField(blank=True)
 
+
+class image_slider(models.Model):
+    images = models.ImageField(blank=True, upload_to='pics')
+
+
    

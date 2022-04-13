@@ -95,7 +95,8 @@
 
         <div class="grid lg:grid-cols-1 md:grid-cols-4">
             <!--      <div class="w-full md:w-1/2 mx-auto p-8">-->
-            <p>Staff <strong>Directory</strong></p>
+    <p class="topic">staff directory</p>
+            <hr class="line">
             <br>
             <div class="shadow-md">
                 <div class="tab w-full h-full overflow-hidden border-t">
@@ -107,8 +108,8 @@
                             {% for minister in ministeroffice %}
                             {% if minister.title == "Minister" %}
                             <div class="w-full overflow-hidden">
-                                <img src="{{ minister.profile_img.url }}" alt="secretary"/>
-                                <p style="font-weight: bold">{{ minister.title }}</p>
+                                <img style="height:300px; display: block; margin-left: auto; margin-right: auto" src="{{ minister.profile_img.url }}" alt="secretary"/>
+                       -         <p style="font-weight: bold">{{ minister.title }}</p>
                                 <p>{{ minister.name }}</p>
                                 <p>{{ minister.mail_id }}</p>
                                 <p>{{ minister.phone_no }}</p>
@@ -295,15 +296,29 @@
                 </div>
             </div>
         </div>
+        <hr class="line">
+        <div class="navigationcontent">
+      <div style="margin:5% 20%;">
+        <h5 class="uppercase font-bold mb-2.5 text-gray-800" style="font-size:22px">
+          <i class="fa fa-caret-right fa-2x mr-3" style="color:#ff6347"></i> ABOUT US</h5>
+        <h5 class="uppercase font-bold mb-2.5 text-gray-800">
+          <i class="fa fa-angle-right fa-2x mr-3" style="color:#ff6347"></i> <a href="{% url 'background' %}">background</a></h5>
+        <h5 class="uppercase font-bold mb-2.5 text-gray-800">
+          <i class="fa fa-angle-right fa-2x mr-3" style="color:#ff6347"></i> <a href="{% url 'mission' %}">vision and mission</a></h5>
+        <h5 class="uppercase font-bold mb-2.5 text-gray-800">
+          <i class="fa fa-angle-right fa-2x mr-3" style="color:#ff6347"></i> <a href="{% url 'organogram' %}">organogram</a></h5>
+      </div>
+    </div>
+        <hr class="line">
     </section>
     <section>
         <div class="scroll-fixed">
             <div class="sidebar">
                 <p style="font-size: 25px">INFORMATION AND DOWNLOADS</p>
-                <a href="#">For MoIC Officials</a><br/>
-                <a href="#">Downloads</a><br/>
-                <a href="#">RSTA Online Services</a><br/>
-                <a href="#">HR Decisions</a>
+                <a href="{% url 'moicofficials' %}">For MoIC Officials</a><br />
+        <a href="{% url 'download' %}">Downloads</a><br />
+        <a href="{% url 'rstaservices' %}">RSTA Online Services</a><br />
+        <a href="{% url 'hrdecisions' %}">HR Decisions</a>
             </div>
             <div>
                 <div class="calendar" inline-datepicker data-date="auto"></div>

@@ -1,0 +1,140 @@
+{% extends 'base.html' %} {% block content %} {% load static %}
+
+<style>
+  .sec {
+    display: grid;
+    grid-template-areas: "acts info";
+  }
+  .acts {
+    padding-left: 55px;
+    width: 680px;
+  }
+  .info {
+    text-align: center;
+  }
+  .content {
+    font-size: 16px;
+    font-family: sans-serif;
+    line-height: 26.4px;
+    letter-spacing: normal;
+    text-align: justify;
+  }
+  .line {
+    border: 1px solid #d4ab2a;
+    margin: 20px 0px;
+  }
+  .border {
+    border-style: solid;
+    padding: 10px;
+    border-width: 1px;
+    border-radius: 10px;
+    border-color: #707070;
+    margin: 10px 0px;
+  }
+  .links {
+    display: grid;
+    grid-template-areas: "";
+  }
+  .demo {
+    width: 90%;
+    border: 1px solid #c0c0c0;
+    border-collapse: collapse;
+    padding: 5px;
+  }
+  .demo th {
+    border: 1px solid #c0c0c0;
+    padding: 5px;
+    background: #f0f0f0;
+  }
+  .demo td {
+    border: 1px solid #c0c0c0;
+    padding: 5px;
+  }
+</style>
+
+<section class="sec mt-12 ml-6">
+  <section class="acts">
+    <p class="topic">RSTA Online Services</p>
+    <p>The links to the  RSTA services to check the status…..</p>
+
+<p>The Online Services can also be availed through the mRSTA Mobile App-</p> <br>
+    <img src="{% static 'images/mrstaapp.jpg' %}" alt="" style="height:450px; text-align:center">
+    <hr class="line">
+    <p class="topic">rsta online services</p>
+    <br>
+    <table class="tb">
+      <thead>
+        <tr>
+          <th>SL. No</th>
+          <th>URLS and Links</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1.</td>
+          <td><a href="https://eralis.rsta.gov.bt/public/serviceredirection.html?q=view_application_status" target="_blank">Track Application Status/Generate Online Payment Receipts</a></td>
+        </tr>
+      <tr>
+          <td>2.</td>
+          <td><a href="">Vehicle Ownership Transfer</a></td>
+        </tr>
+      </tbody>
+      <tr>
+          <td>3.</td>
+          <td><a href="https://eralis.rsta.gov.bt/public/serviceredirection.html?q=search_learner_dtls" target="_blank">Book Driving Test</a></td>
+        </tr>
+      <tr>
+          <td>4.</td>
+          <td><a href="https://eralis.rsta.gov.bt/public/serviceredirection.html?q=payfine" target="_blank">Pay Fine for the Traffic Offence</a></td>
+        </tr>
+      <tr>
+          <td>5.</td>
+          <td><a href="https://eralis.rsta.gov.bt/public/serviceredirection.html?q=vehicle_renewal_service" target="_blank">Renew Vehicle Registration Certificate</a></td>
+        </tr>
+      <tr>
+          <td>6. </td>
+          <td><a href="https://eralis.rsta.gov.bt/public/serviceredirection.html?q=vehicle_search_form&form_type=vehicle_duplication" target="_blank">Replace Vehicle Registration Certificate</a></td>
+        </tr>
+      <tr>
+          <td>7. </td>
+          <td><a href="https://eralis.rsta.gov.bt/public/serviceredirection.html?q=vehicle_search_form&form_type=vehicle_fitness" target="_blank">Renew Road Worthiness Certificate (Fitness)</a></td>
+        </tr>
+      <tr>
+          <td>8. </td>
+          <td><a href="https://eralis.rsta.gov.bt/public/serviceredirection.html?q=get_license_information&form_type=renew_driving_license" target="_blank">Renew Driving License</a></td>
+        </tr>
+      <tr>
+          <td>9. </td>
+          <td><a href="https://eralis.rsta.gov.bt/public/serviceredirection.html?q=get_license_information&form_type=driving_license_duplication" target="_blank">Replace Driving License</a></td>
+        </tr>
+      <tr>
+          <td>10. </td>
+          <td><a href="https://eralis.rsta.gov.bt/public/serviceredirection.html?q=renew_learner_search&form_type=renew_learner_search" target="_blank">Renew Learner License</a></td>
+        </tr>
+      <tr>
+          <td>11. </td>
+          <td><a href="https://eralis.rsta.gov.bt/public/serviceredirection.html?q=renew_learner_search&form_type=learner_license_duplicate" target="_blank">Replace Learner License</a></td>
+        </tr>
+      <tr>
+          <td>12. </td>
+          <td><a href="https://docs.google.com/document/d/1tQGmR50HR0xI2WC4PytRG-DGuq1Vc5ZLwIqluWGQcUs/edit" target="_blank">Driving Test Schedule</a></td>
+        </tr>
+    </table>
+    <hr class="line">
+  </section>
+  <section>
+    <div class="scroll-fixed">
+      <div class="sidebar">
+        <p style="font-size: 25px">INFORMATION AND DOWNLOADS</p>
+        <a href="{% url 'moicofficials' %}">For MoIC Officials</a><br />
+        <a href="{% url 'download' %}">Downloads</a><br />
+        <a href="{% url 'rstaservices' %}">RSTA Online Services</a><br />
+        <a href="{% url 'hrdecisions' %}">HR Decisions</a>
+      </div>
+      <div>
+        <div class="calendar" inline-datepicker data-date="auto"></div>
+      </div>
+    </div>
+  </section>
+</section>
+{% endblock content %}
