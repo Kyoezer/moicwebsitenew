@@ -9,7 +9,6 @@
             display: grid;
             grid-template-areas: "department info";
         }
-
         .department {
             font-family: sans-serif;
             line-height: 26.4px;
@@ -28,7 +27,7 @@
     </style>
 </head>
 <body>
-<section class="doat mt-12 ml-10">
+<section class="doat mt-12 ml-6">
     <section class="department">
         <span style="font-size: 25px; font-weight: bold">{{obj.vacancy_title}}</span>
         <p style="font-size: 15px; color: #a3a3a3">{{obj.pub_date}}</p>
@@ -41,7 +40,6 @@
         <a href="{{obj.vacancy_file.url}}" style="color: #0095ff; text-decoration: underline">Download PDF</a>
         {% endif %}
         <hr>
-
     </section>
     <section>
         <div class="scroll-fixed">
