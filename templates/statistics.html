@@ -23,10 +23,6 @@
     letter-spacing: normal;
     text-align: justify;
   }
-  .line {
-    border: 1px solid #d4ab2a;
-    margin: 20px 0px;
-  }
   .border {
     border-style: solid;
     padding: 10px;
@@ -61,7 +57,6 @@
     padding: 16px;
     margin-top: -22px;
     color: white;
-    font-weight: bold;
     font-size: 18px;
     transition: 0.6s ease;
     border-radius: 0 3px 3px 0;
@@ -178,7 +173,7 @@
     <div class="border">
       <div class="flex flex-wrap overflow-hidden">
         <div class="w-full overflow-hidden sm:w-1/2">
-          <a href="#"><p></p class=content> {{ statistic.SI_No }}. {{ statistic.title }}</p> </a>
+          <a href="#"><p class=content> {{ statistic.SI_No }}. {{ statistic.title }}</p> </a>
         </div>
         <div class="w-full overflow-hidden sm:w-1/2" >
           <i class="fa fa-envelope" style="float: right; padding: 0px 2px"></i>
@@ -209,7 +204,7 @@
   </section>
   <section>
     <div class="scroll-fixed">
-      <div class="sidebar" style="font-style: normal;">
+      <div class="sidebar" style="font-weight:0px;">
         <p style="font-size: 25px">INFORMATION AND DOWNLOADS</p>
         <a href="{% url 'moicofficials' %}">For MoIC Officials</a><br />
         <a href="{% url 'download' %}">Downloads</a><br />
