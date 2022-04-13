@@ -78,6 +78,7 @@ class vacancie(models.Model):
     was_published_today.short_description = 'Published today?'
     pub_date = models.DateTimeField('date published')
     vacancy_description = RichTextField()
+    vacancy_file = models.FileField(blank = True, null = True, upload_to='files')
 
 # event
 class event(models.Model):
@@ -88,6 +89,8 @@ class event(models.Model):
     was_published_today.short_description = 'Published today?'
     pub_date = models.DateTimeField('date published')
     event_description = RichTextField()
+    event_file = models.FileField(blank = True, null = True, upload_to='files')
+
 
 # PRESS RELEASE
 class PressRelease(models.Model):

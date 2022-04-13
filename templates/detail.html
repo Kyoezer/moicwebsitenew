@@ -36,7 +36,10 @@
     <img src="{{ obj.event_img.url }}" alt="secretary" style="display: block; margin-left: auto; margin-right: auto"/>
     <br>
     <p>{{obj.event_description | safe}}</p>
+    {% if obj.event_file %}
     <br>
+    <a href="{{obj.event_file.url}}" style="color: #0095ff; text-decoration: underline">Download PDF</a>
+    {% endif %}
     <hr>
 
   </section>

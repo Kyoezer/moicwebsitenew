@@ -36,7 +36,10 @@
         <img src="{{ obj.vacancy_img.url }}" alt="secretary" style="display: block; margin-left: auto; margin-right: auto"/>
         <br>
         <p>{{obj.vacancy_description | safe}}</p>
+        {% if obj.vacancy_file %}
         <br>
+        <a href="{{obj.vacancy_file.url}}" style="color: #0095ff; text-decoration: underline">Download PDF</a>
+        {% endif %}
         <hr>
 
     </section>
