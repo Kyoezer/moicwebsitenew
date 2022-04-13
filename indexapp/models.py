@@ -12,6 +12,7 @@ from ckeditor.fields import RichTextField
 from ckeditor_uploader.fields import RichTextUploadingField
 import datetime 
 
+
 # Create your models here.
 class Category(models.Model):
     name = models.CharField(max_length=200)
@@ -90,6 +91,19 @@ class event(models.Model):
     pub_date = models.DateTimeField('date published')
     event_description = RichTextField()
     event_file = models.FileField(blank = True, null = True, upload_to='files')
+
+
+# TENDER
+class tender(models.Model):
+    tender_id = models.IntegerField(blank=True)
+    tender_title = models.CharField(max_length=100)
+    tender_img = models.ImageField(blank=True,upload_to='pics')
+    def was_published_today(self):
+        return self.pub_date.date() == datetime.date.today()
+    was_published_today.short_description = 'Published today?'
+    pub_date = models.DateTimeField('date published')
+    tender_description = RichTextField()
+    tender_file = models.FileField(blank = True, null = True, upload_to='files')
 
 
 # PRESS RELEASE

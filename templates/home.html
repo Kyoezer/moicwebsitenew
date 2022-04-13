@@ -194,7 +194,6 @@
     </section>
     <hr class="line">
 </section>
-<hr class="line" />
 <section class="sec mt-12 ml-6">
   <section class="events">
     <div class="flex flex-wrap" id="tabs-id">
@@ -246,15 +245,17 @@
                 {% endfor %}
               </div>
               <div class="hidden" id="tab-tender">
-                <p>
-                  Efficiently unleash cross-media information without
-                  cross-media value. Quickly maximize timely deliverables for
-                  real-time schemas.
-                  <br />
-                  <br />
-                  Dramatically maintain clicks-and-mortar solutions
-                  without functional solutions.
-                </p>
+                  {% for tender in tenders %}
+                  <div style="border-left: 3px solid #d4ab2a; padding-left: 20px">
+                      <p style="font-weight: bold">{{forloop.counter}}) <a href="{% url 'tender_detail' tender.id %}"><span>{{ tender.tender_title }}</span></a></p>
+                      <p style="color: #bababa;font-size: 12px">Published on: {{ tender.pub_date }}</p>
+                      <br>
+                      {{tender.tender_description | safe | truncatechars:150}} <a href="{% url 'tender_detail' tender.id %}">
+                      <span style="color: #d4ab2a;font-size: 13px">Read More >>> </span></a>
+                      <br>
+                  </div>
+                  <br>
+                  {% endfor %}
               </div>
             </div>
           </div>
