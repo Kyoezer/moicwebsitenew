@@ -128,23 +128,21 @@
     }
   }
 
+
 </style>
 <section class="wrapper1">
     <section class="content">
         <section class="start">
-            <div class="back">
-                <p style="
-            font-size: 60px;
-            color: white;
-            text-align: center;
-            font-weight: bold;"
-                >
+            <div class="grid lg:grid-cols-2 md:grid-cols-1">
+            <div class="back text-base md:text-4xl lg:text-6xl text-center text-white font-bold">
+                <p>
                     Connecting the unconnected and establishing a harmonious knowledge
                     society
                 </p>
             </div>
             <div class="info">
-                <img src=" {% static 'images/back.jpg' %}" alt="back"/>
+                <img class="lg:w-150 sm:h-50" src="{% static 'images/back.jpg' %}"/>
+            </div>
             </div>
         </section>
         <div style="position: relative; float: right; padding-right: 10px">
@@ -158,8 +156,8 @@
         <section class="mis">
             <section class="misdetail">
                 <img
-                        src="{% static 'images/Lyonpo-1.jpeg' %}"
                         alt="Lyonpo"
+                        src="{% static 'images/Lyonpo-1.jpeg' %}"
                         style="display: block; margin-left: auto; margin-right: auto"
                 />
                 <br/>
@@ -176,9 +174,9 @@
         <section class="se">
             <section class="sedetails">
                 <img
-                        src="{% static 'images/Dasho-Secretary-1.jpeg' %}"
                         alt="Dasho Secretary"
                         class="mx-12"
+                        src="{% static 'images/Dasho-Secretary-1.jpeg' %}"
                         style="display: block; margin-left: auto; margin-right: auto"
                 />
                 <br/>
@@ -194,75 +192,88 @@
     </section>
     <hr class="line">
 </section>
-<section class="sec mt-12 ml-6">
-  <section class="events">
-    <div class="flex flex-wrap" id="tabs-id">
-      <div class="w-full">
-        <ul class="flex mb-0 list-none flex-wrap pt-3 pb-4 flex-row">
-          <li class="mr-2 last:mr-0 flex-auto text-center">
-            <a class="text-xs font-bold uppercase px-16 py-3 shadow-lg rounded block leading-normal text-white bg-yellow-600" onclick="changeAtiveTab(event,'tab-profile')">
-              <i class="fa fa-calendar text-base mr-1"></i>  Events
-            </a>
-          </li>
-          <li class="-mb-px mr-2 last:mr-0 flex-auto text-center">
-            <a class="text-xs font-bold uppercase px-16 py-3 shadow-lg rounded block leading-normal text-yellow-600 bg-white" onclick="changeAtiveTab(event,'tab-settings')">
-              <i class="fa fa-user-plus text-base mr-1"></i>  Vacancy
-            </a>
-          </li>
-          <li class="-mb-px mr-2 last:mr-0 flex-auto text-center">
-            <a class="text-xs font-bold uppercase px-16 py-3 shadow-lg rounded block leading-normal text-yellow-600 bg-white" onclick="changeAtiveTab(event,'tab-tender')">
-              <i class="fa fa-envelope text-base mr-1"></i>  Tender
-            </a>
-          </li>
-        </ul>
-        <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded">
-          <div class="px-4 py-5 flex-auto">
-            <div class="tab-content tab-space ">
-              <div class="block " id="tab-profile">
-                {% for event in events %}
-                <div style="border-left: 3px solid #d4ab2a; padding-left: 20px">
-                  <p style="font-weight: bold">{{forloop.counter}}) <a href="{% url 'detail' event.id %}"><span>{{ event.event_title }}</span></a></p>
-                  <p style="color: #bababa;font-size: 12px">Published on: {{ event.pub_date }}</p>
-                  <br>
-                  {{event.event_description | safe | truncatechars:250}} <a href="{% url 'detail' event.id %}">
-                  <span style="color: #d4ab2a;font-size: 13px">Read More >>> </span></a>
-                  <br>
+<section class="sec mt-12 ml-6 ">
+    <div class="grid lg:grid-cols-2 md:grid-cols-1">
+    <section class="events">
+        <div class="flex flex-wrap" id="tabs-id">
+            <div class="w-full">
+                <ul class="flex mb-0 list-none flex-wrap pt-3 pb-4 flex-row">
+                    <li class="mr-2 last:mr-0 flex-auto text-center">
+                        <a class="text-xs font-bold uppercase px-16 py-3 shadow-lg rounded block leading-normal text-white bg-yellow-600"
+                           onclick="changeAtiveTab(event,'tab-profile')">
+                            <i class="fa fa-calendar text-base mr-1"></i> Events
+                        </a>
+                    </li>
+                    <li class="-mb-px mr-2 last:mr-0 flex-auto text-center">
+                        <a class="text-xs font-bold uppercase px-16 py-3 shadow-lg rounded block leading-normal text-yellow-600 bg-white"
+                           onclick="changeAtiveTab(event,'tab-settings')">
+                            <i class="fa fa-user-plus text-base mr-1"></i> Vacancy
+                        </a>
+                    </li>
+                    <li class="-mb-px mr-2 last:mr-0 flex-auto text-center">
+                        <a class="text-xs font-bold uppercase px-16 py-3 shadow-lg rounded block leading-normal text-yellow-600 bg-white"
+                           onclick="changeAtiveTab(event,'tab-tender')">
+                            <i class="fa fa-envelope text-base mr-1"></i> Tender
+                        </a>
+                    </li>
+                </ul>
+                <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded">
+                    <div class="px-4 py-5 flex-auto">
+                        <div class="tab-content tab-space ">
+                            <div class="block " id="tab-profile">
+                                {% for event in events %}
+                                <div style="border-left: 3px solid #d4ab2a; padding-left: 20px">
+                                    <p style="font-weight: bold">{{forloop.counter}}) <a
+                                            href="{% url 'detail' event.id %}"><span>{{ event.event_title }}</span></a>
+                                    </p>
+                                    <p style="color: #bababa;font-size: 12px">Published on: {{ event.pub_date }}</p>
+                                    <br>
+                                    {{event.event_description | safe | truncatechars:250}} <a
+                                        href="{% url 'detail' event.id %}">
+                                    <span style="color: #d4ab2a;font-size: 13px">Read More >>> </span></a>
+                                    <br>
+                                </div>
+                                <br>
+                                {% endfor %}
+                            </div>
+                            <div class="hidden" id="tab-settings">
+                                {% for vacancy in vacancies %}
+                                <div style="border-left: 3px solid #d4ab2a; padding-left: 20px">
+                                    <p style="font-weight: bold">{{forloop.counter}}) <a
+                                            href="{% url 'vacancy_detail' vacancy.id %}"><span>{{ vacancy.vacancy_title }}</span></a>
+                                    </p>
+                                    <p style="color: #bababa;font-size: 12px">Published on: {{ vacancy.pub_date }}</p>
+                                    <br>
+                                    {{vacancy.vacancy_description | safe | truncatechars:150}} <a
+                                        href="{% url 'vacancy_detail' vacancy.id %}">
+                                    <span style="color: #d4ab2a;font-size: 13px">Read More >>> </span></a>
+                                    <br>
+                                </div>
+                                <br>
+                                {% endfor %}
+                            </div>
+                            <div class="hidden" id="tab-tender">
+                                {% for tender in tenders %}
+                                <div style="border-left: 3px solid #d4ab2a; padding-left: 20px">
+                                    <p style="font-weight: bold">{{forloop.counter}}) <a
+                                            href="{% url 'tender_detail' tender.id %}"><span>{{ tender.tender_title }}</span></a>
+                                    </p>
+                                    <p style="color: #bababa;font-size: 12px">Published on: {{ tender.pub_date }}</p>
+                                    <br>
+                                    {{tender.tender_description | safe | truncatechars:150}} <a
+                                        href="{% url 'tender_detail' tender.id %}">
+                                    <span style="color: #d4ab2a;font-size: 13px">Read More >>> </span></a>
+                                    <br>
+                                </div>
+                                <br>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <br>
-                {% endfor %}
-              </div>
-              <div class="hidden" id="tab-settings">
-                {% for vacancy in vacancies %}
-                <div style="border-left: 3px solid #d4ab2a; padding-left: 20px">
-                <p style="font-weight: bold">{{forloop.counter}}) <a href="{% url 'vacancy_detail' vacancy.id %}"><span>{{ vacancy.vacancy_title }}</span></a></p>
-                <p style="color: #bababa;font-size: 12px">Published on: {{ vacancy.pub_date }}</p>
-                <br>
-                {{vacancy.vacancy_description | safe | truncatechars:150}} <a href="{% url 'vacancy_detail' vacancy.id %}">
-                <span style="color: #d4ab2a;font-size: 13px">Read More >>> </span></a>
-                <br>
-                </div>
-                <br>
-                {% endfor %}
-              </div>
-              <div class="hidden" id="tab-tender">
-                  {% for tender in tenders %}
-                  <div style="border-left: 3px solid #d4ab2a; padding-left: 20px">
-                      <p style="font-weight: bold">{{forloop.counter}}) <a href="{% url 'tender_detail' tender.id %}"><span>{{ tender.tender_title }}</span></a></p>
-                      <p style="color: #bababa;font-size: 12px">Published on: {{ tender.pub_date }}</p>
-                      <br>
-                      {{tender.tender_description | safe | truncatechars:150}} <a href="{% url 'tender_detail' tender.id %}">
-                      <span style="color: #d4ab2a;font-size: 13px">Read More >>> </span></a>
-                      <br>
-                  </div>
-                  <br>
-                  {% endfor %}
-              </div>
             </div>
-          </div>
         </div>
-      </div>
-    </div>
-    <script type="text/javascript">
+        <script type="text/javascript">
       function changeAtiveTab(event,tabID){
         let element = event.target;
         while(element.nodeName !== "A"){
@@ -287,8 +298,10 @@
         document.getElementById(tabID).classList.add("block");
       }
 
+
         </script>
     </section>
+    </div>
 
     <section>
         <div class="container">
@@ -296,10 +309,10 @@
             <hr class="line">
             <div id="countdown">
                 <ul>
-                    <li><span id="days" class="pit"></span>days</li>
-                    <li><span id="hours" class="pit"></span>Hours</li>
-                    <li><span id="minutes" class="pit"></span>Minutes</li>
-                    <li><span id="seconds" class="pit"></span>Seconds</li>
+                    <li><span class="pit" id="days"></span>days</li>
+                    <li><span class="pit" id="hours"></span>Hours</li>
+                    <li><span class="pit" id="minutes"></span>Minutes</li>
+                    <li><span class="pit" id="seconds"></span>Seconds</li>
                 </ul>
             </div>
         </div>
@@ -313,7 +326,7 @@
                 <a href="{% url 'hrdecisions' %}">HR Decisions</a>
             </div>
             <div>
-                <div class="calendar" inline-datepicker data-date="auto"></div>
+                <div class="calendar" data-date="auto" inline-datepicker></div>
             </div>
         </div>
     </section>
@@ -357,6 +370,7 @@
           ));
       }, 0);
   })();
+
 
 </script>
 
