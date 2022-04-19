@@ -16,6 +16,10 @@
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 <script src="https://cdn.tailwindcss.com"></script>
 <style>
+*{
+font-family:arial;
+line-spacing: 20%;
+}
   .navigationcontent{
     border-style: solid;
     padding: 10px;
@@ -621,10 +625,6 @@
 			}
 
 
-
-
-
-
 </style>
 <section class="wrapper1">
     <section class="head">
@@ -711,9 +711,9 @@
                         <button class="contact"> CONTACT US</button>
                     </a>
                 </div>
-<!--                <div class="searchbtn">-->
-<!--                    <i class="fa fa-search fa-3x"></i>-->
-<!--                </div>-->
+                <!--                <div class="searchbtn">-->
+                <!--                    <i class="fa fa-search fa-3x"></i>-->
+                <!--                </div>-->
                 <button class="searchbtn" id="search-btn">
                     <i class="fa fa-search fa-3x"></i>
 
@@ -779,8 +779,8 @@
 <button id="myBtn" onclick="topFunction()" title="Go to top"><i class="fa fa-arrow-up"></i></button>
 <!-- Remove the container if you want to extend the Footer to full width. -->
 <section class="bubble mt-2">
-    <footer class="bg-gray-100 text-center lg:text-left ml-12">
-        <div class="container p-6">
+    <footer class="bg-gray-100 text-left lg:text-left ml-12">
+        <div class="container p-6" style="text-align:left;">
             <div class="grid lg:grid-cols-4 md:grid-cols-2">
                 <div class="mb-6">
                     <div>
@@ -789,14 +789,14 @@
                     </div>
                     <br>
                     <div>
-                        <i class="fa fa-facebook-square text-blue-500 pr-2" style="font-size: 25px"></i> <span>Facebook Page</span>
-                    </div>
+                        <a href="https://www.facebook.com/MoICBhutan"><i
+                                class="fa fa-facebook-square text-blue-500 pr-2" style="font-size: 25px"></i> <span>Facebook Page</span>
+                        </a></div>
                 </div>
-
-                <div class="mb-6">
+                <div class="mb-6" style="text-align:left;">
                     <h5 class="uppercase font-bold mb-2.5 text-gray-800">Contact Us</h5>
 
-                    <div class="mb-6">
+                    <div class="mb-6" style="text-align:left;">
                         <div>
                             <i class="fa fa-phone text-blue-500 pr-2" style="font-size: 25px"></i>
                             <span>+975-02-322567</span>
@@ -816,7 +816,7 @@
                     </div>
                 </div>
 
-                <div class="mb-6">
+                <div class="mb-6" style="text-align:left;">
                     <h5 class="uppercase font-bold mb-2.5 text-gray-800">
                         <i class="fa fa-sitemap fa-2x text-blue-500 mr-3"></i> Post Categories</h5>
 
@@ -836,7 +836,7 @@
                     </div>
                 </div>
 
-                <div class="mb-6">
+                <div class="mb-6" style="text-align:left;">
                     <h5 class="uppercase font-bold mb-2.5 text-gray-800">
                         <i class="fa fa-file-zip-o fa-2x text-blue-500 mr-3"></i> Archive</h5>
 
@@ -852,9 +852,8 @@
                     </div>
                 </div>
             </div>
-
         </div>
-        <div class="container p-6">
+        <div class="container p-6" style="text-align:left;">
             <div class="grid lg:grid-cols-2 md:grid-cols-2">
                 <div style="padding: 2rem;">
                     <h5 class="uppercase font-bold mb-2.5 text-gray-800">
@@ -886,14 +885,13 @@
                         <input aria-hidden="true" checked="checked" class="carousel-open" hidden="" id="carousel-1"
                                name="carousel" type="radio">
                         <div class="carousel-item absolute opacity-0" style="height:50vh;">
+                            <p>{{ picture.image_description }}</p>
                             <img alt="" src="{% static 'images/archieve1.jpg' %}">
                         </div>
                         <label class="prev control-1 w-10 h-10 ml-2 md:ml-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-blue-700 leading-tight text-center z-10 inset-y-0 left-0 my-auto"
                                for="carousel-3">‹</label>
                         <label class="next control-1 w-10 h-10 mr-2 md:mr-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-blue-700 leading-tight text-center z-10 inset-y-0 right-0 my-auto"
                                for="carousel-2">›</label>
-
-                        <!--Slide 2-->
                         <input aria-hidden="true" class="carousel-open" hidden="" id="carousel-2" name="carousel"
                                type="radio">
                         <div class="carousel-item absolute opacity-0" style="height:50vh;">
@@ -904,7 +902,7 @@
                         <label class="next control-2 w-10 h-10 mr-2 md:mr-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-blue-700 leading-tight text-center z-10 inset-y-0 right-0 my-auto"
                                for="carousel-3">›</label>
 
-                        <!--Slide 3-->
+
                         <input aria-hidden="true" class="carousel-open" hidden="" id="carousel-3" name="carousel"
                                type="radio">
                         <div class="carousel-item absolute opacity-0" style="height:50vh;">
@@ -914,8 +912,6 @@
                                for="carousel-2">‹</label>
                         <label class="next control-3 w-10 h-10 mr-2 md:mr-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-blue-700 leading-tight text-center z-10 inset-y-0 right-0 my-auto"
                                for="carousel-1">›</label>
-
-                        <!-- Add additional indicators for each slide-->
                         <ol class="carousel-indicators">
                             <li class="inline-block mr-3">
                                 <label class="carousel-bullet cursor-pointer block text-4xl text-white hover:text-blue-700"
@@ -934,7 +930,6 @@
                     </div>
                 </div>
             </div>
-
         </div>
 
         <div class="text-gray-700 text-center p-4" style="background-color: #d4ab2a">
@@ -979,13 +974,6 @@
       setInterval(thrid,4000)
       setInterval(fourth,5000)
 
-
-
-
-
-
-
-
 </script>
 <script>
   function first(){
@@ -1004,6 +992,9 @@
   setInterval(second,4000)
   setInterval(thrid,3000)
   setInterval(fourth,2000)
+
+
+
 
 
 
@@ -1040,6 +1031,9 @@ function topFunction() {
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
 }
+
+
+
 
 
 

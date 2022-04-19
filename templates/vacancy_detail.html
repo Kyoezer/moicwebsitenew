@@ -24,6 +24,7 @@
             border-radius: 10px;
             border-color: #707070;
         }
+
     </style>
 </head>
 <body>
@@ -32,7 +33,8 @@
         <span style="font-size: 25px; font-weight: bold">{{obj.vacancy_title}}</span>
         <p style="font-size: 15px; color: #a3a3a3">{{obj.pub_date}}</p>
         <br>
-        <img src="{{ obj.vacancy_img.url }}" alt="secretary" style="display: block; margin-left: auto; margin-right: auto"/>
+        <img alt="secretary" src="{{ obj.vacancy_img.url }}"
+             style="display: block; margin-left: auto; margin-right: auto"/>
         <br>
         <p>{{obj.vacancy_description | safe}}</p>
         {% if obj.vacancy_file %}
@@ -45,13 +47,13 @@
         <div class="scroll-fixed">
             <div class="sidebar">
                 <p style="font-size: 25px">INFORMATION AND DOWNLOADS</p>
-                <a href="{% url 'moicofficials' %}">For MoIC Officials</a><br />
-                <a href="{% url 'download' %}">Downloads</a><br />
-                <a href="{% url 'rstaservices' %}">RSTA Online Services</a><br />
+                <a href="{% url 'moicofficials' %}">For MoIC Officials</a><br/>
+                <a href="{% url 'download' %}">Downloads</a><br/>
+                <a href="{% url 'rstaservices' %}">RSTA Online Services</a><br/>
                 <a href="{% url 'hrdecisions' %}">HR Decisions</a>
             </div>
             <div>
-                <div class="calendar" inline-datepicker data-date="auto"></div>
+                <div class="calendar" data-date="auto" inline-datepicker></div>
             </div>
         </div>
     </section>

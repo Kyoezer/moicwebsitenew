@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-  <style>
+    <style>
     .doat {
       background-color: transparent;
       display: grid;
@@ -25,38 +25,40 @@
       border-radius: 10px;
       border-color: #707070;
     }
-  </style>
+
+    </style>
 </head>
 <body>
 <section class="doat mt-12 ml-10">
-  <section class="department">
-    <span style="font-size: 25px; font-weight: bold">{{obj.event_title}}</span>
-    <p style="font-size: 15px; color: #a3a3a3">{{obj.pub_date}}</p>
-    <br>
-    <img src="{{ obj.event_img.url }}" alt="secretary" style="display: block; margin-left: auto; margin-right: auto"/>
-    <br>
-    <p>{{obj.event_description | safe}}</p>
-    {% if obj.event_file %}
-    <br>
-    <a href="{{obj.event_file.url}}" style="color: #0095ff; text-decoration: underline">Download PDF</a>
-    {% endif %}
-    <hr>
+    <section class="department">
+        <span style="font-size: 25px; font-weight: bold">{{obj.event_title}}</span>
+        <p style="font-size: 15px; color: #a3a3a3">{{obj.pub_date}}</p>
+        <br>
+        <img alt="secretary" src="{{ obj.event_img.url }}"
+             style="display: block; margin-left: auto; margin-right: auto"/>
+        <br>
+        <p>{{obj.event_description | safe}}</p>
+        {% if obj.event_file %}
+        <br>
+        <a href="{{obj.event_file.url}}" style="color: #0095ff; text-decoration: underline">Download PDF</a>
+        {% endif %}
+        <hr>
 
-  </section>
-  <section>
-    <div class="scroll-fixed">
-      <div class="sidebar">
-        <p style="font-size: 25px">INFORMATION AND DOWNLOADS</p>
-        <a href="{% url 'moicofficials' %}">For MoIC Officials</a><br />
-        <a href="{% url 'download' %}">Downloads</a><br />
-        <a href="{% url 'rstaservices' %}">RSTA Online Services</a><br />
-        <a href="{% url 'hrdecisions' %}">HR Decisions</a>
-      </div>
-      <div>
-        <div class="calendar" inline-datepicker data-date="auto"></div>
-      </div>
-    </div>
-  </section>
+    </section>
+    <section>
+        <div class="scroll-fixed">
+            <div class="sidebar">
+                <p style="font-size: 25px">INFORMATION AND DOWNLOADS</p>
+                <a href="{% url 'moicofficials' %}">For MoIC Officials</a><br/>
+                <a href="{% url 'download' %}">Downloads</a><br/>
+                <a href="{% url 'rstaservices' %}">RSTA Online Services</a><br/>
+                <a href="{% url 'hrdecisions' %}">HR Decisions</a>
+            </div>
+            <div>
+                <div class="calendar" data-date="auto" inline-datepicker></div>
+            </div>
+        </div>
+    </section>
 </section>
 
 </body>

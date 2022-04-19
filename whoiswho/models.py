@@ -78,7 +78,7 @@ class procurement_section(models.Model):
     name = models.CharField(max_length=200)
     mail_id = models.EmailField(blank=True)
     phone_no = models.IntegerField(blank=True)
-    profile_img = models.ImageField(blank=True,upload_to='pics')
+    profile_img = models.ImageField(blank=True, upload_to='pics')
 
 
 # short link
