@@ -1,6 +1,6 @@
 from django.contrib import admin
-from .models import media_gallery
+from base.models import  ImageGallery
+
+admin.site.register(ImageGallery)
 
 # Register your models here.
-
-admin.site.register(media_gallery)

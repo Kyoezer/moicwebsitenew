@@ -1,9 +1,7 @@
 from django.shortcuts import render
-from base.models import media_gallery
+from base.models import  ImageGallery
+
 # Create your views here.
-
-
 def base(request):
-    pictures = media_gallery.objects.all()
-    context = {'pictures': pictures}
-    return render(request, 'base.html', context)
+    pictures = ImageGallery.objects.all()
+    return render(request, 'base.html', {'pictures', pictures} )
