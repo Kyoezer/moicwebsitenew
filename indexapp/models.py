@@ -85,6 +85,10 @@ class vacancie(models.Model):
 class event(models.Model):
     event_title = models.CharField(max_length=100)
     event_img = models.ImageField(blank=True,upload_to='pics')
+    event_img2 = models.ImageField(blank=True,upload_to='pics')
+    event_img3 = models.ImageField(blank=True,upload_to='pics')
+    event_img4 = models.ImageField(blank=True,upload_to='pics')
+    event_img5 = models.ImageField(blank=True,upload_to='pics')
     def was_published_today(self):
         return self.pub_date.date() == datetime.date.today()
     was_published_today.short_description = 'Published today?'

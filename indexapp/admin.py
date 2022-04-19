@@ -1,7 +1,7 @@
 from pyexpat import model
 from django.contrib import admin
 
-from indexapp.models import   post,  Category, Tag, profile, vacancie, event, PressRelease, information_and_download, tender
+from indexapp.models import  post,  Category, Tag, profile, vacancie, event, PressRelease, information_and_download, tender
 admin.site.site_header = "MOIC Admin"
 admin.site.site_title = "MOIC Admin Portal"
 admin.site.index_title = "Welcome to MOIC Dashboard "
@@ -22,5 +22,4 @@ admin.site.register(event)
 admin.site.register(PressRelease)
 admin.site.register(information_and_download)
 admin.site.register(tender)
-
 

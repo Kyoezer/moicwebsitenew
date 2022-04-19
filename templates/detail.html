@@ -25,6 +25,127 @@
       border-radius: 10px;
       border-color: #707070;
     }
+
+    .mySlides {display: none}
+    img {vertical-align: middle;}
+
+    /* Slideshow container */
+    .slideshow-container {
+      max-width: 1000px;
+      position: relative;
+      margin: auto;
+    }
+
+    /* Next & previous buttons */
+    .prev, .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      width: auto;
+      padding: 16px;
+      margin-top: -22px;
+      color: white;
+      font-weight: bold;
+      font-size: 18px;
+      transition: 0.6s ease;
+      border-radius: 0 3px 3px 0;
+      user-select: none;
+    }
+
+    /* Position the "next button" to the right */
+    .next {
+      right: 0;
+      border-radius: 3px 0 0 3px;
+    }
+
+    /* On hover, add a black background color with a little bit see-through */
+    .prev:hover, .next:hover {
+      background-color: rgba(0,0,0,0.8);
+    }
+
+    /* Caption text */
+    .text {
+      color: #f2f2f2;
+      font-size: 15px;
+      padding: 8px 12px;
+      position: absolute;
+      bottom: 8px;
+      width: 100%;
+      text-align: center;
+    }
+
+    /* Number text (1/3 etc) */
+    .numbertext {
+      color: #f2f2f2;
+      font-size: 12px;
+      padding: 8px 12px;
+      position: absolute;
+      top: 0;
+    }
+
+    /* The dots/bullets/indicators */
+    .dot {
+      cursor: pointer;
+      height: 15px;
+      width: 15px;
+      margin: 0 2px;
+      background-color: #bbb;
+      border-radius: 50%;
+      display: inline-block;
+      transition: background-color 0.6s ease;
+    }
+
+    .active1, .dot:hover {
+      background-color: #717171;
+    }
+
+    /* Fading animation */
+    .fade {
+      animation-name: fade;
+      animation-duration: 1.5s;
+    }
+
+    @keyframes fade {
+      from {opacity: .4}
+      to {opacity: 1}
+    }
+
+    /* On smaller screens, decrease text size */
+    @media only screen and (max-width: 300px) {
+      .prev, .next,.text {font-size: 11px}
+    }
+
+    /* The dots/bullets/indicators */
+    .dot {
+      cursor: pointer;
+      height: 15px;
+      width: 15px;
+      margin: 0 2px;
+      background-color: #bbb;
+      border-radius: 50%;
+      display: inline-block;
+      transition: background-color 0.6s ease;
+    }
+
+    .active1, .dot:hover {
+      background-color: #717171;
+    }
+
+    /* Fading animation */
+    .fade {
+      animation-name: fade;
+      animation-duration: 1.5s;
+    }
+
+    @keyframes fade {
+      from {opacity: .4}
+      to {opacity: 1}
+    }
+
+    /* On smaller screens, decrease text size */
+    @media only screen and (max-width: 300px) {
+      .prev, .next,.text {font-size: 11px}
+    }
   </style>
 </head>
 <body>
@@ -33,14 +154,143 @@
     <span style="font-size: 25px; font-weight: bold">{{obj.event_title}}</span>
     <p style="font-size: 15px; color: #a3a3a3">{{obj.pub_date}}</p>
     <br>
-    <img src="{{ obj.event_img.url }}" alt="secretary" style="display: block; margin-left: auto; margin-right: auto"/>
+    <div class="slideshow-container">
+      {% if obj.event_img %}
+      <div class="mySlides fade">
+        <img src="{{ obj.event_img.url }}" alt="secretary" style="display: block; margin-left: auto; margin-right: auto"/>
+      </div>
+      {% endif %}
+
+
+      {% if obj.event_img2 %}
+      <div class="mySlides fade">
+        <img src="{{ obj.event_img2.url }}" alt="secretary" style="display: block; margin-left: auto; margin-right: auto"/>
+
+      </div>
+      {% endif %}
+
+      {% if obj.event_img3 %}
+      <div class="mySlides fade">
+        <img src="{{ obj.event_img3.url }}" alt="secretary" style="display: block; margin-left: auto; margin-right: auto"/>
+      </div>
+      {% endif %}
+
+      {% if obj.event_img4 %}
+      <div class="mySlides fade">
+        <img src="{{ obj.event_img4.url }}" alt="secretary" style="display: block; margin-left: auto; margin-right: auto"/>
+      </div>
+      {% endif %}
+
+      {% if obj.event_img5 %}
+      <div class="mySlides fade">
+        <img src="{{ obj.event_img5.url }}" alt="secretary" style="display: block; margin-left: auto; margin-right: auto"/>
+      </div>
+      {% endif %}
+
+      <a class="prev" onclick="plusSlides(-1)">❮</a>
+      <a class="next" onclick="plusSlides(1)">❯</a>
+
+    </div>
     <br>
     <p>{{obj.event_description | safe}}</p>
     {% if obj.event_file %}
     <br>
     <a href="{{obj.event_file.url}}" style="color: #0095ff; text-decoration: underline">Download PDF</a>
     {% endif %}
+    <br>
     <hr>
+    <br>
+    <p style="font-size: 20px">Comments (2)</p>
+    <br>
+    <p style="font-weight: bold">Kinley Yoezer </p>
+    <span style="color: #878787; font-size: 12px">kinleyyoezer@gmail.com</span>
+    <p>this is very good event to be organized by the committee</p>
+    <br>
+    <p style="font-weight: bold">Kinley Yoezer</p>
+    <p><span style="color: #878787; font-size: 12px">kinleyyoezer@gmail.com</span></p>
+    <p>this is very good event to be organized by the committee</p>
+    <br>
+    <hr>
+    <br>
+    <p style="font-size: 20px">Add Comment</p>
+    <br>
+    <div class="">
+      <form>
+        <div class="form-group mb-6">
+          <input type="text" class="form-control block
+        w-full
+        px-3
+        py-1.5
+        text-base
+        font-normal
+        text-gray-700
+        bg-white bg-clip-padding
+        border border-solid border-gray-300
+        rounded
+        transition
+        ease-in-out
+        m-0
+        focus:text-gray-700 focus:bg-white focus:border-yellow-500 focus:outline-none" id="exampleInput7"
+                 placeholder="Name">
+        </div>
+        <div class="form-group mb-6">
+          <input type="email" class="form-control block
+        w-full
+        px-3
+        py-1.5
+        text-base
+        font-normal
+        text-gray-700
+        bg-white bg-clip-padding
+        border border-solid border-gray-300
+        rounded
+        transition
+        ease-in-out
+        m-0
+        focus:text-gray-700 focus:bg-white focus:border-yellow-500 focus:outline-none" id="exampleInput8"
+                 placeholder="Email address">
+        </div>
+        <div class="form-group mb-6">
+      <textarea class="
+        form-control
+        block
+        w-full
+        px-3
+        py-1.5
+        text-base
+        font-normal
+        text-gray-700
+        bg-white bg-clip-padding
+        border border-solid border-gray-300
+        rounded
+        transition
+        ease-in-out
+        m-0
+        focus:text-gray-700 focus:bg-white focus:border-yellow-500 focus:outline-none
+      "
+              id="exampleFormControlTextarea13"
+              rows="3"
+              placeholder="Comment"
+      ></textarea>
+        </div>
+        <button type="submit" class="
+      w-70
+      px-6
+      py-2.5
+      bg-blue-600
+      text-white
+      font-medium
+      text-xs
+      leading-tight
+      uppercase
+      rounded
+      shadow-md
+      bg-yellow-500
+      transition
+      duration-150
+      ease-in-out">Comment</button>
+      </form>
+    </div>
 
   </section>
   <section>
@@ -60,5 +310,33 @@
 </section>
 
 </body>
+<script>
+  let slideIndex = 1;
+  showSlides(slideIndex);
+
+  function plusSlides(n) {
+    showSlides(slideIndex += n);
+  }
+
+  function currentSlide(n) {
+    showSlides(slideIndex = n);
+  }
+
+  function showSlides(n) {
+    let i;
+    let slides = document.getElementsByClassName("mySlides");
+    let dots = document.getElementsByClassName("dot");
+    if (n > slides.length) {slideIndex = 1}
+    if (n < 1) {slideIndex = slides.length}
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+    for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active1", "");
+    }
+    slides[slideIndex-1].style.display = "block";
+    dots[slideIndex-1].className += " active1";
+  }
+</script>
 </html>
 {% endblock content %}

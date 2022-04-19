@@ -1,6 +1,7 @@
 from django.shortcuts import render
+from base.models import  ImageGallery
 
 # Create your views here.
 def base(request):
-    
-    return render(request, 'base.html', )
+    pictures = ImageGallery.objects.all()
+    return render(request, 'base.html', {'pictures', pictures} )
