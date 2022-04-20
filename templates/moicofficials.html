@@ -45,54 +45,59 @@
     border-collapse: collapse;
     padding: 5px;
   }
+
 </style>
 
 <section class="sec mt-12 ml-6">
-  <section class="acts">
-    <p class="topic">For MoIC Officials</p>
-    <hr class="line">
-    <br class="line">
-    <table class="tb">
-      <thead>
-        <tr>
-          <th>SL. No</th>
-          <th>URLs and Links</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>1.</td>
-          <td><a href="http://172.16.161.12/las/" target="_blank">Take Attendance</a></td>
-        </tr>
-        <tr>
-          <td>2.</td>
-          <td><a href="http://las.moic.gov.bt/leave/" target="_blank">Request Leave</a></td>
-        </tr>
-        <tr>
-          <td>3.</td>
-          <td><a href="https://docs.google.com/a/moic.gov.bt/forms/d/e/1FAIpQLSdgROdNnr8zKyw9T7kmn_OA_D_SWf-LXLCIAKHzsd_JhnwHHA/viewform" target="_blank">ICT Help Desk and Support</a></td>
-        </tr>
-        <tr>
-          <td>4.</td>
-          <td><a href="https://docs.google.com/spreadsheets/d/1JbW8V2k9X7Mp5efu0dt2q9xEngEMSBjM0WFNxnjxTyY/edit#gid=0" target="_blank">Conference Hall Bookings</a></td>
-        </tr>
-      </tbody>
-    </table>
-    <hr class="line">
-  </section>
-  <section>
-    <div class="scroll-fixed">
-      <div class="sidebar">
-        <p style="font-size: 25px">INFORMATION AND DOWNLOADS</p>
-        <a href="{% url 'moicofficials' %}">For MoIC Officials</a><br />
-        <a href="{% url 'download' %}">Downloads</a><br />
-        <a href="{% url 'rstaservices' %}">RSTA Online Services</a><br />
-        <a href="{% url 'hrdecisions' %}">HR Decisions</a>
-      </div>
-      <div>
-        <div class="calendar" inline-datepicker data-date="auto"></div>
-      </div>
-    </div>
-  </section>
+    <section class="acts">
+        <p class="topic">For MoIC Officials</p>
+        <hr class="line">
+        <br class="line">
+        <table class="tb">
+            <thead>
+            <tr>
+                <th>SL. No</th>
+                <th>URLs and Links</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>1.</td>
+                <td><a href="http://172.16.161.12/las/" target="_blank">Take Attendance</a></td>
+            </tr>
+            <tr>
+                <td>2.</td>
+                <td><a href="http://las.moic.gov.bt/leave/" target="_blank">Request Leave</a></td>
+            </tr>
+            <tr>
+                <td>3.</td>
+                <td>
+                    <a href="https://docs.google.com/a/moic.gov.bt/forms/d/e/1FAIpQLSdgROdNnr8zKyw9T7kmn_OA_D_SWf-LXLCIAKHzsd_JhnwHHA/viewform"
+                       target="_blank">ICT Help Desk and Support</a></td>
+            </tr>
+            <tr>
+                <td>4.</td>
+                <td>
+                    <a href="https://docs.google.com/spreadsheets/d/1JbW8V2k9X7Mp5efu0dt2q9xEngEMSBjM0WFNxnjxTyY/edit#gid=0"
+                       target="_blank">Conference Hall Bookings</a></td>
+            </tr>
+            </tbody>
+        </table>
+        <hr class="line">
+    </section>
+    <section>
+        <div class="scroll-fixed">
+            <div class="sidebar">
+                <p style="font-size: 25px">INFORMATION AND DOWNLOADS</p>
+                <a href="{% url 'moicofficials' %}">For MoIC Officials</a><br/>
+                <a href="{% url 'download' %}">Downloads</a><br/>
+                <a href="{% url 'rstaservices' %}">RSTA Online Services</a><br/>
+                <a href="{% url 'hrdecisions' %}">HR Decisions</a>
+            </div>
+            <div>
+                <div class="calendar" data-date="auto" inline-datepicker></div>
+            </div>
+        </div>
+    </section>
 </section>
 {% endblock content %}

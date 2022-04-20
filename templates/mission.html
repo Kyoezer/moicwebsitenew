@@ -21,69 +21,73 @@
     padding: 10px;
     border-color: #707070;
   }
+
 </style>
 <section class="mission mt-12 ml-6">
-  <section class="content">
-    <p class="topic">MINISTRY VISION, MISSION & OBJECTIVES</p>
-    <hr class="line">
-    <div class="vision">
-      <h1 class="sub_topic">VISION</h1>
-      <i class="fa fa-eye fa-2x" style="color: #ff6347"> </i>
-      Connecting the unconnected and establishing a harmonious knowledge
-      society.
-    </div>
-    <br />
-    <div class="vision">
-      <h1 class="sub_topic">MISSION</h1>
-      <i class="fa fa-dot-circle-o fa-2x" style="color: #ff6347"> </i>
-      Promoting the development of reliable and sustainable information,
-      communications and transport networks and systems and facilitating the
-      provision of affordable and easier access to associated services,
-      particularly to meet the basic social needs and help improve living
-      standards of people in rural and far-flung communities of Bhutan, for the
-      ultimate purpose of making a meaningful contribution to Gross National
-      Happiness.
-    </div>
-    <br />
-    <div class="vision">
-      <h1 class="sub_topic">OBJECTIVES</h1>
-      <i class="fa fa-eye fa-2x" style="color: #ff6347"> </i>
-      The Ministry’s objectives are: <br />
-      To increase safe, reliable and affordable surface and air transport;<br />
-      To enhance access to sustainable, green and inclusive public transport;
-      <br />
-      To improve access to reliable and affordable ICT and media services;<br />
-      To improve effective and efficient public service delivery; and <br />
-      To keep alive culture and tradition through ICT and media.
-    </div>
-    <hr class="line">
-    <div class="navigationcontent">
-      <div style="margin:5% 20%;">
-        <h5 class="uppercase font-bold mb-2.5 text-gray-800" style="font-size:22px">
-          <i class="fa fa-caret-right fa-2x mr-3" style="color:#ff6347"></i> ABOUT US</h5>
-        <h5 class="uppercase font-bold mb-2.5 text-gray-800">
-          <i class="fa fa-angle-right fa-2x mr-3" style="color:#ff6347"></i> <a href="{% url 'background' %}">Background</a></h5>
-        <h5 class="uppercase font-bold mb-2.5 text-gray-800">
-          <i class="fa fa-angle-right fa-2x mr-3" style="color:#ff6347"></i> <a href="{% url 'organogram' %}">organogram</a></h5>
-        <h5 class="uppercase font-bold mb-2.5 text-gray-800">
-          <i class="fa fa-angle-right fa-2x mr-3" style="color:#ff6347"></i> <a href="{% url 'whoiswho' %}">who is who</a></h5>
-      </div>
-    </div>
-    <hr class="line">
-  </section>
-  <section>
-    <div class="scroll-fixed">
-      <div class="sidebar">
-        <p style="font-size: 25px">INFORMATION AND DOWNLOADS</p>
-        <a href="{% url 'moicofficials' %}">For MoIC Officials</a><br />
-        <a href="{% url 'download' %}">Downloads</a><br />
-        <a href="{% url 'rstaservices' %}">RSTA Online Services</a><br />
-        <a href="{% url 'hrdecisions' %}">HR Decisions</a>
-      </div>
-      <div>
-        <div class="calendar" inline-datepicker data-date="auto"></div>
-      </div>
-    </div>
-  </section>
+    <section class="content">
+        <p class="topic">MINISTRY VISION, MISSION & OBJECTIVES</p>
+        <hr class="line">
+        <div class="vision">
+            <h1 class="sub_topic">VISION</h1>
+            <i class="fa fa-eye fa-2x" style="color: #ff6347"> </i>
+            Connecting the unconnected and establishing a harmonious knowledge
+            society.
+        </div>
+        <br/>
+        <div class="vision">
+            <h1 class="sub_topic">MISSION</h1>
+            <i class="fa fa-dot-circle-o fa-2x" style="color: #ff6347"> </i>
+            Promoting the development of reliable and sustainable information,
+            communications and transport networks and systems and facilitating the
+            provision of affordable and easier access to associated services,
+            particularly to meet the basic social needs and help improve living
+            standards of people in rural and far-flung communities of Bhutan, for the
+            ultimate purpose of making a meaningful contribution to Gross National
+            Happiness.
+        </div>
+        <br/>
+        <div class="vision">
+            <h1 class="sub_topic">OBJECTIVES</h1>
+            <i class="fa fa-eye fa-2x" style="color: #ff6347"> </i>
+            The Ministry’s objectives are: <br/>
+            To increase safe, reliable and affordable surface and air transport;<br/>
+            To enhance access to sustainable, green and inclusive public transport;
+            <br/>
+            To improve access to reliable and affordable ICT and media services;<br/>
+            To improve effective and efficient public service delivery; and <br/>
+            To keep alive culture and tradition through ICT and media.
+        </div>
+        <hr class="line">
+        <div class="navigationcontent">
+            <div style="margin:5% 20%;">
+                <h5 class="uppercase font-bold mb-2.5 text-gray-800" style="font-size:22px">
+                    <i class="fa fa-caret-right fa-2x mr-3" style="color:#ff6347"></i> ABOUT US</h5>
+                <h5 class="uppercase font-bold mb-2.5 text-gray-800">
+                    <i class="fa fa-angle-right fa-2x mr-3" style="color:#ff6347"></i> <a href="{% url 'background' %}">Background</a>
+                </h5>
+                <h5 class="uppercase font-bold mb-2.5 text-gray-800">
+                    <i class="fa fa-angle-right fa-2x mr-3" style="color:#ff6347"></i> <a href="{% url 'organogram' %}">organogram</a>
+                </h5>
+                <h5 class="uppercase font-bold mb-2.5 text-gray-800">
+                    <i class="fa fa-angle-right fa-2x mr-3" style="color:#ff6347"></i> <a href="{% url 'whoiswho' %}">who
+                    is who</a></h5>
+            </div>
+        </div>
+        <hr class="line">
+    </section>
+    <section>
+        <div class="scroll-fixed">
+            <div class="sidebar">
+                <p style="font-size: 25px">INFORMATION AND DOWNLOADS</p>
+                <a href="{% url 'moicofficials' %}">For MoIC Officials</a><br/>
+                <a href="{% url 'download' %}">Downloads</a><br/>
+                <a href="{% url 'rstaservices' %}">RSTA Online Services</a><br/>
+                <a href="{% url 'hrdecisions' %}">HR Decisions</a>
+            </div>
+            <div>
+                <div class="calendar" data-date="auto" inline-datepicker></div>
+            </div>
+        </div>
+    </section>
 </section>
 {% endblock content %}

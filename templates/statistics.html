@@ -92,130 +92,146 @@
   @media only screen and (max-width: 300px) {
     .prev, .next,.text {font-size: 11px}
   }
+
 </style>
 
 <section class="sec mt-12 ml-6">
-  <section class="acts">
-    <p class="topic">statistics</p>
-    <p class="content">Like in the past publications, this annual bulletin covers statistical data and information covering the ICT, Telecommunications, Media, Postal, Surface Transport and Civil Aviation sectors. The information has been compiled from various sectors, and MoIC wishes to thank all the agencies for their kind cooperation and support. The Annual Statistical Bulletin has been formatted for easy understanding and the information may be used freely for planning and other purposes. Every effort has been made to ensure consistency of the data with the Statistical Yearbook of Bhutan and other similar publications with additional statistical information added for quick analysis. For sectoral consistency, all are requested to use the data provided herein …..</p>
-    <hr class="line">
+    <section class="acts">
+        <p class="topic">statistics</p>
+        <p class="content">Like in the past publications, this annual bulletin covers statistical data and information
+            covering the ICT, Telecommunications, Media, Postal, Surface Transport and Civil Aviation sectors. The
+            information has been compiled from various sectors, and MoIC wishes to thank all the agencies for their kind
+            cooperation and support. The Annual Statistical Bulletin has been formatted for easy understanding and the
+            information may be used freely for planning and other purposes. Every effort has been made to ensure
+            consistency of the data with the Statistical Yearbook of Bhutan and other similar publications with
+            additional statistical information added for quick analysis. For sectoral consistency, all are requested to
+            use the data provided herein …..</p>
+        <hr class="line">
 
-    <p class="topic">INFO COMM STATISTICS :JULY 2021</p>
-    <div class="flex flex-wrap overflow-hidden" style="text-align: center;color: #959595;padding: 10px">
+        <p class="topic">INFO COMM STATISTICS :JULY 2021</p>
+        <div class="flex flex-wrap overflow-hidden" style="text-align: center;color: #959595;padding: 10px">
 
-      <div class="w-1/4 overflow-hidden sm:w-full md:w-1/4 lg:w-1/4 xl:w-1/4">
-        <div >
-          <i class="fa fa-globe fa-4x"></i>
-          <p style="font-weight: bold;font-size: 20px">720,169</p>
-          <p style="font-size: 12px">INTERNET</p>
-          <br>
-          <p style="font-size: 12px">SUBSCRIPTION</p>
+            <div class="w-1/4 overflow-hidden sm:w-full md:w-1/4 lg:w-1/4 xl:w-1/4">
+                <div>
+                    <i class="fa fa-globe fa-4x"></i>
+                    <p style="font-weight: bold;font-size: 20px">720,169</p>
+                    <p style="font-size: 12px">INTERNET</p>
+                    <br>
+                    <p style="font-size: 12px">SUBSCRIPTION</p>
+                </div>
+            </div>
+
+            <div class="w-1/4 overflow-hidden sm:w-full md:w-1/4 lg:w-1/4 xl:w-1/4">
+                <div>
+                    <i class="fa fa-phone fa-4x"></i>
+                    <p style="font-weight: bold;font-size: 20px">23,064</p>
+                    <p style="font-size: 12px">FIXED-TELEPHONE</p>
+                    <br>
+                    <p style="font-size: 12px">LINE-SUBSCRIPTION</p>
+                </div>
+            </div>
+
+            <div class="w-1/4 overflow-hidden sm:w-full md:w-1/4 lg:w-1/4 xl:w-1/4">
+                <div>
+                    <i class="fa fa-car fa-4x"></i>
+                    <p style="font-weight: bold;font-size: 20px">113,746</p>
+                    <p style="font-size: 12px">TOTAL CAR</p>
+                    <br>
+                    <p style="font-size: 12px">REGISTERED</p>
+                </div>
+            </div>
+
+            <div class="w-1/4 overflow-hidden sm:w-full md:w-1/4 lg:w-1/4 xl:w-1/4">
+                <div>
+                    <i class="fa fa-truck fa-4x"></i>
+                    <p style="font-weight: bold;font-size: 20px">124</p>
+                    <p style="font-size: 12px">CAR ACCIDENTS</p>
+                </div>
+            </div>
         </div>
-      </div>
+        <hr class="line">
 
-      <div class="w-1/4 overflow-hidden sm:w-full md:w-1/4 lg:w-1/4 xl:w-1/4">
-        <div >
-          <i class="fa fa-phone fa-4x"></i>
-          <p style="font-weight: bold;font-size: 20px">23,064</p>
-          <p style="font-size: 12px">FIXED-TELEPHONE</p>
-          <br>
-          <p style="font-size: 12px">LINE-SUBSCRIPTION</p>
+        <div class="slideshow-container">
+
+            <div class="mySlides fade">
+                <img src="{% static 'images/first-quarter.png' %}" style="width:100%">
+                <button class="contact" style="display: block; margin-left: auto; margin-right: auto"> Download Report
+                </button>
+            </div>
+
+            <div class="mySlides fade">
+                <img src="{% static 'images/second-quarter.png' %}" style="width:100%">
+                <button class="contact" style="display: block; margin-left: auto; margin-right: auto"> Download Report
+                </button>
+
+            </div>
+
+            <div class="mySlides fade">
+                <img src="{% static 'images/third-quarter.png' %}" style="width:100%">
+                <button class="contact" style="display: block; margin-left: auto; margin-right: auto"> Download Report
+                </button>
+            </div>
+
+            <a class="back" onclick="plusSlides(-1)">❮</a>
+            <a class="forward" onclick="plusSlides(1)">❯</a>
+
         </div>
-      </div>
+        <br>
 
-      <div class="w-1/4 overflow-hidden sm:w-full md:w-1/4 lg:w-1/4 xl:w-1/4">
-        <div >
-          <i class="fa fa-car fa-4x"></i>
-          <p style="font-weight: bold;font-size: 20px">113,746</p>
-          <p style="font-size: 12px">TOTAL CAR</p>
-          <br>
-          <p style="font-size: 12px">REGISTERED</p>
+        <p class="topic">Annual Info-Comm & Transport Statistical Bulletin</p>
+        <hr class="line">
+        {% for statistic in statistics %}
+        <div class="border">
+            <div class="flex flex-wrap overflow-hidden">
+                <div class="w-full overflow-hidden sm:w-1/2">
+                    <a href="#"><p class=content> {{ statistic.SI_No }}. {{ statistic.title }}</p></a>
+                </div>
+                <div class="w-full overflow-hidden sm:w-1/2">
+                    <i class="fa fa-envelope" style="float: right; padding: 0px 2px"></i>
+                    <i class="fa fa-plus" style="float: right; padding: 0px 2px"></i>
+                    <i class="fa fa-chain" style="float: right; padding: 0px 2px"></i>
+                </div>
+            </div>
         </div>
-      </div>
-
-      <div class="w-1/4 overflow-hidden sm:w-full md:w-1/4 lg:w-1/4 xl:w-1/4">
-        <div >
-          <i class="fa fa-truck fa-4x"></i>
-          <p style="font-weight: bold;font-size: 20px">124</p>
-          <p style="font-size: 12px">CAR ACCIDENTS</p>
-          </div>
-      </div>
-    </div>
-    <hr class="line">
-
-    <div class="slideshow-container">
-
-      <div class="mySlides fade">
-        <img src="{% static 'images/first-quarter.png' %}" style="width:100%">
-        <button class="contact" style="display: block; margin-left: auto; margin-right: auto"> Download Report </button>
-      </div>
-
-      <div class="mySlides fade">
-        <img src="{% static 'images/second-quarter.png' %}" style="width:100%">
-        <button class="contact" style="display: block; margin-left: auto; margin-right: auto"> Download Report </button>
-
-      </div>
-
-      <div class="mySlides fade">
-        <img src="{% static 'images/third-quarter.png' %}" style="width:100%">
-        <button class="contact" style="display: block; margin-left: auto; margin-right: auto"> Download Report </button>
-      </div>
-
-      <a class="back" onclick="plusSlides(-1)">❮</a>
-      <a class="forward" onclick="plusSlides(1)">❯</a>
-
-    </div>
-    <br>
-
-    <p class="topic">Annual Info-Comm & Transport Statistical Bulletin</p>
-    <hr class="line">
-    {% for statistic in statistics %}
-    <div class="border">
-      <div class="flex flex-wrap overflow-hidden">
-        <div class="w-full overflow-hidden sm:w-1/2">
-          <a href="#"><p class=content> {{ statistic.SI_No }}. {{ statistic.title }}</p> </a>
+        {% endfor %}
+        <hr class="line">
+        <div class="navigationcontent">
+            <div style="margin:5% 20%;">
+                <h5 class="uppercase font-bold mb-2.5 text-gray-800" style="font-size:22px">
+                    <i class="fa fa-caret-right fa-2x mr-3" style="color:#ff6347"></i> PUBLICATIONS</h5>
+                <h5 class="uppercase font-bold mb-2.5 text-gray-800">
+                    <i class="fa fa-angle-right fa-2x mr-3" style="color:#ff6347"></i> <a href="{% url 'policies' %}">Policies</a>
+                </h5>
+                <h5 class="uppercase font-bold mb-2.5 text-gray-800">
+                    <i class="fa fa-angle-right fa-2x mr-3" style="color:#ff6347"></i> <a
+                        href="{% url 'acts' %}">Acts</a></h5>
+                <h5 class="uppercase font-bold mb-2.5 text-gray-800">
+                    <i class="fa fa-angle-right fa-2x mr-3" style="color:#ff6347"></i> <a href="{% url 'rules' %}">Rules
+                    and Regulations</a></h5>
+                <h5 class="uppercase font-bold mb-2.5 text-gray-800">
+                    <i class="fa fa-angle-right fa-2x mr-3" style="color:#ff6347"></i> <a href="{% url 'guidelines' %}">Guidelines</a>
+                </h5>
+                <h5 class="uppercase font-bold mb-2.5 text-gray-800">
+                    <i class="fa fa-angle-right fa-2x mr-3" style="color:#ff6347"></i> <a href="{% url 'reports' %}">Reports</a>
+                </h5>
+            </div>
         </div>
-        <div class="w-full overflow-hidden sm:w-1/2" >
-          <i class="fa fa-envelope" style="float: right; padding: 0px 2px"></i>
-          <i class="fa fa-plus" style="float: right; padding: 0px 2px"></i>
-          <i class="fa fa-chain" style="float: right; padding: 0px 2px"></i>
+        <hr class="line">
+    </section>
+    <section>
+        <div class="scroll-fixed">
+            <div class="sidebar" style="font-weight:0px;">
+                <p style="font-size: 25px">INFORMATION AND DOWNLOADS</p>
+                <a href="{% url 'moicofficials' %}">For MoIC Officials</a><br/>
+                <a href="{% url 'download' %}">Downloads</a><br/>
+                <a href="{% url 'rstaservices' %}">RSTA Online Services</a><br/>
+                <a href="{% url 'hrdecisions' %}">HR Decisions</a>
+            </div>
+            <div>
+                <div class="calendar" data-date="auto" inline-datepicker></div>
+            </div>
         </div>
-      </div>
-    </div>
-    {% endfor %}
-    <hr class="line">
-    <div class="navigationcontent">
-      <div style="margin:5% 20%;">
-        <h5 class="uppercase font-bold mb-2.5 text-gray-800" style="font-size:22px">
-          <i class="fa fa-caret-right fa-2x mr-3" style="color:#ff6347"></i> PUBLICATIONS</h5>
-        <h5 class="uppercase font-bold mb-2.5 text-gray-800">
-        <i class="fa fa-angle-right fa-2x mr-3" style="color:#ff6347"></i> <a href="{% url 'policies' %}">Policies</a></h5>
-        <h5 class="uppercase font-bold mb-2.5 text-gray-800">
-          <i class="fa fa-angle-right fa-2x mr-3" style="color:#ff6347"></i> <a href="{% url 'acts' %}">Acts</a></h5>
-          <h5 class="uppercase font-bold mb-2.5 text-gray-800">
-          <i class="fa fa-angle-right fa-2x mr-3" style="color:#ff6347"></i> <a href="{% url 'rules' %}">Rules and Regulations</a></h5>
-          <h5 class="uppercase font-bold mb-2.5 text-gray-800">
-          <i class="fa fa-angle-right fa-2x mr-3" style="color:#ff6347"></i> <a href="{% url 'guidelines' %}">Guidelines</a></h5>
-        <h5 class="uppercase font-bold mb-2.5 text-gray-800">
-          <i class="fa fa-angle-right fa-2x mr-3" style="color:#ff6347"></i> <a href="{% url 'reports' %}">Reports</a></h5>
-      </div>
-    </div>
-    <hr class="line">
-  </section>
-  <section>
-    <div class="scroll-fixed">
-      <div class="sidebar" style="font-weight:0px;">
-        <p style="font-size: 25px">INFORMATION AND DOWNLOADS</p>
-        <a href="{% url 'moicofficials' %}">For MoIC Officials</a><br />
-        <a href="{% url 'download' %}">Downloads</a><br />
-        <a href="{% url 'rstaservices' %}">RSTA Online Services</a><br />
-        <a href="{% url 'hrdecisions' %}">HR Decisions</a>
-      </div>
-      <div>
-        <div class="calendar" inline-datepicker data-date="auto"></div>
-      </div>
-    </div>
-  </section>
+    </section>
 </section>
 
 <script>
@@ -245,6 +261,7 @@
     slides[slideIndex-1].style.display = "block";
     dots[slideIndex-1].className += " active";
   }
+
 </script>
 {% endblock content %}
 
