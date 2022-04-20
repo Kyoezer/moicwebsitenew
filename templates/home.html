@@ -223,14 +223,16 @@
                             <div class="block " id="tab-profile">
                                 {% for event in events %}
                                 <div style="border-left: 3px solid #d4ab2a; padding-left: 20px">
-                                    <p style="font-weight: bold">{{forloop.counter}}) <a
-                                            href="{% url 'detail' event.id %}"><span>{{ event.event_title }}</span></a>
+                                    <p style="font-weight: bold">{{forloop.counter}})<span>{{ event.event_title }}</span>
                                     </p>
-                                    <p style="color: #bababa;font-size: 12px">Published on: {{ event.pub_date }}</p>
+                                    <p style="color: #bababa;font-size: 12px">Published on: {{ event.pub_date }}
+                                        <i class="fa fa-eye"></i> {{event.total_views}} views
                                     <br>
-                                    {{event.event_description | safe | truncatechars:250}} <a
-                                        href="{% url 'detail' event.id %}">
-                                    <span style="color: #d4ab2a;font-size: 13px">Read More >>> </span></a>
+                                    {{event.event_description | safe | truncatechars:250}}
+                                    <form action="{% url 'post_detail' pk=event.id %}" method="get">
+                                        <input type="hidden" name="event-id" value="{{event.id}}">
+                                        <button type="submit"><span style="color: #d4ab2a;">Read more >>></span></button>
+                                    </form>
                                     <br>
                                 </div>
                                 <br>

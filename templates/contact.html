@@ -78,18 +78,25 @@
     </div>
     <hr class="line" />
     <b style="font-size: 30px">How Can We Help you?</b>
-    <form action="POST">
-      <p>If you don’t find what you need,fill out our Contact Form.</p>
-      <p>Your Name:</p>
-      <input type="text" class="inputcontent" />
-      <p>Your Email:</p>
-      <input type="email" class="inputcontent" />
-      <p>Subject:</p>
-      <input type="text" class="inputcontent" />
-      <p>Your Message:</p>
-      <textarea class="inputcontent"> </textarea>
+    <form action="" method="POST">
+      {% csrf_token %}
+<!--      <p>If you don’t find what you need,fill out our Contact Form.</p>-->
+<!--      <p>First Name:</p>-->
+<!--      <input type="text" class="inputcontent" name="first_name"/>-->
+
+<!--      <p>Last Name:</p>-->
+<!--      <input type="text" class="inputcontent" name="last_name"/>-->
+<!--      <p>Your Email:</p>-->
+<!--      <input type="email" class="inputcontent" name="email_address"/>-->
+<!--      <p>Your Message:</p>-->
+<!--      <textarea class="inputcontent" name="message"> </textarea>-->
+
+      <table>
+        {{form.as_table}}
+      </table>
+      <input class="submitbtn" type="submit">
+
     </form>
-    <button class="submitbtn">SUBMIT</button>
     <hr class="line" />
   </section>
   <section>
