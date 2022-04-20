@@ -12,6 +12,11 @@ from ckeditor.fields import RichTextField
 from ckeditor_uploader.fields import RichTextUploadingField
 import datetime
 
+class IpModel(models.Model):
+    ip = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.ip
 
 # Create your models here.
 class Category(models.Model):
@@ -110,6 +115,10 @@ class event(models.Model):
     pub_date = models.DateTimeField('date published')
     event_description = RichTextField()
     event_file = models.FileField(blank=True, null=True, upload_to='files')
+    views = models.ManyToManyField(IpModel, related_name="post_views", blank=True)
+
+    def total_views(self):
+            return self.views.count()
 
 
 # TENDER

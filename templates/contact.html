@@ -41,71 +41,77 @@
     font-size: 16px;
     cursor: pointer;
   }
-
 </style>
 <section class="background mt-12 ml-6">
-    <section class="history">
-        <div>
-            <h1 class="topic">Contact us</h1>
-            <hr class="line">
-            <p class="content">Ministry of Information & Communication</p>
-            <p class="content">PO Box 278, Chubachu</p>
-            <p class="content">Thimphu: Bhutan</p>
-            <br/>
-            <p class="content">Tele#00975-2- 321238/322567/322144</p>
-            <br/>
-            <p class="content">Email (Web Master) : ict@moic.gov.bt</p>
+  <section class="history">
+    <div>
+      <h1 class="topic">Contact us</h1>
+      <hr class="line">
+      <p class="content">Ministry of Information & Communication</p>
+      <p class="content">PO Box 278, Chubachu</p>
+      <p class="content">Thimphu: Bhutan</p>
+      <br />
+      <p class="content">Tele#00975-2- 321238/322567/322144</p>
+      <br />
+      <p class="content">Email (Web Master) : ict@moic.gov.bt</p>
+    </div>
+    <div
+      class="elementor-element elementor-element-1f132b7 elementor-widget elementor-widget-google_maps"
+      data-id="1f132b7"
+      data-element_type="widget"
+      data-widget_type="google_maps.default"
+    >
+      <div class="elementor-widget-container">
+        <div class="elementor-custom-embed">
+          <iframe
+            frameborder="0"
+            scrolling="no"
+            marginheight="0"
+            marginwidth="0"
+            src="https://maps.google.com/maps?q=MINISTRY%20OF%20INFORMATION%20AND%20COMMUNICATIONS&amp;t=m&amp;z=10&amp;output=embed&amp;iwloc=near"
+            title="MINISTRY OF INFORMATION AND COMMUNICATIONS"
+            aria-label="MINISTRY OF INFORMATION AND COMMUNICATIONS"
+            style="width: 100%; height: 400px"
+          ></iframe>
         </div>
-        <div
-                class="elementor-element elementor-element-1f132b7 elementor-widget elementor-widget-google_maps"
-                data-element_type="widget"
-                data-id="1f132b7"
-                data-widget_type="google_maps.default"
-        >
-            <div class="elementor-widget-container">
-                <div class="elementor-custom-embed">
-                    <iframe
-                            aria-label="MINISTRY OF INFORMATION AND COMMUNICATIONS"
-                            frameborder="0"
-                            marginheight="0"
-                            marginwidth="0"
-                            scrolling="no"
-                            src="https://maps.google.com/maps?q=MINISTRY%20OF%20INFORMATION%20AND%20COMMUNICATIONS&amp;t=m&amp;z=10&amp;output=embed&amp;iwloc=near"
-                            style="width: 100%; height: 400px"
-                            title="MINISTRY OF INFORMATION AND COMMUNICATIONS"
-                    ></iframe>
-                </div>
-            </div>
-        </div>
-        <hr class="line"/>
-        <b style="font-size: 30px">How Can We Help you?</b>
-        <form action="POST">
-            <p>If you don’t find what you need,fill out our Contact Form.</p>
-            <p>Your Name:</p>
-            <input class="inputcontent" type="text"/>
-            <p>Your Email:</p>
-            <input class="inputcontent" type="email"/>
-            <p>Subject:</p>
-            <input class="inputcontent" type="text"/>
-            <p>Your Message:</p>
-            <textarea class="inputcontent"> </textarea>
-        </form>
-        <button class="submitbtn">SUBMIT</button>
-        <hr class="line"/>
-    </section>
-    <section>
-        <div class="scroll-fixed">
-            <div class="sidebar">
-                <p style="font-size: 25px">INFORMATION AND DOWNLOADS</p>
-                <a href="{% url 'moicofficials' %}">For MoIC Officials</a><br/>
-                <a href="{% url 'download' %}">Downloads</a><br/>
-                <a href="{% url 'rstaservices' %}">RSTA Online Services</a><br/>
-                <a href="{% url 'hrdecisions' %}">HR Decisions</a>
-            </div>
-            <div>
-                <div class="calendar" data-date="auto" inline-datepicker></div>
-            </div>
-        </div>
-    </section>
+      </div>
+    </div>
+    <hr class="line" />
+    <b style="font-size: 30px">How Can We Help you?</b>
+    <form action="" method="POST">
+      {% csrf_token %}
+<!--      <p>If you don’t find what you need,fill out our Contact Form.</p>-->
+<!--      <p>First Name:</p>-->
+<!--      <input type="text" class="inputcontent" name="first_name"/>-->
+
+<!--      <p>Last Name:</p>-->
+<!--      <input type="text" class="inputcontent" name="last_name"/>-->
+<!--      <p>Your Email:</p>-->
+<!--      <input type="email" class="inputcontent" name="email_address"/>-->
+<!--      <p>Your Message:</p>-->
+<!--      <textarea class="inputcontent" name="message"> </textarea>-->
+
+      <table>
+        {{form.as_table}}
+      </table>
+      <input class="submitbtn" type="submit">
+
+    </form>
+    <hr class="line" />
+  </section>
+  <section>
+    <div class="scroll-fixed">
+      <div class="sidebar">
+        <p style="font-size: 25px">INFORMATION AND DOWNLOADS</p>
+        <a href="{% url 'moicofficials' %}">For MoIC Officials</a><br />
+        <a href="{% url 'download' %}">Downloads</a><br />
+        <a href="{% url 'rstaservices' %}">RSTA Online Services</a><br />
+        <a href="{% url 'hrdecisions' %}">HR Decisions</a>
+      </div>
+      <div>
+        <div class="calendar" inline-datepicker data-date="auto"></div>
+      </div>
+    </div>
+  </section>
 </section>
 {% endblock content %}

@@ -87,6 +87,12 @@
     margin: 0 auto;
     text-align: center;
   }
+  .pit{
+    border-style: solid;
+    border-radius: 1px;
+    border-color: black;
+  }
+
   h1 {
     font-weight: normal;
     letter-spacing: 0.125rem;
@@ -121,7 +127,6 @@
       font-size: calc(3.375rem * var(--smaller));
     }
   }
-
 
 
 </style>
@@ -189,88 +194,88 @@
 </section>
 <section class="sec mt-12 ml-6 ">
     <div class="grid lg:grid-cols-2 md:grid-cols-1">
-        <section class="events">
-            <div class="flex flex-wrap" id="tabs-id">
-                <div class="w-full">
-                    <ul class="flex mb-0 list-none flex-wrap pt-3 pb-4 flex-row">
-                        <li class="mr-2 last:mr-0 flex-auto text-center">
-                            <a class="text-xs font-bold uppercase px-16 py-3 shadow-lg rounded block leading-normal text-white bg-yellow-600"
-                               onclick="changeAtiveTab(event,'tab-profile')">
-                                <i class="fa fa-calendar text-base mr-1"></i> Events
-                            </a>
-                        </li>
-                        <li class="-mb-px mr-2 last:mr-0 flex-auto text-center">
-                            <a class="text-xs font-bold uppercase px-16 py-3 shadow-lg rounded block leading-normal text-yellow-600 bg-white"
-                               onclick="changeAtiveTab(event,'tab-settings')">
-                                <i class="fa fa-user-plus text-base mr-1"></i> Vacancy
-                            </a>
-                        </li>
-                        <li class="-mb-px mr-2 last:mr-0 flex-auto text-center">
-                            <a class="text-xs font-bold uppercase px-16 py-3 shadow-lg rounded block leading-normal text-yellow-600 bg-white"
-                               onclick="changeAtiveTab(event,'tab-tender')">
-                                <i class="fa fa-envelope text-base mr-1"></i> Tender
-                            </a>
-                        </li>
-                    </ul>
-                    <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded">
-                        <div class="px-4 py-5 flex-auto">
-                            <div class="tab-content tab-space ">
-                                <div class="block " id="tab-profile">
-                                    {% for event in events %}
-                                    <div style="border-left: 3px solid #d4ab2a; padding-left: 20px">
-                                        <p style="font-weight: bold">{{forloop.counter}}) <a
-                                                href="{% url 'detail' event.id %}"><span>{{ event.event_title }}</span></a>
-                                        </p>
-                                        <p style="color: #bababa;font-size: 12px">Published on: {{ event.pub_date }}</p>
-                                        <br>
-                                        {{event.event_description | safe | truncatechars:250}} <a
-                                            href="{% url 'detail' event.id %}">
-                                        <span style="color: #d4ab2a;font-size: 13px">Read More >>> </span></a>
-                                        <br>
-                                    </div>
+    <section class="events">
+        <div class="flex flex-wrap" id="tabs-id">
+            <div class="w-full">
+                <ul class="flex mb-0 list-none flex-wrap pt-3 pb-4 flex-row">
+                    <li class="mr-2 last:mr-0 flex-auto text-center">
+                        <a class="text-xs font-bold uppercase px-16 py-3 shadow-lg rounded block leading-normal text-white bg-yellow-600"
+                           onclick="changeAtiveTab(event,'tab-profile')">
+                            <i class="fa fa-calendar text-base mr-1"></i> Events
+                        </a>
+                    </li>
+                    <li class="-mb-px mr-2 last:mr-0 flex-auto text-center">
+                        <a class="text-xs font-bold uppercase px-16 py-3 shadow-lg rounded block leading-normal text-yellow-600 bg-white"
+                           onclick="changeAtiveTab(event,'tab-settings')">
+                            <i class="fa fa-user-plus text-base mr-1"></i> Vacancy
+                        </a>
+                    </li>
+                    <li class="-mb-px mr-2 last:mr-0 flex-auto text-center">
+                        <a class="text-xs font-bold uppercase px-16 py-3 shadow-lg rounded block leading-normal text-yellow-600 bg-white"
+                           onclick="changeAtiveTab(event,'tab-tender')">
+                            <i class="fa fa-envelope text-base mr-1"></i> Tender
+                        </a>
+                    </li>
+                </ul>
+                <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded">
+                    <div class="px-4 py-5 flex-auto">
+                        <div class="tab-content tab-space ">
+                            <div class="block " id="tab-profile">
+                                {% for event in events %}
+                                <div style="border-left: 3px solid #d4ab2a; padding-left: 20px">
+                                    <p style="font-weight: bold">{{forloop.counter}})<span>{{ event.event_title }}</span>
+                                    </p>
+                                    <p style="color: #bababa;font-size: 12px">Published on: {{ event.pub_date }}
+                                        <i class="fa fa-eye"></i> {{event.total_views}} views
                                     <br>
-                                    {% endfor %}
-                                </div>
-                                <div class="hidden" id="tab-settings">
-                                    {% for vacancy in vacancies %}
-                                    <div style="border-left: 3px solid #d4ab2a; padding-left: 20px">
-                                        <p style="font-weight: bold">{{forloop.counter}}) <a
-                                                href="{% url 'vacancy_detail' vacancy.id %}"><span>{{ vacancy.vacancy_title }}</span></a>
-                                        </p>
-                                        <p style="color: #bababa;font-size: 12px">Published on: {{ vacancy.pub_date
-                                            }}</p>
-                                        <br>
-                                        {{vacancy.vacancy_description | safe | truncatechars:150}} <a
-                                            href="{% url 'vacancy_detail' vacancy.id %}">
-                                        <span style="color: #d4ab2a;font-size: 13px">Read More >>> </span></a>
-                                        <br>
-                                    </div>
+                                    {{event.event_description | safe | truncatechars:250}}
+                                    <form action="{% url 'post_detail' pk=event.id %}" method="get">
+                                        <input type="hidden" name="event-id" value="{{event.id}}">
+                                        <button type="submit"><span style="color: #d4ab2a;">Read more >>></span></button>
+                                    </form>
                                     <br>
-                                    {% endfor %}
                                 </div>
-                                <div class="hidden" id="tab-tender">
-                                    {% for tender in tenders %}
-                                    <div style="border-left: 3px solid #d4ab2a; padding-left: 20px">
-                                        <p style="font-weight: bold">{{forloop.counter}}) <a
-                                                href="{% url 'tender_detail' tender.id %}"><span>{{ tender.tender_title }}</span></a>
-                                        </p>
-                                        <p style="color: #bababa;font-size: 12px">Published on: {{ tender.pub_date
-                                            }}</p>
-                                        <br>
-                                        {{tender.tender_description | safe | truncatechars:150}} <a
-                                            href="{% url 'tender_detail' tender.id %}">
-                                        <span style="color: #d4ab2a;font-size: 13px">Read More >>> </span></a>
-                                        <br>
-                                    </div>
+                                <br>
+                                {% endfor %}
+                            </div>
+                            <div class="hidden" id="tab-settings">
+                                {% for vacancy in vacancies %}
+                                <div style="border-left: 3px solid #d4ab2a; padding-left: 20px">
+                                    <p style="font-weight: bold">{{forloop.counter}}) <a
+                                            href="{% url 'vacancy_detail' vacancy.id %}"><span>{{ vacancy.vacancy_title }}</span></a>
+                                    </p>
+                                    <p style="color: #bababa;font-size: 12px">Published on: {{ vacancy.pub_date }}</p>
                                     <br>
-                                    {% endfor %}
+                                    {{vacancy.vacancy_description | safe | truncatechars:150}} <a
+                                        href="{% url 'vacancy_detail' vacancy.id %}">
+                                    <span style="color: #d4ab2a;font-size: 13px">Read More >>> </span></a>
+                                    <br>
                                 </div>
+                                <br>
+                                {% endfor %}
+                            </div>
+                            <div class="hidden" id="tab-tender">
+                                {% for tender in tenders %}
+                                <div style="border-left: 3px solid #d4ab2a; padding-left: 20px">
+                                    <p style="font-weight: bold">{{forloop.counter}}) <a
+                                            href="{% url 'tender_detail' tender.id %}"><span>{{ tender.tender_title }}</span></a>
+                                    </p>
+                                    <p style="color: #bababa;font-size: 12px">Published on: {{ tender.pub_date }}</p>
+                                    <br>
+                                    {{tender.tender_description | safe | truncatechars:150}} <a
+                                        href="{% url 'tender_detail' tender.id %}">
+                                    <span style="color: #d4ab2a;font-size: 13px">Read More >>> </span></a>
+                                    <br>
+                                </div>
+                                <br>
+                                {% endfor %}
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <script type="text/javascript">
+        </div>
+        <script type="text/javascript">
       function changeAtiveTab(event,tabID){
         let element = event.target;
         while(element.nodeName !== "A"){
@@ -367,7 +372,6 @@
           ));
       }, 0);
   })();
-
 
 
 </script>
