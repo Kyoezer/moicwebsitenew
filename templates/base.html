@@ -18,7 +18,7 @@
 <style>
 *{
 font-family:arial;
-line-spacing: 20%;
+word-spacing: 20%;
 }
   .navigationcontent{
     border-style: solid;
@@ -101,10 +101,6 @@ line-spacing: 20%;
           background-color: transparent;
           margin-left: 2rem;
         }
-<!--        .logo img{-->
-<!--          width: 3rem;-->
-<!--          max-width:100%;-->
-<!--        }-->
         .font_Text{
           font-size: 50px;
           color: #000000;
@@ -521,6 +517,8 @@ line-spacing: 20%;
                 height: auto;
                 padding-top: 2rem;
               }
+
+
   .numbers {
   font-family: sans-serif;
   font-size: 50px;
@@ -591,50 +589,20 @@ line-spacing: 20%;
   border-radius: 85%;
   width:57px;
 }
-
 #myBtn:hover {
-  background-color: #555;
+  background-color: #29b6f6;
 }
-.carousel-open:checked + .carousel-item {
-				position: static;
-				opacity: 100;
-			}
-			.carousel-item {
-				-webkit-transition: opacity 0.6s ease-out;
-				transition: opacity 0.6s ease-out;
-			}
-			#carousel-1:checked ~ .control-1,
-			#carousel-2:checked ~ .control-2,
-			#carousel-3:checked ~ .control-3 {
-				display: block;
-			}
-			.carousel-indicators {
-				list-style: none;
-				margin: 0;
-				padding: 0;
-				position: absolute;
-				bottom: 2%;
-				left: 0;
-				right: 0;
-				text-align: center;
-				z-index: 10;
-			}
-			#carousel-1:checked ~ .control-1 ~ .carousel-indicators li:nth-child(1) .carousel-bullet,
-			#carousel-2:checked ~ .control-2 ~ .carousel-indicators li:nth-child(2) .carousel-bullet,
-			#carousel-3:checked ~ .control-3 ~ .carousel-indicators li:nth-child(3) .carousel-bullet {
-			}
-
 
 </style>
 <section class="wrapper1">
     <section class="head">
         <section class="tophead">
             <div class="ml-12 w-16 md:w-40">
-                <a href="{% url 'home' %}"><img alt="logo" class="sm:my-4 md:my-8 lg:my-12"
+                <a href="{% url 'home' %}"><img alt="logo" class="sm:my-4 md:my-8"
                                                 src="{% static 'images/emblem-1.png' %}"></a>
             </div>
             <div class="textlogo sm:ml-4 md:mr-48">
-                <a href="{% url 'home' %}"><img alt="Moic Description" class="logoimg mt-6"
+                <a href="{% url 'home' %}"><img alt="Moic Description" class="logoimg mt-6 md:w-104"
                                                 src="{% static 'images/imagelogo.jpg' %}"></a>
             </div>
         </section>
@@ -708,18 +676,15 @@ line-spacing: 20%;
             <div class="right1">
                 <div class="subs">
                     <a href="{% url 'contact' %}">
-                        <button class="contact"> CONTACT US</button>
+                        <button class="contact hover:bg-blue-400 hover:text-white-800">CONTACT US</button>
                     </a>
                 </div>
-                <!--                <div class="searchbtn">-->
-                <!--                    <i class="fa fa-search fa-3x"></i>-->
-                <!--                </div>-->
                 <button class="searchbtn" id="search-btn">
-                    <i class="fa fa-search fa-3x"></i>
+                    <i class="fa fa-search fa-3x hover:text-blue-400"></i>
 
                 </button>
 
-                <div class="bg-black bg-opacity-50 absolute inset-0 hidden justify-center items-center" id="overlay">
+                <div class="bg-black bg-opacity-50 absolute inset-0 hidden justify-center items-center" id="overlay" style="z-index:10">
                     <div class="bg-gray-200 max-w-sm py-2 px-3 rounded shadow-xl text-gray-800">
                         <div class="flex justify-between items-center">
                             <h3>Type search keywords</h3>
@@ -765,7 +730,7 @@ line-spacing: 20%;
 <section class="call-icon">
     <span style="background-color: #f2f2f2; padding: 5px 20px; border-radius: 10px">Call Us</span>
     <a href="tel:9752324319">
-        <button style="background-color: #ff6347; padding: 15px 20px; border-radius: 50%; color: white; margin-right: 10px">
+        <button style=" padding: 15px 20px; border-radius: 50%; color: white; margin-right: 10px" class="contact hover:bg-blue-400 hover:text-white-800">
             <i class="fa fa-phone fa-2x"></i></button>
     </a>
 </section>
@@ -775,174 +740,242 @@ line-spacing: 20%;
 {% endblock content %}
 {% block footer %}
 <br>
-<hr>
+<hr>z
 <button id="myBtn" onclick="topFunction()" title="Go to top"><i class="fa fa-arrow-up"></i></button>
-<!-- Remove the container if you want to extend the Footer to full width. -->
 <section class="bubble mt-2">
-    <footer class="bg-gray-100 text-left lg:text-left ml-12">
+    <footer class="text-left lg:text-left ml-12" style="background-color:#121518">
         <div class="container p-6" style="text-align:left;">
             <div class="grid lg:grid-cols-4 md:grid-cols-2">
                 <div class="mb-6">
                     <div>
-                        <i class="fa fa-globe text-blue-500 pr-2" style="font-size: 25px"></i>
-                        <span>Bhutan Portal</span>
+                        <h5 class="font-bold mb-2.5 text-white text-lg">Quick Links</h5>
+                        <hr class="mb-4" style="border:1px solid white; width:30%">
+                        <a href=""><p class="text-slate-400 text-base mb-1 hover:text-red-500 hover:text-lg">Bhutan Portal</p></a>
+                        <a href="https://www.citizenservices.gov.bt/" target="_blank"><p
+                                class="text-slate-400 text-base mb-1 hover:text-red-500 hover:text-lg">Citizen Services</p></a>
+                        <a href="https://www.rcsc.gov.bt/en/" target="_blank"><p class="text-slate-400 text-base mb-1 hover:text-red-500 hover:text-lg">
+                            RCSC</p></a>
+                        <div class="container px-6 pt-6">
+                            <div class="flex justify-left mb-6">
+                                <a class="hover:text-red-500 hover:text-lg rounded-full border-2 border-white text-white leading-normal uppercase hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out w-9 h-9 m-1" href="#!"
+                                   type="button">
+                                    <svg aria-hidden="true"
+                                         class="w-2 h-full mx-auto"
+                                         data-icon="facebook-f"
+                                         data-prefix="fab"
+                                         focusable="false"
+                                         role="img"
+                                         viewBox="0 0 320 512"
+                                         xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                        <path
+                                                d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"
+                                                fill="currentColor"
+                                        ></path>
+                                    </svg>
+                                </a>
+
+                                <a class="hover:text-red-500 hover:text-lg rounded-full border-2 border-white text-white leading-normal uppercase hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out w-9 h-9 m-1" href="#!"
+                                   type="button">
+                                    <svg aria-hidden="true"
+                                         class="w-3 h-full mx-auto"
+                                         data-icon="twitter"
+                                         data-prefix="fab"
+                                         focusable="false"
+                                         role="img"
+                                         viewBox="0 0 512 512"
+                                         xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                        <path
+                                                d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"
+                                                fill="currentColor"
+                                        ></path>
+                                    </svg>
+                                </a>
+
+                                <a class="hover:text-red-500 hover:text-lg rounded-full border-2 border-white text-white leading-normal uppercase hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out w-9 h-9 m-1" href="#!"
+                                   type="button">
+                                    <svg aria-hidden="true"
+                                         class="w-3 h-full mx-auto"
+                                         data-icon="youtube"
+                                         data-prefix="fab"
+                                         focusable="false"
+                                         role="img"
+                                         viewBox="0 0 488 512"
+                                         xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                        <path
+                                                d="M488 261.8C488 403.3 391.1 504 248 504 110.8 504 0 393.2 0 256S110.8 8 248 8c66.8 0 123 24.5 166.3 64.9l-67.5 64.9C258.5 52.6 94.3 116.6 94.3 256c0 86.5 69.1 156.6 153.7 156.6 98.2 0 135-70.4 140.8-106.9H248v-85.3h236.1c2.3 12.7 3.9 24.9 3.9 41.4z"
+                                                fill="currentColor"
+                                        ></path>
+                                    </svg>
+                                </a>
+
+                                <a class="hover:text-red-500 hover:text-lg rounded-full border-2 border-white text-white leading-normal uppercase hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out w-9 h-9 m-1" href="#!"
+                                   type="button">
+                                    <svg aria-hidden="true"
+                                         class="w-3 h-full mx-auto"
+                                         data-icon="instagram"
+                                         data-prefix="fab"
+                                         focusable="false"
+                                         role="img"
+                                         viewBox="0 0 448 512"
+                                         xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                        <path
+                                                d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"
+                                                fill="currentColor"
+                                        ></path>
+                                    </svg>
+                                </a>
+
+                                <a class="hover:text-red-500 hover:text-lg rounded-full border-2 border-white text-white leading-normal uppercase hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out w-9 h-9 m-1" href="#!"
+                                   type="button">
+                                    <svg aria-hidden="true"
+                                         class="w-3 h-full mx-auto"
+                                         data-icon="linkedin-in"
+                                         data-prefix="fab"
+                                         focusable="false"
+                                         role="img"
+                                         viewBox="0 0 448 512"
+                                         xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                        <path
+                                                d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"
+                                                fill="currentColor"
+                                        ></path>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
                     </div>
-                    <br>
-                    <div>
-                        <a href="https://www.facebook.com/MoICBhutan"><i
-                                class="fa fa-facebook-square text-blue-500 pr-2" style="font-size: 25px"></i> <span>Facebook Page</span>
-                        </a></div>
                 </div>
                 <div class="mb-6" style="text-align:left;">
-                    <h5 class="uppercase font-bold mb-2.5 text-gray-800">Contact Us</h5>
-
-                    <div class="mb-6" style="text-align:left;">
-                        <div>
-                            <i class="fa fa-phone text-blue-500 pr-2" style="font-size: 25px"></i>
-                            <span>+975-02-322567</span>
-                            <br>
-                            <span style="margin-left: 32px">+975-02-321283</span>
-                        </div>
-                        <br>
-                        <div class="mb-6">
-                            <i class="fa fa-address-book text-blue-500 pr-2" style="font-size: 25px"></i> <span>P.O Box: 278</span>
-                        </div>
-                        <div class="mb-5">
-                        </div>
-
-                        <div>
-                            <i class="fa fa-envelope text-blue-500 pr-2" style="font-size: 25px"></i> <span>webmaster:ict@moic.gov.bt</span>
-                        </div>
-                    </div>
+                    <h5 class="font-bold mb-2.5 text-white text-lg">Contact Us</h5>
+                    <hr class="mb-4" style="border:1px solid white; width:30%">
+                    <p class="text-slate-400 text-base mb-1 hover:text-red-500 hover:text-lg"><i
+                            class="fa fa-map-marker text-slate-400 text-base hover:text-red-500 hover:text-lg">&nbsp;<a
+                            href="https://www.google.com/maps/place/Ministry+of+Information+and+Communications/@27.4751005,89.6299665,16z/data=!4m19!1m13!4m12!1m4!2m2!1d89.6339041!2d27.4712216!4e1!1m6!1m2!1s0x39e1941a1b18fb85:0x923afa3bd8bcaff6!2sministry+of+information+and+communication+bhutan+location!2m2!1d89.6343806!2d27.478991!3m4!1s0x39e1941a1b18fb85:0x923afa3bd8bcaff6!8m2!3d27.478991!4d89.6343806">Doebum
+                        Lam,Thimphu,Bhutan</i></p></a>
+                    <a href="tel:9752324319"><p class="text-slate-400 text-base mb-1 hover:text-red-500 hover:text-lg"><i
+                            class="fa fa-phone text-slate-400 text-base hover:text-red-500 hover:text-lg">&nbsp;+975-02-324319</i></p></a>
+                    <a href="mailto: ict@moic.gov.bt"><p class="text-slate-400 text-base mb-1 hover:text-red-500 hover:text-lg"><i
+                            class="fa fa-envelope text-slate-400 text-base hover:text-red-500 hover:text-lg">&nbsp;ict@moic.gov.bt</i></p></a>
+                    <p class="text-slate-400 text-base mb-1 hover:text-red-500 hover:text-lg"><i class="fa fa-clock-o text-slate-400 text-base hover:text-red-500 hover:text-lg">&nbsp;Mon
+                        - Fri, 9AM - 5PM</i></p>
                 </div>
 
                 <div class="mb-6" style="text-align:left;">
-                    <h5 class="uppercase font-bold mb-2.5 text-gray-800">
-                        <i class="fa fa-sitemap fa-2x text-blue-500 mr-3"></i> Post Categories</h5>
-
-                    <div class="mt-10">
-                        <label style="font-weight: bold; font-size: 15px;margin-bottom: 20px"> SELECT CATEGORY
-                            TYPE</label>
-                        <select class="mt-3 py-2 px-3" style="width: 70%;border-radius: 10px">
-                            <option>Select Category</option>
-                            <option value="Announcement">Announcement</option>
-                            <option value="Event">Event</option>
-                            <option value="Information">Information</option>
-                            <option value="Notification">Notification</option>
-                            <option value="Press Release">Press Release</option>
-                            <option value="Tender">Tender</option>
-                            <option value="Vacancy">Vacancy</option>
-                        </select>
-                    </div>
+                    <h5 class="font-bold mb-2.5 text-white text-lg">Site Map</h5>
+                    <hr class="mb-4" style="border:1px solid white; width:30%">
+                    <p class="text-slate-400 text-base mb-1 hover:text-red-500 hover:text-lg"><i class="fa fa-caret-right text-slate-400 text-base hover:text-red-500 hover:text-lg">&nbsp;About
+                        Us</i></p>
+                    <p class="text-slate-400 text-base mb-1 hover:text-red-500 hover:text-lg"><i class="fa fa-caret-right text-slate-400 text-base hover:text-red-500 hover:text-lg">&nbsp;Post
+                        Category</i></p>
+                    <p class="text-slate-400 text-base mb-1 hover:text-red-500 hover:text-lg"><i class="fa fa-caret-right text-slate-400 text-base hover:text-red-500 hover:text-lg">&nbsp;Archive</i>
+                    </p>
                 </div>
-
                 <div class="mb-6" style="text-align:left;">
-                    <h5 class="uppercase font-bold mb-2.5 text-gray-800">
-                        <i class="fa fa-file-zip-o fa-2x text-blue-500 mr-3"></i> Archive</h5>
-
-                    <div class="mt-10">
-                        <label style="font-weight: bold; font-size: 15px;margin-bottom: 20px"> SELECT MONTH</label>
-                        <select class="mt-3 py-2 px-3" style="width: 70%;border-radius: 10px">
-                            <option>Select Month</option>
-                            <option value="Announcement">January</option>
-                            <option value="February">February</option>
-                            <option value="March">March</option>
-                            <option value="April">April</option>
-                        </select>
+                    <h5 class="font-bold mb-2.5 text-white text-lg">Gallery</h5>
+                    <hr class="mb-4" style="border:1px solid white; width:30%">
+                    <div class="container grid grid-cols-3 gap-2 mx-auto">
+                        <div class="w-full rounded">
+                            <img alt="image" src="{% static 'images/lyonpo4.png' %}">
+                        </div>
+                        <div class="w-full rounded">
+                            <img alt="image" src="{% static 'images/background.jpg' %}">
+                          </div>
+                        <div class="w-full rounded">
+                            <img alt="image"
+                                 src="{% static 'images/lyonpo4.png' %}">
+                        </div>
+                        <div class="w-full rounded">
+                            <img alt="image"
+                                 src="{% static 'images/lyonpo4.png' %}">
+                        </div>
+                        <div class="w-full rounded">
+                            <img alt="image"
+                                 src="{% static 'images/lyonpo4.png' %}">
+                        </div>
+                        <div class="w-full rounded">
+                            <img alt="image"
+                                 src="{% static 'images/lyonpo4.png' %}">
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
         <div class="container p-6" style="text-align:left;">
-            <div class="grid lg:grid-cols-2 md:grid-cols-2">
-                <div style="padding: 2rem;">
-                    <h5 class="uppercase font-bold mb-2.5 text-gray-800">
-                        <i class="fa fa-map-marker fa-2x text-blue-500 mr-3"></i> Location</h5>
-                    <div class="elementor-widget-container">
-                        <div class="elementor-custom-embed">
-                            <iframe
-                                    aria-label="MINISTRY OF INFORMATION AND COMMUNICATIONS"
-                                    frameborder="0"
-                                    marginheight="0"
-                                    marginwidth="0"
-                                    scrolling="no"
-                                    src="https://maps.google.com/maps?q=MINISTRY%20OF%20INFORMATION%20AND%20COMMUNICATIONS&amp;t=m&amp;z=10&amp;output=embed&amp;iwloc=near"
-                                    style="width: 100%; height: 10rem"
-                                    title="MINISTRY OF INFORMATION AND COMMUNICATIONS"
-                            ></iframe>
-                            <p style="padding-top: 20px ;">
-                                <span>Doeboom Lam</span>
-                                <br>
-                                <span>Thimphu:Bhutan</span>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel relative  bg-transparent">
-                    <p class="sub_topic"><i class="fa fa-image text-blue-500 pr-2">&nbsp;</i>Image Gallery</p>
-                    <div class="carousel-inner relative overflow-hidden w-full" style="padding:1rem;">
-                        <!--Slide 1-->
-                        <input aria-hidden="true" checked="checked" class="carousel-open" hidden="" id="carousel-1"
-                               name="carousel" type="radio">
-                        <div class="carousel-item absolute opacity-0" style="height:50vh;">
-                            <p>{{ picture.image_description }}</p>
-                            <img alt="" src="{% static 'images/archieve1.jpg' %}">
-                        </div>
-                        <label class="prev control-1 w-10 h-10 ml-2 md:ml-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-blue-700 leading-tight text-center z-10 inset-y-0 left-0 my-auto"
-                               for="carousel-3">‹</label>
-                        <label class="next control-1 w-10 h-10 mr-2 md:mr-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-blue-700 leading-tight text-center z-10 inset-y-0 right-0 my-auto"
-                               for="carousel-2">›</label>
-                        <input aria-hidden="true" class="carousel-open" hidden="" id="carousel-2" name="carousel"
-                               type="radio">
-                        <div class="carousel-item absolute opacity-0" style="height:50vh;">
-                            <img alt="" src="{% static 'images/archieve2.jpeg' %}">
-                        </div>
-                        <label class="prev control-2 w-10 h-10 ml-2 md:ml-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-blue-700 leading-tight text-center z-10 inset-y-0 left-0 my-auto"
-                               for="carousel-1">‹</label>
-                        <label class="next control-2 w-10 h-10 mr-2 md:mr-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-blue-700 leading-tight text-center z-10 inset-y-0 right-0 my-auto"
-                               for="carousel-3">›</label>
-
-
-                        <input aria-hidden="true" class="carousel-open" hidden="" id="carousel-3" name="carousel"
-                               type="radio">
-                        <div class="carousel-item absolute opacity-0" style="height:50vh;">
-                            <img alt="" src="{% static 'images/archieve3.jpg' %}">
-                        </div>
-                        <label class="prev control-3 w-10 h-10 ml-2 md:ml-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-blue-700 leading-tight text-center z-10 inset-y-0 left-0 my-auto"
-                               for="carousel-2">‹</label>
-                        <label class="next control-3 w-10 h-10 mr-2 md:mr-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-blue-700 leading-tight text-center z-10 inset-y-0 right-0 my-auto"
-                               for="carousel-1">›</label>
-                        <ol class="carousel-indicators">
-                            <li class="inline-block mr-3">
-                                <label class="carousel-bullet cursor-pointer block text-4xl text-white hover:text-blue-700"
-                                       for="carousel-1">•</label>
-                            </li>
-                            <li class="inline-block mr-3">
-                                <label class="carousel-bullet cursor-pointer block text-4xl text-white hover:text-blue-700"
-                                       for="carousel-2">•</label>
-                            </li>
-                            <li class="inline-block mr-3">
-                                <label class="carousel-bullet cursor-pointer block text-4xl text-white hover:text-blue-700"
-                                       for="carousel-3">•</label>
-                            </li>
-                        </ol>
-
-                    </div>
-                </div>
+            <div class="grid lg:grid-cols-1 md:grid-cols-1">
             </div>
         </div>
+        <div>
+            <form action="">
 
-        <div class="text-gray-700 text-center p-4" style="background-color: #d4ab2a">
-            © 2022 Copyright:
-            <a class="text-gray-800" href="https://tailwind-elements.com/">Ministry of Information and Communication</a>
+                <div class="grid md:grid-cols-5 gird-cols-1 gap-4 flex justify-center items-center">
+                    <div class="md:mb-6">
+                    </div>
+                    <div class="md:mb-6">
+                        <input class="
+                form-control
+                block
+                w-80%
+                px-3
+                py-1.5
+                text-base
+                font-normal
+                text-gray-700
+                border border-solid border-gray-300
+                rounded
+                transition
+                ease-in-out
+                m-0
+                focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
+              " id="name"
+                               placeholder="Your Name"
+                               type="text"/>
+                    </div>
+                    <div class="md:mb-6">
+                        <input
+                                class="
+                form-control
+                block
+                w-80%
+                px-3
+                py-1.5
+                text-base
+                font-normal
+                text-gray-700
+                bg-white bg-clip-padding
+                border border-solid border-gray-300
+                rounded
+                transition
+                ease-in-out
+                m-0
+                focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
+              "
+                                id="email"
+                                placeholder="Your Email"
+                                type="text"/>
+                    </div>
+                    <div class="md:mr-auto mb-6">
+                        <button class="inline-block px-6 py-2 border-2 border-white text-white font-medium text-xs leading-tight uppercase rounded hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out"
+                                type="submit">
+                            Subscribe
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="text-white text-center p-4" style="background-color:black; margin:0% 25%">
+            ©Ministry of Information & Communication, 2022.
+            <p>All Rights Reserved</p>
         </div>
     </footer>
-
 </section>
-<!-- End of .container -->
 {% endblock footer %}
 <script>
-        window.addEventListener('DOMContentLoaded', () =>{
+        window.addListener('DOMContentLoaded', () =>{
             const overlay = document.querySelector('#overlay')
             const delBtn = document.querySelector('#search-btn')
             const closeBtn = document.querySelector('#close-modal')
@@ -974,6 +1007,7 @@ line-spacing: 20%;
       setInterval(thrid,4000)
       setInterval(fourth,5000)
 
+
 </script>
 <script>
   function first(){
@@ -992,15 +1026,6 @@ line-spacing: 20%;
   setInterval(second,4000)
   setInterval(thrid,3000)
   setInterval(fourth,2000)
-
-
-
-
-
-
-
-
-
 
 </script>
 <script>
@@ -1031,13 +1056,6 @@ function topFunction() {
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
 }
-
-
-
-
-
-
-
 
 </script>
 </body>

@@ -67,7 +67,7 @@
   <section class="department">
     <div class="doat1">
       <p class="topic">ROAD SAFETY AND TRANSPORT AUTHORITY</p>
-      <hr class="line">
+      <hr class="line" />
       <img
         src="{% static 'images/RSTA-Director.png' %}"
         alt="background image"
@@ -101,7 +101,7 @@
     </div>
     <br />
     <div class="doat1">
-            <p class="sub_topic">objectives</p>
+      <p class="sub_topic">objectives</p>
       <i class="fa fa-eye fa-2x" style="color: #ff6347"> </i> <br />
       1.Formulation of road transport roadmap, policies, regulatory framework
       and strategy documents <br />
@@ -271,28 +271,45 @@
       <div></div>
       <button class="fb">Facebook</button>
     </div>
-    <hr class="line">
+    <hr class="line" />
     <div class="navigationcontent">
-      <div style="margin:5% 20%;">
-        <h5 class="uppercase font-bold mb-2.5 text-gray-800" style="font-size:22px">
-          <i class="fa fa-caret-right fa-2x mr-3" style="color:#ff6347"></i> department</h5>
-        <h5 class="uppercase font-bold mb-2.5 text-gray-800">
-          <i class="fa fa-angle-right fa-2x mr-3" style="color:#ff6347"></i> <a href="{% url 'doat' %}">doat</a></h5>
-        <h5 class="uppercase font-bold mb-2.5 text-gray-800">
-          <i class="fa fa-angle-right fa-2x mr-3" style="color:#ff6347"></i> <a href="{% url 'ditt' %}">ditt</a></h5>
-        <h5 class="uppercase font-bold mb-2.5 text-gray-800">
-          <i class="fa fa-angle-right fa-2x mr-3" style="color:#ff6347"></i> <a href="{% url 'doim' %}">doim</a></h5>
+      <div style="margin: 5% 20%">
+        <h5
+          class="uppercase font-bold mb-2.5 text-gray-800"
+          style="font-size: 22px"
+        >
+          <i class="fa fa-caret-right fa-2x mr-3" style="color: #ff6347"></i>
+          department
+        </h5>
+        <h5
+          class="uppercase font-bold mb-2.5 text-gray-800 hover:text-lg hover:text-gray-600"
+        >
+          <i class="fa fa-angle-right fa-2x mr-3" style="color: #ff6347"></i>
+          <a href="{% url 'doat' %}">doat</a>
+        </h5>
+        <h5
+          class="uppercase font-bold mb-2.5 text-gray-800 hover:text-lg hover:text-gray-600"
+        >
+          <i class="fa fa-angle-right fa-2x mr-3" style="color: #ff6347"></i>
+          <a href="{% url 'ditt' %}">ditt</a>
+        </h5>
+        <h5
+          class="uppercase font-bold mb-2.5 text-gray-800 hover:text-lg hover:text-gray-600"
+        >
+          <i class="fa fa-angle-right fa-2x mr-3" style="color: #ff6347"></i>
+          <a href="{% url 'doim' %}">doim</a>
+        </h5>
       </div>
     </div>
-    <hr class="line">
+    <hr class="line" />
   </section>
   <section>
     <div class="scroll-fixed">
       <div class="sidebar">
         <p style="font-size: 25px">INFORMATION AND DOWNLOADS</p>
-        <a href="{% url 'moicofficials' %}">For MoIC Officials</a><br/>
-        <a href="{% url 'download' %}">Downloads</a><br/>
-        <a href="{% url 'rstaservices' %}">RSTA Online Services</a><br/>
+        <a href="{% url 'moicofficials' %}">For MoIC Officials</a><br />
+        <a href="{% url 'download' %}">Downloads</a><br />
+        <a href="{% url 'rstaservices' %}">RSTA Online Services</a><br />
         <a href="{% url 'hrdecisions' %}">HR Decisions</a>
       </div>
       <div>
