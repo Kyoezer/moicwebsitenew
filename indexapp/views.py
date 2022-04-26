@@ -41,14 +41,14 @@ def get_client_ip(request):
 class PostDetailView(DetailView):
     model = event
     context_object_name = 'obj'
+    # context_object_name = 'post'
     template_name = 'detail.html'
-
     def get(self, request, *args, **kwargs):
         self.object = self.get_object()
         context = self.get_context_data(object=self.object)
         ip = get_client_ip(self.request)
 
-        if IpModel.objects.filter(id=IpModel.objects.get(ip=ip).id).exists():
+        if IpModel.objects.filter(ip=ip).exists():
             event_id = request.GET.get('event-id')
             Event = event.objects.get(pk=event_id)
             Event.views.add(IpModel.objects.get(ip=ip))
@@ -57,9 +57,5 @@ class PostDetailView(DetailView):
             event_id = request.GET.get('event-id')
             Event = event.objects.get(pk=event_id)
             Event.views.add(IpModel.objects.get(ip=ip))
-        detail(request, event.objects.get(pk=event_id).id)
+            detail(request, event.objects.get(pk=event_id).id)
         return self.render_to_response(context)
-
-
-    
-

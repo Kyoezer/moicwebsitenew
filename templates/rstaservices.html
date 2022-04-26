@@ -51,6 +51,7 @@
     padding: 5px;
   }
 
+
 </style>
 
 <section class="sec mt-12 ml-6">
@@ -73,69 +74,71 @@
             <tbody>
             <tr>
                 <td>1.</td>
-                <td><a href="https://eralis.rsta.gov.bt/public/serviceredirection.html?q=view_application_status"
-                       target="_blank">Track Application Status/Generate Online Payment Receipts</a></td>
+                <td><a class="hover:text-lg"
+                       href="https://eralis.rsta.gov.bt/public/serviceredirection.html?q=view_application_status" target="_blank">Track Application Status/Generate Online Payment
+                    Receipts</a></td>
             </tr>
             <tr>
                 <td>2.</td>
-                <td><a href="">Vehicle Ownership Transfer</a></td>
+                <td><a class="hover:text-lg" href="">Vehicle Ownership Transfer</a></td>
             </tr>
             </tbody>
             <tr>
                 <td>3.</td>
-                <td><a href="https://eralis.rsta.gov.bt/public/serviceredirection.html?q=search_learner_dtls"
-                       target="_blank">Book Driving Test</a></td>
+                <td><a class="hover:text-lg"
+                       href="https://eralis.rsta.gov.bt/public/serviceredirection.html?q=search_learner_dtls" target="_blank" class="hover:text-lg">Book Driving Test</a></td>
             </tr>
             <tr>
                 <td>4.</td>
-                <td><a href="https://eralis.rsta.gov.bt/public/serviceredirection.html?q=payfine" target="_blank">Pay
+                <td><a class="hover:text-lg" href="https://eralis.rsta.gov.bt/public/serviceredirection.html?q=payfine"
+                       target="_blank">Pay
                     Fine for the Traffic Offence</a></td>
             </tr>
             <tr>
                 <td>5.</td>
                 <td><a href="https://eralis.rsta.gov.bt/public/serviceredirection.html?q=vehicle_renewal_service"
-                       target="_blank">Renew Vehicle Registration Certificate</a></td>
+                       target="_blank" class="hover:text-lg">Renew Vehicle Registration Certificate</a></td>
             </tr>
             <tr>
                 <td>6.</td>
                 <td>
                     <a href="https://eralis.rsta.gov.bt/public/serviceredirection.html?q=vehicle_search_form&form_type=vehicle_duplication"
-                       target="_blank">Replace Vehicle Registration Certificate</a></td>
+                       target="_blank" class="hover:text-lg">Replace Vehicle Registration Certificate</a></td>
             </tr>
             <tr>
                 <td>7.</td>
                 <td>
                     <a href="https://eralis.rsta.gov.bt/public/serviceredirection.html?q=vehicle_search_form&form_type=vehicle_fitness"
-                       target="_blank">Renew Road Worthiness Certificate (Fitness)</a></td>
+                       target="_blank" class="hover:text-lg">Renew Road Worthiness Certificate (Fitness)</a></td>
             </tr>
             <tr>
                 <td>8.</td>
                 <td>
                     <a href="https://eralis.rsta.gov.bt/public/serviceredirection.html?q=get_license_information&form_type=renew_driving_license"
-                       target="_blank">Renew Driving License</a></td>
+                       target="_blank" class="hover:text-lg">Renew Driving License</a></td>
             </tr>
             <tr>
                 <td>9.</td>
                 <td>
                     <a href="https://eralis.rsta.gov.bt/public/serviceredirection.html?q=get_license_information&form_type=driving_license_duplication"
-                       target="_blank">Replace Driving License</a></td>
+                       target="_blank" class="hover:text-lg">Replace Driving License</a></td>
             </tr>
             <tr>
                 <td>10.</td>
                 <td>
                     <a href="https://eralis.rsta.gov.bt/public/serviceredirection.html?q=renew_learner_search&form_type=renew_learner_search"
-                       target="_blank">Renew Learner License</a></td>
+                       target="_blank" class="hover:text-lg">Renew Learner License</a></td>
             </tr>
             <tr>
                 <td>11.</td>
                 <td>
                     <a href="https://eralis.rsta.gov.bt/public/serviceredirection.html?q=renew_learner_search&form_type=learner_license_duplicate"
-                       target="_blank">Replace Learner License</a></td>
+                       target="_blank" class="hover:text-lg">Replace Learner License</a></td>
             </tr>
             <tr>
                 <td>12.</td>
                 <td><a href="https://docs.google.com/document/d/1tQGmR50HR0xI2WC4PytRG-DGuq1Vc5ZLwIqluWGQcUs/edit"
-                       target="_blank">Driving Test Schedule</a></td>
+                       target="_blank" class="hover:text-lg">Driving Test Schedule</a></td>
             </tr>
         </table>
         <hr class="line">
@@ -143,14 +146,14 @@
     <section>
         <div class="scroll-fixed">
             <div class="sidebar">
-                <p style="font-size: 25px">INFORMATION AND DOWNLOADS</p>
-                <a href="{% url 'moicofficials' %}">For MoIC Officials</a><br/>
-                <a href="{% url 'download' %}">Downloads</a><br/>
-                <a href="{% url 'rstaservices' %}">RSTA Online Services</a><br/>
-                <a href="{% url 'hrdecisions' %}">HR Decisions</a>
+                <p style="font-size: 1.1875em">INFORMATION AND DOWNLOADS</p>
+                <a class="hover:text-lg" href="{% url 'moicofficials' %}">For MoIC Officials</a><br/>
+                <a class="hover:text-lg" href="{% url 'download' %}">Downloads</a><br/>
+                <a class="hover:text-lg" href="{% url 'rstaservices' %}">RSTA Online Services</a><br/>
+                <a class="hover:text-lg" href="{% url 'hrdecisions' %}">HR Decisions</a>
             </div>
             <div>
-                <div class="calendar" data-date="auto" inline-datepicker></div>
+                <div class="calendar lg:w-10/14" data-date="auto" inline-datepicker></div>
             </div>
         </div>
     </section>

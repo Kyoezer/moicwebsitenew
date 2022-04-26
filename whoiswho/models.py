@@ -3,10 +3,12 @@ from django.db import models
 from ckeditor.fields import RichTextField
 from ckeditor_uploader.fields import RichTextUploadingField
 
+
 # Create your models here.
 # STAFF PROFILE OF THE MINISTRY
 class top_title(models.Model):
     top_title = models.CharField(max_length=300)
+
 
 # OFFICE OF THE MINISTER
 class office_of_minister(models.Model):

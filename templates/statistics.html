@@ -225,7 +225,7 @@
     <div class="border">
       <div class="flex flex-wrap overflow-hidden">
         <div class="w-full overflow-hidden sm:w-1/2">
-          <a href="#"
+          <a href="{{ statistic.attachment.url }}"
             ><p class="content">
               {{ statistic.SI_No }}. {{ statistic.title }}
             </p></a
@@ -285,17 +285,17 @@
   </section>
   <section>
     <div class="scroll-fixed">
-      <div class="sidebar" style="font-weight: 0px">
-        <p style="font-size: 25px">INFORMATION AND DOWNLOADS</p>
-        <a href="{% url 'moicofficials' %}">For MoIC Officials</a><br />
-        <a href="{% url 'download' %}">Downloads</a><br />
-        <a href="{% url 'rstaservices' %}">RSTA Online Services</a><br />
-        <a href="{% url 'hrdecisions' %}">HR Decisions</a>
-      </div>
-      <div>
-        <div class="calendar" data-date="auto" inline-datepicker></div>
-      </div>
-    </div>
+            <div class="sidebar">
+                <p style="font-size: 1.1875em">INFORMATION AND DOWNLOADS</p>
+                <a href="{% url 'moicofficials' %}" class="hover:text-lg">For MoIC Officials</a><br/>
+                <a href="{% url 'download' %}" class="hover:text-lg">Downloads</a><br/>
+                <a href="{% url 'rstaservices' %}" class="hover:text-lg">RSTA Online Services</a><br/>
+                <a href="{% url 'hrdecisions' %}" class="hover:text-lg">HR Decisions</a>
+            </div>
+            <div>
+                <div class="calendar lg:w-10/14" data-date="auto" inline-datepicker></div>
+            </div>
+        </div>
   </section>
 </section>
 

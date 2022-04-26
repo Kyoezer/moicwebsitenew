@@ -16,8 +16,14 @@ def acts(request):
 
 
 def rules(request):
-    rules = rules_and_regulation.objects.all()
+    rules = rule.objects.all()
     context = {'rules': rules}
+    return render(request, 'rules.html', context)
+
+
+def regulations(request):
+    regulations = regulation.objects.all()
+    context = {'regulations': regulations}
     return render(request, 'rules.html', context)
 
 

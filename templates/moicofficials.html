@@ -63,23 +63,23 @@
             <tbody>
             <tr>
                 <td>1.</td>
-                <td><a href="http://172.16.161.12/las/" target="_blank">Take Attendance</a></td>
+                <td><a href="http://172.16.161.12/las/" target="_blank" class="hover:text-lg">Take Attendance</a></td>
             </tr>
             <tr>
                 <td>2.</td>
-                <td><a href="http://las.moic.gov.bt/leave/" target="_blank">Request Leave</a></td>
+                <td><a href="http://las.moic.gov.bt/leave/" target="_blank" class="hover:text-lg">Request Leave</a></td>
             </tr>
             <tr>
                 <td>3.</td>
                 <td>
                     <a href="https://docs.google.com/a/moic.gov.bt/forms/d/e/1FAIpQLSdgROdNnr8zKyw9T7kmn_OA_D_SWf-LXLCIAKHzsd_JhnwHHA/viewform"
-                       target="_blank">ICT Help Desk and Support</a></td>
+                       target="_blank" class="hover:text-lg">ICT Help Desk and Support</a></td>
             </tr>
             <tr>
                 <td>4.</td>
                 <td>
                     <a href="https://docs.google.com/spreadsheets/d/1JbW8V2k9X7Mp5efu0dt2q9xEngEMSBjM0WFNxnjxTyY/edit#gid=0"
-                       target="_blank">Conference Hall Bookings</a></td>
+                       target="_blank" class="hover:text-lg">Conference Hall Bookings</a></td>
             </tr>
             </tbody>
         </table>
@@ -88,14 +88,14 @@
     <section>
         <div class="scroll-fixed">
             <div class="sidebar">
-                <p style="font-size: 25px">INFORMATION AND DOWNLOADS</p>
-                <a href="{% url 'moicofficials' %}">For MoIC Officials</a><br/>
-                <a href="{% url 'download' %}">Downloads</a><br/>
-                <a href="{% url 'rstaservices' %}">RSTA Online Services</a><br/>
-                <a href="{% url 'hrdecisions' %}">HR Decisions</a>
+                <p style="font-size: 1.1875em">INFORMATION AND DOWNLOADS</p>
+                <a href="{% url 'moicofficials' %}" class="hover:text-lg">For MoIC Officials</a><br/>
+                <a href="{% url 'download' %}" class="hover:text-lg">Downloads</a><br/>
+                <a href="{% url 'rstaservices' %}" class="hover:text-lg">RSTA Online Services</a><br/>
+                <a href="{% url 'hrdecisions' %}" class="hover:text-lg">HR Decisions</a>
             </div>
             <div>
-                <div class="calendar" data-date="auto" inline-datepicker></div>
+                <div class="calendar lg:w-10/14" data-date="auto" inline-datepicker></div>
             </div>
         </div>
     </section>

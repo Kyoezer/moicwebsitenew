@@ -44,14 +44,14 @@
 <section class="sec mt-12 ml-6">
   <section class="acts">
     <p class="topic">Rules and regulations</p>
-    <p class="content">Lorem Ipsum</p>
+    <p class="content">The  rules and regulations listed here are related to Transport (RSTA & DoAT), ICT (DITT) and Media (DoIM) …..</p>
     <hr class="line" />
     <p class="topic">rules</p>
     {% for rule in rules %}
     <div class="border">
       <div class="flex flex-wrap overflow-hidden">
         <div class="w-full overflow-hidden sm:w-1/2">
-          <a href="#"> {{ rule.SI_No }}. {{ rule.title }} </a>
+          <a href="{{ rule.attachment.url }}"> {{ rule.SI_No }}. {{ rule.title }} </a>
         </div>
         <div class="w-full overflow-hidden sm:w-1/2">
           <i class="fa fa-envelope" style="float: right; padding: 0px 2px"></i>
@@ -62,6 +62,23 @@
     </div>
     {% endfor %}
     <hr class="line" />
+    <p class="topic">regulations</p>
+    {% for rule in regulations %}
+    <div class="border">
+      <div class="flex flex-wrap overflow-hidden">
+        <div class="w-full overflow-hidden sm:w-1/2">
+          <a href="{{ rule.attachment.url }}"> {{ rule.SI_No }}. {{ rule.title }} </a>
+        </div>
+        <div class="w-full overflow-hidden sm:w-1/2">
+          <i class="fa fa-envelope" style="float: right; padding: 0px 2px"></i>
+          <i class="fa fa-plus" style="float: right; padding: 0px 2px"></i>
+          <i class="fa fa-chain" style="float: right; padding: 0px 2px"></i>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+    <hr class="line">
+
     <div class="navigationcontent">
       <div style="margin: 5% 20%">
         <h5
@@ -107,17 +124,17 @@
   </section>
   <section>
     <div class="scroll-fixed">
-      <div class="sidebar">
-        <p style="font-size: 25px">INFORMATION AND DOWNLOADS</p>
-        <a href="{% url 'moicofficials' %}">For MoIC Officials</a><br />
-        <a href="{% url 'download' %}">Downloads</a><br />
-        <a href="{% url 'rstaservices' %}">RSTA Online Services</a><br />
-        <a href="{% url 'hrdecisions' %}">HR Decisions</a>
-      </div>
-      <div>
-        <div class="calendar" data-date="auto" inline-datepicker></div>
-      </div>
-    </div>
+            <div class="sidebar">
+                <p style="font-size: 1.1875em">INFORMATION AND DOWNLOADS</p>
+                <a href="{% url 'moicofficials' %}" class="hover:text-lg">For MoIC Officials</a><br/>
+                <a href="{% url 'download' %}" class="hover:text-lg">Downloads</a><br/>
+                <a href="{% url 'rstaservices' %}" class="hover:text-lg">RSTA Online Services</a><br/>
+                <a href="{% url 'hrdecisions' %}" class="hover:text-lg">HR Decisions</a>
+            </div>
+            <div>
+                <div class="calendar lg:w-10/14" data-date="auto" inline-datepicker></div>
+            </div>
+        </div>
   </section>
 </section>
 {% endblock content %}
