@@ -1,13 +1,30 @@
 {% extends 'base.html' %} {% block content %} {% load static %}
 <style>
   .history {
-    width: 680px;
-    padding-left: 55px;
+    width: 800px;
+    padding-left: 5px;
+    z-index:35;
+  }
+  @media(max-width : 500px){
+  .history{
+    width:330px;
+    padding-left:0px;
+  }
   }
   .background {
     background-color: transparent;
     display: grid;
     grid-template-areas: "history info";
+  }
+  @media (max-width : 500px){
+  .background {
+    background-color: transparent;
+    padding-left: 0px;
+    width: 400px;
+    padding-top: 6em;
+    display: grid;
+    grid-template-areas: "history info";
+  }
   }
 
   .content {
@@ -17,12 +34,25 @@
     letter-spacing: normal;
     text-align: justify;
   }
+
   .line {
     border: 1px solid #d4ab2a;
     margin: 20px 0px;
   }
+  .pd{
+  padding-left:12px;
+  }
+  @media(max-width:500px){
+  .pd{
+  padding-left:3px;
+  }
+  }
 </style>
-<section class="background mt-12 ml-6">
+<div class="pd">
+
+<section class="background mt-12 ">
+  <div class="grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-1">
+    <div class="lg:w-full sm:w-1/3 md:w-full">
   <section class="history">
     <div>
       <p class="topic">History</p>
@@ -52,7 +82,7 @@
       <br />
       <!-- component -->
       <div class="container bg-gray-100 mx-auto w-full h-full">
-        <div class="relative wrap overflow-hidden p-10 h-full">
+        <div class="relative wrap overflow-hidden p-4 h-full">
           <div
             class="border-2-2 absolute border-opacity-20 border-gray-700 h-full border"
             style="left: 50%"
@@ -65,37 +95,29 @@
             <div
               class="z-20 flex items-center order-1 bg-gray-800 shadow-xl w-16 h-16 rounded-full"
             >
-              <h1 class="mx-auto font-semibold text-lg text-white text-center">
+              <h1 class="mx-auto font-semibold lg:text-lg sm:text-sm text-white text-center">
                 July 1995
               </h1>
             </div>
-            <div
-              class="order-1 bg-green-400 rounded-lg shadow-xl w-5/12 px-6 py-4"
-            >
-              <h3 class="mb-3 font-bold text-gray-800 text-xl">
+            <div class="order-1 bg-green-400 rounded-lg shadow-xl w-5/12 px-6 py-4">
+              <h3 class="mb-3 font-bold text-gray-800 lg:text-xl sm:text-sm">
                 Ministry Founded
               </h3>
             </div>
           </div>
-
-          <!-- left timeline -->
-          <div
-            class="mb-8 flex justify-between flex-row-reverse items-center w-full left-timeline"
-          >
+          <div class="mb-8 flex justify-between flex-row-reverse items-center w-full left-timeline">
             <div class="order-1 w-5/12"></div>
-            <div
-              class="z-20 flex items-center order-1 bg-gray-800 shadow-xl w-16 h-16 rounded-full"
-            >
-              <h1 class="mx-auto text-white font-semibold text-lg">2003</h1>
+            <div class="z-20 flex items-center order-1 bg-gray-800 shadow-xl w-16 h-16 rounded-full">
+              <h1 class="mx-auto text-white font-semibold lg:text-lg sm:text-sm">2003</h1>
             </div>
             <div
-              class="order-1 bg-red-400 rounded-lg shadow-xl w-5/12 px-6 py-4"
+              class="order-1 bg-red-400 rounded-lg shadow-xl w-5/12 px-2 py-4"
             >
-              <h3 class="mb-3 font-bold text-white text-xl">
+              <h3 class="mb-3 font-bold text-white lg:text-xl sm:text-sm text-justify">
                 Ministry Renamed & Bifurcated
               </h3>
               <p
-                class="text-sm font-medium leading-snug tracking-wide text-white text-opacity-100"
+                class="lg:text:xl sm:text-sm leading-snug tracking-wide text-white text-opacity-100"
               >
                 In 2003 Ministry of Communication was bifurcated to Ministry of
                 Information and Communication and Ministry of Works and Human
@@ -141,7 +163,7 @@
               <h1 class="mx-auto text-white font-semibold text-lg">2019</h1>
             </div>
             <div
-              class="order-1 bg-red-400 rounded-lg shadow-xl w-5/12 px-6 py-4"
+              class="order-1 bg-red-400 rounded-lg shadow-xl w-5/12 px-2 py-4"
             >
               <h3 class="mb-3 font-bold text-white text-xl">BCAA Delink</h3>
               <p
@@ -160,7 +182,7 @@
       <br />
       <!-- component -->
       <div class="container bg-gray-100 mx-auto w-full h-full">
-        <div class="relative wrap overflow-hidden p-10 h-full">
+        <div class="relative wrap overflow-hidden p-4 h-full">
           <div
             class="border-2-2 absolute border-opacity-20 border-gray-700 h-full border"
             style="left: 50%"
@@ -273,7 +295,7 @@
       <br />
       <!-- component -->
       <div class="container bg-gray-100 mx-auto w-full h-full">
-        <div class="relative wrap overflow-hidden p-10 h-full">
+        <div class="relative wrap overflow-hidden p-4 h-full">
           <div
             class="border-2-2 absolute border-opacity-20 border-gray-700 h-full border"
             style="left: 50%"
@@ -412,8 +434,12 @@
     </div>
     <hr class="line" />
   </section>
-  <section>
-<div class="scroll-fixed">
+    </div>
+    <div></div>
+    <div class="lg:w-full sm:w-1/3 md:w-full">
+
+    <div class="scroll-fixed">
+      <section>
             <div class="sidebar">
                 <p style="font-size: 1.1875em">INFORMATION AND DOWNLOADS</p>
                 <a href="{% url 'moicofficials' %}" class="hover:text-lg">For MoIC Officials</a><br/>
@@ -424,7 +450,13 @@
             <div>
                 <div class="calendar lg:w-10/14" data-date="auto" inline-datepicker></div>
             </div>
+        </section>
         </div>
-  </section>
+    </div>
+  </div>
 </section>
+
+
+
+</div>
 {% endblock content %}

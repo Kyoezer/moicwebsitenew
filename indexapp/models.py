@@ -102,6 +102,20 @@ class vacancie(models.Model):
 # event
 class event(models.Model):
     event_title = models.CharField(max_length=100)
+    CATEGORY = (
+        ('announcement', 'Announcement'),
+        ('event', 'Event'),
+        ('information', 'Information'),
+        ('notifications', 'Notifications'),
+    )
+    category = models.CharField(choices=CATEGORY, max_length=100, null='True', blank='True')
+
+    STATUS = (
+        ('draft', 'Draft'),
+        ('publish', 'Publish'),
+    )
+    status = models.CharField(choices=STATUS, max_length=100, null='True', blank='True')
+
     event_img = models.ImageField(blank=True, upload_to='pics')
     event_img2 = models.ImageField(blank=True, upload_to='pics')
     event_img3 = models.ImageField(blank=True, upload_to='pics')

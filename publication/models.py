@@ -123,13 +123,13 @@ class statistic(models.Model):
     top_title = models.CharField(max_length=200, blank=True)
     content = RichTextField(blank=True)
     # INFO COMM STATISTICS
-    info_icon = models.ImageField(blank=True,upload_to='pics')
+    info_icon = models.ImageField(blank=True, upload_to='pics')
     info_count = models.IntegerField(blank=True, null=True)
     info_title = models.CharField(max_length=200, blank=True)
     info_info = models.CharField(max_length=200, blank=True)
 
     # slider
-    slider_img = models.ImageField(blank=True,upload_to='pics')
+    slider_img = models.ImageField(blank=True, upload_to='pics')
     slider_title = models.CharField(max_length=200, blank=True)
     slider_name = models.CharField(max_length=200, blank=True)
     report_report = models.CharField(max_length=200, blank=True)
@@ -145,6 +145,6 @@ class statistic(models.Model):
     email = models.CharField(max_length=400, blank=True)
     telegram = models.CharField(max_length=400, blank=True)
 
- # title of address link
+    # title of address link
     link_title = models.CharField(max_length=100, blank=True)
     link_name = models.CharField(max_length=100, blank=True)

@@ -1,36 +1,57 @@
 {% extends 'base.html' %} {% block content %} {% load static %}
 <style>
-  .department {
+  .history {
+    width: 800px;
+    padding-left: 5px;
+    z-index:35;
+  }
+  @media(max-width : 500px){
+  .history{
+    width:350px;
+    padding-left:0px;
+  }
+  }
+  .background {
+    background-color: transparent;
+    display: grid;
+    grid-template-areas: "history info";
+  }
+  @media (max-width : 500px){
+  .background {
+    background-color: transparent;
+    padding-left: 0px;
+    width: 400px;
+    padding-top: 6em;
+    display: grid;
+    grid-template-areas: "history info";
+  }
+  }
+
+  .content {
+    font-size: 16px;
     font-family: sans-serif;
     line-height: 26.4px;
     letter-spacing: normal;
-    padding-left: 55px;
     text-align: justify;
-    width: 680px;
   }
-  .doat1 {
+  .vision {
     border-style: solid;
-    padding: 10px;
     border-width: 1px;
     border-radius: 10px;
+    padding: 10px;
     border-color: #707070;
   }
-  .doat {
-    background-color: transparent;
-    display: grid;
-    grid-template-areas: "department info";
+  .line {
+    border: 1px solid #d4ab2a;
+    margin: 20px 0px;
   }
-  .readmore {
-    border-radius: 7px;
-    background-color: #ff6347;
-    border: none;
-    color: white;
-    padding: 15px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    cursor: pointer;
+  .pd{
+  padding-left:12px;
+  }
+  @media(max-width:500px){
+  .pd{
+  padding-left:3px;
+  }
   }
   .ws {
     width: 150px;
@@ -62,209 +83,198 @@
     display: grid;
     grid-template-areas: "ws" "fb";
   }
+
+
+
+
+
+
+
+
 </style>
-<section class="doat mt-12 ml-6">
-  <section class="department">
-    <div class="doat1">
-      <p class="topic">DEPARTMENT OF INFORMATION AND MEDIA</p>
-      <hr class="line" />
-      <img
-        alt="background image"
-        src="{% static 'images/doim.gif' %}"
-        style="height: 200px; width: 200px; padding-right: 40px"
-      />
-      <p>
-        Recognizing the importance of information in today’s knowledge-based
-        society driven by information technology and with the need to create
-        proper institutional and legal framework for a sound and holistic
-        development of the information and communication technology (ICT)
-        sectors in the Kingdom, the Royal Government created the Ministry of
-        Information and Communications in 2003 through bifurcation of the
-        erstwhile Ministry of Communications with the aim to tap the potential
-        of rapid change in the field of information and communications
-        technology (ICT) and cater to the policy and regulatory needs of the
-        information, communications and media sector in the country
-      </p>
-      <button class="readmore">Read More</button>
-    </div>
-    <br />
-    <div class="doat1">
-      <p class="sub_topic">vision</p>
-      <i class="fa fa-eye fa-2x" style="color: #ff6347"> </i>
-      To create a vibrant and informed society towards a Shared National
-      Consciousness.
-    </div>
-    <br />
-    <div class="doat1">
-      <p class="sub_topic">mission</p>
-      <i class="fa fa-dot-circle-o fa-2x" style="color: #ff6347"> </i>
-      To optimize the use of information and media as a tool to nurture a
-      knowledge-based democratic society.
-    </div>
-    <br />
-    <div class="doat1">
-      <p class="sub_topic">objectives</p>
-      <i class="fa fa-eye fa-2x" style="color: #ff6347"> </i>
-      <br />
-      1.Create conducive growth of media through
-      formulation/consultation/collaboration with various stakeholders on issues
-      related to policies, regulations and legislations;<br />
+<div class="pd">
 
-      2Create right infrastructure for media uptake;<br />
-      3.Develop strategies and standards for development of local contents;
-      <br />
-      4.Stimulate a vibrant and creative arts to strengthen national
-      identity;<br />
-      5.Enhance effective use of media for strengthening of democracy;<br />
-      6.Facilitate the dissemination of the Government information by using the
-      Government Web Portal and any other
-    </div>
-    <br />
-    <div class="doat1">
-      <h1 class="sub_topic1">DoIM Human Resource Strength:10</h1>
-      <section>
-        <div class="flex flex-wrap overflow-hidden">
-          <div class="w-1/2 overflow-hidden">
-            <section>
-              <div class="rt-container">
-                <div class="col-rt-12">
-                  <div class="Scriptcontent">
-                    <!-- partial:index.partial.html -->
-                    <div class="numbers">
-                      <span class="numbers__window">
-                        <span
-                          class="numbers__window__digit numbers__window__digit--1"
-                          data-fake="8642519073"
-                          style="font-weight: bold"
-                          >1</span
-                        >
-                      </span>
-                      <br />
-                      <span class="text-2">Executives</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </section>
-          </div>
+    <section class="background mt-12 ">
+        <div class="grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-1">
+            <div class="lg:w-full sm:w-1/3 md:w-full">
+                <section class="history">
+                    <div>
+                        <p class="topic">DEPARTMENT OF INFORMATION AND MEDIA</p>
+                        <hr class="line">
+                        <div class="vision">
+                            <img
+                                    alt="background image"
+                                    src="{% static 'images/doim.gif' %}"
+                                    style="width: auto; padding-right: 40px"
+                            />
+                            <p>
+                                Recognizing the importance of information in today’s knowledge-based
+                                society driven by information technology and with the need to create
+                                proper institutional and legal framework for a sound and holistic
+                                development of the information and communication technology (ICT)
+                                sectors in the Kingdom, the Royal Government created the Ministry of
+                                Information and Communications in 2003 through bifurcation of the
+                                erstwhile Ministry of Communications with the aim to tap the potential
+                                of rapid change in the field of information and communications
+                                technology (ICT) and cater to the policy and regulatory needs of the
+                                information, communications and media sector in the country
+                            </p>
 
-          <div class="w-1/2 overflow-hidden">
-            <section>
-              <div class="rt-container">
-                <div class="col-rt-12">
-                  <div class="Scriptcontent">
-                    <!-- partial:index.partial.html -->
-                    <div class="numbers">
-                      <span class="numbers__window">
-                        <span
-                          class="numbers__window__digit numbers__window__digit--1"
-                          data-fake="8642519073"
-                          style="font-weight: bold"
-                          >2</span
-                        >
-                      </span>
-                      <span class="numbers__window">
-                        <span
-                          class="numbers__window__digit numbers__window__digit--3"
-                          data-fake="8395216407"
-                          style="font-weight: bold"
-                          >5</span
-                        >
-                      </span>
-                      <br />
-                      <span class="text-2">Professional & Management</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </section>
-          </div>
+                        </div>
+                        <br>
+                        <div class="vision">
+                            <p class="sub_topic">VISION</p>
+                            <i class="fa fa-eye fa-2x" style="color: #ff6347"> </i>
+                            To create a vibrant and informed society towards a Shared National
+                            Consciousness.
+                        </div>
+                        <br>
+                        <div class="vision">
+                            <p class="sub_topic">mission</p>
+                            <i class="fa fa-dot-circle-o fa-2x" style="color: #ff6347"> </i>
+                            To optimize the use of information and media as a tool to nurture a
+                            knowledge-based democratic society.
+                        </div>
+                        <br>
+                        <div class="vision">
+                            <p class="sub_topic">objectives</p>
+                            <i class="fa fa-eye fa-2x" style="color: #ff6347"> </i>
+                            1.Create conducive growth of media through
+                            formulation/consultation/collaboration with various stakeholders on issues
+                            related to policies, regulations and legislations;<br/>
 
-          <div class="w-1/2 overflow-hidden">
-            <section>
-              <div class="rt-container">
-                <div class="col-rt-12">
-                  <div class="Scriptcontent">
-                    <!-- partial:index.partial.html -->
-                    <div class="numbers">
+                            2Create right infrastructure for media uptake;<br/>
+                            3.Develop strategies and standards for development of local contents;
+                            <br/>
+                            4.Stimulate a vibrant and creative arts to strengthen national
+                            identity;<br/>
+                            5.Enhance effective use of media for strengthening of democracy;<br/>
+                            6.Facilitate the dissemination of the Government information by using the
+                            Government Web Portal and any other
+                        </div>
+                        <hr class="line">
+                        <div class="vision">
+                            <p class="sub_topic1">DOIM Human Resource Strength:10</p>
+                            <section>
+                                <div class="flex flex-wrap overflow-hidden">
+                                    <div class="w-1/2 overflow-hidden">
+                                        <section>
+                                            <div class="rt-container">
+                                                <div class="col-rt-12">
+                                                    <div class="Scriptcontent">
+                                                        <!-- partial:index.partial.html -->
+                                                        <div class="numbers">
                       <span class="numbers__window">
                         <span
-                          class="numbers__window__digit numbers__window__digit--1"
-                          data-fake="8642519073"
-                          style="font-weight: bold"
-                          >2</span
+                                class="numbers__window__digit numbers__window__digit--1"
+                                data-fake="8642519073"
+                                style="font-weight: bold"
+                        >1</span
                         >
                       </span>
-                      <span class="numbers__window">
-                        <span
-                          class="numbers__window__digit numbers__window__digit--3"
-                          data-fake="8395216407"
-                          style="font-weight: bold"
-                          >2</span
-                        >
-                      </span>
-                      <span class="numbers__window">
-                        <span
-                          class="numbers__window__digit numbers__window__digit--3"
-                          data-fake="8395216407"
-                          style="font-weight: bold"
-                          >4</span
-                        >
-                      </span>
-                      <br />
-                      <span class="text-2">Supervisory & Support</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </section>
-          </div>
+                                                            <br/>
+                                                            <span class="text-2">Executives</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </section>
+                                    </div>
 
-          <div class="w-1/2 overflow-hidden">
-            <section>
-              <div class="rt-container">
-                <div class="col-rt-12">
-                  <div class="Scriptcontent">
-                    <!-- partial:index.partial.html -->
-                    <div class="numbers">
+                                    <div class="w-1/2 overflow-hidden">
+                                        <section>
+                                            <div class="rt-container">
+                                                <div class="col-rt-12">
+                                                    <div class="Scriptcontent">
+                                                        <!-- partial:index.partial.html -->
+                                                        <div class="numbers">
                       <span class="numbers__window">
                         <span
-                          class="numbers__window__digit numbers__window__digit--1"
-                          data-fake="8642519073"
-                          style="font-weight: bold"
-                          >3</span
+                                class="numbers__window__digit numbers__window__digit--1"
+                                data-fake="8642519073"
+                                style="font-weight: bold"
+                        >5</span
                         >
                       </span>
+                                                            <br/>
+                                                            <span class="text-2">Professional & Management</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </section>
+                                    </div>
+
+                                    <div class="w-1/2 overflow-hidden">
+                                        <section>
+                                            <div class="rt-container">
+                                                <div class="col-rt-12">
+                                                    <div class="Scriptcontent">
+                                                        <!-- partial:index.partial.html -->
+                                                        <div class="numbers">
+                                                            <span class="numbers__window">
+                        <span
+                                class="numbers__window__digit numbers__window__digit--3"
+                                data-fake="8395216407"
+                                style="font-weight: bold"
+                        >2</span
+                        >
+                      </span>
+                                                            <br/>
+                                                            <span class="text-2">Supervisory & Support</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </section>
+                                    </div>
+
+                                    <div class="w-1/2 overflow-hidden">
+                                        <section>
+                                            <div class="rt-container">
+                                                <div class="col-rt-12">
+                                                    <div class="Scriptcontent">
+                                                        <!-- partial:index.partial.html -->
+                                                        <div class="numbers">
                       <span class="numbers__window">
                         <span
-                          class="numbers__window__digit numbers__window__digit--3"
-                          data-fake="8395216407"
-                          style="font-weight: bold"
-                          >0</span
+                                class="numbers__window__digit numbers__window__digit--1"
+                                data-fake="8642519073"
+                                style="font-weight: bold"
+                        >1</span
                         >
                       </span>
-                      <br />
-                      <span class="text-2">Operational</span>
+                                                            <span class="numbers__window">
+                        <span
+                                class="numbers__window__digit numbers__window__digit--1"
+                                data-fake="8642519073"
+                                style="font-weight: bold"
+                        >0</span
+                        >
+                      </span>
+                                                            <br/>
+                                                            <span class="text-2">Operational</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </section>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                        <br/>
+                        <div class="btn grid lg:grid-cols-4 md:grid-cols-4 sm:grid-cols-2">
+                            <a href="https://www.doim.gov.bt/" target="_blank">
+                                <button class="ws lg:w-1/4 sm:w-full">Website</button>
+                            </a>
+                            <div></div>
+                            <div></div>
+                            <button class="fb lg:w-1/4 sm:w-full">Facebook</button>
+                        </div>
                     </div>
-                  </div>
-                </div>
-              </div>
-            </section>
-          </div>
-        </div>
-      </section>
-    </div>
-    <br />
-    <div class="btn grid lg:grid-cols-4 md:grid-cols-4">
-      <a href="https://www.doim.gov.bt/" target="_blank">
-        <button class="ws">Website</button>
-      </a>
-      <div></div>
-      <div></div>
-      <button class="fb">Facebook</button>
-    </div>
-    <hr class="line" />
-    <div class="navigationcontent">
+                    <hr class="line">
+<div class="navigationcontent">
       <div style="margin: 5% 20%">
         <h5
           class="uppercase font-bold mb-2.5 text-gray-800"
@@ -292,22 +302,28 @@
           <a href="{% url 'rsta' %}">rsta</a>
         </h5>
       </div>
-    </div>
-    <hr class="line" />
-  </section>
-  <section>
-    <div class="scroll-fixed">
-            <div class="sidebar">
-                <p style="font-size: 1.1875em">INFORMATION AND DOWNLOADS</p>
-                <a href="{% url 'moicofficials' %}" class="hover:text-lg">For MoIC Officials</a><br/>
-                <a href="{% url 'download' %}" class="hover:text-lg">Downloads</a><br/>
-                <a href="{% url 'rstaservices' %}" class="hover:text-lg">RSTA Online Services</a><br/>
-                <a href="{% url 'hrdecisions' %}" class="hover:text-lg">HR Decisions</a>
+    </div>                    <hr class="line"/>
+                </section>
             </div>
-            <div>
-                <div class="calendar lg:w-10/14" data-date="auto" inline-datepicker></div>
+            <div></div>
+            <div class="lg:w-full sm:w-1/3 md:w-full">
+
+                <div class="scroll-fixed">
+                    <section>
+                        <div class="sidebar">
+                            <p style="font-size: 1.1875em">INFORMATION AND DOWNLOADS</p>
+                            <a class="hover:text-lg" href="{% url 'moicofficials' %}">For MoIC Officials</a><br/>
+                            <a class="hover:text-lg" href="{% url 'download' %}">Downloads</a><br/>
+                            <a class="hover:text-lg" href="{% url 'rstaservices' %}">RSTA Online Services</a><br/>
+                            <a class="hover:text-lg" href="{% url 'hrdecisions' %}">HR Decisions</a>
+                        </div>
+                        <div>
+                            <div class="calendar lg:w-10/14" data-date="auto" inline-datepicker></div>
+                        </div>
+                    </section>
+                </div>
             </div>
         </div>
-  </section>
-</section>
+    </section>
+</div>
 {% endblock content %}

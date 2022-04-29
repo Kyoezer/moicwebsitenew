@@ -1,18 +1,38 @@
 {% extends 'base.html' %} {% block content %} {% load static %}
-
 <style>
-  .content {
-    font-family: sans-serif;
-    line-height: 26.4px;
-    letter-spacing: normal;
-    padding-left: 55px;
-    text-align: justify;
-    width: 680px;
+  .history {
+    width: 800px;
+    padding-left: 5px;
+    z-index:35;
   }
-  .mission {
+  @media(max-width : 500px){
+  .history{
+    width:350px;
+    padding-left:0px;
+  }
+  }
+  .background {
     background-color: transparent;
     display: grid;
     grid-template-areas: "history info";
+  }
+  @media (max-width : 500px){
+  .background {
+    background-color: transparent;
+    padding-left: 0px;
+    width: 400px;
+    padding-top: 6em;
+    display: grid;
+    grid-template-areas: "history info";
+  }
+  }
+
+  .content {
+    font-size: 16px;
+    font-family: sans-serif;
+    line-height: 26.4px;
+    letter-spacing: normal;
+    text-align: justify;
   }
   .vision {
     border-style: solid;
@@ -21,18 +41,35 @@
     padding: 10px;
     border-color: #707070;
   }
+  .line {
+    border: 1px solid #d4ab2a;
+    margin: 20px 0px;
+  }
+  .pd{
+  padding-left:12px;
+  }
+  @media(max-width:500px){
+  .pd{
+  padding-left:3px;
+  }
+  }
 </style>
-<section class="mission mt-12 ml-6">
-  <section class="content">
-    <p class="topic">MINISTRY VISION, MISSION & OBJECTIVES</p>
-    <hr class="line" />
-    <div class="vision">
+<div class="pd">
+
+<section class="background mt-12 ">
+  <div class="grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-1">
+    <div class="lg:w-full sm:w-1/3 md:w-full">
+  <section class="history">
+    <div>
+      <p class="topic">MINISTRY VISION, MISSION & OBJECTIVES</p>
+      <hr class="line">
+      <div class="vision">
       <h1 class="sub_topic">VISION</h1>
       <i class="fa fa-eye fa-2x" style="color: #ff6347"> </i>
       Connecting the unconnected and establishing a harmonious knowledge
       society.
     </div>
-    <br />
+      <hr class="line" />
     <div class="vision">
       <h1 class="sub_topic">MISSION</h1>
       <i class="fa fa-dot-circle-o fa-2x" style="color: #ff6347"> </i>
@@ -44,8 +81,8 @@
       ultimate purpose of making a meaningful contribution to Gross National
       Happiness.
     </div>
-    <br />
-    <div class="vision">
+      <hr class="line">
+      <div class="vision">
       <h1 class="sub_topic">OBJECTIVES</h1>
       <i class="fa fa-eye fa-2x" style="color: #ff6347"> </i>
       The Ministry’s objectives are: <br />
@@ -57,9 +94,13 @@
       To keep alive culture and tradition through ICT and media.
     </div>
     <hr class="line" />
+    </div>
     <div class="navigationcontent">
       <div style="margin: 5% 20%">
-        <h5 class="uppercase font-bold mb-2.5 text-gray-800">
+        <h5
+          class="uppercase font-bold mb-2.5 text-gray-800"
+          style="font-size: 22px"
+        >
           <i class="fa fa-caret-right fa-2x mr-3" style="color: #ff6347"></i>
           ABOUT US
         </h5>
@@ -85,19 +126,29 @@
     </div>
     <hr class="line" />
   </section>
-  <section>
-<div class="scroll-fixed">
+    </div>
+    <div></div>
+    <div class="lg:w-full sm:w-1/3 md:w-full">
+
+    <div class="scroll-fixed">
+      <section>
             <div class="sidebar">
                 <p style="font-size: 1.1875em">INFORMATION AND DOWNLOADS</p>
-                <a href="{% url 'moicofficials' %}">For MoIC Officials</a><br/>
-                <a href="{% url 'download' %}">Downloads</a><br/>
-                <a href="{% url 'rstaservices' %}">RSTA Online Services</a><br/>
-                <a href="{% url 'hrdecisions' %}">HR Decisions</a>
+                <a href="{% url 'moicofficials' %}" class="hover:text-lg">For MoIC Officials</a><br/>
+                <a href="{% url 'download' %}" class="hover:text-lg">Downloads</a><br/>
+                <a href="{% url 'rstaservices' %}" class="hover:text-lg">RSTA Online Services</a><br/>
+                <a href="{% url 'hrdecisions' %}" class="hover:text-lg">HR Decisions</a>
             </div>
             <div>
                 <div class="calendar lg:w-10/14" data-date="auto" inline-datepicker></div>
             </div>
+        </section>
         </div>
-  </section>
+    </div>
+  </div>
 </section>
+
+
+
+</div>
 {% endblock content %}

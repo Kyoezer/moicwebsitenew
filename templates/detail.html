@@ -25,7 +25,17 @@
         border-radius: 10px;
         border-color: #707070;
       }
-
+        @media(max-width:500px){
+        .department {
+    font-family: sans-serif;
+    line-height: 26.4px;
+    letter-spacing: normal;
+    padding-left: 0px;
+    text-align: justify;
+    padding-top: 6rem;
+    width: 360px;
+}
+        }
       .mySlides {
         display: none;
       }
@@ -175,7 +185,11 @@
     </style>
 </head>
 <body>
-<section class="doat mt-12 ml-10">
+
+
+<section class="doat mt-12 ml-2">
+    <div class="grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-1">
+    <div class="lg:w-full sm:w-1/3 md:w-full">
     <section class="department">
         <span style="font-size: 25px; font-weight: bold">{{obj.event_title}}</span>
         <p style="font-size: 15px; color: #a3a3a3">
@@ -291,6 +305,9 @@
         <!--            </form>-->
         <!--        </div>-->
     </section>
+    </div>
+        <div></div>
+        <div class="lg:w-full sm:w-1/3 md:w-full">
     <section>
         <div class="scroll-fixed">
             <div class="sidebar">
@@ -305,7 +322,10 @@
             </div>
         </div>
     </section>
+        </div>
+        </div>
 </section>
+
 </body>
 <script>
     let slideIndex = 1;
@@ -338,8 +358,6 @@
       slides[slideIndex - 1].style.display = "block";
       dots[slideIndex - 1].className += " active1";
     }
-
-
 </script>
 </html>
 {% endblock content %}

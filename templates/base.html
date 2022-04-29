@@ -16,10 +16,20 @@ word-spacing: 20%;
 }
   .navigationcontent{
     border-style: solid;
-    padding: 10px;
+    padding: 0px;
     border-width: 1px;
     border-radius: 10px;
     border-color: #707070;
+   }
+   @media(max-width:500px){
+   .navigationcontent{
+    border-style: solid;
+    padding: 0px;
+    border-width: 1px;
+    border-radius: 10px;
+    border-color: #707070;
+    font-size:.9em;
+   }
    }
   .line {
     border: 1px solid #d4ab2a;
@@ -42,7 +52,15 @@ word-spacing: 20%;
     width: 90%;
     border: 1px solid #c0c0c0;
     border-collapse: collapse;
-    padding: 5px;
+    padding: 5px 10px;
+  }
+  @media(max-width:500px){
+  .tb {
+    width: 90%;
+    border: 1px solid #c0c0c0;
+    border-collapse: collapse;
+    margin-left:20px;
+  }
   }
   .tb th {
     border: 1px solid #c0c0c0;
@@ -60,7 +78,14 @@ word-spacing: 20%;
         .wrapper1{
             align-items: center;
             width: auto;
-            margin-left: 3rem;
+            margin-left: 0rem;
+        }
+        @media(max-width : 500px){
+        .wrapper1{
+            align-items: center;
+            width: auto;
+            margin-left: 0rem;
+        }
         }
         .tophead{
           font-family: sans-serif;
@@ -71,17 +96,36 @@ word-spacing: 20%;
         }
 
         .sidebar {
-            margin: 10%;
+            margin: 5%;
             color: white;
             background-color: #D4AB2A;
             padding: 10px;
             border: 1px solid black;
             border-radius: 10px;
+            width:auto;
         }
         .calendar {
-            margin: 10%;
+            margin: 5%;
             background-color: #D4AB2A;
             border: 1px solid black;
+            width:85%;
+        }
+        @media(max-width : 500px){
+        .sidebar {
+            margin: 5%;
+            color: white;
+            background-color: #D4AB2A;
+            padding: 10px;
+            border: 1px solid black;
+            border-radius: 10px;
+            width:330px;
+        }
+        .calendar {
+            margin: 5%;
+            background-color: #D4AB2A;
+            border: 1px solid black;
+            width:85%;
+        }
         }
 
         .scroll-fixed {
@@ -117,6 +161,8 @@ word-spacing: 20%;
             display: grid;
             width: 100%;
             height: 100px;
+            z-index:30;
+            margin-left: -30px;
             align-items: center;
             grid-template-areas:
             'logo logotext';
@@ -158,6 +204,7 @@ word-spacing: 20%;
             width: 100%;
             margin: auto;
             color: white;
+            z-index:30;
             grid-template-areas:
             'left1 left1 ';
         }
@@ -169,28 +216,31 @@ word-spacing: 20%;
         .navbar{
             grid-area: left1;
             font-size: 14px;
+            z-index:30;
         }
 
         .navbar{
             grid-area: right1;
             font-size: 14px;
+            z-index:30;
         }
         .left1{
             background-color:  #d4ab2a ;
             width: auto;
             box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-
+            z-index:30;
         }
         .right1{
             background-color: transparent;
+            z-index:30;
         }
         @media(max-width: 500px){
             .right1{
                 margin-top: 20px;
-                background-color: #d4ab2a;
+                background-color: transparent;
                 border-radius: 20px;
+                z-index:30;
             }
-
           .topwrap{
             align-items: center;
             width: 100%;
@@ -198,7 +248,7 @@ word-spacing: 20%;
           .wrapper{
             align-items: center;
             width: 94%;
-            margin-left: 20px;
+            margin-left: 0px;
           }
         }
         @media(max-width: 768px){
@@ -209,15 +259,17 @@ word-spacing: 20%;
             grid-gap:20px;
             height: 100px;
             width: 100%;
+            padding-bottom: 40px;
             margin: auto;
+            z-index:30;
             grid-template-areas:
             'left1'
             'right1';
         }
          .right1{
-                background-color: #d4ab2a;
+                background-color: transparent;
                 border-radius: 20px;
-
+                z-index:30;
             }
         }
         @media(max-width: 1024px){
@@ -229,14 +281,15 @@ word-spacing: 20%;
                 height: 100px;
                 width: 100%;
                 margin: auto;
+                z-index:30;
                 grid-template-areas:
                 'left1'
                 'right1';
             }
              .right1{
-                    background-color: #d4ab2a;
+                    background-color: transparent;
                     border-radius: 20px;
-
+                    z-index:30;
                 }
             }
         ul {
@@ -269,8 +322,6 @@ word-spacing: 20%;
         li a:hover {
             background-color: rgb(255, 255, 255);
           }
-
-
           @media(max-width: 500px){
 
             .navbar{
@@ -279,7 +330,9 @@ word-spacing: 20%;
                 height: 40px;
                 width: 100%;
                 margin: auto;
+                padding-bottom: 40px;
                 align-items: center;
+                z-index:30;
                 grid-template-areas:
                 'left1'
                 'right1';
@@ -288,10 +341,12 @@ word-spacing: 20%;
             .navbar{
                 grid-area: left1;
                 font-size: 14px;
+                z-index:30;
             }
             .navbar{
                 font-size: 14px;
                 grid-area: right1;
+                z-index:30;
             }
           }
 
@@ -369,10 +424,12 @@ word-spacing: 20%;
             @media screen and (max-width: 600px) {
               .topnav a:not(:first-child), .dropdown .dropbtn {
                 display: none;
+                z-index:30;
               }
               .topnav a.icon {
                 float: right;
                 display: block;
+                z-index:30;
               }
             }
 
@@ -412,7 +469,14 @@ word-spacing: 20%;
                  grid-template-areas:
                  'subs search';
              }
-
+            @media(max-width:500px){
+            .right1{
+                 display: grid;
+                 grid-template-areas:
+                 background-color: transparent;
+                 'subs search';
+             }
+            }
             dbutton1{
                 border-radius: 12px;
                 background-color: #ff6347; /* Green */
@@ -423,6 +487,7 @@ word-spacing: 20%;
                 text-decoration: none;
                 display: inline-block;
                 font-size: 16px;
+                z-index:30;
                 cursor: pointer;
             }
             @media(max-width: 500px){
@@ -436,6 +501,7 @@ word-spacing: 20%;
                     text-decoration: none;
                     display: inline-block;
                     font-size: 16px;
+                    z-index:30;
                     cursor: pointer;
                 }
               }
@@ -445,6 +511,14 @@ word-spacing: 20%;
                     top: 85%;
                     right: 0;
                     z-index: 1;
+                }
+                @media(max-width:500px){
+                .call-icon{
+                    position: fixed;
+                    top: 85%;
+                    right: 5%;
+                    z-index: 1;
+                }
                 }
               .contact{
                 border-radius: 7px;
@@ -457,6 +531,7 @@ word-spacing: 20%;
                     display: inline-block;
                     font-size: 16px;
                     cursor: pointer;
+                    z-index:30;
               }
               .searchbtn{
                 color: black;
@@ -539,6 +614,26 @@ word-spacing: 20%;
   border-radius: 85%;
   width:57px;
 }
+
+@media(max-width : 500px){
+    #myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 85%;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: #ff6347;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 85%;
+  width:57px;
+}
+}
+
 #myBtn:hover {
   background-color: #86efac;
 }
@@ -553,7 +648,7 @@ word-spacing: 20%;
 <section class="wrapper1">
     <section class="head">
         <section class="tophead">
-            <div class="ml-12 w-16 md:w-40">
+            <div class="logo ml-12 w-16 md:w-40">
                 <a href="{% url 'home' %}"><img alt="logo" class="sm:my-4 md:my-8"
                                                 src="{% static 'images/emblem-1.png' %}"></a>
             </div>
@@ -673,6 +768,7 @@ word-spacing: 20%;
                         </div>
                     </div>
                 </div>
+            </div>
         </section>
     </section>
         </div>
@@ -691,24 +787,26 @@ word-spacing: 20%;
 {% block footer %}
 <br>
 <hr>
+<div class="topBtn">
 <button id="myBtn" onclick="topFunction()" title="Go to top"><i class="fa fa-arrow-up"></i></button>
+    </div>
 <section class="bubble mt-2">
-    <footer class="text-left lg:text-left ml-12" style="background-color:#121518">
+    <footer class="text-left lg:text-left w-screen" style="background-color:#121518">
         <div class="container p-6" style="text-align:left;">
             <div class="grid lg:grid-cols-4 md:grid-cols-2">
                 <div class="mb-6">
                     <div>
                         <h5 class="font-bold mb-2.5 text-white text-lg">Quick Links</h5>
                         <hr class="mb-4" style="border:1px solid white; width:30%">
-                        <a href=""><p class="text-slate-400 text-base mb-1 hover:text-red-500 hover:text-lg">Bhutan Portal</p></a>
+                        <a href="https://www.gov.bt/"><p class="text-slate-400 text-base mb-1 hover:text-red-500 hover:text-lg">Bhutan Portal</p></a>
                         <a href="https://www.citizenservices.gov.bt/" target="_blank"><p
                                 class="text-slate-400 text-base mb-1 hover:text-red-500 hover:text-lg">Citizen Services</p></a>
                         <a href="https://www.rcsc.gov.bt/en/" target="_blank"><p class="text-slate-400 text-base mb-1 hover:text-red-500 hover:text-lg">
                             RCSC</p></a>
                         <div class="container px-6 pt-6">
                             <div class="flex justify-left mb-6">
-                                <a class="hover:text-red-500 hover:text-lg rounded-full border-2 border-white text-white leading-normal uppercase hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out w-9 h-9 m-1" href="#!"
-                                   type="button">
+                                <a class="hover:text-red-500 hover:text-lg rounded-full border-2 border-white text-white leading-normal uppercase hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out w-9 h-9 m-1" href="https://www.facebook.com/MoICBhutan"
+                                   target="_blank" type="button">
                                     <svg aria-hidden="true"
                                          class="w-2 h-full mx-auto"
                                          data-icon="facebook-f"
@@ -716,8 +814,7 @@ word-spacing: 20%;
                                          focusable="false"
                                          role="img"
                                          viewBox="0 0 320 512"
-                                         xmlns="http://www.w3.org/2000/svg"
-                                    >
+                                         xmlns="http://www.w3.org/2000/svg">
                                         <path
                                                 d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"
                                                 fill="currentColor"
@@ -818,8 +915,8 @@ word-spacing: 20%;
                 <div class="mb-6" style="text-align:left;">
                     <h5 class="font-bold mb-2.5 text-white text-lg">Site Map</h5>
                     <hr class="mb-4" style="border:1px solid white; width:30%">
-                    <p class="text-slate-400 text-base mb-1 hover:text-red-500 hover:text-lg"><i class="fa fa-caret-right text-slate-400 text-base hover:text-red-500 hover:text-lg">&nbsp;About
-                        Us</i></p>
+                    <a href="{% url 'background' %}"><p class="text-slate-400 text-base mb-1 hover:text-red-500 hover:text-lg"><i class="fa fa-caret-right text-slate-400 text-base hover:text-red-500 hover:text-lg">&nbsp;About
+                        Us</i></p></a>
                     <p class="text-slate-400 text-base mb-1 hover:text-red-500 hover:text-lg"><i class="fa fa-caret-right text-slate-400 text-base hover:text-red-500 hover:text-lg">&nbsp;Post
                         Category</i></p>
                     <p class="text-slate-400 text-base mb-1 hover:text-red-500 hover:text-lg"><i class="fa fa-caret-right text-slate-400 text-base hover:text-red-500 hover:text-lg">&nbsp;Archive</i>
@@ -909,8 +1006,9 @@ word-spacing: 20%;
                                 type="text"/>
                     </div>
                     <div class="md:mr-auto mb-6">
-                        <button class="inline-block px-6 py-2 border-2 border-white text-white font-medium text-xs leading-tight uppercase rounded hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out"
-                                type="submit">
+                        <button class="bg-red-500 rounded-md text-white py-3 px-6 hover:bg-green-300 hover:text-white-800"
+                                type="submit"
+                        >
                             Subscribe
                         </button>
                     </div>
