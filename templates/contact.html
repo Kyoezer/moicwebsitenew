@@ -4,11 +4,27 @@
     width: 680px;
     padding-left: 55px;
   }
+  @media(max-width : 500px){
+  .history{
+    width:350px;
+    padding-left:0px;
+  }
+  }
 
   .background {
     background-color: transparent;
     display: grid;
     grid-template-areas: "history info";
+  }
+  @media (max-width : 500px){
+  .background {
+    background-color: transparent;
+    padding-left: 0px;
+    width: 400px;
+    padding-top: 6em;
+    display: grid;
+    grid-template-areas: "history info";
+  }
   }
   .content {
     font-size: 16px;
@@ -41,8 +57,19 @@
     font-size: 16px;
     cursor: pointer;
   }
+  .pd{
+  padding-left:12px;
+  }
+  @media(max-width:500px){
+  .pd{
+  padding-left:3px;
+  }
+  }
 </style>
-<section class="background mt-12 ml-6">
+<div class="pd">
+<section class="background mt-12">
+    <div class="grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-1">
+        <div class="lg:w-full sm:w-1/3 md:w-full">
   <section class="history">
     <div>
       <h1 class="topic">Contact us</h1>
@@ -98,6 +125,9 @@
     </form>
     <hr class="line" />
   </section>
+        </div>
+        <div></div>
+        <div class="lg:w-full sm:w-1/3 md:w-full">
   <section>
     <div class="scroll-fixed">
             <div class="sidebar">
@@ -112,5 +142,8 @@
             </div>
         </div>
   </section>
+        </div>
+    </div>
 </section>
+</div>
 {% endblock content %}
