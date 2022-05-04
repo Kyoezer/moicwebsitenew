@@ -148,3 +148,4 @@ class statistic(models.Model):
     # title of address link
     link_title = models.CharField(max_length=100, blank=True)
     link_name = models.CharField(max_length=100, blank=True)
+

@@ -14,7 +14,7 @@ def whoiswho(request):
     adm = administration.objects.all()
     fd = finance_division.objects.all()
     ps = procurement_section.objects.all()
-    context = { 'ministeroffice': ministeroffice,
+    context = {'ministeroffice': ministeroffice,
                 'secretaryoffice': secretaryoffice,
                 'ppd': ppd,
                 'hrd': hrd,

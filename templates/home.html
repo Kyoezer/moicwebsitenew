@@ -1,5 +1,16 @@
 {% extends 'base.html' %} {% block content %} {% load static %}
 <style>
+    .pg{
+        font-size: 13px;
+        letter-spacing: 1px;
+        word-spacing: 1px;
+        color: #6B6B6B;
+        font-weight: 400;
+        text-decoration: none solid rgb(68, 68, 68);
+        font-style: normal;
+        font-variant: normal;
+        text-transform: none;
+    }
   .wrapper1 {
     align-items: center;
     width: auto;
@@ -106,6 +117,14 @@
     border-radius: 1px;
     border-color: black;
   }
+  .ptime{
+  text-decoration:none;
+  }
+  @media(max-width:500px){
+  .ptime{
+    font-size:2em;
+  }
+  }
 
   h1 {
     font-weight: normal;
@@ -141,6 +160,20 @@
       font-size: calc(3.375rem * var(--smaller));
     }
   }
+
+.post{
+padding:none;
+}
+@media(max-width:500px){
+.post{
+float: right;
+padding-right: 25px;
+}
+}
+
+
+
+
 
 
 </style>
@@ -209,34 +242,37 @@
             <section class="events">
                 <div class="flex flex-wrap" id="tabs-id">
                     <div class="w-full">
-                        <ul class="flex mb-0 list-none flex-wrap pt-3 pb-4 flex-row">
-                            <li class="mr-2 last:mr-0 flex-auto text-center hover:cursor-pointer">
-                                <a class="text-xs font-bold uppercase px-16 py-3 shadow-lg rounded block leading-normal text-white bg-yellow-600"
+
+                        <ul class="flex flex-wrap overflow-hidden">
+                            <li class="h-fit pt-3 text-center hover:cursor-pointer w-1/3 overflow-hidden lg:w-1/3 xl:w-1/3">
+                                <a class="post text-xs font-bold uppercase px-16 py-3 shadow-lg rounded block leading-normal text-white bg-yellow-600"
                                    onclick="changeActiveTab(event,'tab-profile')">
                                     <i class="fa fa-calendar text-base mr-1"></i> Events
                                 </a>
                             </li>
-                            <li class="-mb-px mr-2 last:mr-0 flex-auto text-center hover:cursor-pointer">
-                                <a class="text-xs font-bold uppercase px-16 py-3 shadow-lg rounded block leading-normal text-yellow-600 bg-white"
+                            <li class="h-fit pb-3 text-center hover:cursor-pointer w-1/3 overflow-hidden lg:w-1/3 xl:w-1/3">
+                                <a class="post text-xs font-bold uppercase px-16 py-3 shadow-lg rounded block leading-normal text-yellow-600 bg-white"
                                    onclick="changeActiveTab(event,'tab-settings')">
                                     <i class="fa fa-user-plus text-base mr-1"></i> Vacancy
                                 </a>
                             </li>
-                            <li class="-mb-px mr-2 last:mr-0 flex-auto text-center hover:cursor-pointer"
+                            <li class="h-fit pb-3 text-center hover:cursor-pointer w-1/3 overflow-hidden lg:w-1/3 xl:w-1/3"
                                 style="z-index:9">
-                                <a class="text-xs font-bold uppercase px-16 py-3 shadow-lg rounded block leading-normal text-yellow-600 bg-white"
+                                <a class="post text-xs font-bold uppercase px-16 py-3 shadow-lg rounded block leading-normal text-yellow-600 bg-white"
                                    onclick="changeActiveTab(event,'tab-tender')">
                                     <i class="fa fa-envelope text-base mr-1"></i> Tender
                                 </a>
                             </li>
                         </ul>
+
+
                         <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded">
                             <div class="px-4 py-5 flex-auto">
                                 <div class="tab-content tab-space ">
                                     <div class="block " id="tab-profile">
                                         {% for event in events %}
                                         <div style="border-left: 3px solid #d4ab2a; padding-left: 20px">
-                                            <p style="font-weight: bold">{{forloop.counter}})<span>{{ event.event_title }}</span>
+                                            <p style="font-weight: bold"><span>{{ event.event_title }}</span>
                                             </p>
                                             <p style="color: #bababa;font-size: 12px">Published on: {{ event.pub_date }}
                                                 <i class="fa fa-eye"></i> {{event.total_views}} views
@@ -251,6 +287,22 @@
                                         </div>
                                         <br>
                                         {% endfor %}
+                                        <br>
+                                        <div class="pg">
+                                        {% if events.has_previous %}
+                                        <a href="?page=1">&laquo First</a>
+                                        <a href="?page={{ events.previous_page_number }}">Previous</a>
+                                        {% endif %}
+
+                                        Page: {{ events.number }} of {{ events.paginator.num_pages }}
+
+                                        {% if events.has_next %}
+                                        <a href="?page={{ events.next_page_number }}">Next</a>
+                                        <a href="?page={{ events.paginator.num_pages }}">Last
+                                            &raquo</a>
+                                        {% endif %}
+                                            </div>
+
                                     </div>
                                     <div class="hidden" id="tab-settings">
                                         {% for vacancy in vacancies %}
@@ -258,7 +310,8 @@
                                             <p style="font-weight: bold">{{forloop.counter}}) <a
                                                     href="{% url 'vacancy_detail' vacancy.id %}"><span>{{ vacancy.vacancy_title }}</span></a>
                                             </p>
-                                            <p style="color: #bababa;font-size: 12px">Published on: {{ vacancy.pub_date }}</p>
+                                            <p style="color: #bababa;font-size: 12px">Published on: {{ vacancy.pub_date
+                                                }}</p>
                                             <br>
                                             {{vacancy.vacancy_description | safe | truncatechars:150}} <a
                                                 href="{% url 'vacancy_detail' vacancy.id %}">
@@ -267,14 +320,31 @@
                                         </div>
                                         <br>
                                         {% endfor %}
+                                        <br>
+<!--                                        <div class="pg">-->
+<!--                                        {% if vacancies.has_previous %}-->
+<!--                                        <a href="?page=1">&laquo First</a>-->
+<!--                                        <a href="?page={{ vacancies.previous_page_number }}">Previous</a>-->
+<!--                                        {% endif %}-->
+
+<!--                                        Page: {{ vacancies.number }} of {{ vacancies.paginator.num_pages }}-->
+
+<!--                                        {% if vacancies.has_next %}-->
+<!--                                        <a href="?page={{ vacancies.next_page_number }}">Next</a>-->
+<!--                                        <a href="?page={{ vacancies.paginator.num_pages }}">Last-->
+<!--                                            &raquo</a>-->
+<!--                                        {% endif %}-->
+<!--                                            </div>-->
                                     </div>
                                     <div class="hidden" id="tab-tender">
                                         {% for tender in tenders %}
                                         <div style="border-left: 3px solid #d4ab2a; padding-left: 20px">
                                             <p style="font-weight: bold">{{forloop.counter}}) <a
-                                                    href="{% url 'tender_detail' tender.id %}">{{ tender.tender_title }}</a>
+                                                    href="{% url 'tender_detail' tender.id %}">{{ tender.tender_title
+                                                }}</a>
                                             </p>
-                                            <p style="color: #bababa; font-size: 12px">Published on: {{ tender.pub_date }}</p>
+                                            <p style="color: #bababa; font-size: 12px">Published on: {{ tender.pub_date
+                                                }}</p>
                                             <br>
                                             <br>
                                             {{tender.tender_description | safe | truncatechars:150}} <a
@@ -284,6 +354,21 @@
                                         </div>
                                         <br>
                                         {% endfor %}
+                                        <br>
+<!--                                        <div class="pg">-->
+<!--                                        {% if tenders.has_previous %}-->
+<!--                                        <a href="?page=1">&laquo First</a>-->
+<!--                                        <a href="?page={{ tenders.previous_page_number }}">Previous</a>-->
+<!--                                        {% endif %}-->
+
+<!--                                        Page: {{ tenders.number }} of {{ tenders.paginator.num_pages }}-->
+
+<!--                                        {% if tenders.has_next %}-->
+<!--                                        <a href="?page={{ tenders.next_page_number }}">Next</a>-->
+<!--                                        <a href="?page={{ tenders.paginator.num_pages }}">Last-->
+<!--                                            &raquo</a>-->
+<!--                                        {% endif %}-->
+<!--                                            </div>-->
                                     </div>
                                 </div>
                             </div>
@@ -315,6 +400,12 @@
         document.getElementById(tabID).classList.add("block");
       }
 
+
+
+
+
+
+
                 </script>
             </section>
         </div>
@@ -325,17 +416,17 @@
                     <p style="font-size: 30px; font-weight: bold">PIT DECLARATION</p>
                     <div id="countdown">
                         <ul>
-                            <li><span id="days"></span>days</li>
-                            <li><span id="hours"></span>Hours</li>
-                            <li><span id="minutes"></span>Minutes</li>
-                            <li><span id="seconds"></span>Seconds</li>
+                            <li><span class="ptime" id="days"></span>days</li>
+                            <li><span class="ptime" id="hours"></span>Hours</li>
+                            <li><span class="ptime" id="minutes"></span>Minutes</li>
+                            <li><span class="ptime" id="seconds"></span>Seconds</li>
                         </ul>
                     </div>
                 </div>
                 <hr class="line">
                 <div class="scroll-fixed">
                     <div class="sidebar">
-                        <p style="font-size: 1.1875em" class="font-bold underline">INFORMATION AND DOWNLOADS</p>
+                        <p class="font-bold underline" style="font-size: 1.1875em">INFORMATION AND DOWNLOADS</p>
                         <a class="hover:text-lg" href="{% url 'moicofficials' %}">For MoIC Officials</a><br/>
                         <a class="hover:text-lg" href="{% url 'download' %}">Downloads</a><br/>
                         <a class="hover:text-lg" href="{% url 'rstaservices' %}">RSTA Online Services</a><br/>
@@ -350,6 +441,8 @@
     </div>
 </section>
 <script>
+
+
   (function () {
     const second = 1000,
       minute = second * 60,
@@ -385,6 +478,12 @@
           ));
       }, 0);
   })();
+
+
+
+
+
+
 
 
 </script>

@@ -1,4 +1,6 @@
 from django.shortcuts import render
+from .models import *
+
 
 # Create your views here.
 def moicofficials(request):
@@ -11,9 +13,9 @@ def download(request):
     return render(request, 'download.html', )
 
 
-def hrdecisions(request):
-    
-    return render(request, 'hrdecisions.html', )
+def hrdecision(request):
+    hrds = hrdecisions.objects.all()
+    return render(request, 'hrdecisions.html', {'hrds': hrds})
 
 
 def rsrstaservices(request):

@@ -5,24 +5,43 @@ from django.http import HttpResponse
 from django.shortcuts import render, get_object_or_404
 from indexapp.models import post, event, vacancie, tender, IpModel
 from django.core.mail import send_mail, BadHeaderError
+from django.core.paginator import Paginator
 
 # Create your views here.
 def home(request):
     popuplarPs = post.objects.all()
     events = event.objects.all().order_by('-id')
+    # Events Pagination
+    p = Paginator(event.objects.all(), 3)
+    page = request.GET.get('page')
+    events = p.get_page(page)
+
     vacancies = vacancie.objects.all().order_by('-id')
+    # Vacancy Pagination
+    # p1 = Paginator(vacancie.objects.all(), 1)
+    # page = request.GET.get('page')
+    # vacancies = p1.get_page(page)
+
     tenders = tender.objects.all().order_by('-id')
-    return render(request, 'home.html', {'post': popuplarPs, 'events': events, 'vacancies': vacancies, 'tenders': tenders})
+    # Tender Pagination
+    # p3 = Paginator(tender.objects.all(), 1)
+    # page = request.GET.get('page')
+    # tenders = p3.get_page(page)
+
+    #add when the pagination works
+    # 'vacancy': vacancies, 'tender': tenders
+
+    return render(request, 'home.html', {'post': popuplarPs, 'events': events, 'vacancies': vacancies, 'tenders': tenders, 'event': events})
 
 
 def vacancy_detail(request, id):
     obj =get_object_or_404(vacancie, pk=id)
-    return render(request, 'vacancy_detail.html', {'obj': obj })
+    return render(request, 'vacancy_detail.html', {'obj': obj})
 
 
 def tender_detail(request, id):
     obj =get_object_or_404(tender, pk=id)
-    return render(request, 'tender_detail.html', {'obj': obj })
+    return render(request, 'tender_detail.html', {'obj': obj})
 
 
 def detail(request, id):
