@@ -170,12 +170,6 @@ float: right;
 padding-right: 25px;
 }
 }
-
-
-
-
-
-
 </style>
 <section class="wrapper1">
     <section class="content">
@@ -266,7 +260,7 @@ padding-right: 25px;
                         </ul>
 
 
-                        <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded">
+                        <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded" style="padding-top: -16px;">
                             <div class="px-4 py-5 flex-auto">
                                 <div class="tab-content tab-space ">
                                     <div class="block " id="tab-profile">
@@ -288,20 +282,24 @@ padding-right: 25px;
                                         <br>
                                         {% endfor %}
                                         <br>
+
+
                                         <div class="pg">
-                                        {% if events.has_previous %}
-                                        <a href="?page=1">&laquo First</a>
-                                        <a href="?page={{ events.previous_page_number }}">Previous</a>
-                                        {% endif %}
+                                            Page: {{ events.number }} of {{ events.paginator.num_pages }}
+                                            <br>
+                                            {% if events.has_previous %}
+                                            <span><a href="?page=1"
+                                                     style="border: 1px solid #1C6EA4; border-radius: 5px;">&laquo First</a></span>
+                                            <a href="?page={{ events.previous_page_number }}">Previous</a>
+                                            {% endif %}
 
-                                        Page: {{ events.number }} of {{ events.paginator.num_pages }}
 
-                                        {% if events.has_next %}
-                                        <a href="?page={{ events.next_page_number }}">Next</a>
-                                        <a href="?page={{ events.paginator.num_pages }}">Last
-                                            &raquo</a>
-                                        {% endif %}
-                                            </div>
+                                            {% if events.has_next %}
+                                            <a href="?page={{ events.next_page_number }}">Next</a>
+                                            <a href="?page={{ events.paginator.num_pages }}">Last
+                                                &raquo</a>
+                                            {% endif %}
+                                        </div>
 
                                     </div>
                                     <div class="hidden" id="tab-settings">
@@ -321,20 +319,20 @@ padding-right: 25px;
                                         <br>
                                         {% endfor %}
                                         <br>
-<!--                                        <div class="pg">-->
-<!--                                        {% if vacancies.has_previous %}-->
-<!--                                        <a href="?page=1">&laquo First</a>-->
-<!--                                        <a href="?page={{ vacancies.previous_page_number }}">Previous</a>-->
-<!--                                        {% endif %}-->
+                                        <!--                                        <div class="pg">-->
+                                        <!--                                        {% if vacancies.has_previous %}-->
+                                        <!--                                        <a href="?page=1">&laquo First</a>-->
+                                        <!--                                        <a href="?page={{ vacancies.previous_page_number }}">Previous</a>-->
+                                        <!--                                        {% endif %}-->
 
-<!--                                        Page: {{ vacancies.number }} of {{ vacancies.paginator.num_pages }}-->
+                                        <!--                                        Page: {{ vacancies.number }} of {{ vacancies.paginator.num_pages }}-->
 
-<!--                                        {% if vacancies.has_next %}-->
-<!--                                        <a href="?page={{ vacancies.next_page_number }}">Next</a>-->
-<!--                                        <a href="?page={{ vacancies.paginator.num_pages }}">Last-->
-<!--                                            &raquo</a>-->
-<!--                                        {% endif %}-->
-<!--                                            </div>-->
+                                        <!--                                        {% if vacancies.has_next %}-->
+                                        <!--                                        <a href="?page={{ vacancies.next_page_number }}">Next</a>-->
+                                        <!--                                        <a href="?page={{ vacancies.paginator.num_pages }}">Last-->
+                                        <!--                                            &raquo</a>-->
+                                        <!--                                        {% endif %}-->
+                                        <!--                                            </div>-->
                                     </div>
                                     <div class="hidden" id="tab-tender">
                                         {% for tender in tenders %}
@@ -355,20 +353,20 @@ padding-right: 25px;
                                         <br>
                                         {% endfor %}
                                         <br>
-<!--                                        <div class="pg">-->
-<!--                                        {% if tenders.has_previous %}-->
-<!--                                        <a href="?page=1">&laquo First</a>-->
-<!--                                        <a href="?page={{ tenders.previous_page_number }}">Previous</a>-->
-<!--                                        {% endif %}-->
+                                        <!--                                        <div class="pg">-->
+                                        <!--                                        {% if tenders.has_previous %}-->
+                                        <!--                                        <a href="?page=1">&laquo First</a>-->
+                                        <!--                                        <a href="?page={{ tenders.previous_page_number }}">Previous</a>-->
+                                        <!--                                        {% endif %}-->
 
-<!--                                        Page: {{ tenders.number }} of {{ tenders.paginator.num_pages }}-->
+                                        <!--                                        Page: {{ tenders.number }} of {{ tenders.paginator.num_pages }}-->
 
-<!--                                        {% if tenders.has_next %}-->
-<!--                                        <a href="?page={{ tenders.next_page_number }}">Next</a>-->
-<!--                                        <a href="?page={{ tenders.paginator.num_pages }}">Last-->
-<!--                                            &raquo</a>-->
-<!--                                        {% endif %}-->
-<!--                                            </div>-->
+                                        <!--                                        {% if tenders.has_next %}-->
+                                        <!--                                        <a href="?page={{ tenders.next_page_number }}">Next</a>-->
+                                        <!--                                        <a href="?page={{ tenders.paginator.num_pages }}">Last-->
+                                        <!--                                            &raquo</a>-->
+                                        <!--                                        {% endif %}-->
+                                        <!--                                            </div>-->
                                     </div>
                                 </div>
                             </div>
@@ -399,6 +397,8 @@ padding-right: 25px;
         document.getElementById(tabID).classList.remove("hidden");
         document.getElementById(tabID).classList.add("block");
       }
+
+
 
 
 
@@ -478,14 +478,6 @@ padding-right: 25px;
           ));
       }, 0);
   })();
-
-
-
-
-
-
-
-
 </script>
 
 {% endblock content %}

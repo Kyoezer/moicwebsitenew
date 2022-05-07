@@ -14,6 +14,12 @@
 font-family:arial;
 word-spacing: 20%;
 }
+.director {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 4px 4px;
+  justify-items: start;
+}
   .navigationcontent{
     border-style: solid;
     padding: 0px;
@@ -633,7 +639,14 @@ word-spacing: 20%;
   width:57px;
 }
 }
-
+.pad{
+margin-bottom:-25px;
+}
+@media(max-width:500px){
+    .pad{
+margin-bottom:0px;
+}
+}
 #myBtn:hover {
   background-color: #86efac;
 }
@@ -647,7 +660,7 @@ word-spacing: 20%;
 
 <section class="wrapper1">
     <section class="head">
-        <section class="tophead">
+        <section class="tophead" style="margin: -10px;">
             <div class="logo ml-12 w-16 md:w-40">
                 <a href="{% url 'home' %}"><img alt="logo" class="sm:my-4 md:my-8"
                                                 src="{% static 'images/emblem-1.png' %}"></a>
@@ -658,11 +671,11 @@ word-spacing: 20%;
             </div>
         </section>
     </section>
-    <!--navber start-->
-    <div class="sm:mb-14 lg:mb-10">
+    <!--navbar start-->
+    <div class="pad ">
     <section class="navbar">
         <div class="left1">
-            <div class="topnav" id="myTopnav"> <!--yellow background-->
+            <div class="topnav" id="myTopnav">
                 <a class="active" href="{% url 'home' %}">HOME</a>
                 <div class="dropdown">
                     <button class="dropbtn">ABOUT US

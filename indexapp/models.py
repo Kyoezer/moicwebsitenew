@@ -139,7 +139,7 @@ class event(models.Model):
 class tender(models.Model):
     tender_id = models.IntegerField(blank=True)
     tender_title = models.CharField(max_length=100)
-    tender_img = models.ImageField(blank=True, upload_to='pics')
+    tender_img = models.ImageField(blank=True, null=True, upload_to='pics')
 
     def was_published_today(self):
         return self.pub_date.date() == datetime.date.today()

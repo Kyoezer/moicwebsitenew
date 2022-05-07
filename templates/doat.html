@@ -94,11 +94,39 @@
                         <p class="topic">DEPARTMENT OF AIR TRANSPORT</p>
                         <hr class="line">
                         <div class="vision">
-                            <img
-                                    alt="background image"
-                                    src="{% static 'images/DOAT-Director.jpeg' %}"
-                                    style="width: auto; padding-right: 40px"
-                            />
+                            <div class="director">
+                                <img
+                                            alt="background image"
+                                            src="{% static 'images/DOAT-Director.jpeg' %}"
+                                            style=" height:8rem;"
+                                    />
+                                <p style="padding:1px">Karma Wangchuk <br>
+                                Director General <br>
+                                    kwangchuk@doat.gov.bt <br>
+                                    Phone No : 08-271403</p>
+                            </div>
+<!--                            <div class="flex flex-wrap overflow-hidden">-->
+
+<!--                                <div class="w-1/3 overflow-hidden lg:w-1/3">-->
+<!--                                    <img-->
+<!--                                            alt="background image"-->
+<!--                                            src="{% static 'images/DOAT-Director.jpeg' %}"-->
+<!--                                            style="width: auto; padding-right: 40px"-->
+<!--                                    />-->
+<!--                                </div>-->
+
+<!--                                <div style="z-index:1" class="w-1/3 overflow-hidden lg:w-1/3">-->
+<!--                                    <p>Karma Wangchuk</p>-->
+<!--                                    <p>Director General</p>-->
+<!--                                    <p>kwangchuk@doat.gov.bt</p>-->
+<!--                                    <p>Phone No : 08-271403</p>-->
+<!--                                </div>-->
+
+<!--                                <div style="z-index:-1" class="w-1/3 overflow-hidden lg:w-1/3">-->
+
+<!--                                </div>-->
+<!--                            </div>-->
+                            <br>
                             <p>
                                 Department of Air Transport (DoAT) is a statutory department under the
                                 Ministry of Information and Communications of Royal Government of
@@ -271,49 +299,50 @@
                         </div>
                         <br/>
                         <div class="flex flex-wrap -mx-px overflow-hidden">
-                        <div class="btn w-1/4 overflow-hidden">
-                            <a href="https://www.doat.gov.bt/" target="_blank">
-                                <button class="ws hover:bg-green-300 hover:text-white-800">Website</button>
-                            </a>
-                        </div>
+                            <div class="btn w-1/4 overflow-hidden">
+                                <a href="https://www.doat.gov.bt/" target="_blank">
+                                    <button class="ws hover:bg-green-300 hover:text-white-800">Website</button>
+                                </a>
+                            </div>
                             <div class="w-1/4 overflow-hidden"></div>
                             <div class="w-1/4 overflow-hidden"></div>
                             <div class="w-1/4 overflow-hidden" style="z-index:40;">
-                            <a href="https://www.facebook.com/doatBhutan" target="_blank">
-                            <button class="fb hover:bg-green-300 hover:text-white-800">Facebook</button>
+                                <a href="https://www.facebook.com/doatBhutan" target="_blank">
+                                    <button class="fb hover:bg-green-300 hover:text-white-800">Facebook</button>
                                 </a>
-                                </div>
-                    </div>
-                    <hr class="line">
-<div class="navigationcontent">
-      <div style="margin: 5% 20%">
-        <h5
-          class="uppercase font-bold mb-2.5 text-gray-800"
-          style="font-size: 22px"
-        >
-          <i class="fa fa-caret-right fa-2x mr-3" style="color: #ff6347"></i>
-          DEPARTMENTS
-        </h5>
-        <h5
-          class="uppercase font-bold mb-2.5 text-gray-800 hover:text-lg hover:text-gray-600"
-        >
-          <i class="fa fa-angle-right fa-2x mr-3" style="color: #ff6347"></i>
-          <a href="{% url 'ditt' %}">ditt</a>
-        </h5>
-        <h5
-          class="uppercase font-bold mb-2.5 text-gray-800 hover:text-lg hover:text-gray-600"
-        >
-          <i class="fa fa-angle-right fa-2x mr-3" style="color: #ff6347"></i>
-          <a href="{% url 'rsta' %}">doim</a>
-        </h5>
-        <h5
-          class="uppercase font-bold mb-2.5 text-gray-800 hover:text-lg hover:text-gray-600"
-        >
-          <i class="fa fa-angle-right fa-2x mr-3" style="color: #ff6347"></i>
-          <a href="{% url 'rsta' %}">rsta</a>
-        </h5>
-      </div>
-    </div>                    <hr class="line"/>
+                            </div>
+                        </div>
+                        <hr class="line">
+                        <div class="navigationcontent">
+                            <div style="margin: 5% 20%">
+                                <h5
+                                        class="uppercase font-bold mb-2.5 text-gray-800"
+                                        style="font-size: 22px"
+                                >
+                                    <i class="fa fa-caret-right fa-2x mr-3" style="color: #ff6347"></i>
+                                    DEPARTMENTS
+                                </h5>
+                                <h5
+                                        class="uppercase font-bold mb-2.5 text-gray-800 hover:text-lg hover:text-gray-600"
+                                >
+                                    <i class="fa fa-angle-right fa-2x mr-3" style="color: #ff6347"></i>
+                                    <a href="{% url 'ditt' %}">ditt</a>
+                                </h5>
+                                <h5
+                                        class="uppercase font-bold mb-2.5 text-gray-800 hover:text-lg hover:text-gray-600"
+                                >
+                                    <i class="fa fa-angle-right fa-2x mr-3" style="color: #ff6347"></i>
+                                    <a href="{% url 'rsta' %}">doim</a>
+                                </h5>
+                                <h5
+                                        class="uppercase font-bold mb-2.5 text-gray-800 hover:text-lg hover:text-gray-600"
+                                >
+                                    <i class="fa fa-angle-right fa-2x mr-3" style="color: #ff6347"></i>
+                                    <a href="{% url 'rsta' %}">rsta</a>
+                                </h5>
+                            </div>
+                        </div>
+                        <hr class="line"/>
                 </section>
             </div>
             <div></div>

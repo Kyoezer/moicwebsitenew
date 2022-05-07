@@ -17,10 +17,28 @@ admin.site.register(post, postAdmin)
 admin.site.register(Category)
 admin.site.register(Tag)
 admin.site.register(profile)
-admin.site.register(vacancie)
-admin.site.register(event)
+
+
+class VacancyAdmin(admin.ModelAdmin):
+    list_display = ('vacancy_title', 'pub_date')
+
+
+admin.site.register(vacancie, VacancyAdmin)
+
+
+class EventAdmin(admin.ModelAdmin):
+    list_display = ('event_title', 'category', 'status', 'pub_date')
+
+
+admin.site.register(event, EventAdmin)
 admin.site.register(PressRelease)
 admin.site.register(information_and_download)
-admin.site.register(tender)
+
+
+class TenderAdmin(admin.ModelAdmin):
+    list_display = ('tender_id', 'tender_title', 'pub_date')
+
+
+admin.site.register(tender, TenderAdmin)
 admin.site.register(IpModel)
 

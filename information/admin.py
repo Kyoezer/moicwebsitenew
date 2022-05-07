@@ -2,4 +2,10 @@ from django.contrib import admin
 from .models import *
 
 # Register your models here.
-admin.site.register(hrdecisions)
+
+
+class HrAdmin(admin.ModelAdmin):
+    list_display = ('SI_No', 'title')
+
+
+admin.site.register(hrdecisions, HrAdmin)
