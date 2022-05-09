@@ -1,5 +1,6 @@
 {% extends 'base.html' %} {% block content %} {% load static %}
-<style>
+<title>Ministry of Information and Communications</title>
+    <style>
     .pg{
         font-size: 13px;
         letter-spacing: 1px;
@@ -288,8 +289,7 @@ padding-right: 25px;
                                             Page: {{ events.number }} of {{ events.paginator.num_pages }}
                                             <br>
                                             {% if events.has_previous %}
-                                            <span><a href="?page=1"
-                                                     style="border: 1px solid #1C6EA4; border-radius: 5px;">&laquo First</a></span>
+                                            <span><a href="?page=1">&laquo First</a></span>
                                             <a href="?page={{ events.previous_page_number }}">Previous</a>
                                             {% endif %}
 

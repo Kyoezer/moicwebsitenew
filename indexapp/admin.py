@@ -1,7 +1,7 @@
 from pyexpat import model
 from django.contrib import admin
 
-from indexapp.models import  IpModel, post,  Category, Tag, profile, vacancie, event, PressRelease, information_and_download, tender
+from indexapp.models import IpModel, post,  Category, Tag, profile, vacancie, event, PressRelease, information_and_download, tender
 admin.site.site_header = "MOIC Admin"
 admin.site.site_title = "MOIC Admin Portal"
 admin.site.index_title = "Welcome to MOIC Dashboard "
@@ -14,9 +14,9 @@ class postAdmin(admin.ModelAdmin):
 
 # Register your models here.
 admin.site.register(post, postAdmin)
-admin.site.register(Category)
-admin.site.register(Tag)
-admin.site.register(profile)
+# admin.site.register(Category)
+# admin.site.register(Tag)
+# admin.site.register(profile)
 
 
 class VacancyAdmin(admin.ModelAdmin):
@@ -31,8 +31,8 @@ class EventAdmin(admin.ModelAdmin):
 
 
 admin.site.register(event, EventAdmin)
-admin.site.register(PressRelease)
-admin.site.register(information_and_download)
+# admin.site.register(PressRelease)
+# admin.site.register(information_and_download)
 
 
 class TenderAdmin(admin.ModelAdmin):

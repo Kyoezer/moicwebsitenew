@@ -3,7 +3,7 @@ from django.contrib import admin
 from whoiswho.models import *
 
 # Register your models here.
-admin.site.register(top_title)
+# admin.site.register(top_title)
 
 
 class MinisterOffice(admin.ModelAdmin):
@@ -67,4 +67,4 @@ class ProcurementSection(admin.ModelAdmin):
 
 
 admin.site.register(procurement_section, ProcurementSection)
-admin.site.register(shortlink)
+# admin.site.register(shortlink)
