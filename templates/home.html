@@ -130,7 +130,7 @@
   h1 {
     font-weight: normal;
     letter-spacing: 0.125rem;
-    text-transform: uppercase;
+    text-transform: none;
   }
 
   li {
@@ -138,7 +138,7 @@
     font-size: 16px;
     list-style-type: none;
     padding: 1em;
-    text-transform: uppercase;
+    text-transform: none;
   }
 
   li span {
@@ -305,11 +305,10 @@ padding-right: 25px;
                                     <div class="hidden" id="tab-settings">
                                         {% for vacancy in vacancies %}
                                         <div style="border-left: 3px solid #d4ab2a; padding-left: 20px">
-                                            <p style="font-weight: bold">{{forloop.counter}}) <a
+                                            <p style="font-weight: bold"><a
                                                     href="{% url 'vacancy_detail' vacancy.id %}"><span>{{ vacancy.vacancy_title }}</span></a>
                                             </p>
-                                            <p style="color: #bababa;font-size: 12px">Published on: {{ vacancy.pub_date
-                                                }}</p>
+                                            <p style="color: #bababa;font-size: 12px">Published on: {{ vacancy.pub_date }}</p>
                                             <br>
                                             {{vacancy.vacancy_description | safe | truncatechars:150}} <a
                                                 href="{% url 'vacancy_detail' vacancy.id %}">
@@ -337,15 +336,13 @@ padding-right: 25px;
                                     <div class="hidden" id="tab-tender">
                                         {% for tender in tenders %}
                                         <div style="border-left: 3px solid #d4ab2a; padding-left: 20px">
-                                            <p style="font-weight: bold">{{forloop.counter}}) <a
-                                                    href="{% url 'tender_detail' tender.id %}">{{ tender.tender_title
-                                                }}</a>
+                                            <p style="font-weight: bold"><a
+                                                    href="{% url 'tender_detail' tender.id %}">{{ tender.tender_title }}</a>
                                             </p>
-                                            <p style="color: #bababa; font-size: 12px">Published on: {{ tender.pub_date
-                                                }}</p>
+                                            <p style="color: #bababa; font-size: 12px">Published on: {{ tender.pub_date }}</p>
                                             <br>
                                             <br>
-                                            {{tender.tender_description | safe | truncatechars:150}} <a
+                                            {{tender.tender_description | safe | truncatechars:100}} <a
                                                 href="{% url 'tender_detail' tender.id %}">
                                             <span style="color: #d4ab2a;font-size: 13px">Read More >>> </span></a>
                                             <br>
@@ -413,7 +410,7 @@ padding-right: 25px;
         <div class="lg:w-full sm:w-1/3 md:w-full">
             <section>
                 <div class="container">
-                    <p style="font-size: 30px; font-weight: bold">PIT DECLARATION</p>
+                    <a href="https://www.acc.org.bt/?q=node/1658" target="_blank"><p style="font-size: 30px; font-weight: bold">ASSET DECLARATION</p></a>
                     <div id="countdown">
                         <ul>
                             <li><span class="ptime" id="days"></span>days</li>
@@ -456,9 +453,12 @@ padding-right: 25px;
       mm = String(today.getMonth() + 1).padStart(2, "0"),
       yyyy = today.getFullYear(),
       nextYear = yyyy + 1,
-      dayMonth = "09/30/",
+    // COUNT DOWN DAYS ADD HERE MONTH/DATE
+      dayMonth = "06/29/",
       birthday = dayMonth + yyyy;
-    today = '04' + "/" + "30" + "/" + "2022";
+    // ADD TODAY'S DATE MONTH/DATE/YEAR
+    today = '05' + "/" + "12" + "/" + "2022";
+
     //end
     const countDown = new Date(birthday).getTime(),
       x = setInterval(function () {

@@ -115,6 +115,21 @@
             {% endfor %}
             </tbody>
         </table>
+                        <div class="pg">
+                                            Page: {{ hr.number }} of {{ hr.paginator.num_pages }}
+                                            <br>
+                                            {% if hr.has_previous %}
+                                            <span><a href="?page=1">&laquo First</a></span>
+                                            <a href="?page={{ hr.previous_page_number }}">Previous</a>
+                                            {% endif %}
+
+
+                                            {% if hr.has_next %}
+                                            <a href="?page={{ hr.next_page_number }}">Next</a>
+                                            <a href="?page={{ hr.paginator.num_pages }}">Last
+                                                &raquo</a>
+                                            {% endif %}
+                                        </div>
                     </div>
                     <hr class="line">
                 </section>

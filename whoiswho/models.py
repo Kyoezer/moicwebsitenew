@@ -31,6 +31,7 @@ class policy_planning_division(models.Model):
     title = models.CharField(max_length=200)
     name = models.CharField(max_length=200)
     mail_id = models.EmailField(blank=True)
+    focal_person_for = models.CharField(max_length=200, null=True, blank=True)
     phone_no = models.IntegerField(blank=True)
     profile_img = models.ImageField(blank=True,upload_to='pics')
 
@@ -39,6 +40,7 @@ class human_resource_division(models.Model):
     title = models.CharField(max_length=200)
     name = models.CharField(max_length=200)
     mail_id = models.EmailField(blank=True)
+    focal_person_for = models.CharField(max_length=200, null=True, blank=True)
     phone_no = models.IntegerField(blank=True)
     profile_img = models.ImageField(blank=True,upload_to='pics')
 
@@ -47,6 +49,7 @@ class ict_division(models.Model):
     title = models.CharField(max_length=200)
     name = models.CharField(max_length=200)
     mail_id = models.EmailField(blank=True)
+    focal_person_for = models.CharField(max_length=200, null=True, blank=True)
     phone_no = models.IntegerField(blank=True)
     profile_img = models.ImageField(blank=True,upload_to='pics')
 
@@ -55,6 +58,7 @@ class internal_audit(models.Model):
     title = models.CharField(max_length=200)
     name = models.CharField(max_length=200)
     mail_id = models.EmailField(blank=True)
+    focal_person_for = models.CharField(max_length=200, null=True, blank=True)
     phone_no = models.IntegerField(blank=True)
     profile_img = models.ImageField(blank=True,upload_to='pics')
 
@@ -63,6 +67,7 @@ class administration(models.Model):
     title = models.CharField(max_length=200)
     name = models.CharField(max_length=200)
     mail_id = models.EmailField(blank=True)
+    focal_person_for = models.CharField(max_length=200, null=True, blank=True)
     phone_no = models.IntegerField(blank=True)
     profile_img = models.ImageField(blank=True,upload_to='pics')
 
@@ -71,6 +76,7 @@ class finance_division(models.Model):
     title = models.CharField(max_length=200)
     name = models.CharField(max_length=200)
     mail_id = models.EmailField(blank=True)
+    focal_person_for = models.CharField(max_length=200, null=True, blank=True)
     phone_no = models.IntegerField(blank=True)
     profile_img = models.ImageField(blank=True,upload_to='pics')
 
@@ -79,6 +85,7 @@ class procurement_section(models.Model):
     title = models.CharField(max_length=200)
     name = models.CharField(max_length=200)
     mail_id = models.EmailField(blank=True)
+    focal_person_for = models.CharField(max_length=200, null=True, blank=True)
     phone_no = models.IntegerField(blank=True)
     profile_img = models.ImageField(blank=True, upload_to='pics')
 

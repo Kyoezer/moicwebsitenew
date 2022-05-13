@@ -25,8 +25,8 @@
     letter-spacing: normal;
     padding-left: 0px;
     text-align: justify;
-    padding-top: 6rem;
-    width: 360px;
+    padding: 6rem 10px 0px 0px;
+    width: 350px;
 }
         }
         .doat1 {
@@ -40,20 +40,18 @@
     </style>
 </head>
 <body>
-<section class="doat mt-12 ml-2">
+<section class="doat mt-16 ml-2">
     <div class="grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-1">
         <div class="lg:w-full sm:w-1/3 md:w-full">
     <section class="department">
-        <span style="font-size: 25px; font-weight: bold">{{obj.vacancy_title}}</span>
+        <span class="sub_topic">{{obj.vacancy_title}}</span>
         <p style="font-size: 15px; color: #a3a3a3">{{obj.pub_date}}</p>
         <br>
-        <img alt="secretary" src="{{ obj.vacancy_img.url }}"
-             style="display: block; margin-left: auto; margin-right: auto"/>
         <br>
-        <p>{{obj.vacancy_description | safe}}</p>
+        <p style="text-align:justify; font-size:14px;">{{obj.vacancy_description|safe}}</p>
         {% if obj.vacancy_file %}
         <br>
-        <a href="{{obj.vacancy_file.url}}" style="color: #0095ff; text-decoration: underline">Download PDF</a>
+        To download the file <a href="{{obj.vacancy_file.url}}" style="color: #0095ff; text-decoration: underline">click here</a>
         {% endif %}
         <hr>
     </section>

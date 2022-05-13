@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .models import *
+from django.core.paginator import Paginator
 
 
 # Create your views here.
@@ -15,9 +16,15 @@ def download(request):
 
 def hrdecision(request):
     hrds = hrdecisions.objects.all()
-    return render(request, 'hrdecisions.html', {'hrds': hrds})
+
+    # paginator
+    p = Paginator(hrdecisions.objects.all(), 3)
+    page = request.GET.get('page')
+    hr = p.get_page(page)
+
+    return render(request, 'hrdecisions.html', {'hrds': hrds, 'hrdecisions': hr})
 
 
 def rsrstaservices(request):
     
-    return render(request, 'rstaservices.html', )
+    return render(request, 'rstaservices.html',)
