@@ -15,14 +15,12 @@ def download(request):
 
 
 def hrdecision(request):
-    hrds = hrdecisions.objects.all()
-
     # paginator
-    p = Paginator(hrdecisions.objects.all(), 3)
+    p = Paginator(hrdecisions.objects.all().order_by('-id'), 5)
     page = request.GET.get('page')
     hr = p.get_page(page)
 
-    return render(request, 'hrdecisions.html', {'hrds': hrds, 'hrdecisions': hr})
+    return render(request, 'hrdecisions.html', {'hr': hr})
 
 
 def rsrstaservices(request):

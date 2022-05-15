@@ -10,23 +10,20 @@ from django.core.paginator import Paginator
 # Create your views here.
 def home(request):
     popuplarPs = post.objects.all()
-    events = event.objects.all().order_by('-id')
     # Events Pagination
-    p = Paginator(event.objects.all(), 3)
+    p = Paginator(event.objects.all().order_by('-id'), 3)
     page = request.GET.get('page')
     events = p.get_page(page)
 
-    vacancies = vacancie.objects.all().order_by('-id')
     # Vacancy Pagination
-    # p1 = Paginator(vacancie.objects.all(), 1)
-    # page = request.GET.get('page')
-    # vacancies = p1.get_page(page)
+    p1 = Paginator(vacancie.objects.all().order_by('-id'), 3)
+    page1 = request.GET.get('page1')
+    vacancies = p1.get_page(page1)
 
-    tenders = tender.objects.all().order_by('-id')
-    # Tender Pagination
-    # p3 = Paginator(tender.objects.all(), 1)
-    # page = request.GET.get('page')
-    # tenders = p3.get_page(page)
+#     Tender Pagination
+    p3 = Paginator(tender.objects.all().order_by('-id'), 3)
+    page2 = request.GET.get('page2')
+    tenders = p3.get_page(page2)
 
     #add when the pagination works
     # 'vacancy': vacancies, 'tender': tenders

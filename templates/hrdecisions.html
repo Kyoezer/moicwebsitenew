@@ -107,10 +107,10 @@
             </tr>
             </thead>
             <tbody>
-            {% for hr in hrds %}
+            {% for h in hr %}
             <tr>
-                <td>{{ hr.SI_No }}</td>
-                <td><a href="{{ hr.attachment.url }}">{{ hr.title }}</a></td>
+                <td>{{ h.SI_No }}</td>
+                <td><a href="{{ h.attachment.url }}">{{ h.title }}</a></td>
             </tr>
             {% endfor %}
             </tbody>

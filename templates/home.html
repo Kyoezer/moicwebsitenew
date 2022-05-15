@@ -1,7 +1,7 @@
 {% extends 'base.html' %} {% block content %} {% load static %}
 <title>Ministry of Information and Communications</title>
-    <style>
-    .pg{
+<style>
+    .pg {
         font-size: 13px;
         letter-spacing: 1px;
         word-spacing: 1px;
@@ -12,165 +12,187 @@
         font-variant: normal;
         text-transform: none;
     }
-  .wrapper1 {
-    align-items: center;
-    width: auto;
-    margin-left: 0px;
-  }
-  .start {
-    height: 100%;
-    width: 100%;
-    grid-gap: 2px;
-    display: grid;
-    grid-template-areas: "back info";
-  }
-  @media (max-width : 500px){
-  .start {
-    height: 100%;
-    width: 100%;
-    grid-gap: 2px;
-    padding-top:3em;
-    display: grid;
-    grid-template-areas: "back info";
-    padding-left: -10px;
-  }
-  }
-  .info {
-    background: white;
-    box-shadow: -20px 20px 15px rgb(68, 68, 68);
-  }
-  .info img {
-    width: 600px;
-    height: 400px;
-    object-fit: cover;
-  }
-  .back {
-    background-color: #d4ab2a;
-    border-bottom-left-radius: 30% 10%;
-    border-bottom-radius: 30% 50%;
-  }
-  .back h1 {
-    background-color: transparent;
-    font-size: 54px;
-    font-weight: 600;
-    color: white;
-    font-family: sans-serif;
-    text-align: center;
-  }
-  .content {
-    margin-top: 50px;
-    background-color: rgb(255, 255, 255);
-    padding: 10px 20px;
-    width: 100%;
-    height: 100%;
-  }
-  .pro1 {
-    display: grid;
-    grid-template-areas: "mis se";
-  }
-  .mis {
-    text-align: center;
-    font-family: Poppins;
-  }
-  .se {
-    text-align: center;
-  }
-  .sec {
-    display: flex;
-    grid-template-areas: "events sidebar";
-  }
-  .events {
-    padding-left: 55px;
-    width: 850px;
-  }
-  @media(max-width:500px){
-    .events{
-    padding-left: 0px;
-    width: 350px;
+
+    .wrapper1 {
+        align-items: center;
+        width: auto;
+        margin-left: 0px;
     }
-  }
-  :root {
-    --smaller: 0.75;
-  }
 
-  * {
-    border-style: solid;
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
-  .container {
-    color: #333;
-    margin: 0 auto;
-    text-align: center;
-  }
-  @media(max-width:500px){
-  .container {
-    color: #333;
-    margin: 0 auto;
-    text-align: center;
-    margin-top: -30px;
-    margin-left: -20px;
-  }
-  }
-  .pit{
-    border-style: solid;
-    border-radius: 1px;
-    border-color: black;
-  }
-  .ptime{
-  text-decoration:none;
-  }
-  @media(max-width:500px){
-  .ptime{
-    font-size:2em;
-  }
-  }
+    .start {
+        height: 100%;
+        width: 100%;
+        grid-gap: 2px;
+        display: grid;
+        grid-template-areas: "back info";
+    }
 
-  h1 {
-    font-weight: normal;
-    letter-spacing: 0.125rem;
-    text-transform: none;
-  }
+    @media (max-width: 500px) {
+        .start {
+            height: 100%;
+            width: 100%;
+            grid-gap: 2px;
+            padding-top: 3em;
+            display: grid;
+            grid-template-areas: "back info";
+            padding-left: -10px;
+        }
+    }
 
-  li {
-    display: inline-block;
-    font-size: 16px;
-    list-style-type: none;
-    padding: 1em;
-    text-transform: none;
-  }
+    .info {
+        background: white;
+        box-shadow: -20px 20px 15px rgb(68, 68, 68);
+    }
 
-  li span {
-    border-style: solid;
-    border-color: #333;
-    display: block;
-    font-size: 40px;
-    font-weight: bold;
-  }
-  @media all and (max-width: 768px) {
+    .info img {
+        width: 600px;
+        height: 400px;
+        object-fit: cover;
+    }
+
+    .back {
+        background-color: #d4ab2a;
+        border-bottom-left-radius: 30% 10%;
+        border-bottom-radius: 30% 50%;
+    }
+
+    .back h1 {
+        background-color: transparent;
+        font-size: 54px;
+        font-weight: 600;
+        color: white;
+        font-family: sans-serif;
+        text-align: center;
+    }
+
+    .content {
+        margin-top: 50px;
+        background-color: rgb(255, 255, 255);
+        padding: 10px 20px;
+        width: 100%;
+        height: 100%;
+    }
+
+    .pro1 {
+        display: grid;
+        grid-template-areas: "mis se";
+    }
+
+    .mis {
+        text-align: center;
+        font-family: Poppins;
+    }
+
+    .se {
+        text-align: center;
+    }
+
+    .sec {
+        display: flex;
+        grid-template-areas: "events sidebar";
+    }
+
+    .events {
+        padding-left: 55px;
+        width: 850px;
+    }
+
+    @media (max-width: 500px) {
+        .events {
+            padding-left: 0px;
+            width: 350px;
+        }
+    }
+
+    :root {
+        --smaller: 0.75;
+    }
+
+    * {
+        border-style: solid;
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    .container {
+        color: #333;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    @media (max-width: 500px) {
+        .container {
+            color: #333;
+            margin: 0 auto;
+            text-align: center;
+            margin-top: -30px;
+            margin-left: -20px;
+        }
+    }
+
+    .pit {
+        border-style: solid;
+        border-radius: 1px;
+        border-color: black;
+    }
+
+    .ptime {
+        text-decoration: none;
+    }
+
+    @media (max-width: 500px) {
+        .ptime {
+            font-size: 2em;
+        }
+    }
+
     h1 {
-      font-size: calc(1.5rem * var(--smaller));
+        font-weight: normal;
+        letter-spacing: 0.125rem;
+        text-transform: none;
     }
 
     li {
-      font-size: calc(1.125rem * var(--smaller));
+        display: inline-block;
+        font-size: 16px;
+        list-style-type: none;
+        padding: 1em;
+        text-transform: none;
     }
 
     li span {
-      font-size: calc(3.375rem * var(--smaller));
+        border-style: solid;
+        border-color: #333;
+        display: block;
+        font-size: 40px;
+        font-weight: bold;
     }
-  }
 
-.post{
-padding:none;
-}
-@media(max-width:500px){
-.post{
-float: right;
-padding-right: 25px;
-}
-}
+    @media all and (max-width: 768px) {
+        h1 {
+            font-size: calc(1.5rem * var(--smaller));
+        }
+
+        li {
+            font-size: calc(1.125rem * var(--smaller));
+        }
+
+        li span {
+            font-size: calc(3.375rem * var(--smaller));
+        }
+    }
+
+    .post {
+        padding: none;
+    }
+
+    @media (max-width: 500px) {
+        .post {
+            float: right;
+            padding-right: 25px;
+        }
+    }
 </style>
 <section class="wrapper1">
     <section class="content">
@@ -261,7 +283,8 @@ padding-right: 25px;
                         </ul>
 
 
-                        <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded" style="padding-top: -16px;">
+                        <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded"
+                             style="padding-top: -16px;">
                             <div class="px-4 py-5 flex-auto">
                                 <div class="tab-content tab-space ">
                                     <div class="block " id="tab-profile">
@@ -318,20 +341,20 @@ padding-right: 25px;
                                         <br>
                                         {% endfor %}
                                         <br>
-                                        <!--                                        <div class="pg">-->
-                                        <!--                                        {% if vacancies.has_previous %}-->
-                                        <!--                                        <a href="?page=1">&laquo First</a>-->
-                                        <!--                                        <a href="?page={{ vacancies.previous_page_number }}">Previous</a>-->
-                                        <!--                                        {% endif %}-->
+                                        <div class="pg">
+                                            {% if vacancies.has_previous %}
+                                            <a href="?page1=1">&laquo First</a>
+                                            <a href="?page1={{ vacancies.previous_page_number }}" onclick="return false;">Previous</a>
+                                            {% endif %}
 
-                                        <!--                                        Page: {{ vacancies.number }} of {{ vacancies.paginator.num_pages }}-->
+                                            Page: {{ vacancies.number }} of {{ vacancies.paginator.num_pages }}
 
-                                        <!--                                        {% if vacancies.has_next %}-->
-                                        <!--                                        <a href="?page={{ vacancies.next_page_number }}">Next</a>-->
-                                        <!--                                        <a href="?page={{ vacancies.paginator.num_pages }}">Last-->
-                                        <!--                                            &raquo</a>-->
-                                        <!--                                        {% endif %}-->
-                                        <!--                                            </div>-->
+                                            {% if vacancies.has_next %}
+                                            <a href="?page1={{ vacancies.next_page_number }}">Next</a>
+                                            <a href="?page1={{ vacancies.paginator.num_pages }}">Last
+                                                &raquo</a>
+                                            {% endif %}
+                                        </div>
                                     </div>
                                     <div class="hidden" id="tab-tender">
                                         {% for tender in tenders %}
@@ -350,20 +373,20 @@ padding-right: 25px;
                                         <br>
                                         {% endfor %}
                                         <br>
-                                        <!--                                        <div class="pg">-->
-                                        <!--                                        {% if tenders.has_previous %}-->
-                                        <!--                                        <a href="?page=1">&laquo First</a>-->
-                                        <!--                                        <a href="?page={{ tenders.previous_page_number }}">Previous</a>-->
-                                        <!--                                        {% endif %}-->
+                                        <div class="pg">
+                                            {% if tenders.has_previous %}
+                                            <a href="?page2=1">&laquo First</a>
+                                            <a href="?page2={{ tenders.previous_page_number }}">Previous</a>
+                                            {% endif %}
 
-                                        <!--                                        Page: {{ tenders.number }} of {{ tenders.paginator.num_pages }}-->
+                                            Page: {{ tenders.number }} of {{ tenders.paginator.num_pages }}
 
-                                        <!--                                        {% if tenders.has_next %}-->
-                                        <!--                                        <a href="?page={{ tenders.next_page_number }}">Next</a>-->
-                                        <!--                                        <a href="?page={{ tenders.paginator.num_pages }}">Last-->
-                                        <!--                                            &raquo</a>-->
-                                        <!--                                        {% endif %}-->
-                                        <!--                                            </div>-->
+                                            {% if tenders.has_next %}
+                                            <a href="?page2={{ tenders.next_page_number }}">Next</a>
+                                            <a href="?page2={{ tenders.paginator.num_pages }}">Last
+                                                &raquo</a>
+                                            {% endif %}
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -371,36 +394,29 @@ padding-right: 25px;
                     </div>
                 </div>
                 <script type="text/javascript">
-      function changeActiveTab(event,tabID){
-        let element = event.target;
-        while(element.nodeName !== "A"){
-          element = element.parentNode;
-        }
-        ulElement = element.parentNode.parentNode;
-        aElements = ulElement.querySelectorAll("li > a");
-        tabContents = document.getElementById("tabs-id").querySelectorAll(".tab-content > div");
-        for(let i = 0 ; i < aElements.length; i++){
-          aElements[i].classList.remove("text-white");
-          aElements[i].classList.remove("bg-yellow-600");
-          aElements[i].classList.add("text-yellow-600");
-          aElements[i].classList.add("bg-white");
-          tabContents[i].classList.add("hidden");
-          tabContents[i].classList.remove("block");
-        }
-        element.classList.remove("text-yellow-600");
-        element.classList.remove("bg-white");
-        element.classList.add("text-white");
-        element.classList.add("bg-yellow-600");
-        document.getElementById(tabID).classList.remove("hidden");
-        document.getElementById(tabID).classList.add("block");
-      }
-
-
-
-
-
-
-
+                    function changeActiveTab(event, tabID) {
+                        let element = event.target;
+                        while (element.nodeName !== "A") {
+                            element = element.parentNode;
+                        }
+                        ulElement = element.parentNode.parentNode;
+                        aElements = ulElement.querySelectorAll("li > a");
+                        tabContents = document.getElementById("tabs-id").querySelectorAll(".tab-content > div");
+                        for (let i = 0; i < aElements.length; i++) {
+                            aElements[i].classList.remove("text-white");
+                            aElements[i].classList.remove("bg-yellow-600");
+                            aElements[i].classList.add("text-yellow-600");
+                            aElements[i].classList.add("bg-white");
+                            tabContents[i].classList.add("hidden");
+                            tabContents[i].classList.remove("block");
+                        }
+                        element.classList.remove("text-yellow-600");
+                        element.classList.remove("bg-white");
+                        element.classList.add("text-white");
+                        element.classList.add("bg-yellow-600");
+                        document.getElementById(tabID).classList.remove("hidden");
+                        document.getElementById(tabID).classList.add("block");
+                    }
 
 
                 </script>
@@ -410,7 +426,8 @@ padding-right: 25px;
         <div class="lg:w-full sm:w-1/3 md:w-full">
             <section>
                 <div class="container">
-                    <a href="https://www.acc.org.bt/?q=node/1658" target="_blank"><p style="font-size: 30px; font-weight: bold">ASSET DECLARATION</p></a>
+                    <a href="https://www.acc.org.bt/?q=node/1658" target="_blank"><p
+                            style="font-size: 30px; font-weight: bold">ASSET DECLARATION</p></a>
                     <div id="countdown">
                         <ul>
                             <li><span class="ptime" id="days"></span>days</li>
@@ -440,44 +457,44 @@ padding-right: 25px;
 <script>
 
 
-  (function () {
-    const second = 1000,
-      minute = second * 60,
-      hour = minute * 60,
-      day = hour * 24;
+    (function () {
+        const second = 1000,
+            minute = second * 60,
+            hour = minute * 60,
+            day = hour * 24;
 
-    //I'm adding this section so I don't have to keep updating this pen every year :-)
-    //remove this if you don't need it
-    let today = new Date(),
-      dd = String(today.getDate()).padStart(2, "0"),
-      mm = String(today.getMonth() + 1).padStart(2, "0"),
-      yyyy = today.getFullYear(),
-      nextYear = yyyy + 1,
-    // COUNT DOWN DAYS ADD HERE MONTH/DATE
-      dayMonth = "06/29/",
-      birthday = dayMonth + yyyy;
-    // ADD TODAY'S DATE MONTH/DATE/YEAR
-    today = '05' + "/" + "12" + "/" + "2022";
+        //I'm adding this section so I don't have to keep updating this pen every year :-)
+        //remove this if you don't need it
+        let today = new Date(),
+            dd = String(today.getDate()).padStart(2, "0"),
+            mm = String(today.getMonth() + 1).padStart(2, "0"),
+            yyyy = today.getFullYear(),
+            nextYear = yyyy + 1,
+            // COUNT DOWN DAYS ADD HERE MONTH/DATE
+            dayMonth = "06/29/",
+            birthday = dayMonth + yyyy;
+        // ADD TODAY'S DATE MONTH/DATE/YEAR
+        today = '05' + "/" + "12" + "/" + "2022";
 
-    //end
-    const countDown = new Date(birthday).getTime(),
-      x = setInterval(function () {
-        const now = new Date().getTime(),
-          distance = countDown - now;
-        (document.getElementById("days").innerText = Math.floor(
-          distance / day
-        )),
-          (document.getElementById("hours").innerText = Math.floor(
-            (distance % day) / hour
-          )),
-          (document.getElementById("minutes").innerText = Math.floor(
-            (distance % hour) / minute
-          )),
-          (document.getElementById("seconds").innerText = Math.floor(
-            (distance % minute) / second
-          ));
-      }, 0);
-  })();
+        //end
+        const countDown = new Date(birthday).getTime(),
+            x = setInterval(function () {
+                const now = new Date().getTime(),
+                    distance = countDown - now;
+                (document.getElementById("days").innerText = Math.floor(
+                    distance / day
+                )),
+                    (document.getElementById("hours").innerText = Math.floor(
+                        (distance % day) / hour
+                    )),
+                    (document.getElementById("minutes").innerText = Math.floor(
+                        (distance % hour) / minute
+                    )),
+                    (document.getElementById("seconds").innerText = Math.floor(
+                        (distance % minute) / second
+                    ));
+            }, 0);
+    })();
 </script>
 
 {% endblock content %}
