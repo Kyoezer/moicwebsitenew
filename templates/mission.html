@@ -135,7 +135,7 @@
                 <div class="scroll-fixed">
                     <section>
                         <div class="sidebar">
-                            <p style="font-size: 1.1875em">INFORMATION AND DOWNLOADS</p>
+                        <p class="font-bold underline" style="font-size: 1.1875em; color:#152238">INFORMATION AND DOWNLOADS</p>
                             <a class="hover:text-lg" href="{% url 'moicofficials' %}">For MoIC Officials</a><br/>
                             <a class="hover:text-lg" href="{% url 'download' %}">Downloads</a><br/>
                             <a class="hover:text-lg" href="{% url 'rstaservices' %}">RSTA Online Services</a><br/>
@@ -143,14 +143,11 @@
                         </div>
                         <div class="p-5">
 
-                            <iframe frameborder="0"
-                                    height="350" scrolling="no" src="https://calendar.google.com/calendar/embed?height=350&wkst=1&bgcolor=%23ffffff&ctz=Asia%2FThimphu&title=MoIC%20Calendar&showCalendars=0&showTz=0&showTabs=1&showPrint=0&src=NWVtMDd2NTM5dXFjZ3Q1Z2g5cjNkajdkMThAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&color=%23AD1457" style="border:solid 1px #777"
-                                    width="350"></iframe>
+                                              <iframe class="calendar" src="https://calendar.google.com/calendar/embed?src=las%40moic.gov.bt&ctz=Asia%2FThimphu" style="border-radius: 5px" width="400" height="350" frameborder="0" scrolling="no"></iframe>
+
                         </div>
                 </div>
             </div>
     </section>
-
-
 </div>
 {% endblock content %}

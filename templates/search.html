@@ -1,167 +1,112 @@
+{% extends 'base.html' %} {% block content %} {% load static %}
+<title>Terms and Conditions</title>
 <style>
-  * {
-    box-sizing: border-box;
+  .history {
+    width: 800px;
+    padding-left: 5px;
+    z-index:35;
   }
-  ul {
-    list-style-type: none;
+  @media(max-width : 500px){
+  .history{
+    width:350px;
+    padding-left:0px;
   }
-  body {
-    font-family: Verdana, sans-serif;
   }
-
-  .month {
-    padding: 70px 25px;
-    width: 100%;
-    background: #1abc9c;
-    text-align: center;
+  .background {
+    background-color: transparent;
+    display: grid;
+    grid-template-areas: "history info";
   }
-
-  .month ul {
-    margin: 0;
-    padding: 0;
+  @media (max-width : 500px){
+  .background {
+    background-color: transparent;
+    padding-left: 0px;
+    width: 400px;
+    padding-top: 6em;
+    display: grid;
+    grid-template-areas: "history info";
   }
-
-  .month ul li {
-    color: white;
-    font-size: 20px;
-    text-transform: uppercase;
-    letter-spacing: 3px;
   }
 
-  .month .prev {
-    float: left;
-    padding-top: 10px;
+  .content {
+    font-size: 16px;
+    font-family: sans-serif;
+    line-height: 26.4px;
+    letter-spacing: normal;
+    text-align: justify;
+  }
+  .vision {
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 10px;
+    padding: 10px;
+    border-color: #707070;
+  }
+  .line {
+    border: 1px solid #d4ab2a;
+    margin: 20px 0px;
+  }
+  .pd{
+  padding-left:12px;
+  }
+  @media(max-width:500px){
+  .pd{
+  padding-left:3px;
+  }
   }
 
-  .month .next {
-    float: right;
-    padding-top: 10px;
-  }
 
-  .weekdays {
-    margin: 0;
-    padding: 10px 0;
-    background-color: #ddd;
-  }
-
-  .weekdays li {
-    display: inline-block;
-    width: 13.6%;
-    color: #666;
-    text-align: center;
-  }
-
-  .days {
-    padding: 10px 0;
-    background: #eee;
-    margin: 0;
-  }
-
-  .days li {
-    list-style-type: none;
-    display: inline-block;
-    width: 13.6%;
-    text-align: center;
-    margin-bottom: 5px;
-    font-size: 12px;
-    color: #777;
-  }
-
-  .days li .active {
-    padding: 5px;
-    background: #1abc9c;
-    color: white !important;
-  }
-
-  /* Add media queries for smaller screens */
-  @media screen and (max-width: 720px) {
-    .weekdays li,
-    .days li {
-      width: 13.1%;
-    }
-  }
-
-  @media screen and (max-width: 420px) {
-    .weekdays li,
-    .days li {
-      width: 12.5%;
-    }
-    .days li .active {
-      padding: 2px;
-    }
-  }
-
-  @media screen and (max-width: 290px) {
-    .weekdays li,
-    .days li {
-      width: 12.2%;
-    }
-  }
-  .sidebar {
-    margin: 10%;
-    background-color: rgb(206, 199, 199);
-  }
 
 </style>
-<div class="sidebar">
-    <p style="font-size: 25px">INFORMATION AND DOWNLOADS</p>
-    <a href="{% url 'moicofficials' %}">For MoIC Officials</a><br/>
-    <a href="{% url 'download' %}">Downloads</a><br/>
-    <a href="{% url 'rstaservices' %}">RSTA Online Services</a><br/>
-    <a href="{% url 'hrdecisions' %}">HR Decisions</a>
-</div>
-<div class="month">
-    <ul>
-        <li class="prev">&#10094;</li>
-        <li class="next">&#10095;</li>
-        <li>
-            August<br/>
-            <span style="font-size: 18px">2021</span>
-        </li>
-    </ul>
-</div>
+<div class="pd">
+    <section class="background mt-12 ">
+        <div class="grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-1">
+            <div class="lg:w-full sm:w-1/3 md:w-full">
+                <section class="history">
+                    <div>
+                        <p class="topic">Search results</p>
+                        <hr class="line">
+                        <p>Posts containing "Promotion Proposal"</p>
+                        <p>Found 1 Results</p>
+                        <p><strong>Notification: Promotion Proposal for July 2022</strong>
 
-<ul class="weekdays">
-    <li>Mo</li>
-    <li>Tu</li>
-    <li>We</li>
-    <li>Th</li>
-    <li>Fr</li>
-    <li>Sa</li>
-    <li>Su</li>
-</ul>
+                            Published on: May 4, 2022, 2:49 a.m. 2 views
+                            This is to notify all the Departments/Division under the Ministry of Information and
+                            Communications to submit the promotion proposals for July 2022. All employees who are due
+                            and eligible for July 2022 promotion are req…
 
-<ul class="days">
-    <li>1</li>
-    <li>2</li>
-    <li>3</li>
-    <li>4</li>
-    <li>5</li>
-    <li>6</li>
-    <li>7</li>
-    <li>8</li>
-    <li>9</li>
-    <li><span class="active">10</span></li>
-    <li>11</li>
-    <li>12</li>
-    <li>13</li>
-    <li>14</li>
-    <li>15</li>
-    <li>16</li>
-    <li>17</li>
-    <li>18</li>
-    <li>19</li>
-    <li>20</li>
-    <li>21</li>
-    <li>22</li>
-    <li>23</li>
-    <li>24</li>
-    <li>25</li>
-    <li>26</li>
-    <li>27</li>
-    <li>28</li>
-    <li>29</li>
-    <li>30</li>
-    <li>31</li>
-</ul>
+                            Read more >>></p>
+                        <hr class="line">
+                </section>
+
+            </div>
+
+            <div></div>
+            <div class="lg:w-full sm:w-1/3 md:w-full">
+                <div class="scroll-fixed">
+                    <section>
+                        <div class="sidebar">
+                            <p class="font-bold underline" style="font-size: 1.1875em; color:#152238">INFORMATION AND
+                                DOWNLOADS</p>
+                            <a class="hover:text-lg" href="{% url 'moicofficials' %}">For MoIC Officials</a><br/>
+                            <a class="hover:text-lg" href="{% url 'download' %}">Downloads</a><br/>
+                            <a class="hover:text-lg" href="{% url 'rstaservices' %}">RSTA Online Services</a><br/>
+                            <a class="hover:text-lg" href="{% url 'hrdecisions' %}">HR Decisions</a>
+                        </div>
+                        <div>
+                            <iframe class="calendar"
+                                    frameborder="0"
+                                    height="350" scrolling="no"
+                                    src="https://calendar.google.com/calendar/embed?src=las%40moic.gov.bt&ctz=Asia%2FThimphu"
+                                    style="border-radius: 5px"
+                                    width="400"></iframe>
+
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </section>
 </div>
+{% endblock content %}
+

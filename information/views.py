@@ -26,3 +26,18 @@ def hrdecision(request):
 def rsrstaservices(request):
     
     return render(request, 'rstaservices.html',)
+
+
+def terms(request):
+
+    return render(request, 'terms.html')
+
+
+def privacy(request):
+
+    return render(request, 'privacy.html')
+
+
+def disclaimer(request):
+
+    return render(request, 'disclaimer.html')

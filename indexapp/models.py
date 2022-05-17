@@ -101,10 +101,10 @@ class vacancie(models.Model):
 class event(models.Model):
     event_title = models.CharField(max_length=100)
     CATEGORY = (
-        ('announcement', 'Announcement'),
-        ('event', 'Event'),
-        ('information', 'Information'),
-        ('notifications', 'Notifications'),
+        ('Announcement', 'Announcements'),
+        ('Event', 'Events'),
+        ('Information', 'Informations'),
+        ('Notification', 'Notifications'),
     )
     category = models.CharField(choices=CATEGORY, max_length=100, null='True', blank='True')
 

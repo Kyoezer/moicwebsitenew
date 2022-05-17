@@ -172,14 +172,15 @@
                 <div class="scroll-fixed">
                     <section>
                         <div class="sidebar">
-                            <p style="font-size: 1.1875em">INFORMATION AND DOWNLOADS</p>
+                        <p class="font-bold underline" style="font-size: 1.1875em; color:#152238">INFORMATION AND DOWNLOADS</p>
                             <a class="hover:text-lg" href="{% url 'moicofficials' %}">For MoIC Officials</a><br/>
                             <a class="hover:text-lg" href="{% url 'download' %}">Downloads</a><br/>
                             <a class="hover:text-lg" href="{% url 'rstaservices' %}">RSTA Online Services</a><br/>
                             <a class="hover:text-lg" href="{% url 'hrdecisions' %}">HR Decisions</a>
                         </div>
                         <div>
-                            <div class="calendar lg:w-10/14" data-date="auto" inline-datepicker></div>
+                           <iframe class="calendar" src="https://calendar.google.com/calendar/embed?src=las%40moic.gov.bt&ctz=Asia%2FThimphu" style="border-radius: 5px" width="400" height="350" frameborder="0" scrolling="no"></iframe>
+
                         </div>
                     </section>
                 </div>

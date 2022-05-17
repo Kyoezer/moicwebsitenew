@@ -30,7 +30,7 @@ urlpatterns = [
     path('contact/', include('contact.urls')),
     path('information/', include('information.urls')),
     path('search/', include('search.urls')),
-    path('admin/', admin.site.urls),
+    path('moic_admin/', admin.site.urls),
 ]
 
 urlpatterns = urlpatterns + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
