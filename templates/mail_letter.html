@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block title %}Mail Page {% endblock %}
+{% block content %} {% load static %}
+<!-- <style>
+
+.contact{
+    border-radius: 7px;
+        background-color: #ff6347;
+        border: none;
+        color: white;
+        padding: 15px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 15px;
+        cursor: pointer;
+        z-index:30;
+  }
+  </style> -->
+
+<div class="container">
+    <div class="row mt-5 pt-5">
+        <div class="col-md-6 offset-md-3">
+            {% for message in messages %}
+            <div class="alert alert-success">
+                {{ message }}
+            </div>
+            {% endfor %}
+            <div class="card">
+                <div class="card-body">
+                    <form method="POST">
+                        {% csrf_token %}
+                        {{ form|crispy }}
+                        <input class="btn btn-info btn-block" type="submit" value="Send Message">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+  {% endblock content %}

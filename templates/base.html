@@ -676,6 +676,7 @@ margin-bottom:0px;
   z-index: 1;
   top: 0;
   left: 0;
+  color:black;
   background-color: rgb(0,0,0);
   background-color: rgba(0,0,0, 0.9);
 }
@@ -685,7 +686,6 @@ margin-bottom:0px;
   top: 46%;
   width: 50%;
   text-align: center;
-  margin-top: 30px;
   margin: auto;
 }
 @media(max-width:500px){
@@ -737,6 +737,121 @@ margin-bottom:0px;
 
 .overlay button:hover {
   background: #bbb;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 600;
+  padding-top: 50px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: black;
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  width: 90%;
+  max-width: 1000px;
+}
+
+/* The Close Button */
+.close {
+  color: white;
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #999;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.mySlides {
+  display: none;
+}
+
+.cursor {
+  cursor: pointer;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+img {
+  margin-bottom: -4px;
+}
+
+.caption-container {
+  text-align: center;
+  background-color: black;
+  padding: 2px 16px;
+  color: white;
+}
+
+.demo {
+  opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
+}
+
+img.hover-shadow {
+  transition: 0.3s;
+}
+
+.hover-shadow:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
     </style>
@@ -837,10 +952,11 @@ margin-bottom:0px;
                     <div id="myOverlay" class="overlay" style="z-index:1000;">
   <span class="closebtn" onclick="closeSearch()" title="Close Overlay">×</span>
   <div class="overlay-content">
-<!--    <form action="">-->
-      <input type="text" placeholder="Search.." name="search">
-        <a href="{% url 'search' %}"><button type="submit"><i class="fa fa-search"></i></button></a>
-<!--    </form>-->
+  <form method=POST action="{% url 'search' %}">
+      {% csrf_token %}
+      <input type="text" placeholder="Search for posts..." name="searched">
+      <button type="submit"><i class="fa fa-search"></i></button>
+    </form>
   </div>
 </div>
                     <button class="searchbtn" onclick="openSearch()"><i class="fa fa-search fa-3x hover:text-green-300"></i></button>
@@ -961,38 +1077,37 @@ function closeSearch() {
                             class="text-slate-400 text-base mb-1 hover:text-red-500 hover:text-lg"><i
                             class="fa fa-caret-right text-slate-400 text-base hover:text-red-500 hover:text-lg">&nbsp;About
                         Us</i></p></a>
-                    <p class="text-slate-400 text-base mb-1 hover:text-red-500 hover:text-lg"><i
-                            class="fa fa-caret-right text-slate-400 text-base hover:text-red-500 hover:text-lg">&nbsp;Post
-                        Category</i></p>
-                    <p class="text-slate-400 text-base mb-1 hover:text-red-500 hover:text-lg"><i
-                            class="fa fa-caret-right text-slate-400 text-base hover:text-red-500 hover:text-lg">&nbsp;Archive</i>
-                    </p>
+                    <p class="text-slate-400 text-base mb-1">
+                        <i
+                            class="fa fa-caret-right text-slate-400 text-base">&nbsp;Post Category</i></p>
                 </div>
                 <div class="mb-6" style="text-align:left;">
                     <h5 class="font-bold mb-2.5 text-white text-lg">Gallery</h5>
                     <hr class="mb-4" style="border:1px solid white; width:30%">
                     <div class="container grid grid-cols-3 gap-2 mx-auto">
                         <div class="w-full rounded">
-                            <img alt="image" src="{% static 'images/lyonpo4.png' %}">
+                            <img alt="image" onclick="openModal();currentSlide(1)" class="hover-shadow cursor"
+                                 src="{% static 'images/gallery1.jpg' %}">
                         </div>
                         <div class="w-full rounded">
-                            <img alt="image" src="{% static 'images/background.jpg' %}">
+                            <img alt="image" onclick="openModal();currentSlide(2)" class="hover-shadow cursor"
+                                 src="{% static 'images/gallery2.jpeg' %}">
                         </div>
                         <div class="w-full rounded">
-                            <img alt="image"
-                                 src="{% static 'images/lyonpo4.png' %}">
+                            <img alt="image" onclick="openModal();currentSlide(3)" class="hover-shadow cursor"
+                                 src="{% static 'images/gallery3.jpg' %}">
                         </div>
                         <div class="w-full rounded">
-                            <img alt="image"
-                                 src="{% static 'images/lyonpo4.png' %}">
+                            <img alt="image" onclick="openModal();currentSlide(4)" class="hover-shadow cursor"
+                                 src="{% static 'images/gallery4.jpg' %}">
                         </div>
                         <div class="w-full rounded">
-                            <img alt="image"
-                                 src="{% static 'images/lyonpo4.png' %}">
+                            <img alt="image" onclick="openModal();currentSlide(5)" class="hover-shadow cursor"
+                                 src="{% static 'images/gallery5.png' %}">
                         </div>
                         <div class="w-full rounded">
-                            <img alt="image"
-                                 src="{% static 'images/lyonpo4.png' %}">
+                            <img alt="image" onclick="openModal();currentSlide(6)" class="hover-shadow cursor"
+                                 src="{% static 'images/gallery6.jpg' %}">
                         </div>
                     </div>
                 </div>
@@ -1070,9 +1185,59 @@ function closeSearch() {
                 <a href="{% url 'terms' %}" class="verticalLine mr-4">&nbsp&nbspTerms</a>
                 <a href="{% url 'disclaimer' %}" class="verticalLine mr-4">&nbsp&nbspDisclaimer</a>
                 <a href="{% url 'privacy' %}" class="verticalLine mr-4">&nbsp&nbspPrivacy</a>
-                <a href="{% url 'contact' %}" class="verticalLine mr-20">&nbsp&nbspContact</a>
+                <a href="{% url 'contact' %}" class="verticalLine mr-4">&nbsp&nbspContact</a>
+                <a href="{% url 'subscribe' %}" class="verticalLine mr-20">&nbsp&nbspSubscribe</a>
             </div>
         </div>
+        <div id="myModal" class="modal">
+  <span class="close cursor" onclick="closeModal()">&times;</span>
+  <div class="modal-content">
+
+    <div class="mySlides">
+      <div class="numbertext">1 / 6</div>
+      <img src="{% static 'images/gallery1.jpg' %}" style="width:100%">
+        <p style="padding:20px;">MoIC Promotion Ceremony 09/07/21</p>
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">2 / 6</div>
+      <img src="{% static 'images/gallery2.jpeg' %}" style="width:100%">
+        <p style="padding:20px;">Photo Exhibition, 2021, DoIM </p>
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">3 / 6</div>
+      <img src="{% static 'images/gallery3.jpg' %}" style="width:100%">
+        <p style="padding:20px;">Caption</p>
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">4 / 6</div>
+      <img src="{% static 'images/gallery4.jpg' %}" style="width:100%">
+        <p style="padding:20px;">Music Festival Inauguration, MoIC</p>
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">5 / 6</div>
+      <img src="{% static 'images/gallery5.png' %}" style="width:100%">
+        <p style="padding:20px;">Music Festival Inauguration, MoIC</p>
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">6 / 6</div>
+      <img src="{% static 'images/gallery6.jpg' %}" style="width:100%">
+        <p style="padding:20px;">Caption</p>
+    </div>
+
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+    <div class="caption-container">
+      <p id="caption"></p>
+    </div>
+
+                    </div>
+                </div>
     </footer>
 </section>
 {% endblock footer %}
@@ -1108,10 +1273,47 @@ function closeSearch() {
       setInterval(second,3000)
       setInterval(thrid,4000)
       setInterval(fourth,5000)
-
-
-
 </script>
+
+<script>
+    function openModal() {
+  document.getElementById("myModal").style.display = "block";
+}
+
+function closeModal() {
+  document.getElementById("myModal").style.display = "none";
+}
+
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo");
+  var captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  captionText.innerHTML = dots[slideIndex-1].alt;
+}
+</script>
+
 <script>
   function first(){
     document.getElementById("sildeimage1").src="{% static 'images/yeshi.png' %}";

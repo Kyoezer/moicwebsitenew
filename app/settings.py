@@ -27,7 +27,8 @@ SECRET_KEY = 'django-insecure-8_32xf5%=&s^bz9hpc*_j9n2)kgpjs7!+(v@&m*yasg@cxrdrb
 DEBUG = True
 
 
-ALLOWED_HOSTS = ['172.16.164.167', '172.16.164.53']
+# ALLOWED_HOSTS = ['172.16.164.167', '172.16.164.53', '172.16.163.232', '']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -53,6 +54,8 @@ INSTALLED_APPS = [
     'base',
     'search',
     'information',
+    'crispy_forms',
+    'subscribe',
 ]
 
 MIDDLEWARE = [
@@ -120,7 +123,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Thimphu'
 
 USE_I18N = True
 

@@ -1,5 +1,5 @@
 {% extends 'base.html' %} {% block content %} {% load static %}
-<title>Terms and Conditions</title>
+<title>Search Results</title>
 <style>
   .history {
     width: 800px;
@@ -54,9 +54,6 @@
   padding-left:3px;
   }
   }
-
-
-
 </style>
 <div class="pd">
     <section class="background mt-12 ">
@@ -64,19 +61,70 @@
             <div class="lg:w-full sm:w-1/3 md:w-full">
                 <section class="history">
                     <div>
+                        {% if searched %}
                         <p class="topic">Search results</p>
                         <hr class="line">
-                        <p>Posts containing "Promotion Proposal"</p>
-                        <p>Found 1 Results</p>
-                        <p><strong>Notification: Promotion Proposal for July 2022</strong>
+                        <p>You have searched for "{{ searched }}"</p> <br>
 
-                            Published on: May 4, 2022, 2:49 a.m. 2 views
-                            This is to notify all the Departments/Division under the Ministry of Information and
-                            Communications to submit the promotion proposals for July 2022. All employees who are due
-                            and eligible for July 2022 promotion are req…
+                        <p>Found {{ total_count }} post(s) containing "{{ searched }}"</p>
+                        <br>
 
-                            Read more >>></p>
+
+                        {% for event in events %}
+                        {% if event.category == 'announcement' or 'event' or 'information' or 'notifications' %}
+                            <div style="border-left: 3px solid #d4ab2a; padding-left: 20px">
+                                            <p style="font-weight: bold"><span>{{ event.category }}: {{ event.event_title }}</span>
+                                            </p>
+                                            <p style="color: #bababa;font-size: 12px">Published on: {{ event.pub_date }}
+                                                <i class="fa fa-eye"></i> {{event.total_views}} views
+                                                <br>
+                                                {{event.event_description | safe | truncatechars:250}}
+                                            <form action="{% url 'post_detail' pk=event.id %}" method="get">
+                                                <input name="event-id" type="hidden" value="{{event.id}}">
+                                                    <button type="submit"><span style="color: #d4ab2a;">Read more >>></span>
+                                                </button>
+                                            </form>
+                                            <br>
+                                        </div>
+                                        <br>
+                                        {% endif %}
+                        {% endfor %}
+                        {% for vacancy in vacancies %}
+                                        <div style="border-left: 3px solid #d4ab2a; padding-left: 20px">
+                                            <p style="font-weight: bold"><a
+                                                    href="{% url 'vacancy_detail' vacancy.id %}"><span>{{ vacancy.vacancy_title }}</span></a>
+                                            </p>
+                                            <p style="color: #bababa;font-size: 12px">Published on: {{ vacancy.pub_date }}</p>
+
+                                            {{vacancy.vacancy_description | safe | truncatechars:250}}
+                                            <a href="{% url 'vacancy_detail' vacancy.id %}">
+                                            <span style="color: #d4ab2a;font-size: 13px">Read More >>></span></a>
+                                            <br>
+                                        </div>
+                                        <br>
+                                        {% endfor %}
+                        {% for tender in tenders %}
+                                        <div style="border-left: 3px solid #d4ab2a; padding-left: 20px">
+                                            <p style="font-weight: bold"><a
+                                                    href="{% url 'tender_detail' tender.id %}">{{ tender.tender_title }}</a>
+                                            </p>
+                                            <p style="color: #bababa; font-size: 12px">Published on: {{ tender.pub_date }}</p>
+                                            {{tender.tender_description | safe | truncatechars:250}}
+                                            <a href="{% url 'tender_detail' tender.id %}">
+                                            <span style="color: #d4ab2a;font-size: 13px">Read More >>> </span></a>
+                                            <br>
+                                        </div>
+                                        <br>
+                                        {% endfor %}
+
+                        {% else %}
+
+
+
+                        <p>Please input a search keyword</p>
+
                         <hr class="line">
+                        {% endif %}
                 </section>
 
             </div>

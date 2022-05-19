@@ -3,6 +3,7 @@ from turtle import title
 from django.db import models
 from ckeditor.fields import RichTextField
 from ckeditor_uploader.fields import RichTextUploadingField
+from django.core.files import File
 
 # Create your models here.
 # annual report
@@ -26,5 +27,16 @@ class social_link(models.Model):
 
 # ANNUAL PERFORMANCE AGREEMENT
 class annual_performance_agreement(models.Model):
-    title =  models.CharField(max_length=400, blank=True)
-    address_link =  models.CharField(max_length=200, blank=True)
+    title = models.CharField(max_length=400, blank=True)
+    YEAR = (
+        ('2016-2017', '2016-2017'),
+        ('2017-2018', '2017-2018'),
+        ('2018-2019', '2018-2019'),
+        ('2019-2020', '2019-2020'),
+        ('2020-2021', '2020-2021'),
+        ('2021-2022', '2021-2022'),
+        ('2022-2023', '2022-2023'),
+        ('2023-2024', '2023-2024'),
+    )
+    year = models.CharField(choices=YEAR, max_length=100, null='True', blank='True')
+    attachment = models.FileField(blank=True, null=True, upload_to='files')

@@ -29,7 +29,8 @@ urlpatterns = [
     path('publication/', include('publication.urls')),
     path('contact/', include('contact.urls')),
     path('information/', include('information.urls')),
-    path('search/', include('search.urls')),
+    # path('search/', include('search.urls')),
+    path('subscribe/', include('subscribe.urls')),
     path('moic_admin/', admin.site.urls),
 ]
 
