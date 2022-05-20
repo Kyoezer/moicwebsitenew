@@ -77,6 +77,14 @@
     <div>
       <h1 class="topic">Contact us</h1>
       <hr class="line" />
+        {% for message in messages %}
+<!--            <div class="alert alert-success">-->
+            <div class="p-4 mb-4 text-sm text-green-700 bg-green-100 rounded-lg dark:bg-green-200 dark:text-green-800" role="alert">
+  <span class="font-medium">{{ message }}</span>
+</div>
+
+<!--            </div>-->
+            {% endfor %}
       <p class="content">Ministry of Information & Communication</p>
       <p class="content">PO Box 278, Chubachu</p>
       <p class="content">Thimphu: Bhutan</p>
