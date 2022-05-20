@@ -27,8 +27,8 @@ SECRET_KEY = 'django-insecure-8_32xf5%=&s^bz9hpc*_j9n2)kgpjs7!+(v@&m*yasg@cxrdrb
 DEBUG = True
 
 
-# ALLOWED_HOSTS = ['172.16.164.167', '172.16.164.53', '172.16.163.232', '']
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['172.16.164.167', '172.16.164.53', '172.16.163.232']
+# ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -136,6 +136,12 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_USE_TLS = True
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'kyoezer@moic.gov.bt' #Enter your email
+EMAIL_HOST_PASSWORD = 'qdoypbudmjevwbld' #Enter the password to the email
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]

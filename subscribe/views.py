@@ -20,7 +20,7 @@ def subscribe(request):
         if contactForm.is_valid():
             contactForm.save()
             messages.success(request, 'Subscription Successful')
-            return redirect('/')
+            return redirect('/subscribe')
     else:
         form = SubscribeForm()
         context = {

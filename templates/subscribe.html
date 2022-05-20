@@ -1,29 +1,104 @@
 {% extends 'base.html' %}
 {% load crispy_forms_tags %}
 {% block content %} {% load static %}
+<style>
+    .submitbtn {
+    border-radius: 7px;
+                    background-color: #ff6347;
+                    border: none;
+                    color: white;
+                    padding: 15px;
+                    text-align: center;
+                    text-decoration: none;
+                    display: inline-block;
+                    font-size: 15px;
+                    cursor: pointer;
+                    z-index:30;
+  }
+  .history {
+    width: 800px;
+    padding-left: 5px;
+    z-index:35;
+  }
+  @media(max-width : 500px){
+  .history{
+    width:350px;
+    padding-left:0px;
+    padding-top:50px;
+  }
+  }
+  .pd{
+  padding-left:12px;
+  }
+  @media(max-width:500px){
+  .pd{
+  padding-left:3px;
+  }
+  }
+</style>
+<div class="pd">
 
-<title>Subscribe to Our News</title>
+    <section class="background mt-12" style="background-color:white">
+        <div class="grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-1">
+            <div class="lg:w-full sm:w-1/3 md:w-full">
+                <section class="history">
+
 <div class="container">
     <div class="row mt-5 pt-5">
         <div class="col-md-4 offset-md-4">
             {% for message in messages %}
-            <div class="alert alert-success">
-                {{ message }}
-            </div>
+<!--            <div class="alert alert-success">-->
+            <div class="p-4 mb-4 text-sm text-green-700 bg-green-100 rounded-lg dark:bg-green-200 dark:text-green-800" role="alert">
+  <span class="font-medium">{{ message }}</span>
+</div>
+
+<!--            </div>-->
             {% endfor %}
-            <div class="card">
-                <div class="card-body">
-                    <h3>Subscribe to Newsletter</h3>
-                    <hr>
+
+                    <p class="topic">Subscribe to Newsletter</p>
+            <hr class="line">
+
                     <form action="" method=  "POST">
                         {% csrf_token %}
-                        {{ form|crispy }}
-                        <!-- <input class="submitbtn" type="submit" /> -->
-                        <input class="btn btn-info btn-block" type="submit" value="Subscribe">
+<!--                        {{ form|crispy }}-->
+                        <table>
+        {{ form.as_table }}
+      </table>
+                        <br>
+                              <input class="submitbtn hover:bg-green-300 hover:text-white-800" style="text-transform:uppercase;" value="SUBSCRIBE" type="submit" />
                       </form>
-                </div>
-            </div>
         </div>
     </div>
+</div>
+                     </section>
+                </div>
+
+        <div style="z-index:-1"></div>
+                    <div class="lg:w-full sm:w-1/3 md:w-full">
+                <div class="scroll-fixed">
+                    <section>
+                        <div class="sidebar">
+                            <p class="font-bold underline" style="font-size: 1.1875em; color:#152238">INFORMATION AND
+                                DOWNLOADS</p>
+                            <a class="hover:text-lg" href="{% url 'moicofficials' %}">For MoIC Officials</a><br/>
+                            <a class="hover:text-lg" href="{% url 'download' %}">Downloads</a><br/>
+                            <a class="hover:text-lg" href="{% url 'rstaservices' %}">RSTA Online Services</a><br/>
+                            <a class="hover:text-lg" href="{% url 'hrdecisions' %}">HR Decisions</a>
+                        </div>
+                        <div>
+                            <iframe class="calendar"
+                                    frameborder="0"
+                                    height="350" scrolling="no"
+                                    src="https://calendar.google.com/calendar/embed?src=las%40moic.gov.bt&ctz=Asia%2FThimphu"
+                                    style="border-radius: 5px"
+                                    width="400"></iframe>
+
+                        </div>
+                    </section>
+                </div>
+            </div>
+
+
+                </section>
 </div>
   {% endblock content %}

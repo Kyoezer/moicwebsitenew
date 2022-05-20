@@ -28,6 +28,12 @@ class SubscribeForm(ModelForm):
     class Meta:
         model = subscribeUs
         fields = ['email', ]
+        widgets = {
+        'email': EmailInput(attrs={
+                            'class': "inputcontent",
+                            'placeholder': 'Email'
+                            })
+        }
 
 
 class MailMessageForm(forms.ModelForm):
