@@ -105,14 +105,10 @@
                         <hr class="line">
                         {% for policy in policies %}
         <div class="border">
-            <div class="flex flex-wrap overflow-hidden">
-                <div class="w-full overflow-hidden sm:w-1/2">
+
                     <a href="{{ policy.attachment.url }}"><p class=content> {{ policy.SI_No }}. {{ policy.title }}</p> </a>
-                </div>
-                <div class="w-full overflow-hidden sm:w-1/2">
-                    <a href=""><i class="fa fa-share" style="float: right; padding: 0px 10px"></i></a>
-                </div>
-            </div>
+
+
         </div>
         {% endfor %}
         <hr class="line">

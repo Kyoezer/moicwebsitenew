@@ -107,16 +107,9 @@
                         {% for guideline in guidelines %}
 
         <div class="border">
-            <div class="flex flex-wrap overflow-hidden">
-                <div class="w-full overflow-hidden sm:w-1/2">
+
                     <a href="{{ guideline.attachment.url }}"><p class=content> {{ guideline.SI_No }}. {{ guideline.title }}</p> </a>
-                </div>
-                <div class="w-full overflow-hidden sm:w-1/2">
-                    <i class="fa fa-envelope" style="float: right; padding: 0px 2px"></i>
-                    <i class="fa fa-plus" style="float: right; padding: 0px 2px"></i>
-                    <i class="fa fa-chain" style="float: right; padding: 0px 2px"></i>
-                </div>
-            </div>
+
         </div>
         {% endfor %}
                         <hr class="line">

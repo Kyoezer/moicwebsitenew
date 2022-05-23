@@ -242,10 +242,10 @@
           src="{% static 'images/first-quarter.png' %}"
           style="width: 100%"
         />
-          <a href="https://www.moic.gov.bt/wp-content/uploads/2021/07/1st-Quarter-2021-.pdf">
+          <a href="{% static 'files/1st-Quarter-2021.pdf' %}" target="_blank">
         <button
           class="contact"
-          style="display: block; margin-left: auto; margin-right: auto"
+          style="display: block; margin-left: auto; margin-right: auto; border-radius:5px;"
         >
           Download Report
         </button>
@@ -257,10 +257,10 @@
           src="{% static 'images/second-quarter.png' %}"
           style="width: 100%"
         />
-          <a href="https://www.moic.gov.bt/wp-content/uploads/2021/07/2nd-Quarter-2021-.pdf">
-        <button
+<a href="{% static 'files/2nd-Quarter-2021.pdf' %}" target="_blank">
+    <button
           class="contact"
-          style="display: block; margin-left: auto; margin-right: auto"
+          style="display: block; margin-left: auto; margin-right: auto; border-radius:5px;"
         >
           Download Report
         </button>
@@ -272,10 +272,10 @@
           src="{% static 'images/third-quarter.png' %}"
           style="width: 100%"
         />
-          <a href="https://www.moic.gov.bt/wp-content/uploads/2022/02/3rd-Quarter-Statistics-2021.pdf">
-        <button
+<a href="{% static 'files/3rd-Quarter-2021.pdf' %}" target="_blank">
+    <button
           class="contact"
-          style="display: block; margin-left: auto; margin-right: auto"
+          style="display: block; margin-left: auto; margin-right: auto; border-radius:5px;"
         >
           Download Report
         </button>
@@ -291,20 +291,10 @@
     <hr class="line" />
     {% for statistic in statistics %}
     <div class="border">
-      <div class="flex flex-wrap overflow-hidden">
-        <div class="w-full overflow-hidden sm:w-1/2">
-          <a href="{{ statistic.attachment.url }}"
-            ><p class="content">
+
+          <a href="{{ statistic.attachment.url }}"><p class="content">
               {{ statistic.SI_No }}. {{ statistic.title }}
-            </p></a
-          >
-        </div>
-        <div class="w-full overflow-hidden sm:w-1/2">
-          <i class="fa fa-envelope" style="float: right; padding: 0px 2px"></i>
-          <i class="fa fa-plus" style="float: right; padding: 0px 2px"></i>
-          <i class="fa fa-chain" style="float: right; padding: 0px 2px"></i>
-        </div>
-      </div>
+            </p></a>
     </div>
     {% endfor %}
     <hr class="line" />
