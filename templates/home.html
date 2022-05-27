@@ -61,7 +61,6 @@
         font-size: 54px;
         font-weight: 600;
         color: white;
-        font-family: sans-serif;
         text-align: center;
     }
 
@@ -80,7 +79,6 @@
 
     .mis {
         text-align: center;
-        font-family: Poppins;
     }
 
     .se {
@@ -190,7 +188,8 @@
     @media (max-width: 500px) {
         .post {
             float: right;
-            padding-right: 25px;
+            padding-right: 11px;
+            font-size:9px;
         }
     }
 
@@ -267,20 +266,20 @@
                             <li class="h-fit pt-3 text-center hover:cursor-pointer w-1/3 overflow-hidden lg:w-1/3 xl:w-1/3">
                                 <a class="post text-xs font-bold uppercase px-16 py-3 shadow-lg rounded block leading-normal text-white bg-yellow-600"
                                    onclick="changeActiveTab(event,'tab-profile')">
-                                    <i class="fa fa-calendar text-base mr-1"></i> Events
+                                    <i class="fa fa-calendar text-base mr-1"> </i> <br> Event/Notification
                                 </a>
                             </li>
                             <li class="h-fit pb-3 text-center hover:cursor-pointer w-1/3 overflow-hidden lg:w-1/3 xl:w-1/3">
                                 <a class="post text-xs font-bold uppercase px-16 py-3 shadow-lg rounded block leading-normal text-yellow-600 bg-white"
                                    onclick="changeActiveTab(event,'tab-settings')">
-                                    <i class="fa fa-user-plus text-base mr-1"></i> Vacancy
+                                    <i class="fa fa-user-plus text-base mr-1"></i> <br>Vacancies
                                 </a>
                             </li>
                             <li class="h-fit pb-3 text-center hover:cursor-pointer w-1/3 overflow-hidden lg:w-1/3 xl:w-1/3"
                                 style="z-index:9">
                                 <a class="post text-xs font-bold uppercase px-16 py-3 shadow-lg rounded block leading-normal text-yellow-600 bg-white"
                                    onclick="changeActiveTab(event,'tab-tender')">
-                                    <i class="fa fa-envelope text-base mr-1"></i> Tender
+                                    <i class="fa fa-envelope text-base mr-1"></i> <br> Tender
                                 </a>
                             </li>
                         </ul>

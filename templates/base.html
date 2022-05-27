@@ -15,7 +15,7 @@
       }
 
 *{
-font-family:arial;
+font-family:sans-serif;
 word-spacing: 20%;
 }
 .director {
@@ -1066,9 +1066,12 @@ function closeSearch() {
                             class="text-slate-400 text-base mb-1 hover:text-red-500 hover:text-lg"><i
                             class="fa fa-caret-right text-slate-400 text-base hover:text-red-500 hover:text-lg">&nbsp;About
                         Us</i></p></a>
-                    <p class="text-slate-400 text-base mb-1">
-                        <i
-                            class="fa fa-caret-right text-slate-400 text-base">&nbsp;Post Category</i></p>
+<!--                    <p class="text-slate-400 text-base mb-1">-->
+<!--                        <i-->
+<!--                            class="fa fa-caret-right text-slate-400 text-base">&nbsp;Post Category</i></p>-->
+<!--                    <p class="text-slate-400 text-base mb-1">-->
+<!--                        <i-->
+<!--                            class="fa fa-caret-right text-slate-400 text-base">&nbsp;Archive</i></p>-->
                 </div>
                 <div class="mb-6" style="text-align:left;">
                     <h5 class="font-bold mb-2.5 text-white text-lg">Gallery</h5>
@@ -1076,19 +1079,19 @@ function closeSearch() {
                     <div class="container grid grid-cols-3 gap-2 mx-auto">
                         <div class="w-full rounded">
                             <img alt="image" onclick="openModal();currentSlide(1)" class="hover-shadow cursor"
-                                 src="{% static 'images/gallery1.jpg' %}">
+                                 src="{% static 'images/1.jpeg' %}">
                         </div>
                         <div class="w-full rounded">
                             <img alt="image" onclick="openModal();currentSlide(2)" class="hover-shadow cursor"
-                                 src="{% static 'images/gallery2.jpeg' %}">
+                                 src="{% static 'images/2.jpg' %}">
                         </div>
                         <div class="w-full rounded">
                             <img alt="image" onclick="openModal();currentSlide(3)" class="hover-shadow cursor"
-                                 src="{% static 'images/gallery3.jpg' %}">
+                                 src="{% static 'images/3.jpg' %}">
                         </div>
                         <div class="w-full rounded">
                             <img alt="image" onclick="openModal();currentSlide(4)" class="hover-shadow cursor"
-                                 src="{% static 'images/gallery4.jpg' %}">
+                                 src="{% static 'images/4.jpg' %}">
                         </div>
                         <div class="w-full rounded">
                             <img alt="image" onclick="openModal();currentSlide(5)" class="hover-shadow cursor"
@@ -1096,7 +1099,7 @@ function closeSearch() {
                         </div>
                         <div class="w-full rounded">
                             <img alt="image" onclick="openModal();currentSlide(6)" class="hover-shadow cursor"
-                                 src="{% static 'images/gallery6.jpg' %}">
+                                 src="{% static 'images/6.jpg' %}">
                         </div>
 
                     </div>
@@ -1127,26 +1130,26 @@ function closeSearch() {
 
     <div class="mySlides">
       <div class="numbertext">1 / 6</div>
-      <img src="{% static 'images/gallery1.jpg' %}" style="width:100%">
-        <p style="padding:20px;">MoIC Promotion Ceremony 09/07/21</p>
+      <img src="{% static 'images/1.jpeg' %}" style="width:100%">
+        <p style="padding:20px;">Promotion Ceremony of MoIC Officials- January 2022</p>
     </div>
 
     <div class="mySlides">
       <div class="numbertext">2 / 6</div>
-      <img src="{% static 'images/gallery2.jpeg' %}" style="width:100%">
+      <img src="{% static 'images/2.jpg' %}" style="width:100%">
         <p style="padding:20px;">Photo Exhibition, 2021, DoIM </p>
     </div>
 
     <div class="mySlides">
       <div class="numbertext">3 / 6</div>
-      <img src="{% static 'images/gallery3.jpg' %}" style="width:100%">
-        <p style="padding:20px;">Caption</p>
+      <img src="{% static 'images/3.jpg' %}" style="width:100%">
+        <p style="padding:20px;">Fourth Ministerial Conference on Transport, 14–17 December 2021</p>
     </div>
 
     <div class="mySlides">
       <div class="numbertext">4 / 6</div>
-      <img src="{% static 'images/gallery4.jpg' %}" style="width:100%">
-        <p style="padding:20px;">Music Festival Inauguration, MoIC</p>
+      <img src="{% static 'images/4.jpg' %}" style="width:100%">
+        <p style="padding:20px;">Courtesy Call by JICA</p>
     </div>
 
     <div class="mySlides">
@@ -1157,8 +1160,8 @@ function closeSearch() {
 
     <div class="mySlides">
       <div class="numbertext">6 / 6</div>
-      <img src="{% static 'images/gallery6.jpg' %}" style="width:100%">
-        <p style="padding:20px;">Caption</p>
+      <img src="{% static 'images/6.jpg' %}" style="width:100%">
+        <p style="padding:20px;">World Day of Remembrance for Road Traffic Victims</p>
     </div>
 
     <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
@@ -1171,41 +1174,17 @@ function closeSearch() {
                     </div>
                 </div>
     </footer>
+     <div class="cookie-container">
+       &nbsp; We use cookies in this website to give you the best experience on our
+        site and show you relevant ads. To find out more, read our
+        <a href="{% url 'privacy' %}">privacy policy.</a> &nbsp;
+      <button class="contact cookie-btn">
+        Accept
+      </button>
+</div>
 </section>
 {% endblock footer %}
-<script>
-        window.addListener('DOMContentLoaded', () =>{
-            const overlay = document.querySelector('#overlay')
-            const delBtn = document.querySelector('#search-btn')
-            const closeBtn = document.querySelector('#close-modal')
 
-            const toggleModal = () => {
-                overlay.classList.toggle('hidden')
-                overlay.classList.toggle('flex')
-            }
-
-            delBtn.addEventListener('click', toggleModal)
-
-            closeBtn.addEventListener('click', toggleModal)
-        })
-
-      function first(){
-        document.getElementById("sildeimage").src="{% static 'images/yeshi.png' %}";
-      }
-      function second(){
-        document.getElementById("sildeimage").src="{% static 'images/logo1.png' %}";
-      }
-      function thrid(){
-        document.getElementById("sildeimage").src="{% static 'images/whoweare.png' %}";
-      }
-      function fourth(){
-        document.getElementById("sildeimage").src="{% static 'images/samuh.png' %}";
-      }
-      setInterval(first,2000)
-      setInterval(second,3000)
-      setInterval(thrid,4000)
-      setInterval(fourth,5000)
-</script>
 
 <script>
     function openModal() {
@@ -1247,26 +1226,6 @@ function showSlides(n) {
 </script>
 
 <script>
-  function first(){
-    document.getElementById("sildeimage1").src="{% static 'images/yeshi.png' %}";
-  }
-  function second(){
-    document.getElementById("sildeimage1").src="{% static 'images/whatwedo.png' %}";
-  }
-  function thrid(){
-    document.getElementById("sildeimage1").src="{% static 'images/samuh.png' %}";
-  }
-  function fourth(){
-    document.getElementById("sildeimage1").src="{% static 'images/denkers.png' %}";
-  }
-  setInterval(first,5000)
-  setInterval(second,4000)
-  setInterval(thrid,3000)
-  setInterval(fourth,2000)
-
-
-</script>
-<script>
         function myFunction() {
           var x = document.getElementById("myTopnav");
           if (x.className === "topnav") {
@@ -1275,7 +1234,6 @@ function showSlides(n) {
             x.className = "topnav";
           }
         }
-
        var mybutton = document.getElementById("myBtn");
 
 // When the user scrolls down 20px from the top of the document, show the button
@@ -1288,14 +1246,11 @@ function scrollFunction() {
     mybutton.style.display = "none";
   }
 }
-
 // When the user clicks on the button, scroll to the top of the document
 function topFunction() {
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
 }
-
-
 </script>
 </body>
 </html>

@@ -27,7 +27,7 @@ def contact(request):
             messages.success(request, 'You have successfully contacted to MoIC')
 
             try:
-                send_mail(subject, message, 'email', ['kyoezer@moic.gov.bt'])
+                send_mail(subject, message, 'email', ['admin@moic.gov.bt'])
             except BadHeaderError:
                 return HttpResponse('Invalid header found.')
             return redirect("/contact")

@@ -56,6 +56,7 @@ INSTALLED_APPS = [
     'information',
     'crispy_forms',
     'subscribe',
+    'django_social_share',
 ]
 
 MIDDLEWARE = [
@@ -140,8 +141,8 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_USE_TLS = True
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'kyoezer@moic.gov.bt' #Enter your email
-EMAIL_HOST_PASSWORD = 'qdoypbudmjevwbld' #Enter the password to the email
+EMAIL_HOST_USER = 'admin@moic.gov.bt' #Enter your email
+EMAIL_HOST_PASSWORD = 'zcwjusorvzyvlxuw' #Enter the password to the email
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
@@ -151,6 +152,8 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'assets')
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

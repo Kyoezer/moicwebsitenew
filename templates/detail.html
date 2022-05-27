@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-{% extends 'base.html' %} {% block content %} {% load static %}
+{% extends 'base.html' %} {% block content %} {% load static %} {% load social_share %}
 <html lang="en">
 <head>
     <title>Event Details</title>
@@ -181,6 +181,30 @@
           font-size: 11px;
         }
       }
+
+     .i{
+     background: #3B5998;
+  color: white;
+  padding:10px;
+  width:35px;
+  text-align:center;
+  border-radius:50%;
+     }
+     .i2{
+     background: #25D366;
+  color: white;
+  padding:10px;
+  width:35px;
+  text-align:center;
+  border-radius:50%;
+     }.i3{
+     background: #25D366;
+  color: white;
+  padding:10px;
+  width:35px;
+  text-align:center;
+  border-radius:50%;
+     }
     </style>
 </head>
 <body>
@@ -204,7 +228,7 @@
                 <img
                         alt="secretary"
                         fade
-                        mySlides src="{{ obj.event_img2.url }}" style="display: block; margin-left: auto; margin-right: auto/>
+                        mySlides src="{{ obj.event_img2.url }}" style="display: block; margin-left: auto; margin-right: auto">
             </div>
             {% endif %} {% if obj.event_img3 %}
             <div class="">
@@ -247,63 +271,24 @@
         <br/>
         <hr/>
         <br/>
-        <!--        <p style="font-size: 20px">Comments (2)</p>-->
-        <!--        <br/>-->
-        <!--        <p style="font-weight: bold">Kinley Yoezer</p>-->
-        <!--        <span style="color: #878787; font-size: 12px"-->
-        <!--        >kinleyyoezer@gmail.com</span-->
-        <!--        >-->
-        <!--        <p>this is very good event to be organized by the committee</p>-->
-        <!--        <br/>-->
-        <!--        <p style="font-weight: bold">Kinley Yoezer</p>-->
-        <!--        <p>-->
-        <!--          <span style="color: #878787; font-size: 12px"-->
-        <!--          >kinleyyoezer@gmail.com</span-->
-        <!--          >-->
-        <!--        </p>-->
-        <!--        <p>this is very good event to be organized by the committee</p>-->
-        <!--        <br/>-->
-        <!--        <hr/>-->
-        <!--        <br/>-->
-        <!--        <p style="font-size: 20px">Add Comment</p>-->
-        <!--        <br/>-->
-        <!--        <div class="">-->
-        <!--            <form>-->
-        <!--                <div class="form-group mb-6">-->
-        <!--                    <input-->
-        <!--                            class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-yellow-500 focus:outline-none"-->
-        <!--                            id="exampleInput7"-->
-        <!--                            placeholder="Name"-->
-        <!--                            type="text"-->
-        <!--                    />-->
-        <!--                </div>-->
-        <!--                <div class="form-group mb-6">-->
-        <!--                    <input-->
-        <!--                            class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-yellow-500 focus:outline-none"-->
-        <!--                            id="exampleInput8"-->
-        <!--                            placeholder="Email address"-->
-        <!--                            type="email"-->
-        <!--                    />-->
-        <!--                </div>-->
-        <!--                <div class="form-group mb-6">-->
-        <!--              <textarea-->
-        <!--                      class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-yellow-500 focus:outline-none"-->
-        <!--                      id="exampleFormControlTextarea13"-->
-        <!--                      placeholder="Comment"-->
-        <!--                      rows="3"-->
-        <!--              ></textarea>-->
-        <!--                </div>-->
-        <!--                <button-->
-        <!--                        class="w-70 px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md bg-yellow-500 transition duration-150 ease-in-out"-->
-        <!--                        type="submit"-->
-        <!--                >-->
-        <!--                    Comment-->
-        <!--                </button>-->
-        <!--            </form>-->
-        <!--        </div>-->
+
+<!--        <div class="flex">-->
+<!--            <div class="w-1/6 overflow-hidden">-->
+                {% post_to_facebook object_or_url '' %}
+<!--            </div>-->
+<!--            <div class="w-1/6 overflow-hidden">-->
+                {% post_to_whatsapp object_or_url 'Share in WhatsApp' %}
+<!--            </div>-->
+<!--            <div class="w-1/6 overflow-hidden">-->
+                {% post_to_twitter object_or_url '<i class="i2 fa fa-twitter"></i>' %}
+                {% send_email object_or_url '' %}
+
+
+<!--            </div>-->
+<!--        </div>-->
     </section>
     </div>
-        <div></div>
+        <div style="z-index:-1;"></div>
         <div class="lg:w-full sm:w-1/3 md:w-full">
     <section>
         <div class="scroll-fixed">
