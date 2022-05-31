@@ -1,4 +1,4 @@
-{% extends 'base.html' %} {% block content %} {% load static %}
+{% extends 'base.html' %} {% block content %} {% load static %} {% load social_share %}
 <!DOCTYPE html>
 <html lang="en">
 <title>Tender Details</title>
@@ -52,8 +52,15 @@
         <p>{{obj.tender_description | safe}}</p>
         {% if obj.tender_file %}
         <br>
-        <a href="{{obj.tender_file.url}}" style="color: #0095ff; text-decoration: underline">Download PDF</a>
+        <a href="{{obj.tender_file.url}}" style="color: #0095ff; text-decoration: underline">Download file</a><br><br>
         {% endif %}
+        <i class="fa fa-share-alt" style="color:#ff6347; width: 23px;height: 23px;"></i>
+               <button style="font-size:17px; background: #3B5998;
+               color: white;"> {% post_to_facebook object_or_url '<i class="fa fa-facebook" style="width: 23px;height: 23px;" aria-hidden="true"></i>' %}</button>
+                <button style="font-size:17px; background: #25D366;
+                color: white;"> {% post_to_whatsapp object_or_url '<i class="fa fa-whatsapp" style="width: 23px;height: 23px;" ></i>' %}</button>
+                <button style="font-size:17px; background: #73b0e0;
+                color: white;"> {% post_to_telegram "Telegram" object_or_url '<i class="fa fa-telegram" style="width: 23px;height: 23px;"  aria-hidden="true"></i>' %}</button>
         <hr>
     </section>
          </div>

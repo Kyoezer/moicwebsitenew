@@ -1,4 +1,4 @@
-{% extends 'base.html' %} {% block content %} {% load static %}
+{% extends 'base.html' %} {% block content %} {% load static %} {% load social_share %}
 <!DOCTYPE html>
 <html lang="en">
 <title>Vacancy Details</title>
@@ -51,12 +51,20 @@
         <p style="text-align:justify; font-size:14px;">{{obj.vacancy_description|safe}}</p>
         {% if obj.vacancy_file %}
         <br>
-        To download the file <a href="{{obj.vacancy_file.url}}" style="color: #0095ff; text-decoration: underline">click here</a>
+        <a href="{{obj.vacancy_file.url}}" style="color: #0095ff; text-decoration: underline">Vacancy Announcement</a>
         {% endif %}
+        <br><br>
+        <i class="fa fa-share-alt" style="color:#ff6347; width: 23px;height: 23px;"></i>
+               <button style="font-size:17px; background: #3B5998;
+               color: white;"> {% post_to_facebook object_or_url '<i class="fa fa-facebook" style="width: 23px;height: 23px;" aria-hidden="true"></i>' %}</button>
+                <button style="font-size:17px; background: #25D366;
+                color: white;"> {% post_to_whatsapp object_or_url '<i class="fa fa-whatsapp" style="width: 23px;height: 23px;" ></i>' %}</button>
+                <button style="font-size:17px; background: #73b0e0;
+                color: white;"> {% post_to_telegram "Telegram" object_or_url '<i class="fa fa-telegram" style="width: 23px;height: 23px;"  aria-hidden="true"></i>' %}</button>
         <hr>
     </section>
         </div>
-        <div></div>
+        <div style="z-index:-1"></div>
         <div class="lg:w-full sm:w-1/3 md:w-full">
     <section>
         <div class="scroll-fixed">
